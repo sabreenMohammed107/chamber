@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate text-center mb-4">
-                    <h1 class="mb-2 bread"> تنويه   </h1>
+                    <h1 class="mb-2 bread">{{ __('titles.newsDetails') }} </h1>
                 </div>
             </div>
         </div>
@@ -20,107 +20,9 @@
     <section class="about-Adv">
         <!-- Sidebar -->
         <div class="container">
-            <div class="row ">
+            <div id="newsDetails" class="row ">
 
-                <div class="category-desc col-md-8 col-xs-12">
-                    <div class="category-desc-pan  panel panel-default">
-                    
-                        <div class="test panel-heading mt-3">
-                            <p id="newTitle mr-5 mt-3">
-                            {{$newsObj->ar_title}}  </p>
-                            <h6>  
-                            <?php $date = date_create($newsObj->news_date) ?>
-                                    {{ date_format($date,"d-m-Y") }}
-                                  
-                               </h6>
-                        </div>
-                        <div class="fees panel-body">
-                         
-                            <div class="articleimg">
-                              <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
-                                <div class="carousel-inner ">
-                                @foreach($newsGallery as $key => $gallery)
-                                  <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
-                                  @if($gallery !=null && $gallery->image!=null)
-                                        <img src="{{ asset('uploads/news/'.$gallery->image) }}" alt="{{$gallery->ar_title}}" title="{{$gallery->ar_title}}">
-                                  @else
-                                  <iframe width="560" height="315"
-                                            src="{{$gallery->vedio}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                  @endif
-                                    
-                                  </div>
-                                  @endforeach
-                                 
-                                </div>
-                                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                  <span class="carousel-control-prev-icon" aria-hidden="true" >
-                                    <i class="fa fa-angle-left"></i>
-                                  </span>
-                                  <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" >
-                                  <span class="carousel-control-next-icon" aria-hidden="true" >
-                                    <i class="fa fa-angle-right"></i>
-                                  </span>
-                                  <span class="sr-only" >Next</span>
-                                </a>
-                              </div>
-                          </div>
-                          <div class="outlineSocialShare">
-                            <i class="fa fa-twitter" ></i>
-                          
-                            <i class="fa fa-facebook"></i>
-                            <i class="fa fa-envelope"></i>
-                          </div>
-                             <div class="newsStory">
-                              
-                             <p>{{$newsObj->ar_text}}  </p>
-                            </div>
-
-</div>
-                        </div>
-                        <div class="test panel-heading">
-                          <p id="newTitle mr-5 mt-3" class="subTest">أخبار متعلقة </p>
-                      </div>
-                        <div class="newsExt">
-                          <div class="row">
-                          <div class="container text-center">
-                          
-                         <!-- sabreen pagination -->
-                         <div class="fees panel-body" style="display: flex;flex-wrap: wrap;">
-                         @foreach($relatedNews as $gallerynew)
-                        
-                       
-                                <div class="card mb-2" style=" flex-grow: 1;width: 31%;margin:0 5px 5px" >
-                                  <img class="card-img-top"
-                                  src="{{ asset('uploads/news/'.$gallerynew->relatednews->gallery->first()->image) }}" alt="محمد أبو العينين - صورة أرشيفية" title="محمد أبو العينين - صورة أرشيفية">
-                                
-                                  <div class="card-body">
-                                   
-                                    <a href="#"><p class="card-text">   {{ Str::limit($gallerynew->relatednews->ar_text, 100,'') }}
-                                               
-                                      </p></a> 
-                                   
-                                  </div>
-                              
-                            
-                              </div>
-                              @endforeach 
-                              </div>
-                              <div class="clearfix"></div>
-                        <div id="category" class="blog-pagination justify-content-center"  >
-						
-						{!! $relatedNews->links() !!}
-						
-						</div>
-
-
-
-                         <!-- End sabreen pagination -->
-
-                          </div></div>
-                    </div> </div>
-
+                @include('Customer.news.newsDetailsList')
                 <div class=" col-md-3 col-xs-12 mr-5">
                     <div class="  panel panel-default ">
                         <div class=" panel-heading mb-5" >
@@ -228,4 +130,45 @@
 
 @endsection
 @section('scripts')
+<script>
+
+$(document).ready(function() {
+
+
+
+//pagination
+$(document).on('click', '#categoryNews .pagination a', function(event){
+  
+
+  event.preventDefault(); 
+  var page = $(this).attr('href').split('page=')[1];
+  fetch_data(page);
+ });
+ 
+ 
+ function fetch_data(page)
+ {
+
+  $.ajax({
+	
+    url:"{{ URL::to('fetch_news') }}?page="+page,
+	data:
+		{
+		
+			id:$("#newsId").val(),
+
+		
+        } ,
+   
+   success:function(data)
+   {
+    $('#newsDetails').html(data);
+   }
+  });
+ }
+
+});
+
+
+</script>
 @endsection

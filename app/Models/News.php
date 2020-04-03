@@ -11,7 +11,7 @@ class News extends Model
     }
 
 
-    public function relatedcourse()
+    public function relatednews()
     {
         return $this->hasMany('App\Models\News','related_news_id');
     }

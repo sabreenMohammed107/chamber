@@ -25,4 +25,32 @@ class NewsController extends Controller
         $newsRandom=News::take(3)->inRandomOrder(rand(10,100))->get();
         return view('Customer.news.newsDetails',compact('newsObj','newsGallery','relatedNews','newsRandom'));
     }
+
+    function fetch_data(Request $request)
+    {
+     
+
+     if($request->ajax())
+     {
+        $news=News::orderBy("created_at", "Desc")->paginate(6);
+        $newsRandom=News::take(3)->inRandomOrder(rand(10,100))->get();
+      return view('Customer.news.indexNews', compact('news','newsRandom'))->render();
+     }
+    }
+
+    function fetch_news(Request $request)
+    {
+     
+
+     if($request->ajax())
+     {
+         $id=$request->get("id");
+         $newsObj=News::where("id",'=',$id)->first();
+         $newsGallery=News_gallery::where("news_id",'=',$id)->get();
+         $relatedNews=Related_new::where("news_id",'=',$id)->paginate(3);
+         $newsRandom=News::take(3)->inRandomOrder(rand(10,100))->get();
+               
+         return view('Customer.news.newsDetailsList', compact('newsObj','newsGallery','relatedNews','newsRandom'))->render();
+     }
+    }
 }

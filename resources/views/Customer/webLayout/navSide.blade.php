@@ -20,7 +20,6 @@
   <div class="collapse navbar-collapse" id="ftco-nav">
     <ul class=" navbar-nav ">
 
-
       <li class="nav-item  "><a href="index.html" class="nav-link">{{ __('links.home') }}</a></li>
 
       <li class="nav-item dropdown show ">
@@ -48,10 +47,10 @@
         </a>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="news.html">أخبار الغرفة</a>
+          <a class="dropdown-item" href="{{url('/news')}}">أخبار الغرفة</a>
           <a class="dropdown-item" href="albums.html">عدسة الغرفة ( أليوم الصور والفيديو
             )</a>
-          <a class="dropdown-item" href="advertesment.html">تنويهات وإعلانات</a>
+          <a class="dropdown-item" href="{{url('/announce')}}">تنويهات وإعلانات</a>
           <a class="dropdown-item" href="chahbander.html"> مجلة الشهبندر </a>
 
         </div>

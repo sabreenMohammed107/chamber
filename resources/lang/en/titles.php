@@ -2,6 +2,14 @@
 
 return [
         
+   /*------global----------*/
+'more'=>'More',
+'welcom'=>'Welcome',
+'guest'=>'guest',
+'login'=>'Login',
+'slogan'=>'Nine Tenth of Livelihood Comes From Trade',
+
+
     /*------Home----------*/
     
     'home' => 'Home',
@@ -16,8 +24,19 @@ return [
     'total'=>'Total',
     'note'=>'Notes',
 
-     /*------title----------*/
-    'title'=>'Title',
+     /*------news----------*/
+     'chamberNews'=>'  Chamber News',
+     'news'=>'News',
+    'advert'=>'Advertsments',
+    'importNews'=>'Important News',
+    'newsDetails'=>'News Details',
+    'relatedNews'=>'Related News',
+     /*------announce----------*/
+     'chamberAnnounce'=>'Advertsments',
+     'announce'=>'Advertsment',
+    
+     'announceDetails'=>'Advertesment Details ',
+     'relatedAnnounce'=>'Related Advertsment',
 
     /*------city----------*/
     'show '=>'Show ',

@@ -12,6 +12,7 @@
 <!-- end -->
 
   <!--========== Start Top Menu ==========-->
+ 
   <div class=" bg-black top">
     <div class="container">
       <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -97,11 +98,11 @@
 
               <p class="  mr-3  mt-2 register-link">
                 <a href="shahbandr.cairochamber.org.eg" target="_blank" class="  text-white">
-                  <span class="welcomeuser"><span class="welcome">مرحبا بك :</span>
-                    <span class="welcomeuser">الزائر</span>
+                  <span class="welcomeuser"><span class="welcome">{{ __('titles.welcom') }} :</span>
+                    <span class="welcomeuser">{{ __('titles.guest') }}</span>
                 </a></p>
-                {{ str_replace('_', '-', app()->getLocale()) }}
-              <button class="btn btn-primary mr-3 ml-3 "><a href="login.html">تسجيل الدخول</a></button>
+              
+              <button class="btn btn-primary mr-3 ml-3 "><a href="login.html">{{ __('titles.login') }} </a></button>
               <a href="{{ URL::to('changeLang/en') }}" class=" text-white"><span>EN</span></a>/
               <a href="{{ URL::to('changeLang/ar') }}" class=" text-white"><span>AR</span></a>
               
@@ -173,7 +174,7 @@
 
 
             <div class="slogan">
-              <span>تسعة اعشار الرزق فى التجارة</span>
+              <span>{{ __('titles.slogan') }}</span>
             </div>
           </div>
         </div>

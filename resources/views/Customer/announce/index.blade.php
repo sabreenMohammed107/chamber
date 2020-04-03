@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate text-center mb-4">
-                    <h1 class="mb-2 bread">{{ __('titles.chamberNews') }}
+                    <h1 class="mb-2 bread">{{ __('titles.chamberAnnounce') }}
                   
                    
                   </h1>
@@ -24,8 +24,8 @@
     <section class="about-Adv">
         <!-- Sidebar -->
         <div class="container">
-            <div id="newsContent" class="row ">
-@include('Customer.news.indexNews')
+            <div id="announceContent" class="row ">
+@include('Customer.announce.indexAnnounce')
                   
 
                 
@@ -45,7 +45,7 @@ $(document).ready(function() {
 
 
 //pagination
-$(document).on('click', '#category .pagination a', function(event){
+$(document).on('click', '#announce .pagination a', function(event){
   event.preventDefault(); 
   var page = $(this).attr('href').split('page=')[1];
  
@@ -58,12 +58,12 @@ $(document).on('click', '#category .pagination a', function(event){
 	 
   $.ajax({
 	
-    url:"{{ URL::to('fetch_data') }}?page="+page,
+    url:"{{ URL::to('fetch_announce') }}?page="+page,
 
    
    success:function(data)
    {
-    $('#newsContent').html(data);
+    $('#announceContent').html(data);
    }
   });
  }
