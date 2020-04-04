@@ -21,18 +21,18 @@
           <div class="col-md-3 col-12">
 
             <a href="index.html">
-              <img src="images/cairo-chamber-logo-footer.png" class="img-fluid"
+              <img src="{{ asset('webasset/images/cairo-chamber-logo-footer.png')}}" class="img-fluid"
                 style="width: 130px; margin-right: 30px;">
             </a>
             <ul class="contact-info mt-3 ml-3">
               <li><span>العنوان :</span>
-                <span class="contact-t">4 ميدان الفلكى - باب اللوق - القاهرة</span>
+                <span class="contact-t">{{$branch->address}}</span>
               </li>
               <li><span>تليفون :</span>
-                <span class="contact-t">27958261/ 27958262 /27948491</span>
+                <span class="contact-t">{{$branch->phone}}</span>
               </li>
               <li><span>بريد إلكترونى :</span>
-                <span class="contact-t">info@cairochamber.org.eg</span>
+                <span class="contact-t">{{$branch->email}}</span>
               </li>
 
             </ul>
@@ -110,14 +110,14 @@
 
             <div class="row ">
               <div class="social-links">
-                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                <a href="#" class="instagram">
+                <a href="{{$social->twitter_url}}" class="twitter"><i class="fa fa-twitter"></i></a>
+                <a href="{{$social->facebook_url}}" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="{{$social->feedsfloor_url}}" class="instagram">
                   <i class="fa fa-rss"></i>
-                <a href="#" class="google-plus"><i class="fa fa-youtube"></i></a>
-                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                <a href="{{$social->youtube_url}}" class="google-plus"><i class="fa fa-youtube"></i></a>
+                <a href="{{$social->linkedin_url}}" class="linkedin"><i class="fa fa-linkedin"></i></a>
               </div>
-              <iframe class="mt-2" src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d110491.62014720339!2d31.217497669855145!3d30.069457536940735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d30.068274799999998!2d31.338510399999997!4m5!1s0x145840b863fab4dd%3A0xd5558c93ba84de05!2z2KfZhNi62LHZgdipINin2YTYqtis2KfYsdmK2Kkg2KjYp9mE2YLYp9mH2LHYqdiMIDYgRWwgVGFocmlyLCBBbCBCYWxhcXNhaCwgQWJkZWVuLCBDYWlybyBHb3Zlcm5vcmF0ZeKArQ!3m2!1d30.0445936!2d31.2407172!5e0!3m2!1sen!2seg!4v1578875774068!5m2!1sen!2seg" 
+              <iframe class="mt-2" src="{{$branch->map_url}}" 
               width="100%" height="300" frameborder="0" style="border:0;opacity: 0.8;" allowfullscreen=""></iframe>
             </div>
           </div>

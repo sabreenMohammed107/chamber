@@ -25,31 +25,31 @@
                   <span class="top-span" >مجلة الشهبندر</span>
                 </a></p>
                 <div class="icon mr-3 d-flex justify-content-center align-items-center">
-                  <a href="https://www.facebook.com/CairoChamberOrg" target="_blank" class="text-white">
+                  <a href="{{$social->facebook_url}}" target="_blank" class="text-white">
                     <span class="fa fa-facebook"></span>
                   </a>
                 </div>
   
   
                 <div class="icon mr-2 d-flex justify-content-center align-items-center">
-                  <a href="https://www.twitter.com/CairoChamberOrg" target="_blank" class="text-white">
+                  <a href="{{$social->twitter_url}}" target="_blank" class="text-white">
                     <span class="fa fa-twitter"></span>
                   </a>
                 </div>
   
                 <div class="icon mr-2 d-flex justify-content-center align-items-center">
-                  <a href="https://www.youtube.com/CairoChamberOrg" target="_blank" class="text-white">
+                  <a href="{{$social->youtube_url}}" target="_blank" class="text-white">
                     <span class="fa fa-youtube"></span>
                   </a>
                 </div>
                 <div class="icon mr-2 d-flex justify-content-center align-items-center">
-                  <a href="https://www.linkedin.com/company/cairo-chamber-of-commerce---الغرفة-التجارية-للقاهرة"
+                  <a href="{{$social->feedsfloor_url}}"
                     target="_blank" class="text-white">
                     <span class="fa fa-rss"></span>
                   </a>
                 </div>
                 <div class="icon mr-2 d-flex justify-content-center align-items-center">
-                  <a href="https://www.linkedin.com/company/cairo-chamber-of-commerce---الغرفة-التجارية-للقاهرة"
+                  <a href="{{$social->linkedin_url}}"
                     target="_blank" class="text-white">
                     <span class="fa fa-linkedin"></span>
                   </a>

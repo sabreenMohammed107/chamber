@@ -20,6 +20,13 @@ Route::namespace('Customer')->group(function () {
     Route::get('/announceDetails/{id}', 'AnnounceController@announceDetails')->name('announceDetails');
     Route::get('fetch_announce', 'AnnounceController@fetch_announce');
     Route::get('fetch_announceDetails', 'AnnounceController@fetch_announceDetails');
+    /*-----------------------------Conferance---------------------------------------*/
+    Route::get('/conference', 'ConferenceController@index');
+    Route::get('fetch_conference', 'ConferenceController@fetch_conference');
+    Route::get('/searchForm', 'ConferenceController@searchForm')->name('searchForm');
+    /*--------------------------Contact-------------------------*/
+    Route::get('/contact', 'ContactController@index');
+    Route::post('/sendMessage', 'ContactController@sendMessage')->name('sendMessage');
 // //  Change Lang..
 Route::get('changeLang/{lang}', function($lang){
 

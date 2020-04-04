@@ -6,6 +6,7 @@
     @include('Customer.webLayout.navSide')
 
     <!-- container -->
+   
     @yield('content')
 
 

@@ -105,8 +105,8 @@
 
         </div>
       </li>
-
-      <li class="nav-item"><a href="conferences.html" class="dropdown-item nav-link ">مؤتمرات ومعارض</a></li>
+      
+      <li class="nav-item"><a href="{{url('/conference')}}" class="dropdown-item nav-link ">مؤتمرات ومعارض</a></li>
 
 
       <li class="nav-item dropdown show ">
@@ -152,9 +152,17 @@
 
       <li class="nav-item"><a href="encyclo.html" class=" dropdown-item nav-link  ">أدلة هامة</a></li>
       <!-- <li class="nav-item"><a href="depts.html" class="nav-link  mr-2">إدارات الغرفة</a></li> -->
-      <li class="nav-item "><a href="contact.html" class="nav-link mr-1">تواصل معنا</a></li>
+      <li class="nav-item "><a href="{{url('/contact')}}" class="nav-link mr-1">تواصل معنا</a></li>
     </ul>
   </div>
 </div>
 </nav>
 <!--========== End Navbar ==========-->
+<!-- @if ($message =Session::get('message'))
+		<div id="alertDiv" class="alert alert-info alert-block">
+	<button type="button" id="alertClose" class="close" data-dismiss="alert">×</button>	
+        <strong style="color:black;font-weight:bold">{{ $message }}</strong>
+</div>
+	
+
+@endif -->
