@@ -20,7 +20,7 @@
   <div class="collapse navbar-collapse" id="ftco-nav">
     <ul class=" navbar-nav ">
 
-      <li class="nav-item  "><a href="index.html" class="nav-link">{{ __('links.home') }}</a></li>
+      <li class="nav-item  "><a href="{{url('/index')}}" class="nav-link">{{ __('links.home') }}</a></li>
 
       <li class="nav-item dropdown show ">
         <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
@@ -30,7 +30,12 @@
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <a class="dropdown-item" href="intro.html">كلمة رئيس الغرفة</a>
-          <a class="dropdown-item" href="board.html">مجلس إدارة الغرفة 2019 - 2023</a>
+          <?php
+          $current=now()->year;
+          $prev=$current-1;
+          $next=$current+3;
+          ?>
+          <a class="dropdown-item" href="{{url('/board')}}">مجلس إدارة الغرفة {{$prev}} - {{$next}}</a>
           <a class="dropdown-item" href="history.html">تاريخ غرفة تجارة القاهرة</a>
           <a class="dropdown-item" href="objectives.html">الرسالة والرؤية</a>
 
@@ -48,7 +53,7 @@
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <a class="dropdown-item" href="{{url('/news')}}">أخبار الغرفة</a>
-          <a class="dropdown-item" href="albums.html">عدسة الغرفة ( أليوم الصور والفيديو
+          <a class="dropdown-item" href="{{url('/album')}}">عدسة الغرفة ( أليوم الصور والفيديو
             )</a>
           <a class="dropdown-item" href="{{url('/announce')}}">تنويهات وإعلانات</a>
           <a class="dropdown-item" href="chahbander.html"> مجلة الشهبندر </a>

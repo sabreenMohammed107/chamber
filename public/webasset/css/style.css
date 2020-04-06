@@ -11057,7 +11057,7 @@ background-size: 100% 100%;
 .selected-carousel .carousel-control-prev-icon,
 .selected-carousel .carousel-control-next-icon {
   height: 200px;
-  background-image: none;
+  /* background-image: none; */
   font-size: 50px;
   color: #000;
   font-weight: bold;

@@ -24,7 +24,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
   <link rel="stylesheet" type="text/css" href="{{ asset('webasset/css/zabuto_calendar.min.css')}}">
   <!-- =================fas icons=========================== -->
-  
+   <!--========== fancy CSS ==========-->
+   <link rel="stylesheet" type="text/css" href="{{ asset('webasset/css/jquery.fancybox.css')}}">   
   <!--========== Main Style CSS ==========-->
   <link rel="stylesheet" href="{{ asset('webasset/css/style.css')}}">
   <!--========== wow CSS ==========-->

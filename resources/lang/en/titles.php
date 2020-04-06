@@ -9,6 +9,8 @@ return [
 'login'=>'Login',
 'slogan'=>'Nine Tenth of Livelihood Comes From Trade',
 'type'=>'Type',
+'from'=>'From',
+'to'=>'To',
 
 
     /*------Home----------*/
@@ -48,7 +50,17 @@ return [
 'conference'=>'Congresses and mates',
 'events'=>'ُEvents',
 'calen'=>'Calender',
+'conferenceDetails'=>'Conference Details',
+'relatedConference'=>'Related Conference',
+/*--------------Albums---------------*/
+'album'=>'Albums',
+'albumchamber'=>'Chamber Album',
    
-
+ /*---------------boards----------*/
+ 'boards'=>'Board of Directors ',
+ 'boards_from'=>'Board of Directors of the period',
+ 'boards_to'=>'To the period',
+ 'manger'=>'Chairman of Board of Directors',
+ 'prev_board'=>'The previous Boards',
 
 ];

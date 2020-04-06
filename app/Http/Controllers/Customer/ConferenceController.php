@@ -7,7 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Conference;
 use App\Models\Conference_type;
 use App\Models\Country;
-
+use App\Models\Conference_gallery;
+use App\Models\Related_conference;
 class ConferenceController extends Controller
 {
     public function index()
@@ -95,4 +96,27 @@ class ConferenceController extends Controller
             return view('Customer.conference.calIndex', compact('conferences'))->render();
         }
     
+        public function conferenceDetails($id){
+
+            $conferenceObj=Conference::where("id",'=',$id)->first();
+            $conferenceGallery=Conference_gallery::where("conference_id",'=',$id)->get();
+            $relatedConference=Related_conference::where("conference_id",'=',$id)->paginate(3);
+            $conferenceRandom=Conference::take(3)->inRandomOrder(rand(10,100))->get();
+            return view('Customer.conference.conferenceDetails',compact('conferenceObj','conferenceGallery','relatedConference','conferenceRandom'));
+        }
+        function fetch_conferenceDetails(Request $request)
+        {
+         
+    
+         if($request->ajax())
+         {
+             $id=$request->get("id");
+             $conferenceObj=Conference::where("id",'=',$id)->first();
+             $conferenceGallery=Conference_gallery::where("conference_id",'=',$id)->get();
+             $relatedConference=Related_conference::where("conference_id",'=',$id)->paginate(3);
+             $conferenceRandom=Conference::take(3)->inRandomOrder(rand(10,100))->get();
+                   
+             return view('Customer.conference.conferenceDetailsList',compact('conferenceObj','conferenceGallery','relatedConference','conferenceRandom'))->render();
+         }
+        }
 }

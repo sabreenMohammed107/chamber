@@ -7,7 +7,7 @@
                       @foreach($conferences as $conference)
                                 <div class="col-md-6">
                                     <div class="card">
-                                        <a href="#">
+                                        <a href="{{ url('conferenceDetails/'.$conference->id) }}">
                                         @if($conference->gallery->first() !=null && $conference->gallery->first()->order==1)
                                  @if($conference->gallery->first()->image!=null)
                                         <img src="{{ asset('uploads/conference/'.$conference->gallery->first()->image) }}" alt="...">
