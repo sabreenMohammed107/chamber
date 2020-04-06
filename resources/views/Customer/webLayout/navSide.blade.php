@@ -40,7 +40,7 @@
           <a class="dropdown-item" href="objectives.html">الرسالة والرؤية</a>
 
           <a class="dropdown-item" href="departments.html">ادارت الغرفة </a>
-          <a class="dropdown-item" href="socialres.html">المسئولية المجتمعية</a>
+          <a class="dropdown-item" href="{{url('/socialres')}}">المسئولية المجتمعية</a>
         </div>
       </li>
 

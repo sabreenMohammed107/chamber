@@ -62,5 +62,9 @@ return [
  'boards_to'=>'To the period',
  'manger'=>'Chairman of Board of Directors',
  'prev_board'=>'The previous Boards',
+ /*--------------socialres---------------*/
+'socialres'=>'Socialres',
+
+   
 
 ];
