@@ -23,6 +23,9 @@ class SocialresController extends Controller
        
         return view('Customer.socialres.indexSocialres',compact('socialres'))->render();
      }
+
+
+     
      public function socialresDetails($id){
 
         $socialresObj=Social_responsibility::where("id",'=',$id)->first();

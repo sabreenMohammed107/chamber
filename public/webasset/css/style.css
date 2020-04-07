@@ -14420,3 +14420,6 @@ body.ltr .img_imp{
 width: 62px;
  margin:0;
 }
+body.ltr .icon .fa-search {
+  margin-left: 350px !important;
+}

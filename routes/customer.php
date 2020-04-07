@@ -40,8 +40,17 @@ Route::namespace('Customer')->group(function () {
       Route::get('/socialres', 'SocialresController@index');
       Route::get('fetch_socialres', 'SocialresController@fetch_socialres');
       Route::get('/socialresDetails/{id}', 'SocialresController@socialresDetails')->name('socialresDetails');
-   
-// //  Change Lang..
+    /*----------------------------devision-------------------------------*/
+    Route::get('/devision', 'DivisionController@index');
+    Route::get('fetch_devision', 'DivisionController@fetch_devision');
+    Route::get('/devisionDetails/{id}', 'DivisionController@devisionDetails')->name('devisionDetails');
+    Route::post('/registerDevision', 'DivisionController@registerDevision')->name('registerDevision');
+    Route::get('fetch_meetingdevision', 'DivisionController@fetch_meetingdevision');
+    Route::get('/newsDivisionDetails/{id}', 'DivisionController@newsDivisionDetails')->name('newsDivisionDetails');
+    Route::get('/meetingDivisionDetails/{id}', 'DivisionController@meetingDivisionDetails')->name('meetingDivisionDetails');
+    Route::get('fetch_newsDetailsDeivsion', 'DivisionController@fetch_newsDetailsDeivsion');
+ 
+    //  Change Lang..
 Route::get('changeLang/{lang}', function($lang){
 
 	\Session::put('locale', $lang);

@@ -28,10 +28,13 @@ return [
     'select'=>'إختر',
     'search'=>'بحث',
     'contact'=>'تواصل معنا',
-    'mobile'=>'Mobile',
-    'email'=>'Email',
-    'messege'=>'Messege',
-    'sendMessege'=>'Send Messege',
+    'subject'=>'subject',
+    'mobile'=>'موبايل',
+    'email'=>'بريد ألكترونى',
+    'messege'=>'الرسالة',
+    'subject'=>'الموضوع',
+    'save'=>'حفظ',
+    'mesSession'=>'شكرا تم تنفيذ طلبك بنجاح',
         /*------news----------*/
     'chamberNews'=>'  أخبار  الغرفة',
     'news'=>'الاخبار',
@@ -63,6 +66,12 @@ return [
  'prev_board'=>'المجالس السابقة',
  /*--------------socialres---------------*/
 'socialres'=>'المسئولية المجتمعية',
+/*--------------division---------------*/
+'division'=>'صفحات الشعب ',
+'searchdivision'=>'إبحث عن الشعبة',
+'register'=>'سجل بياناتك',
+'meeting'=>'الإجتماعات التى تمت',
+
 
    
 
