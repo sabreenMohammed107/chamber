@@ -1,9 +1,9 @@
 <div class="table-responsive">
     <table class="table table-bordered text-center">
         <tr class="bg-brown text-white">
-            <td>العلم</td>
-            <td>أسم الدولة</td>
-            <td>عرض</td>
+            <td>{{ __('titles.flag') }}</td>
+            <td>{{ __('titles.country') }}</td>
+            <td>{{ __('titles.show') }}</td>
         </tr>
 @foreach($agreements as $agreement)
         <tr>

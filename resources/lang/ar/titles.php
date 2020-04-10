@@ -71,6 +71,8 @@ return [
 'calen'=>'تقويم الفاعليات',
 'conferenceDetails'=>'تفاصيل المؤتمر',
 'relatedConference'=>'مؤتمرات متعلقة',
+'select'=>'إختر',
+'search'=>'بحث',
 /*--------------Albums---------------*/
 'album'=>'البوم الصور',
 'albumchamber'=>'البومات الغرفة',
@@ -87,7 +89,46 @@ return [
 'searchdivision'=>'إبحث عن الشعبة',
 'register'=>'سجل بياناتك',
 'meeting'=>'الإجتماعات التى تمت',
-
+'devisionDetails'=>'تفاصيل الشعبة',
+'devisionBord'=>'مجلس إدارة الشعبة',
+'devisionReg'=>'سجل فى الشعبة',
+'subject'=>'الموضوع',
+'save'=>'حفظ',
+/*-----table divivsion ----*/
+'devname'=>'إسم الشعبة',
+'date'=>'التاريخ',
+'time'=>'الميعاد',
+'today'=>'اليوم',
+/*--------------chansese----------*/
+'title'=>'العنوان',
+'country'=>'الدولة',
+'type'=>'المجال',
+'details'=>'التفاصيل',
+/*----WomenNews-----*/
+'WomenNews'=>'أخبار المرأه',
+'womennewsDetails'=>'تفاصيل الخبر',
+/*----WomenNews-----*/
+''=>'',
+'co-operation'=>' اتفاقات التآخي',
+'worldsView'=>'بيانات الدول',
+'countriesProtocol'=>' اتفاقات تجارية وقعتها مصر',
+'laws'=>'قوانين  وقرارات   ',
+'organization'=>' منظمات الأعمال',
+'embassies'=>'سفارات و قنصليات',
+'ministries'=>' وزارات و هيئات حكومية',
+'reports'=>' دراسات وتقارير',
+'egyptsContacts'=>' أدلة الاتصالات',
+'topics'=>'موضوعات تجارية',
+'encyclopedia'=>' موسوعة المصدرين',
+/*-------*/
+'agreement'=>'الاتفاقية',
+'destination'=>'الجهة',
+'show'=>'عرض',
+'website'=>'الموقع',
+'low'=>'القانون',
+'minster'=>'الوزارة',
+'region'=>'القارة',
+'flag'=>'العلم',
 
    
 

@@ -8,7 +8,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate text-center mb-4">
-            <h1 class="mb-2 bread">اتفاقات التآخي</h1>
+            <h1 class="mb-2 bread">{{ __('titles.co-operation') }}</h1>
           </div>
         </div>
       </div>
@@ -29,10 +29,10 @@
             <div class="table-responsive">
                     <table class="table table-bordered text-center">
                         <tr class="bg-brown text-white">
-                            <td>الاتفاقية</td>
-                            <td>الجهة</td>
-                            <td>التاريخ</td>
-                            <td>عرض</td>
+                            <td>{{ __('titles.agreement') }}</td>
+                            <td>{{ __('titles.destination') }}</td>
+                            <td>{{ __('titles.date') }}</td>
+                            <td>{{ __('titles.show') }}</td>
                         </tr>
 @foreach($agreements as $agreement)
                         <tr>

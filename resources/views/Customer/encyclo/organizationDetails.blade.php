@@ -1,11 +1,11 @@
 <div class="table-responsive">
     <table class="table table-bordered text-center">
         <tr class="bg-brown text-white">
-            <td>الاسم</td>
-            <td>التليفون</td>
-            <td>البريد الإلكترونى	</td>
-            <td>الموقع</td>
-            <td>العنوان</td>
+            <td>{{ __('titles.name') }}</td>
+            <td>{{ __('links.phone') }}</td>
+            <td>{{ __('links.email') }}	</td>
+            <td>{{ __('titles.website') }}</td>
+            <td>{{ __('links.address') }}</td>
         </tr>
 @foreach($agreements as $agreement)
         <tr>

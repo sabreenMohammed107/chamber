@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate text-center mb-4">
-                    <h1 class="mb-2 bread">أدلة هامة
+                    <h1 class="mb-2 bread">{{ __('links.encyclo') }}
                     </h1>
                 </div>
             </div>
@@ -22,7 +22,7 @@
     <section class="ftco-section">
         <div class="container">
             <div class="section-header mb-4">
-                <h3>   أدلة هامة</h3>
+                <h3>  {{ __('links.encyclo') }}</h3>
         
               </div>
              
@@ -45,37 +45,37 @@
 
                 <nav>
                     <ul id="myMenu2">
-                        <li><a href="{{url('/brother')}}" class="text-dark text-decoration"> اتفاقات التآخي
+                        <li><a href="{{url('/brother')}}" class="text-dark text-decoration">  {{ __('titles.co-operation') }}
                             </a> </li>
-                        <li><a href="{{url('/region')}}" class="text-dark text-decoration"> بيانات الدول
+                        <li><a href="{{url('/region')}}" class="text-dark text-decoration"> {{ __('titles.worldsView') }}
                             </a></li>
-                        <li><a href="{{url('/commerical')}}" class="text-dark text-decoration"> اتفاقات تجارية وقعتها مصر
+                        <li><a href="{{url('/commerical')}}" class="text-dark text-decoration"> {{ __('titles.countriesProtocol') }}
                             </a></li>
                         <li><a href="{{url('/organization')}}" class="text-dark text-decoration">
-                                منظمات الأعمال </a></li>
+                        {{ __('titles.organization') }}   </a></li>
                         <li><a href="{{url('/embassy')}}" class="text-dark text-decoration">
-                                سفارات و قنصليات
+                        {{ __('titles.embassies') }}  
                             </a>
                         </li>
                         <li><a href="{{url('/studies')}}" class="text-dark text-decoration">
-                          دراسات وتقارير
+                        {{ __('titles.reports') }}  
                         </a>
                     </li>
                     <li><a href="{{url('/laws')}}" class="text-dark text-decoration">
-قوانين  وقرارات                       </a>
+                    {{ __('titles.laws') }}                    </a>
                   </li>
                         <li><a href="{{url('/ministry')}}" class="text-dark text-decoration">
-                            وزارات و هيئات حكومية
+                        {{ __('titles.ministries') }}
                         </a>
                         </li>
                         <li><a href="{{url('/communication')}}" class="text-dark text-decoration">
-                            أدلة الاتصالات
+                        {{ __('titles.egyptsContacts') }}
                         </a></li>
                         <li><a href="{{url('/topics')}}" class="text-dark text-decoration">
-                            موضوعات تجارية
+                        {{ __('titles.topics') }}
                         </a></li>
                         <li><a href="{{url('/expencyclopedia')}}" class="text-dark text-decoration">
-                            موسوعة المصدرين
+                        {{ __('titles.encyclopedia') }}
                         </a></li>
                        
 

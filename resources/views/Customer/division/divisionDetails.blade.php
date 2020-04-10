@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
             <div class="col-md-9 ftco-animate text-center mb-4">
-                <h1 class="mb-2 bread"> تفاصيل الشعبة </h1>
+                <h1 class="mb-2 bread">  {{ __('titles.devisionDetails') }}</h1>
             </div>
         </div>
     </div>
@@ -27,17 +27,17 @@
 <section class="ftco-section ftco-wrap-about bg-light">
     <div class="container">
         <div class="col-md-4">
-            <h3>الشعبة :</h3>
-            <hr class="mb-4">
+         
+          
         </div>
         <div class="row">
             <div class="col-md-3">
                 <div class="sidebar2 ">
 
-                    <a class="active " href="#home-dept" onclick="homedept()">مجلس ادارة الشعبة</a>
+                    <a class="active " href="#home-dept" onclick="homedept()">{{ __('titles.devisionBord') }}</a>
                     <a href="#about-dept" onclick="aboutdept()">{{ __('titles.meeting') }}</a>
                     <a href="#news-dept" onclick="newsdept()">{{ __('titles.news') }}</a>
-                    <a href="#contact-dept" onclick="contentdept()">سجل في الشعبة</a>
+                    <a href="#contact-dept" onclick="contentdept()">{{ __('titles.devisionReg') }}</a>
 
                 </div>
             </div>
@@ -54,11 +54,11 @@
                             <input class="form-control" id="name" type="text" name="name">
                         </div>
                         <div class="form-group">
-                            <label for="name">{{ __('titles.mobile') }} </label>
+                            <label for="name">{{ __('links.phone') }} </label>
                             <input class="form-control" id="mobile" type="text" name="mobile">
                         </div>
                         <div class="form-group">
-                            <label for="email">{{ __('titles.email') }} </label>
+                            <label for="email">{{ __('links.email') }} </label>
                             <input class="form-control" id="email" type="email" name="email">
                         </div>
                         <div class="form-group">
@@ -66,7 +66,7 @@
                             <input class="form-control" id="subject" type="text" name="subject">
                         </div>
                         <div class="form-group">
-                            <label for="message">{{ __('titles.messege') }} </label>
+                            <label for="message">{{ __('titles.notes') }} </label>
                             <textarea class="form-control" id="message" name="messege"></textarea>
                         </div>
                         <input class="btn btn-primary " type="submit" value="{{ __('titles.save') }} " />
@@ -95,7 +95,7 @@
                     </div>
                 </div>
                 <div class="home-dept">
-                    <h5 style="border-bottom: 1px solid #CCC;">مجلس الإدارة </h5>
+                    <h5 style="border-bottom: 1px solid #CCC;">{{ __('titles.devisionBord') }} </h5>
                     <div class="row">
 
                         <div class="col-md-12 ftco-animate">
@@ -148,11 +148,14 @@
                                                 @else
                                                 {{$mastr->ar_name}}
                                                 @endif</h6>
+                                          
+                                                <p style="text-align: center !important">
                                             @if(app()->getLocale()=='en')
                                             {{$mastr->en_position}}
                                             @else
                                             {{$mastr->ar_position}}
-                                            @endif</p>
+                                            @endif
+                                        </p>
 
                                         </div>
                                         @endforeach
@@ -201,6 +204,7 @@
                                                 @else
                                                 {{$mastr->ar_name}}
                                                 @endif</h6>
+                                                <p style="text-align: center !important">
                                             @if(app()->getLocale()=='en')
                                             {{$mastr->en_position}}
                                             @else

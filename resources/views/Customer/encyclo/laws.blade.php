@@ -12,7 +12,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate text-center mb-4">
-            <h1 class="mb-2 bread">قوانين و قرارات</h1>
+            <h1 class="mb-2 bread">{{ __('titles.laws') }}</h1>
           </div>
         </div>
       </div>
@@ -31,11 +31,11 @@
             </div>
             <div class="row">
                 <div class="col-md-2 mr-3">
-            <h5>النوع :</h5></div>
+            <h5>{{ __('titles.type') }} :</h5></div>
             <div class="col-md-3 mb-3 ml-3">
       
               <select name="law_id" id="law_id" class="browser-default custom-select" >
-                                    <option value="">إختر النوع</option>
+                                    <option value="">{{ __('titles.select') }} {{ __('titles.type') }}</option>
                                     @foreach ($laws as $law)
                                     <option value='{{$law->id}}'>
                                     @if(app()->getLocale()=='en')

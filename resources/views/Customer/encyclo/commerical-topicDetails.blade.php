@@ -1,10 +1,10 @@
 <div class="table-responsive">
     <table class="table table-bordered text-center">
         <tr class="bg-brown text-white">
-        <td>الموضوع</td>
+        <td>{{ __('links.subject') }}</td>
                            
                            <!-- <td>التاريخ</td> -->
-                           <td>عرض</td>
+                           <td>{{ __('titles.show') }}</td>
         </tr>
 @foreach($agreements as $agreement)
         <tr>

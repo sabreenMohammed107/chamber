@@ -12,7 +12,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate text-center mb-4">
-            <h1 class="mb-2 bread"> بيانات الدول </h1>
+            <h1 class="mb-2 bread">{{ __('titles.worldsView') }}</h1>
           </div>
         </div>
       </div>
@@ -31,11 +31,11 @@
             </div>
             <div class="row">
                 <div class="col-md-2 mr-3">
-            <h5>إسم القارة :</h5></div>
+            <h5>{{ __('titles.region') }}:</h5></div>
             <div class="col-md-3 mb-3 ml-3">
       
               <select name="region_id" id="region_id" class="browser-default custom-select" >
-                                    <option value="">إختر القارة</option>
+                                    <option value="">{{ __('titles.select') }} {{ __('titles.region') }}</option>
                                     @foreach ($regions as $region)
                                     <option value='{{$region->id}}'>
                                     @if(app()->getLocale()=='en')

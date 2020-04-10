@@ -10,11 +10,11 @@
                 <table id="example2" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                         <tr class="bg-brown text-white">
-                          <th>عنوان الفرصة </td>
+                          <th> {{ __('titles.title') }}</td>
                    
-                            <th>الدولة</th>
-                            <th>المجال </th>
-                            <th>بيانات التواصل</th>
+                            <th> {{ __('titles.country') }}</th>
+                            <th> {{ __('titles.type') }} </th>
+                            <th> {{ __('titles.details') }} </th>
                         </tr>
                       </thead>
                       <tbody>

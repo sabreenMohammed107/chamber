@@ -1,8 +1,8 @@
 <table class="table table-bordered text-center">
               <tr class="bg-brown text-white">
-                <td>اسم الشعبة</td>
-                <td>التاريخ</td>
-                <td>الميعاد</td>
+                <td>{{ __('titles.devname') }}</td>
+                <td>{{ __('titles.date') }}</td>
+                <td>{{ __('titles.time') }}</td>
               </tr>
 @foreach($schedules as $schedul)
  
@@ -14,7 +14,7 @@ $current=date_create(now());
  <tr bgcolor="#eee">
                 <td >
                     @if(date_format($dateTest,"d-m-Y")==date_format($current,"d-m-Y"))
-                  <p class="awesome">اليوم*</p>
+                  <p class="awesome">{{ __('titles.today') }}*</p>
                   @endif
                   <a href="devisionPage.html" class="text-dark">
                   @if(app()->getLocale()=='en')

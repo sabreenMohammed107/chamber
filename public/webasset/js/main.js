@@ -547,6 +547,23 @@ $(document).ready(function () {
 		{
 			"paging": true,
 			"pageLength":3,
+			"info": false,         
+			
+			language: {
+				paginate: {
+					previous: '‹',
+					next:     '›'
+				},
+				
+				aria: {
+					paginate: {
+						previous: 'Previous',
+						next:     'Next'
+					}
+				},
+				sSearch:'<i class="fa fa-search fa-2x"></i>'
+			},
+
 			
 			 stateSave: false,
 			"autoWidth": true,

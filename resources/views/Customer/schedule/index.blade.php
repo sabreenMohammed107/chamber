@@ -11,7 +11,7 @@
     <div class="container">
       <div class="row no-gutters slider-text align-items-end justify-content-center">
         <div class="col-md-9 ftco-animate text-center mb-4">
-          <h1 class="mb-2 bread">جدول مواعيد إجتماعات الشعب</h1>
+          <h1 class="mb-2 bread">{{ __('links.ScheduleDevision') }}</h1>
         </div>
       </div>
     </div>

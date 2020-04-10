@@ -14476,3 +14476,10 @@ body.ltr .dataTables_paginate {
   float: left !important;
 }
 
+@media only screen and (max-width: 750px){
+  body.ltr .main-logo .slogan {
+    /* right: 10px; */
+    left: 1px;
+    font-size: 14px;
+}
+}

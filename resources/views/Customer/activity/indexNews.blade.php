@@ -2,7 +2,7 @@
                 <div class="category-desc col-md-8 col-xs-12">
                     <div class="category-desc-pan  panel panel-default">
                         <div class="test panel-heading">
-                            <p id="newTitle mr-5">  {{ __('titles.womenNews') }}
+                            <p id="newTitle mr-5">  {{ __('titles.WomenNews') }}
                   
                             </p>
                         </div>

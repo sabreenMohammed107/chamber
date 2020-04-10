@@ -1,10 +1,10 @@
 <div class="table-responsive">
     <table class="table table-bordered text-center">
         <tr class="bg-brown text-white">
-        <td>الاسم</td>
+        <td>{{ __('titles.name') }}</td>
                            
                            <!-- <td>التاريخ</td> -->
-                           <td>عرض</td>
+                           <td>{{ __('titles.show') }}</td>
         </tr>
 @foreach($agreements as $agreement)
         <tr>

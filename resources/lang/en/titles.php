@@ -62,11 +62,13 @@ return [
    'announceDetails' => 'Advertesment Details ',
    'relatedAnnounce' => 'Related Advertsment',
    /*-----------conference-----------------*/
-   'conference' => 'Congresses and mates',
+   'conference' => 'Conference and Meetings',
    'events' => 'ُEvents',
    'calen' => 'Calender',
    'conferenceDetails' => 'Conference Details',
    'relatedConference' => 'Related Conference',
+   'select'=>'Select',
+   'search'=>'Search',
    /*--------------Albums---------------*/
    'album' => 'Albums',
    'albumchamber' => 'Chamber Album',
@@ -84,6 +86,52 @@ return [
    'searchdivision' => 'Search on Dividion',
    'register' => 'Register Data',
 'meeting'=>'Done Meetings',
+'devisionDetails'=>'Devision Details',
+'devisionBord'=>'Division Board',
+'devisionReg'=>'Division Register',
+'subject'=>'Subject',
+'save'=>'Save',
+/*-----table divivsion ----*/
+'devname'=>'Devision Name',
+'date'=>' Date',
+'time'=>'Time',
+'today'=>'Today',
+
+/*--------------chansese----------*/
+'title'=>'Title',
+'country'=>'Country',
+'type'=>'Type',
+'details'=>'Details',
+/*----WomenNews-----*/
+'WomenNews'=>'Women News',
+'womennewsDetails'=>'women News Details',
+
+
+
+
+'co-operation'=>'Protocols of Co-operation',
+'worldsView'=>'The Worlds View',
+'countriesProtocol'=>'Signed Trade Protocols between Egypt and other Countries',
+'laws'=>'Laws and Decisions',
+'organization'=>'Bussiness Organizations',
+'embassies'=>'Embassies and Consolate',
+'ministries'=>'Ministries and Governmental Authorities',
+'reports'=>'Studies and Reports',
+'egyptsContacts'=>'Egypts Contacts',
+'topics'=>'Business Topics',
+'encyclopedia'=>'Exports Encyclopedia',
+/*-------------------------------*/
+'agreement'=>'Agreement',
+'destination'=>'Destination',
+'show'=>'Show',
+'website'=>'Website',
+'low'=>'Low',
+'minster'=>'Minister',
+'region'=>'Region',
+'flag'=>'Flag',
+
+
+
 
 
 ];
