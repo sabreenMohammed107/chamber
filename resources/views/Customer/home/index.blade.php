@@ -1,6 +1,24 @@
 @extends('Customer.webLayout.web')
 
 @section('content')
+<!-- advertsment -->
+
+<div id="overlay" >
+   <div class="overShow">
+     <h2>الغرفة التجاريه بالقاهرة</h2>
+
+     <p>ضع أعلانك المميز هنا .</p>
+   
+     <a href="{{$mainAds->url}}" target="_blank">
+       
+       <img src="{{ asset('uploads/ads')}}/{{$mainAds->image}}" alt="advertsment" style="width:100%;height: 350px;">
+     </a>
+    
+
+     <button onclick="off()">X </button>
+   </div>
+ </div>
+ <!-- end -->
  <!--========== Start Slider ==========-->
  <section class="  home-slider owl-carousel js-fullheight">
 
