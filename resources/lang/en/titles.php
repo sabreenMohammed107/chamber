@@ -10,7 +10,7 @@ return [
    'to' => 'To',
    'searchResult'=>'Search Result',
    'wmTr'=>'Women and Traders Committee',
-
+'meetingDetails'=>'Meeting Details',
    /*------Home----------*/
 
    'services'=>'Chamber Services',
