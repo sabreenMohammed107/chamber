@@ -88,5 +88,7 @@ return [
 'relatedwebsites'=>'روابط ذات صلة',
 'coursesfooter'=>'دورات',
 'chamber'=>'الغرفة التجارية للقاهرة',
-
+'password'=>'كلمة السر ',
+'confirmPassword'=>'تأكيد كلمه السر',
+'registerLogin'=>' عضو جديد',
 ];

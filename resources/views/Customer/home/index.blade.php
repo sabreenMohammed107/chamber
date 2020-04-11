@@ -52,7 +52,6 @@
 <div class="container">
 
 
-
   <!-- Grid row -->
   <div class="row mt-5 ">
 
@@ -60,28 +59,41 @@
     <div class="col-lg-4 col-md-12 mb-3">
 
       <div class="cube">
-        <div class="flippety wow fadeInDown" data-wow-delay="0.5s">
-          <h1>إعلانك هنا </h1>
+      @isset($ads['0'])
+      <a href="{{ $ads['0']['url']}}" target="_blank">
+        <div class="flippety"  style="background-image: url({{ asset('uploads/ads')}}/{{ $ads['0']['image']}});"  >
+          <h1>إعلانك رقم 1 </h1>
 
-        </div>
-        <div class="flop">
-          <h2>إعلانك هنا </h2>
-        </div>
+        </div></a>
+        @endisset
+        @isset($ads['1'])
+        <a href="{{ $ads['1']['url']}}" target="_blank" >
+        <div class="flop" style="background-image: url({{ asset('uploads/ads')}}/{{ $ads['1']['image']}});"  >
+          <h2>إعلانك رقم 2 </h2>
+        </div></a>
+        @endisset
       </div>
 
     </div>
+  
     <!-- Grid column -->
 
     <!-- Grid column -->
     <div class="col-lg-4 col-md-6 mb-3">
 
       <div class="cube">
-        <div class="flippety wow fadeInDown" data-wow-delay="0.7s">
+      @isset($ads['2'])
+      <a href="{{ $ads['2']['url']}}" target="_blank">
+        <div class="flippety " style="background-image: url({{ asset('uploads/ads')}}/{{ $ads['2']['image']}});"  >
           <h1>إعلانك هنا </h1>
-        </div>
-        <div class="flop">
+        </div></a>
+        @endisset
+        @isset($ads['3'])
+        <a href="{{ $ads['3']['url']}}" target="_blank">
+        <div class="flop" style="background-image: url({{ asset('uploads/ads')}}/{{ $ads['3']['image']}});" >
           <h2>إعلانك هنا</h2>
-        </div>
+        </div></a>
+        @endisset
       </div>
 
     </div>
@@ -91,12 +103,18 @@
     <div class="col-lg-4 col-md-6 mb-3 ">
 
       <div class="cube">
-        <div class="flippety wow fadeInDown" data-wow-delay="0.9s">
+      @isset($ads['4'])
+      <a href="{{ $ads['4']['url']}}" target="_blank">
+        <div class="flippety " style="background-image: url({{ asset('uploads/ads')}}/{{ $ads['4']['image']}});" >
           <h1>إعلانك هنا</h1>
-        </div>
-        <div class="flop">
+        </div></a>
+        @endisset
+        @isset($ads['5'])
+        <a href="{{ $ads['5']['url']}}" target="_blank">
+        <div class="flop" style="background-image: url({{ asset('uploads/ads')}}/{{ $ads['5']['image']}});" >
           <h2>إعلانك هنا</h2>
-        </div>
+        </div></a>
+        @endisset
       </div>
 
     </div>

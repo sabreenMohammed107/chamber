@@ -9,6 +9,8 @@ use App\Models\Conference_type;
 use App\Models\Country;
 use App\Models\Conference_gallery;
 use App\Models\Related_conference;
+use App\Models\Chamber_ads;
+use App\Models\Ads_vedio;
 class ConferenceController extends Controller
 {
     public function index()
@@ -102,7 +104,9 @@ class ConferenceController extends Controller
             $conferenceGallery=Conference_gallery::where("conference_id",'=',$id)->get();
             $relatedConference=Related_conference::where("conference_id",'=',$id)->paginate(3);
             $conferenceRandom=Conference::take(3)->inRandomOrder(rand(10,100))->get();
-            return view('Customer.conference.conferenceDetails',compact('conferenceObj','conferenceGallery','relatedConference','conferenceRandom'));
+            $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+            $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+            return view('Customer.conference.conferenceDetails',compact('adsVedio','ads','conferenceObj','conferenceGallery','relatedConference','conferenceRandom'));
         }
         function fetch_conferenceDetails(Request $request)
         {
@@ -115,8 +119,9 @@ class ConferenceController extends Controller
              $conferenceGallery=Conference_gallery::where("conference_id",'=',$id)->get();
              $relatedConference=Related_conference::where("conference_id",'=',$id)->paginate(3);
              $conferenceRandom=Conference::take(3)->inRandomOrder(rand(10,100))->get();
-                   
-             return view('Customer.conference.conferenceDetailsList',compact('conferenceObj','conferenceGallery','relatedConference','conferenceRandom'))->render();
+             $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+             $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+             return view('Customer.conference.conferenceDetailsList',compact('adsVedio','ads','conferenceObj','conferenceGallery','relatedConference','conferenceRandom'))->render();
          }
         }
 }

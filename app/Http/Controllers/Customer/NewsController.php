@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Models\News;
 use App\Models\News_gallery;
 use App\Models\Related_new;
+use App\Models\Chamber_ads;
+use App\Models\Ads_vedio;
 class NewsController extends Controller
 {
 
@@ -14,7 +16,9 @@ class NewsController extends Controller
 
       $news=News::orderBy("created_at", "Desc")->paginate(6);
     $newsRandom=News::take(3)->inRandomOrder(rand(10,100))->get();
-        return view('Customer.news.index',compact('news','newsRandom'));
+    $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+    $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+        return view('Customer.news.index',compact('news','newsRandom','ads','adsVedio'));
     }
 
     public function newsDetails($id){
@@ -23,7 +27,9 @@ class NewsController extends Controller
         $newsGallery=News_gallery::where("news_id",'=',$id)->get();
         $relatedNews=Related_new::where("news_id",'=',$id)->paginate(3);
         $newsRandom=News::take(3)->inRandomOrder(rand(10,100))->get();
-        return view('Customer.news.newsDetails',compact('newsObj','newsGallery','relatedNews','newsRandom'));
+        $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+        $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+        return view('Customer.news.newsDetails',compact('newsObj','newsGallery','ads','relatedNews','newsRandom','adsVedio'));
     }
 
     function fetch_data(Request $request)
@@ -34,7 +40,9 @@ class NewsController extends Controller
      {
         $news=News::orderBy("created_at", "Desc")->paginate(6);
         $newsRandom=News::take(3)->inRandomOrder(rand(10,100))->get();
-      return view('Customer.news.indexNews', compact('news','newsRandom'))->render();
+        $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+        $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+      return view('Customer.news.indexNews', compact('news','ads','adsVedio','newsRandom'))->render();
      }
     }
 
@@ -49,8 +57,9 @@ class NewsController extends Controller
          $newsGallery=News_gallery::where("news_id",'=',$id)->get();
          $relatedNews=Related_new::where("news_id",'=',$id)->paginate(3);
          $newsRandom=News::take(3)->inRandomOrder(rand(10,100))->get();
-               
-         return view('Customer.news.newsDetailsList', compact('newsObj','newsGallery','relatedNews','newsRandom'))->render();
+         $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+         $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+         return view('Customer.news.newsDetailsList', compact('newsObj','newsGallery','relatedNews','adsVedio','ads','newsRandom'))->render();
      }
     }
 }

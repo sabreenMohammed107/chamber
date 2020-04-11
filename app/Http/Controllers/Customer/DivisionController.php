@@ -13,6 +13,8 @@ use App\Models\Department_news;
 use App\Models\Related_department_news;
 use App\Models\Department_gallery;
 use App\Models\Department_meeting_gallery;
+use App\Models\Chamber_ads;
+use App\Models\Ads_vedio;
 class DivisionController extends Controller
 {
     public function index()
@@ -115,16 +117,19 @@ class DivisionController extends Controller
         $newsGallery=Department_gallery::where("department_news_id",'=',$id)->get();
         $relatedNews=Related_department_news::where("department_news_id",'=',$id)->paginate(3);
         $newsRandom=Department_news::take(3)->inRandomOrder(rand(10,100))->get();
-        return view('Customer.division.newsDetails',compact('newsObj','newsGallery','relatedNews','newsRandom'));
+        $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+        $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+        return view('Customer.division.newsDetails',compact('adsVedio','ads','newsObj','newsGallery','relatedNews','newsRandom'));
     }
 
     public function meetingDivisionDetails($id){
 
         $newsObj=Department_meeting::where("id",'=',$id)->first();
         $newsGallery=Department_meeting_gallery::where("department_meeting_id",'=',$id)->get();
-      
+        $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+        $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
         $newsRandom=Department_meeting::take(3)->inRandomOrder(rand(10,100))->get();
-        return view('Customer.division.meetingDetails',compact('newsObj','newsGallery','newsRandom'));
+        return view('Customer.division.meetingDetails',compact('adsVedio','ads','newsObj','newsGallery','newsRandom'));
     }
 
 
@@ -139,8 +144,9 @@ class DivisionController extends Controller
          $newsGallery=Department_gallery::where("department_news_id",'=',$id)->get();
          $relatedNews=Related_department_news::where("department_news_id",'=',$id)->paginate(3);
          $newsRandom=Department_news::take(3)->inRandomOrder(rand(10,100))->get();
-               
-         return view('Customer.division.newsDetailsList', compact('newsObj','newsGallery','relatedNews','newsRandom'))->render();
+         $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+         $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+         return view('Customer.division.newsDetailsList', compact('adsVedio','ads','newsObj','newsGallery','relatedNews','newsRandom'))->render();
      }
     }
 }

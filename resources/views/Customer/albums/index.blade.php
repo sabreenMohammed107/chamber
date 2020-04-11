@@ -42,16 +42,27 @@
                         <!-- frist section -->
 <div class="fees">
 
-                                <iframe id="frame2" name="f2" width="100%" height="200px"
-                                    src="https://www.youtube.com/embed/J06I7TD5QpI" 
-                                   ></iframe>
-                                <div>
-                                    <h5>إجتماع اللجنه  </h5>
-                                    <p>الاجتماع يناقش قرارات ..... </p>
+@foreach($adsVedio as $key => $vedio)
+                                    <iframe id="popup-youtube-player" width="100%" height="200px"
+                                        src="{{$vedio->vedio_url}}" frameborder="0"
+                                        allowfullscreen="true" allowscriptaccess="always"></iframe>
+                                    <div>
+                                        <h5> @if(app()->getLocale()=='en')
+                                        {{$vedio->en_title}}
+					@else
+                    {{$vedio->ar_title}}
+					@endif
+                                           </h5>
+                                        <p> @if(app()->getLocale()=='en')
+                                        {{$vedio->en_subtitle}}
+					@else
+                    {{$vedio->ar_subtitle}}
+					@endif</p>
 
 
 
-                                </div>
+                                    </div>
+                                    @endforeach
                            
                       
 
@@ -102,18 +113,15 @@
                 <img src="images/slider1.jpg" width="100%" height="200px"></a> -->
                 <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
                   <div class="carousel-inner ">
-                    <div class="carousel-item active">
-                      <img class="d-block " style="width: 100%; height: 200px; " src="images/meeting_room_solution_image1-1024x768.jpg"
+                  @foreach($ads as $key => $adsObj)
+                    <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
+                  
+                      <img class="d-block " style="width: 100%; height: 200px; " src="{{ asset('uploads/ads/'.$adsObj->image) }}"
                         alt="First slide">
                     </div>
-                    <div class="carousel-item">
-                      <img class="d-block " style="width: 100%; height: 200px; " src="images/download-1-1024x768.jpeg"
-                        alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block " style="width: 100%; height: 200px; " src="images/e1e88e69109c22068694d3894e649370.jpg"
-                        alt="Third slide">
-                    </div>
+                    @endforeach
+                  
+                
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true" >

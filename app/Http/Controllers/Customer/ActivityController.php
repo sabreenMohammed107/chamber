@@ -7,13 +7,17 @@ use App\Http\Controllers\Controller;
 use App\Models\Woman_activity;
 use App\Models\Wactivity_gallery;
 use App\Models\Related_wactivity;
+use App\Models\Chamber_ads;
+use App\Models\Ads_vedio;
 class ActivityController extends Controller
 {
     public function index(){
 
         $news=Woman_activity::orderBy("created_at", "Desc")->paginate(6);
       $newsRandom=Woman_activity::take(3)->inRandomOrder(rand(10,100))->get();
-          return view('Customer.activity.index',compact('news','newsRandom'));
+      $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+      $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+          return view('Customer.activity.index',compact('adsVedio','ads','news','newsRandom'));
       }
   
       public function newsDetails($id){
@@ -22,7 +26,9 @@ class ActivityController extends Controller
           $newsGallery=Wactivity_gallery::where("activity_id",'=',$id)->get();
           $relatedNews=Related_wactivity::where("activity_id",'=',$id)->paginate(3);
           $newsRandom=Woman_activity::take(3)->inRandomOrder(rand(10,100))->get();
-          return view('Customer.activity.newsDetails',compact('newsObj','newsGallery','relatedNews','newsRandom'));
+          $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+          $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+          return view('Customer.activity.newsDetails',compact('adsVedio','ads','newsObj','newsGallery','relatedNews','newsRandom'));
       }
   
       function fetch_data(Request $request)
@@ -33,7 +39,9 @@ class ActivityController extends Controller
        {
           $news=Woman_activity::orderBy("created_at", "Desc")->paginate(6);
           $newsRandom=Woman_activity::take(3)->inRandomOrder(rand(10,100))->get();
-        return view('Customer.activity.indexNews', compact('news','newsRandom'))->render();
+          $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+          $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+        return view('Customer.activity.indexNews', compact('adsVedio','ads','news','newsRandom'))->render();
        }
       }
   
@@ -48,8 +56,9 @@ class ActivityController extends Controller
            $newsGallery=Wactivity_gallery::where("activity_id",'=',$id)->get();
            $relatedNews=Related_wactivity::where("activity_id",'=',$id)->paginate(3);
            $newsRandom=Woman_activity::take(3)->inRandomOrder(rand(10,100))->get();
-                 
-           return view('Customer.activity.newsDetailsList', compact('newsObj','newsGallery','relatedNews','newsRandom'))->render();
+           $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+           $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+           return view('Customer.activity.newsDetailsList', compact('adsVedio','ads','newsObj','newsGallery','relatedNews','newsRandom'))->render();
        }
       }
 }

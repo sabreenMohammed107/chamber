@@ -93,6 +93,9 @@ return [
 'relatedwebsites'=>'Related Websites',
 
 'chamber'=>'Cairo Chamber Of Commerce',
+'password'=>'Password',
+'confirmPassword'=>'Confirm Password',
+'registerLogin'=>'Register',
 
 
 

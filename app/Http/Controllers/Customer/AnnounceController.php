@@ -7,13 +7,17 @@ use App\Http\Controllers\Controller;
 use App\Models\Announcement;
 use App\Models\Announce_gallery;
 use App\Models\Related_announce;
+use App\Models\Chamber_ads;
+use App\Models\Ads_vedio;
 class AnnounceController extends Controller
 {
     public function index(){
 
         $announces=Announcement::orderBy("created_at", "Desc")->paginate(6);
       $announceRandom=Announcement::take(3)->inRandomOrder(rand(10,100))->get();
-       return view('Customer.announce.index',compact('announces','announceRandom'));
+      $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+      $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+       return view('Customer.announce.index',compact('adsVedio','announces','ads','announceRandom'));
       }
   
       public function announceDetails($id){
@@ -22,8 +26,9 @@ class AnnounceController extends Controller
           $announceGallery=Announce_gallery::where("announce_id",'=',$id)->get();
           $relatedAnnounces=Related_announce::where("announce_id",'=',$id)->paginate(3);
           $AnnounceRandom=Announcement::take(3)->inRandomOrder(rand(10,100))->get();
-          
-        return view('Customer.announce.announceDetails',compact('announceObj','announceGallery','relatedAnnounces','AnnounceRandom'));
+          $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+          $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+        return view('Customer.announce.announceDetails',compact('adsVedio','announceObj','announceGallery','ads','relatedAnnounces','AnnounceRandom'));
       }
   
       function fetch_announce(Request $request)
@@ -34,7 +39,9 @@ class AnnounceController extends Controller
        {
           $announces=Announcement::orderBy("created_at", "Desc")->paginate(6);
           $announceRandom=Announcement::take(3)->inRandomOrder(rand(10,100))->get();
-        return view('Customer.announce.indexAnnounce', compact('announces','announceRandom'))->render();
+          $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+          $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+        return view('Customer.announce.indexAnnounce', compact('adsVedio','announces','announceRandom','ads'))->render();
        }
       }
   
@@ -49,8 +56,9 @@ class AnnounceController extends Controller
            $announceGallery=Announce_gallery::where("announce_id",'=',$id)->get();
            $relatedAnnounces=Related_announce::where("announce_id",'=',$id)->paginate(3);
            $AnnounceRandom=Announcement::take(3)->inRandomOrder(rand(10,100))->get();
-                 
-           return view('Customer.announce.announceDetailsList', compact('announceObj','announceGallery','relatedAnnounces','AnnounceRandom'))->render();
+           $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
+           $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+           return view('Customer.announce.announceDetailsList', compact('adsVedio','announceObj','announceGallery','ads','relatedAnnounces','AnnounceRandom'))->render();
        }
       }
 }

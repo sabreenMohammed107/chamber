@@ -8,9 +8,11 @@ use App\Models\Home_slider;
 use App\Models\News;
 use App\Models\Announcement;
 use App\Models\Conference;
-use App\Models\Depatrtment_meeting;
+use App\Models\Department_meeting;
 use App\Models\Department_news;
 use App\Models\Woman_activity;
+use App\Models\Chamber_ads;
+use App\Models\Ads_vedio;
 class IndexController extends Controller
 {
 
@@ -20,8 +22,9 @@ class IndexController extends Controller
         $announces=Announcement::orderBy("created_at", "Desc")->get();
         $conferences = Conference::orderBy("created_at", "Desc")->get();
         $sliders = Home_slider::where('active', '=', 1)->get();
-
-        return view('Customer.home.index', compact('sliders','news','announces','conferences'));
+        $ads=Chamber_ads::where('active', '=', 1)->get();
+        $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
+        return view('Customer.home.index', compact('adsVedio','sliders','news','announces','conferences','ads','adsVedio'));
     }
 
     public function search(Request $request)
@@ -34,7 +37,7 @@ class IndexController extends Controller
                 $announces = Announcement::where('en_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();   //searchType=1
                 $conferences = Conference::where('en_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();   //searchType=2
                 $department_news = Department_news::where('en_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get(); //searchType=3
-                $department_meetings = Depatrtment_meeting::where('en_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();  //searchType=4
+                $department_meetings = Department_meeting::where('en_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();  //searchType=4
                 $activity=Woman_activity::where('en_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();
                 
             } else {
@@ -42,7 +45,7 @@ class IndexController extends Controller
                 $announces = Announcement::where('ar_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();   //searchType=1
                 $conferences = Conference::where('ar_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();   //searchType=2
                 $department_news = Department_news::where('ar_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get(); //searchType=3
-                $department_meetings = Depatrtment_meeting::where('ar_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();  //searchType=4
+                $department_meetings = Department_meeting::where('ar_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();  //searchType=4
                 $activity=Woman_activity::where('ar_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();
                
             }

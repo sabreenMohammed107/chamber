@@ -12512,12 +12512,12 @@ padding: 50px 0 ;
 
 /* The two faces of the cube */
 .flippety{
-  background: url("../images/slider1.jpg");
+  /* background: url("../images/slider1.jpg"); */
   background-size: cover;
   background-position: center;
 }
 .flop {
-  background: url("../images/slider2.jpg");
+  /* background: url("../images/slider2.jpg"); */
   background-size: cover;
   background-position: center;
 }
