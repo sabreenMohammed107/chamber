@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use View;
+use App\Models\Chamber_data;
+use App\Models\Social;
+use App\Models\Chamber_ads;
 class LoginController extends Controller
 {
     /*
@@ -35,7 +38,25 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-    }
+        $branch =Chamber_data::first();
+        $social =Social::first();
+        $mainAds=Chamber_ads::first();
+      if($social==null){
+          $social = new Social();
+      }
+      if($branch==null){
+          $branch = new Chamber_data();
+      }
 
+     
+     
+      if($mainAds==null){
+          $mainAds = new Chamber_ads();
+      }
+       
+      View::share(['social' => $social,'mainAds' => $mainAds, 'branch' => $branch]);
+     
+  
+    }
     
 }

@@ -8,14 +8,15 @@
   font-family: 'Raleway', sans-serif;
 }
 
-body{ background: #795548; }
+body{ background: #84aaaa;
+    background-image: linear-gradient(to right, #e8d4b800, #ccccccde, #607d8bf2); }
 
 .cont{
   position: relative;
   width: 25%;
   height: 400px;
   padding: 20px 25px;
-  margin: 5vh auto;
+  margin: 20vh auto;
   background: #fff;
   border-radius: 8px;
 }

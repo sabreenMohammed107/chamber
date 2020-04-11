@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Auth;
+use View;
+use App\Models\Chamber_data;
+use App\Models\Social;
+use App\Models\Chamber_ads;
 class RegisterController extends Controller
 {
     /*
@@ -39,9 +43,25 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
-      
-    }
+        $branch =Chamber_data::first();
+        $social =Social::first();
+        $mainAds=Chamber_ads::first();
+      if($social==null){
+          $social = new Social();
+      }
+      if($branch==null){
+          $branch = new Chamber_data();
+      }
 
+     
+     
+      if($mainAds==null){
+          $mainAds = new Chamber_ads();
+      }
+       
+      View::share(['social' => $social,'mainAds' => $mainAds, 'branch' => $branch]);
+     
+  }
     /**
      * Get a validator for an incoming registration request.
      *
