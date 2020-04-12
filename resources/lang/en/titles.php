@@ -11,7 +11,7 @@ return [
    'type' => 'Type',
    'from' => 'From',
    'to' => 'To',
-
+   'searchResult'=>'Search Result',
 
    /*------Home----------*/
 

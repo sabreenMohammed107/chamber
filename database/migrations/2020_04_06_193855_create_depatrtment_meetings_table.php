@@ -20,6 +20,7 @@ class CreateDepatrtmentMeetingsTable extends Migration
             $table->dateTime('meeting_date',6)->nullable();
             $table->text('ar_text')->nullable();
             $table->text('en_text')->nullable();
+            $table->integer('searchType')->nullable();
             $table->integer('department_id')->unsigned()->nullable();
             $table->integer('active')->nullable();
             $table->timestamps();

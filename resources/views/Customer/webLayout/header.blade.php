@@ -80,7 +80,7 @@
                         <div class="centered">
                           <div id='search-box'>
                             <i id="close-btn" class="fa fa-times fa-2x"></i>
-                            <form action='/search' id='search-form' method='get' target='_top'>
+                            <form action="{{route('search')}}" id='search-form' method='get' target='_top'>
 
                               <input id='search-text' name='q' placeholder="ابحث هنا" type='text' />
                               <button id='search-button' type='submit'>

@@ -21,6 +21,7 @@ class CreateConferencesTable extends Migration
             $table->integer('conference_type_id')->unsigned()->nullable();
             $table->text('ar_text')->nullable();
             $table->text('en_text')->nullable();
+            $table->integer('searchType')->nullable();
             $table->integer('home_order')->nullable();
             $table->integer('active')->nullable();
             $table->timestamps();
