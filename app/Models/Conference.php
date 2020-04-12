@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Conference extends Model
 {
+    protected $fillable = [
+        'ar_title', 'en_title', 'conference_date', 'conference_type_id', 'ar_text', 'en_text','home_order', 'active',
+    ];
+
     public function gallery()
     {
         return $this->hasMany('App\Models\Conference_gallery','conference_id','id');

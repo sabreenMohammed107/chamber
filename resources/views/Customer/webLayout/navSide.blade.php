@@ -85,15 +85,26 @@
           aria-haspopup="true" aria-expanded="false">
           خدمات الغرفة
         </a>
+        <?php
+$articleId=1;
+$medicalId=2;
+$insuranceId=3;
+$ershadId=4; 
+$clubId=5;
+$chamberConferanceId=6;
+$tawfeekId=7;
+$ladiesId=8;
 
+?>
+        
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="excellence.html">مركز التميز</a>
-          <a class="dropdown-item" href="medical-care.html"> الرعاية الصحية للتجار </a>
-          <a class="dropdown-item" href="insurance.html">التأمين على حياة التجار وممتلكاتهم</a>
-          <a class="dropdown-item" href="guidance.html">الإرشاد التجارى </a>
-          <a class="dropdown-item" href="club.html">نادي تجار العاصمة</a>
-          <a class="dropdown-item" href="hall.html">قاعة مؤتمرات غرفة القاهرة</a>
-          <a class="dropdown-item" href="arbitration.html">التوفيق والتحكيم التجارى </a>
+          <a class="dropdown-item" href="{{ url('article/'.$articleId) }}">مركز التميز</a>
+          <a class="dropdown-item" href="{{ url('article/'.$medicalId) }}"> الرعاية الصحية للتجار </a>
+          <a class="dropdown-item" href="{{ url('article/'.$insuranceId) }}">التأمين على حياة التجار وممتلكاتهم</a>
+          <a class="dropdown-item" href="{{ url('article/'.$ershadId) }}">الإرشاد التجارى </a>
+          <a class="dropdown-item" href="{{ url('article/'.$clubId) }}">نادي تجار العاصمة</a>
+          <a class="dropdown-item" href="{{ url('article/'.$chamberConferanceId) }}">قاعة مؤتمرات غرفة القاهرة</a>
+          <a class="dropdown-item" href="{{ url('article/'.$tawfeekId) }}">التوفيق والتحكيم التجارى </a>
         </div>
       </li>
 
@@ -106,7 +117,7 @@
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <a class="dropdown-item" href="{{url('/devision')}}">صفحات الشعب</a>
-          <a class="dropdown-item" href="divisions.html">جدول مواعيد إجتماعات الشعب</a>
+          <a class="dropdown-item" href="{{url('/schedule')}}">جدول مواعيد إجتماعات الشعب</a>
 
         </div>
       </li>
@@ -119,12 +130,19 @@
           aria-haspopup="true" aria-expanded="false">
           فرص تجارية
         </a>
+        <?php
+$importId=1;
+$exportId=2;
+$investmentId=3;
+$tendersId=4; 
 
+
+?>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="chances.html">فرص تصديرية</a>
-          <a class="dropdown-item" href="chances2.html">فرص استيرادية</a>
-          <a class="dropdown-item" href="chances3.html">فرص استثمارية</a>
-          <a class="dropdown-item" href="tenders.html">مناقصات و مزايدات</a>
+          <a class="dropdown-item" href="{{ url('chance/'.$importId) }}">فرص تصديرية</a>
+          <a class="dropdown-item" href="{{ url('chance/'.$exportId) }}">فرص استيرادية</a>
+          <a class="dropdown-item" href="{{ url('chance/'.$investmentId) }}">فرص استثمارية</a>
+          <a class="dropdown-item" href="{{ url('chance/'.$tendersId) }}">مناقصات و مزايدات</a>
 
         </div>
       </li>
@@ -149,7 +167,7 @@
         </a>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="aboutCommitty.html">عن اللجنة</a>
+          <a class="dropdown-item" href="{{ url('article/'.$ladiesId) }}">عن اللجنة</a>
           <a class="dropdown-item" href="committyExer.html">نشاطات اللجنة</a>
 
         </div>

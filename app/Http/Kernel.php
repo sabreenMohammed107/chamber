@@ -39,6 +39,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\ChangeLangMiddleware::class,
         ],
 
+        
         'api' => [
             'throttle:60,1',
             'bindings',

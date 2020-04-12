@@ -11,7 +11,7 @@
 */
 Route::namespace('Customer')->group(function () {
   /*-----------------------index-------------------*/
-  Route::get('/index', 'IndexController@index');
+  Route::get('/', 'IndexController@index');
   /*----------------------News---------------------------*/
    Route::get('/news', 'NewsController@index');
    Route::get('/newsDetails/{id}', 'NewsController@newsDetails')->name('newsDetails');
@@ -49,6 +49,12 @@ Route::namespace('Customer')->group(function () {
     Route::get('/newsDivisionDetails/{id}', 'DivisionController@newsDivisionDetails')->name('newsDivisionDetails');
     Route::get('/meetingDivisionDetails/{id}', 'DivisionController@meetingDivisionDetails')->name('meetingDivisionDetails');
     Route::get('fetch_newsDetailsDeivsion', 'DivisionController@fetch_newsDetailsDeivsion');
+     /*----------------------------schedule-------------------------------*/
+     Route::get('/schedule', 'ScheduleController@index');
+     Route::get('fetch_categorySchedule', 'ScheduleController@fetch_categorySchedule');
+      /*----------------------------Aricale-------------------------------*/
+         Route::get('/article/{id}', 'ArticlesController@article')->name('article');
+         Route::get('/chance/{id}', 'ArticlesController@chance')->name('chance');
  
     //  Change Lang..
 Route::get('changeLang/{lang}', function($lang){

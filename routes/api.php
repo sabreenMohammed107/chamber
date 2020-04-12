@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+route::resource('posts','PostsController')->except(['create','edit']); //use this or  use get & post as you like
+route::post('store','PostsController@storeData')->name('store');
+

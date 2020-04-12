@@ -545,7 +545,8 @@ $(document).ready(function () {
 	// DataTable initialisation
 	$('#example2').DataTable(
 		{
-			"paging": false,
+			"paging": true,
+			"pageLength":3,
 			"autoWidth": true,
 			"footerCallback": function (row, data, start, end, display) {
 				var api = this.api();
