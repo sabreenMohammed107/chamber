@@ -20,7 +20,7 @@
   <div class="collapse navbar-collapse" id="ftco-nav">
     <ul class=" navbar-nav ">
 
-      <li class="nav-item  "><a href="{{url('/index')}}" class="nav-link">{{ __('links.home') }}</a></li>
+      <li class="nav-item  "><a href="{{url('/')}}" class="nav-link">{{ __('links.home') }}</a></li>
 
       <li class="nav-item dropdown show ">
         <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
