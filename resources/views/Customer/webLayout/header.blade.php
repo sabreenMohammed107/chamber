@@ -96,13 +96,40 @@
                 </div>
               </div>
 
-              <p class="  mr-3  mt-2 register-link">
+              <!-- <p class="  mr-3  mt-2 register-link">
                 <a href="shahbandr.cairochamber.org.eg" target="_blank" class="  text-white">
                   <span class="welcomeuser"><span class="welcome">{{ __('titles.welcom') }} :</span>
-                    <span class="welcomeuser">{{ __('titles.guest') }}</span>
-                </a></p>
-              
-              <button class="btn btn-primary mr-3 ml-3 "><a href="login.html">{{ __('titles.login') }} </a></button>
+                    <span class="welcomeuser"></span>
+                </a></p> -->
+                @guest
+                <button class="btn btn-primary mr-3 ml-3 "><a href="{{ route('login') }}">تسجيل الدخول</a></button>
+                          
+                            @if (Route::has('register'))
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li> -->
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre> -->
+                            <span class="welcomeuser"><span class="welcome">{{ __('titles.welcom') }} :</span>
+                              <span class="welcomeuser"> {{ Auth::user()->name }} </span>
+                   
+                                <!-- </a> -->
+
+                                <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> -->
+                                <button class="btn btn-primary mr-3 ml-3 "><a  href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a></button>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                <!-- </div> -->
+                            </li>
+                        @endguest
               <a href="{{ URL::to('changeLang/en') }}" class=" text-white"><span>EN</span></a>/
               <a href="{{ URL::to('changeLang/ar') }}" class=" text-white"><span>AR</span></a>
               

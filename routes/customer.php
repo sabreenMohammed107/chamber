@@ -9,6 +9,7 @@
 | 
 |   \Customer
 */
+Auth::routes();
 Route::namespace('Customer')->group(function () {
   /*-----------------------index-------------------*/
   Route::get('/', 'IndexController@index');
