@@ -168,7 +168,7 @@ $tendersId=4;
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <a class="dropdown-item" href="{{ url('article/'.$ladiesId) }}">عن اللجنة</a>
-          <a class="dropdown-item" href="committyExer.html">نشاطات اللجنة</a>
+          <a class="dropdown-item" href="{{url('/activity')}}">نشاطات اللجنة</a>
 
         </div>
       </li>

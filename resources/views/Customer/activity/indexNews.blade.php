@@ -2,7 +2,7 @@
                 <div class="category-desc col-md-8 col-xs-12">
                     <div class="category-desc-pan  panel panel-default">
                         <div class="test panel-heading">
-                            <p id="newTitle mr-5">  {{ __('titles.news') }}
+                            <p id="newTitle mr-5">  {{ __('titles.womenNews') }}
                   
                             </p>
                         </div>
@@ -36,7 +36,7 @@
 					@endif
                                                 </p>
 
-                                            <a href="{{ url('newsDetails/'.$new->id) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
+                                            <a href="{{ url('activityDetails/'.$new->id) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
                                         </div>
                                     </div>
                               
@@ -101,10 +101,10 @@
       <style>
          
           </style>
-        <a href="{{ url('newsDetails/'.$news->id) }}" target="_blank">
+        <a href="{{ url('activityDetails/'.$news->id) }}" target="_blank">
         <p  style="float: left;">  
         
-        @if($new->gallery!=null && $news->gallery->first()!=null && $news->gallery->first()->image!=null)
+        @if($news->gallery!=null && $news->gallery->first()!=null && $news->gallery->first()->image!=null)
                                         <img src="{{ asset('uploads/news/'.$news->gallery->first()->image) }}" alt="..." class="img_imp">
                                   @else
                                   <img src="{{ asset('webasset/images/screen.png')}}"  class="img_imp">

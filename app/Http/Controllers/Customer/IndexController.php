@@ -10,7 +10,7 @@ use App\Models\Announcement;
 use App\Models\Conference;
 use App\Models\Depatrtment_meeting;
 use App\Models\Department_news;
-
+use App\Models\Woman_activity;
 class IndexController extends Controller
 {
 
@@ -32,21 +32,20 @@ class IndexController extends Controller
                 $conferences = Conference::where('en_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();   //searchType=2
                 $department_news = Department_news::where('en_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get(); //searchType=3
                 $department_meetings = Depatrtment_meeting::where('en_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();  //searchType=4
-        
-                $items = array_merge($news->toArray(), $announces->toArray(), $conferences->toArray(), $department_news->toArray(), $department_meetings->toArray());
-                $itemsCollection = collect($items)->unique();
+                $activity=Woman_activity::where('en_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();
+                
             } else {
                 $news = News::where('ar_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();
                 $announces = Announcement::where('ar_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();   //searchType=1
                 $conferences = Conference::where('ar_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();   //searchType=2
                 $department_news = Department_news::where('ar_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get(); //searchType=3
                 $department_meetings = Depatrtment_meeting::where('ar_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();  //searchType=4
-        
-                $items = array_merge($news->toArray(), $announces->toArray(), $conferences->toArray(), $department_news->toArray(), $department_meetings->toArray());
-                $itemsCollection = collect($items)->unique();
+                $activity=Woman_activity::where('ar_title', 'like', '%' . $request->get("q") . '%')->with('gallery')->get();
+               
             }
         }
-      
+        $items = array_merge($activity->toArray(),$news->toArray(), $announces->toArray(), $conferences->toArray(), $department_news->toArray(), $department_meetings->toArray());
+        $itemsCollection = collect($items)->unique();
         // dd($itemsCollection[0]['id']);
 
         //   dd($itemsCollection);

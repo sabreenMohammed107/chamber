@@ -57,6 +57,13 @@ Route::namespace('Customer')->group(function () {
       /*----------------------------Aricale-------------------------------*/
          Route::get('/article/{id}', 'ArticlesController@article')->name('article');
          Route::get('/chance/{id}', 'ArticlesController@chance')->name('chance');
+
+
+          /*----------------------Activity---------------------------*/
+   Route::get('/activity', 'ActivityController@index');
+   Route::get('/activityDetails/{id}', 'ActivityController@newsDetails')->name('activityDetails');
+   Route::get('fetch_activitydata', 'ActivityController@fetch_data');
+   Route::get('fetch_activitynews', 'ActivityController@fetch_news');
  
     //  Change Lang..
 Route::get('changeLang/{lang}', function($lang){

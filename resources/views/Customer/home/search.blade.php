@@ -86,7 +86,16 @@
                                   @endif
                                  
                                              @endif
-                                  
+                                             @if($item['searchType']==5)
+                                    @if($item['gallery']!=null && $item['gallery'][0]['image']!=null)
+                                        <img src="{{ asset('uploads/news/'.$item['gallery'][0]['image']) }}" alt="...">
+                                  @else
+                                  <iframe id="popup-youtube-player" width="100%" height="200"
+                                            src="{$item['gallery'][0]['vedio']}}" frameborder="0"
+                                            allowfullscreen="true" allowscriptaccess="always"></iframe>
+                                  @endif
+                                 
+                                             @endif
                                         <div class="card-body">
                                         @if(app()->getLocale()=='en')
                                             {{$item['en_title']}}
@@ -115,6 +124,9 @@
                                       @endif
                                       @if($item['searchType']==4)
                                             <a href="{{ url('meetingDivisionDetails/'.$item['id']) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
+                                      @endif
+                                      @if($item['searchType']==5)
+                                            <a href="{{ url('activityDetails/'.$item['id']) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
                                       @endif
                                         </div>
                                     </div>
