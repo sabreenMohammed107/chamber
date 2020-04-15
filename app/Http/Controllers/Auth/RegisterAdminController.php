@@ -1,15 +1,16 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-use App\Models\Admin;
-use App\Models\User;
+
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
 use Auth;
-class RegisterController extends Controller
+class RegisterAdminController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    public $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -38,9 +39,16 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
-      
+        $this->middleware('guest:admin')->except('logout');
     }
+
+    /** Overrriding native method */
+    public function showRegisterForm()
+    {
+        return view('Admin.register');
+    }
+
+
 
     /**
      * Get a validator for an incoming registration request.
@@ -52,7 +60,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:admins'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -63,31 +71,25 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-    }
-
-   
-     /**
-     * @param Request $request
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    protected function createAdmin(Request $request)
-    {
-        $this->validator($request->all())->validate();
-        return Admin::create([
+  
+        event(new Registered($user =Admin::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role'=>1,
-        ]);
-        // $this->guard('admin')->login($admin);
-        // return redirect()->intended(url('/admin'));
+            'role'=>$request->role,
+          
+            'password' => Hash::make($request->password)
+        ])));
+
+        Auth::guard('admin')->login($user);
+
+        return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
+            return redirect()->intended(url('/admin'));
+       
+    
+     
     }
 }

@@ -162,97 +162,52 @@
                     <!-- <p id="newTitle"> الاخبار</p> -->
                   </div>
                   <div class=" panel-body ">
-                    <div class="row">
+                  <div class="row">
+                    @foreach($news as $new)
+                   
                       <div class=" col-md-4 wow fadeInDown" data-wow-delay="0.2s" data-wow-duration="1s"
                         data-wow-delay="0s">
-                        <div class="card ">
-                          <img src="images/slider2.jpg" alt="...">
-                          <div class="card-body">
-                            <h5>الإعلان الأول</h5>
-                            <p>تفاصيل الإعلان الأول في جزء الأخبار من الصفحة الرئيسية/تفاصيل الإعلان
-                              الأول في جزء الأخبار من الصفحة الرئيسية</p>
+                        <div class="card" >
+                                    @if($new->gallery!=null && $new->gallery->first() !=null && $new->gallery->first()->order==1)
+                                 @if($new->gallery->first()->image!=null)
+                                        <img src="{{ asset('uploads/news/'.$new->gallery->first()->image) }}" alt="...">
+                                  @else
+                                  <iframe id="popup-youtube-player" width="100%" height="200"
+                                            src="{{$new->gallery->first()->vedio}}" frameborder="0"
+                                            allowfullscreen="true" allowscriptaccess="always"></iframe>
+                                  @endif
+                                  @else
+                                  <img src="" alt="no image">
+                                  @endif
+                                        <div class="card-body">
+                                            <h5>
+                                            @if(app()->getLocale()=='en')
+                                            {{$new->en_title}}
+					@else
+                    {{$new->ar_title}}
+					@endif
+                                            </h5>
+                                            <p> 
+                                            @if(app()->getLocale()=='en')
+                                            {{ Str::limit($new->en_text, 70,'...') }}
+					@else
+                    {{ Str::limit($new->ar_text, 100,'...') }}
+					@endif
+                                                </p>
 
-                            <a href="news-one.html" class="btn btn-primary">المزيد</a>
-                          </div>
-                        </div>
+                                            <a href="{{ url('newsDetails/'.$new->id) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
+                                        </div>
+                                    </div>
                       </div>
 
 
 
-                      <div class=" col-md-4 wow wow fadeInDown" data-wow-delay="0.4s">
-                        <div class="card">
-                          <iframe id="popup-youtube-player" width="100%" height="200"
-                            src="https://www.youtube.com/embed/J06I7TD5QpI" frameborder="0" allowfullscreen="true"
-                            allowscriptaccess="always"></iframe>
-
-                          <div class="card-body">
-                            <h5>الإعلان الأول</h5>
-                            <p>تفاصيل الإعلان الأول في جزء الأخبار من الصفحة الرئيسية/تفاصيل الإعلان
-                              الأول في جزء الأخبار من الصفحة الرئيسية</p>
-
-                            <a href="news-one.html" class="btn btn-primary">المزيد</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4 wow wow fadeInDown" data-wow-delay="0.6s">
-                        <div class="card">
-                          <img src="images/slider2.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5>الإعلان الأول</h5>
-                            <p>تفاصيل الإعلان الأول في جزء الأخبار من الصفحة الرئيسية/تفاصيل الإعلان
-                              الأول في جزء الأخبار من الصفحة الرئيسية</p>
-
-                            <a href="news-one.html" class="btn btn-primary">المزيد</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4 wow wow fadeInDown" data-wow-delay="0.8s" data-wow-delay="0s"">
-                        <div class=" card">
-                        <iframe id="popup-youtube-player" width="100%" height="200"
-                          src="https://www.youtube.com/embed/J06I7TD5QpI" frameborder="0" allowfullscreen="true"
-                          allowscriptaccess="always"></iframe>
-                        <div class="card-body">
-                          <h5>الإعلان الأول</h5>
-                          <p>تفاصيل الإعلان الأول في جزء الأخبار من الصفحة الرئيسية/تفاصيل الإعلان
-                            الأول في جزء الأخبار من الصفحة الرئيسية</p>
-
-                          <a href="news-one.html" class="btn btn-primary">المزيد</a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-4 wow wow fadeInDown" data-wow-delay="1s">
-                      <div class="card">
-                        <img src="images/slider2.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5>الإعلان الأول</h5>
-                          <p>تفاصيل الإعلان الأول في جزء الأخبار من الصفحة الرئيسية/تفاصيل الإعلان
-                            الأول في جزء الأخبار من الصفحة الرئيسية</p>
-
-                          <a href="news-one.html" class="btn btn-primary">المزيد</a>
-                        </div>
-                      </div>
-                    </div>
-
-
-
-                    <div class="col-md-4 wow wow fadeInDown" data-wow-delay="1.2s">
-                      <div class="card">
-                        <img src="images/slider2.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5>الإعلان الأول</h5>
-                          <p>تفاصيل الإعلان الأول في جزء الأخبار من الصفحة الرئيسية/تفاصيل الإعلان
-                            الأول في جزء الأخبار من الصفحة الرئيسية</p>
-
-                          <a href="news-one.html" class="btn btn-primary">المزيد</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
+                     
+                      
+                   
+                   
+@endforeach
+</div>
                 </div>
               </div>
             </div>
@@ -263,7 +218,7 @@
             <div class="col-md-4 text-center"></div>
 
             <div class="col-md-4 text-center  mt-5">
-              <p><a href="news.html" class="btn btn-primary w-100">عرض الكل</a></p>
+              <p><a href="{{url('/news')}}" class="btn btn-primary w-100">عرض الكل</a></p>
             </div>
 
 
@@ -279,21 +234,21 @@
 
             <div class="col-md-4 col-5 text-center electronicPayment">
               <a href="online-payment.html">
-                <img src="images/icons/payment.png" class="img-fluid mb-4">
+                <img src="{{ asset('webasset/images/icons/payment.png')}}" class="img-fluid mb-4">
                 <h5>خدمة <br> السداد الإلكتروني</h5>
               </a>
             </div>
 
             <div class="col-md-4 col-5 text-center electronicPayment">
               <a href="qr-code.html">
-                <img src="images/icons/qr-code.png" class="img-fluid mb-4">
+                <img src="{{ asset('webasset/images/icons/qr-code.png')}}" class="img-fluid mb-4">
                 <h5>خدمة <br> QR CODE</h5>
               </a>
             </div>
 
             <div class="col-md-4 col-5 text-center electronicPayment">
               <a href="blockchain.html">
-                <img src="images/icons/blockchain.png" class="img-fluid mb-4">
+                <img src="{{ asset('webasset/images/icons/blockchain.png')}}" class="img-fluid mb-4">
                 <h5>خدمة <br> BLOCKCHAIN</h5>
               </a>
             </div>
@@ -306,11 +261,21 @@
         <div class="tab-pane fade greyly" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab"
           style="padding: 80px 0 100px 0!important; margin-top: 70px;">
           <div class="row d-md-flex justify-content-center chamberServices" style="padding: 30px 0 !important; ">
+          <?php
+$articleId=1;
+$medicalId=2;
+$insuranceId=3;
+$ershadId=4; 
+$clubId=5;
+$chamberConferanceId=6;
+$tawfeekId=7;
+$ladiesId=8;
 
+?>
 
             <div class="col-md-3 col-6 text-center ">
-              <a href="#">
-                <img src="images/icons/heartbeat.png" class="img-fluid mb-4">
+              <a href="{{ url('article/'.$insuranceId) }}">
+                <img src="{{ asset('webasset/images/icons/heartbeat.png')}}" class="img-fluid mb-4">
                 <h5>التأمين على حياة التجار و ممتلكاتهم</h5>
               </a>
             </div>
@@ -318,45 +283,45 @@
 
 
             <div class="col-md-3 col-6 text-center">
-              <a href="#">
-                <img src="images/icons/first-aid-kit.png" class="img-fluid mb-4">
+              <a href="{{ url('article/'.$medicalId) }}">
+                <img src="{{ asset('webasset/images/icons/first-aid-kit.png')}}" class="img-fluid mb-4">
                 <h5>الرعاية الصحية للتجار</h5>
               </a>
             </div>
             <div class="col-md-3 col-6 text-center">
-              <a href="retail-academy.html">
-                <img src="images/icons/champr-serv-icon-3 (1).png" class="img-fluid mb-4">
+              <a href="{{ url('article/'.$tawfeekId) }}">
+                <img src="{{ asset('webasset/images/icons/champr-serv-icon-3 (1).png')}}" class="img-fluid mb-4">
                 <h5>التوفيق والتحكيم التجاري  </h5>
               </a>
             </div>
 
             <div class="col-md-3 col-6 text-center">
-              <a href="retail-academy.html">
-                <img src="images/icons/education.png" class="img-fluid mb-4">
+              <a href="{{ url('article/'.$articleId) }}">
+                <img src="{{ asset('webasset/images/icons/education.png')}}" class="img-fluid mb-4">
                 <h5>مركز التميز</h5>
               </a>
             </div>
 
 
             <div class="col-md-4 col-6 text-center mt-5">
-              <a href="#">
-                <img src="images/icons/meeting.png" class="img-fluid mb-4">
+              <a href="{{ url('article/'.$chamberConferanceId) }}">
+                <img src="{{ asset('webasset/images/icons/meeting.png')}}" class="img-fluid mb-4">
                 <h5>قاعة مؤتمرات غرفة القاهرة</h5>
               </a>
             </div>
 
 
             <div class="col-md-4 col-6 text-center mt-5">
-              <a href="#">
-                <img src="images/icons/global-community.png" class="img-fluid mb-4">
+              <a href="{{ url('article/'.$clubId) }}">
+                <img src="{{ asset('webasset/images/icons/global-community.png')}}" class="img-fluid mb-4">
                 <h5>نادي تجار العاصمة</h5>
               </a>
             </div>
 
 
             <div class="col-md-4 col-6 text-center mt-5">
-              <a href="#">
-                <img src="images/icons/business-people.png" class="img-fluid mb-4">
+              <a href="{{ url('article/'.$ershadId) }}">
+                <img src="{{ asset('webasset/images/icons/business-people.png')}}" class="img-fluid mb-4">
                 <h5>الإرشاد التجاري</h5>
               </a>
             </div>
@@ -399,23 +364,31 @@
       <div class="col-md-5 col-xs-12 " style=" margin-top: 40px; ">
         <div id="calendar" class="calendar-base wow fadeInDown"></div>
       </div>
+      <style>
+        .event-calender .carousel-control-next-icon, .event-calender .carousel-control-prev-icon {
+    background: #000 !important;
+}
+        </style>
       <!-- calendar-left -->
       <div class="col-md-5 col-xs-12 mr-3 wow fadeInDown" data-wow-delay="0.5s" style=" margin-top: 10px;">
         <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
           <div class="carousel-inner ">
-            <div class="carousel-item active">
-              <img class="d-block calendar-base" style="width: 100%; height: 300px; margin-top: 30px;"
-                src="images/meeting_room_solution_image1-1024x768.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block calendar-base" style="width: 100%; height: 300px;  margin-top: 30px;"
-                src="images/download-1-1024x768.jpeg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block calendar-base" style="width: 100%; height: 300px; margin-top: 30px;"
-                src="images/e1e88e69109c22068694d3894e649370.jpg" alt="Third slide">
-            </div>
+          @foreach($conferences as $key => $conference)
+                                  <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
+        
+           
+           
+                                 @if($conference->gallery!=null &&  $conference->gallery->first()!=null && $conference->gallery->first()->image!=null)
+                                        <img src="{{ asset('uploads/conference/'.$conference->gallery->first()->image) }}" class="d-block calendar-base" style="width: 100%; height: 300px; margin-top: 30px;">
+                                  
+                                  @else
+                                  <img src="{{ asset('webasset/images/unnamed.png')}}" class="d-block calendar-base" style="width: 100%; height: 300px; margin-top: 30px;">
+                                  @endif
+                                
+             
+           
           </div>
+          @endforeach
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true">
               <i class="fa fa-angle-left"></i>
@@ -433,7 +406,7 @@
       </div>
       <div class="col-md-4 text-center"></div>
       <div class="col-md-4 text-center mt-5">
-        <p><a href="conferences.html" class="btn btn-primary w-100">صفحة الفعاليات</a></p>
+        <p><a href="{{url('/conference')}}" class="btn btn-primary w-100">صفحة الفعاليات</a></p>
       </div>
     </div>
   </div></div>
@@ -533,63 +506,48 @@
       <div id="advCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 
         <div class="carousel-inner">
-
-          <div class=" row carousel-item active">
-            <img src="images/adv/mixed-ethnic-group-business-people-21282326.jpg" alt="Image"
-              style="max-width:100%;">
-            <div class="advr">
+        @foreach($announces as $key => $announce)
+                                  <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
+                                
+                                 @if($announce->gallery->first()->image!=null)
+                                        <img src="{{ asset('uploads/announce/'.$announce->gallery->first()->image) }}" alt="Image"
+                                  style="max-width:100%;">
+                                 
+                                  @else   
+                                  <img src="{{ asset('webasset/images/unnamed.png')}}" alt="no image" 
+                               style="max-width:100%;">
+                                  @endif
+                                  <div class="advr">
               <div class="carousel-caption line-height:inherit">
 
                 <div class="row">
-                  <span class="col-md-3 col-2 banner-text-bg bounceInLeft aimated text-span">25 نوفمبر 2019</span>
-                  <a href="advertesment.html"><span class="col-md-9 col-10 test-news">ملتقى الإدراج يناقش متطلبات الطرح وفرص السوق
-                      والحوافز</span></a> </div>
+                  <span class="col-md-3 col-2 banner-text-bg bounceInLeft aimated text-span">
+                  <?php $date = date_create($announce->announce_date) ?>
+                                    {{ date_format($date,"d-m-Y") }}
+                                  
+                               </h6>
+                  </span>
+                  <a href="{{ url('announceDetails/'.$announce->id) }}"><span class="col-md-9 col-10 test-news">
+                  @if(app()->getLocale()=='en')
+                                            {{$announce->en_title}}
+					@else
+                    {{$announce->ar_title}}
+					@endif
+                    </span></a> </div>
                 <!-- <a class="more" style="z-index:20" href="advertesment.html">المزيد...</a> -->
 
 
               </div>
-            </div>
-          </div>
+            </div>    
+                                  </div>
+
+                                  @endforeach
+        
           <!--.item-->
 
-          <div class="row carousel-item">
-            <img
-              src="images/adv/44440440-smiling-business-team-holding-poster-against-modern-blue-and-white-room.jpg"
-              alt="Image" style="max-width:100%;">
-            <div class="advr">
-              <div class=" carousel-caption line-height:inherit">
-
-                <div class="row">
-                  <span class="col-md-3 col-2 banner-text-bg bounceInLeft aimated text-span">25 نوفمبر 2019</span>
-                  <a href="advertesment.html"><span class="col-md-9 col-10 test-news">ملتقى الإدراج يناقش متطلبات الطرح وفرص السوق
-                      والحوافز</span></a> </div>
-
-                <!-- <a class="more" style="z-index:20" href="advertesment.html">المزيد...</a> -->
-
-
-              </div>
-            </div>
-          </div>
-          <!--.item-->
-
-          <div class="row carousel-item">
-            <img src="images/adv/BS-Business-Group-Showing-Ethnic-6479327.jpg" alt="Image" style="max-width:100%;">
-            <div class="advr">
-              <div class="carousel-caption line-height:inherit">
-                <div class="row">
-                  <span class="col-md-3 col-2 banner-text-bg bounceInLeft aimated text-span">25 نوفمبر 2019</span>
-                  <a href="advertesment.html"><span class="col-md-9 col-10 test-news">ملتقى الإدراج يناقش متطلبات الطرح وفرص السوق
-                      والحوافز</span></a>
-                </div>
-
-                <!-- <a class="more" style="z-index:20" href="advertesment.html">المزيد...</a> -->
-
-
-              </div>
-            </div>
-          </div>
-          <!--.item-->
-          <a class="latestNews" href="advertesment.html">آخر التنويهات</a>
+        
+        
+          <a class="latestNews" href="{{url('/announce')}}">آخر التنويهات</a>
 
         </div>
         <!--.carousel-inner-->

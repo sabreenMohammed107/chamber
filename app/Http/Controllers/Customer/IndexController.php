@@ -16,9 +16,12 @@ class IndexController extends Controller
 
     public function index()
     {
-
+        $news=News::take(6)->inRandomOrder(rand(10,100))->get();
+        $announces=Announcement::orderBy("created_at", "Desc")->get();
+        $conferences = Conference::orderBy("created_at", "Desc")->get();
         $sliders = Home_slider::where('active', '=', 1)->get();
-        return view('Customer.home.index', compact('sliders'));
+
+        return view('Customer.home.index', compact('sliders','news','announces','conferences'));
     }
 
     public function search(Request $request)

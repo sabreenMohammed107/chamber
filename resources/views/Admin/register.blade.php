@@ -1,17 +1,20 @@
-@extends('layouts.app')
+@extends('layouts.adminApp')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('admin.register') }}">
                         @csrf
+                        <?php
+                         $role=1;
+                        ?>
 
+<input type="hidden" name="role" value="{{$role}}" >
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
