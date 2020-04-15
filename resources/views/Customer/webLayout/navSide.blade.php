@@ -176,8 +176,8 @@ $tendersId=4;
 
         </div>
       </li>
-
-      <li class="nav-item"><a href="encyclo.html" class=" dropdown-item nav-link  ">أدلة هامة</a></li>
+      
+      <li class="nav-item"><a href="{{url('/encyclo')}}" class=" dropdown-item nav-link  ">أدلة هامة</a></li>
       <!-- <li class="nav-item"><a href="depts.html" class="nav-link  mr-2">إدارات الغرفة</a></li> -->
       <li class="nav-item "><a href="{{url('/contact')}}" class="nav-link mr-1">تواصل معنا</a></li>
     </ul>

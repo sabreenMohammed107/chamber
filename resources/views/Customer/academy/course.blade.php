@@ -61,174 +61,45 @@
                <div class="carousel-inner" role="listbox">
              
                  <!--First slide-->
-                 <div class="carousel-item active">
+                 @foreach($coursegalleries as $key => $gallery)
+                        <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
+                            @foreach($coursegalleries as $gallery)
              
                    <div class="col-md-3">
                      <div class="card mb-2">
                        <img class="card-img-top"
-                         src="images/courses/c1.jpg"
+                         src="{{ asset('uploads/academy/'.$gallery->image) }}"
                          alt="Card image cap">
                        <div class="card-body">
-                         <h4 class="card-title">التسويق الإلكترونى</h4>
-                         <p class="card-text">الهدف مساعدة الباحثين عن دورات متخصصة فى المجالات الاتية من منظمات كبري و معتمدة لتحقيق الاستفادة القصوى للمتدرب و ايضا فى الحصول على شهادة معتمدة . التدريب يتم فى معامل متخصصة فى هذه المجالات من مهندسين و مدربيين متخصصين تحت أشراف نخبة من الدكاترة المتخصصة فى هذه المجالات . .</p>
-                         <a href="regestation.html" class="btn btn-primary">تسجيل >></a>
+                         <h4 class="card-title">
+                         @if(app()->getLocale()=='en')
+                                                {{$gallery->en_name}}
+                                                @else
+                                                {{$gallery->ar_name}}
+                                                @endif
+                          </h4>
+                         <p class="card-text">
+                         @if(app()->getLocale()=='en')
+                                            {{ Str::limit($gallery->en_description, 120,'...') }}
+					@else
+                    {{ Str::limit($gallery->ar_description, 150,'...') }}
+					@endif
+                          </p>
+                         <a href="{{ url('courseRegisteration/'.$gallery->id) }}" class="btn btn-primary">تسجيل >></a>
                        </div>
                      </div>
                    </div>
              
-                   <div class="col-md-3">
-                     <div class="card mb-2">
-                       <img class="card-img-top"
-                         src="images/courses/c2.jpg"
-                         alt="Card image cap">
-                       <div class="card-body">
-                         <h4 class="card-title">                          مهارات القيادة والإدارة
-                        </h4>
-                         <p class="card-text">الهدف مساعدة الباحثين عن دورات متخصصة فى المجالات الاتية من منظمات كبري و معتمدة لتحقيق الاستفادة القصوى للمتدرب و ايضا فى الحصول على شهادة معتمدة . التدريب يتم فى معامل متخصصة فى هذه المجالات من مهندسين و مدربيين متخصصين تحت أشراف نخبة من الدكاترة المتخصصة فى هذه المجالات . .</p>
-                         <a href="regestation.html" class="btn btn-primary">تسجيل >></a>
-                       </div>
-                     </div>
-                   </div>
+                  
              
-                   <div class="col-md-3">
-                     <div class="card mb-2">
-                       <img class="card-img-top"
-                         src="images/courses/c3.jpg"
-                         alt="Card image cap">
-                       <div class="card-body">
-                         <h4 class="card-title">دورات متخصصة في الحاسب </h4>
-                         <p class="card-text">الهدف مساعدة الباحثين عن دورات متخصصة فى المجالات الاتية من منظمات كبري و معتمدة لتحقيق الاستفادة القصوى للمتدرب و ايضا فى الحصول على شهادة معتمدة . التدريب يتم فى معامل متخصصة فى هذه المجالات من مهندسين و مدربيين متخصصين تحت أشراف نخبة من الدكاترة المتخصصة فى هذه المجالات . .</p>
-                         <a href="regestation.html" class="btn btn-primary">تسجيل >></a>
-                       </div>
-                     </div>
-                   </div>
-                   <div class="col-md-3">
-                    <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="images/courses/c3.jpg"
-                        alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title">دورات متخصصة في الحاسب </h4>
-                        <p class="card-text">الهدف مساعدة الباحثين عن دورات متخصصة فى المجالات الاتية من منظمات كبري و معتمدة لتحقيق الاستفادة القصوى للمتدرب و ايضا فى الحصول على شهادة معتمدة . التدريب يتم فى معامل متخصصة فى هذه المجالات من مهندسين و مدربيين متخصصين تحت أشراف نخبة من الدكاترة المتخصصة فى هذه المجالات . .</p>
-                        <a href="regestation.html" class="btn btn-primary">تسجيل >></a>
-                      </div>
-                    </div>
-                  </div>
-            
-                 </div>
-                 <!--/.First slide-->
-             
-                 <!--Second slide-->
-                 <div class="carousel-item">
-                   <div class="col-md-3">
-                     <div class="card mb-2">
-                       <img class="card-img-top"
-                         src="images/courses/c1.jpg" alt="Card image cap">
-                       <div class="card-body">
-                         <h4 class="card-title">التسويق الإلكترونى</h4>
-                         <p class="card-text">الهدف مساعدة الباحثين عن دورات متخصصة فى المجالات الاتية من منظمات كبري و معتمدة لتحقيق الاستفادة القصوى للمتدرب و ايضا فى الحصول على شهادة معتمدة . التدريب يتم فى معامل متخصصة فى هذه المجالات من مهندسين و مدربيين متخصصين تحت أشراف نخبة من الدكاترة المتخصصة فى هذه المجالات . .</p>
-                         <a href="regestation.html" class="btn btn-primary">تسجيل >></a>
-                       </div>
-                     </div>
-                   </div>
-             
-                   <div class="col-md-3">
-                     <div class="card mb-2">
-                       <img class="card-img-top"
-                         src="images/courses/c2.jpg" alt="Card image cap">
-                       <div class="card-body">
-                         <h4 class="card-title">                          مهارات القيادة والإدارة
-                        </h4>
-                         <p class="card-text">الهدف مساعدة الباحثين عن دورات متخصصة فى المجالات الاتية من منظمات كبري و معتمدة لتحقيق الاستفادة القصوى للمتدرب و ايضا فى الحصول على شهادة معتمدة . التدريب يتم فى معامل متخصصة فى هذه المجالات من مهندسين و مدربيين متخصصين تحت أشراف نخبة من الدكاترة المتخصصة فى هذه المجالات . .</p>
-                         <a href="regestation.html" class="btn btn-primary">تسجيل >></a>
-                       </div>
-                     </div>
-                   </div>
+                
+                   @endforeach
 
-                   
-                   <div class="col-md-3">
-                    <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="images/courses/c2.jpg" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title">                          مهارات القيادة والإدارة
-                       </h4>
-                        <p class="card-text">الهدف مساعدة الباحثين عن دورات متخصصة فى المجالات الاتية من منظمات كبري و معتمدة لتحقيق الاستفادة القصوى للمتدرب و ايضا فى الحصول على شهادة معتمدة . التدريب يتم فى معامل متخصصة فى هذه المجالات من مهندسين و مدربيين متخصصين تحت أشراف نخبة من الدكاترة المتخصصة فى هذه المجالات . .</p>
-                        <a href="regestation.html" class="btn btn-primary">تسجيل >></a>
-                      </div>
-                    </div>
-                  </div>
-             
-                   <div class="col-md-3">
-                     <div class="card mb-2">
-                       <img class="card-img-top"
-                         src="images/courses/c3.jpg" alt="Card image cap">
-                       <div class="card-body">
-                         <h4 class="card-title">دورات متخصصة في الحاسب </h4>
-                         <p class="card-text">الهدف مساعدة الباحثين عن دورات متخصصة فى المجالات الاتية من منظمات كبري و معتمدة لتحقيق الاستفادة القصوى للمتدرب و ايضا فى الحصول على شهادة معتمدة . التدريب يتم فى معامل متخصصة فى هذه المجالات من مهندسين و مدربيين متخصصين تحت أشراف نخبة من الدكاترة المتخصصة فى هذه المجالات ..</p>
-                         <a href="regestation.html" class="btn btn-primary">تسجيل >></a>
-                       </div>
-                     </div>
-                   </div>
-             
-                 </div>
-                 <!--/.Second slide-->
-             
-                 <!--Third slide-->
-                 <div class="carousel-item">
-             
-                   <div class="col-md-3">
-                     <div class="card mb-2">
-                       <img class="card-img-top"
-                         src="images/courses/c1.jpg" alt="Card image cap">
-                       <div class="card-body">
-                         <h4 class="card-title">التسويق الإلكترونى</h4>
-                         <p class="card-text">الهدف مساعدة الباحثين عن دورات متخصصة فى المجالات الاتية من منظمات كبري و معتمدة لتحقيق الاستفادة القصوى للمتدرب و ايضا فى الحصول على شهادة معتمدة . التدريب يتم فى معامل متخصصة فى هذه المجالات من مهندسين و مدربيين متخصصين تحت أشراف نخبة من الدكاترة المتخصصة فى هذه المجالات . .</p>
-                         <a href="regestation.html" class="btn btn-primary">تسجيل >></a>
-                       </div>
-                     </div>
-                   </div>
-             
-                   <div class="col-md-3">
-                     <div class="card mb-2">
-                       <img class="card-img-top"
-                         src="images/courses/c2.jpg" alt="Card image cap">
-                       <div class="card-body">
-                         <h4 class="card-title">                          مهارات القيادة والإدارة
-                        </h4>
-                         <p class="card-text">الهدف مساعدة الباحثين عن دورات متخصصة فى المجالات الاتية من منظمات كبري و معتمدة لتحقيق الاستفادة القصوى للمتدرب و ايضا فى الحصول على شهادة معتمدة . التدريب يتم فى معامل متخصصة فى هذه المجالات من مهندسين و مدربيين متخصصين تحت أشراف نخبة من الدكاترة المتخصصة فى هذه المجالات . .</p>
-                         <a href="regestation.html" class="btn btn-primary">تسجيل >></a>
-                       </div>
-                     </div>
-                   </div>
-             
-                   <div class="col-md-3">
-                     <div class="card mb-2">
-                       <img class="card-img-top"
-                         src="images/courses/c3.jpg" alt="Card image cap">
-                       <div class="card-body">
-                         <h4 class="card-title">دورات متخصصة في الحاسب </h4>
-                         <p class="card-text">الهدف مساعدة الباحثين عن دورات متخصصة فى المجالات الاتية من منظمات كبري و معتمدة لتحقيق الاستفادة القصوى للمتدرب و ايضا فى الحصول على شهادة معتمدة . التدريب يتم فى معامل متخصصة فى هذه المجالات من مهندسين و مدربيين متخصصين تحت أشراف نخبة من الدكاترة المتخصصة فى هذه المجالات . .</p>
-                         <a href="regestation.html" class="btn btn-primary">تسجيل >></a>
-                       </div>
-                     </div>
-                   </div>
-                   
-                   <div class="col-md-3">
-                    <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="images/courses/c2.jpg" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title">                          مهارات القيادة والإدارة
-                       </h4>
-                        <p class="card-text">الهدف مساعدة الباحثين عن دورات متخصصة فى المجالات الاتية من منظمات كبري و معتمدة لتحقيق الاستفادة القصوى للمتدرب و ايضا فى الحصول على شهادة معتمدة . التدريب يتم فى معامل متخصصة فى هذه المجالات من مهندسين و مدربيين متخصصين تحت أشراف نخبة من الدكاترة المتخصصة فى هذه المجالات . .</p>
-                        <a href="regestation.html" class="btn btn-primary">تسجيل >></a>
-                      </div>
-                    </div>
-                  </div>
-             
-                 </div>
-                 <!--/.Third slide-->
+
+</div>
+@endforeach
+                
+              
              
                </div>
                <!--/.Slides-->
@@ -245,69 +116,23 @@
                     <h6>دورات وبرامج تدريبة متخصصة في مجالات تجارية واقتصادية مختلفة :</h6>
 
 
-                    <div class="row CoursesUl">
+                    <div class="row CoursesUl" style="display: flex;flex-wrap: wrap;">
+                    @foreach($courses as $course)
+                        <div  style=" flex-grow: 1;width: 31%;margin:0 5px 5px">
 
-                        <div class="col-md-4">
-
-                        <li><a href="#" class="text-dark">التسويق</a></li>
-                        <li><a href="#" class="text-dark">الحاسب الآلي</a></li>
-                        <li><a href="#" class="text-dark">دورات متخصصة في الحاسب الآلي</a></li>
-                        <li><a href="#" class="text-dark">العرض التقديمي</a></li>
-                        <li><a href="#" class="text-dark">ICDL </a></li>
-                        <li><a href="#" class="text-dark">الإنترنت</a></li>
-                        <li><a href="#" class="text-dark">الفوتوشوب</a></li>
-                        <li><a href="#" class="text-dark"> مهارات فن البيع</a></li>
-                        <li><a href="#" class="text-dark">تنمية الموارد البشرية</a></li>
-                        <li><a href="#" class="text-dark">التسويق الإلكتروني</a></li>
                         <li><a href="#" class="text-dark">
-                          مهارات القيادة والإدارة
+                        @if(app()->getLocale()=='en')
+                                                {{$course->en_name}}
+                                                @else
+                                                {{$course->ar_name}}
+                                                @endif
                         </a></li>
-                        <li><a href="#" class="text-dark">تدريب المدربين TOT</a></li>
-                        <li><a href="#" class="text-dark">التخطيط</a></li>
-                        <li><a href="#" class="text-dark">إدارة الأعمال</a></li> 
-                        <li><a href="#" class="text-dark">مهارات الاتصال</a></li> 
-                        <li><a href="#" class="text-dark">خدمة العمـلاء</a></li> 
-                        <li><a href="#" class="text-dark">فن التفاوض</a></li> 
+                     
+                       
                         </div>
-                        <div class="col-md-4">
-                        
-                        <li><a href="#" class="text-dark">المحاسبة المالية</a></li> 
-                        <li><a href="#" class="text-dark">تعليم المحاسبة المالية لتصبح مصمم نظم محاسبية</a></li> 
-                        <li><a href="#" class="text-dark">تنمية المهـارات البشرية</a></li> 
-                        <li><a href="#" class="text-dark">المحاسبة المالية والضرائب</a></li> 
-                        <li><a href="#" class="text-dark">الاختيار الفعال للموظفين</a></li> 
-                        <li><a href="#" class="text-dark">إدارة المشتريات والمخازن</a></li> 
-                        <li><a href="#" class="text-dark">الأوشا</a></li> 
-                        <li><a href="#" class="text-dark">آليات التجارة الإلكترونية وآثارها على الصادرات</a></li> 
-                        <li><a href="#" class="text-dark">التفكير الإيجابي وأسرار النجاح</a></li> 
-                        <li><a href="#" class="text-dark">إدارة الأزمات</a></li> 
-                        <li><a href="#" class="text-dark"></a>إدارة الجودة الشاملة</li>
-                        <li><a href="#" class="text-dark"> إدارة العمليات</a></li>
-                        <li><a href="#" class="text-dark"> إدارة المشروعات</a></li>
-                        <li><a href="#" class="text-dark"> الإتيكيت</a></li>
-                        <li><a href="#" class="text-dark">فن الضيافة</a></li> 
-                        <li><a href="#" class="text-dark">مهارات السكرتارية</a></li> 
-                        <li><a href="#" class="text-dark">إعداد خبير فى إدارة الشركات</a></li>
-                    </div> 
-                    <div class="col-md-4">
-                      <li><a href="#" class="text-dark">المحاسبة المالية</a></li> 
-                        <li><a href="#" class="text-dark">تعليم المحاسبة المالية لتصبح مصمم نظم محاسبية</a></li> 
-                        <li><a href="#" class="text-dark">تنمية المهـارات البشرية</a></li> 
-                        <li><a href="#" class="text-dark">المحاسبة المالية والضرائب</a></li> 
-                        <li><a href="#" class="text-dark">الاختيار الفعال للموظفين</a></li> 
-                        <li><a href="#" class="text-dark">إدارة المشتريات والمخازن</a></li> 
-                        <li><a href="#" class="text-dark">الأوشا</a></li> 
-                        <li><a href="#" class="text-dark">آليات التجارة الإلكترونية وآثارها على الصادرات</a></li> 
-                        <li><a href="#" class="text-dark">التفكير الإيجابي وأسرار النجاح</a></li> 
-                        <li><a href="#" class="text-dark">إدارة الأزمات</a></li> 
-                        <li><a href="#" class="text-dark"></a>إدارة الجودة الشاملة</li>
-                        <li><a href="#" class="text-dark"> إدارة العمليات</a></li>
-                        <li><a href="#" class="text-dark"> إدارة المشروعات</a></li>
-                        <li><a href="#" class="text-dark"> الإتيكيت</a></li>
-                        <li><a href="#" class="text-dark">فن الضيافة</a></li> 
-                        <li><a href="#" class="text-dark">مهارات السكرتارية</a></li> 
-                        <li><a href="#" class="text-dark">إعداد خبير فى إدارة الشركات</a></li>
-                    </div>
+                        @endforeach
+                     
+                    
 
                     </ul>
 

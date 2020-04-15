@@ -69,6 +69,15 @@ Route::namespace('Customer')->group(function () {
    Route::get('/academy/{id}', 'AcademyController@index')->name('academy');
    Route::get('/academytraining/{id}', 'AcademyController@training')->name('academytraining');
    Route::get('/course', 'AcademyController@course');
+   Route::get('/courseRegisteration/{id}', 'AcademyController@courseDetails')->name('courseRegisteration');
+   Route::post('/registerationForm', 'AcademyController@registerationForm')->name('registerationForm');
+
+   /*-------------------------------------encyclo--------------------------------------------------*/
+   Route::get('/encyclo', 'EncycloController@index');
+   Route::get('/brother', 'EncycloController@brother');
+   Route::get('/commerical', 'EncycloController@commerical');
+   Route::get('/region', 'EncycloController@region');
+   Route::get('/fetch_regions', 'EncycloController@regionDetails');
  
     //  Change Lang..
 Route::get('changeLang/{lang}', function($lang){
