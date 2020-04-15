@@ -64,6 +64,11 @@ Route::namespace('Customer')->group(function () {
    Route::get('/activityDetails/{id}', 'ActivityController@newsDetails')->name('activityDetails');
    Route::get('fetch_activitydata', 'ActivityController@fetch_data');
    Route::get('fetch_activitynews', 'ActivityController@fetch_news');
+
+   /*--------------------------------------Academy--------------------------------------------*/
+   Route::get('/academy/{id}', 'AcademyController@index')->name('academy');
+   Route::get('/academytraining/{id}', 'AcademyController@training')->name('academytraining');
+   Route::get('/course', 'AcademyController@course');
  
     //  Change Lang..
 Route::get('changeLang/{lang}', function($lang){

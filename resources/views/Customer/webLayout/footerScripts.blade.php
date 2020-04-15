@@ -30,6 +30,9 @@
 <script src="{{ asset('webasset/js/scrollax.min.js')}}"></script>
 <!--========== Data Table ==========-->
 <script src="{{ asset('webasset/js/jquery.dataTable.js')}}"></script>
+
+<!--========== counter ==========-->
+<script src="{{ asset('webasset/js/jquery.animateNumber.min.js')}}"></script>
 <!--========== Main JS ==========-->
 <script src="{{ asset('webasset/js/main.js')}}"></script>
 

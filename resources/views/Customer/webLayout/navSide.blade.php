@@ -66,11 +66,15 @@
           aria-haspopup="true" aria-expanded="false">
           أكاديمية التجزئة
         </a>
+        <?php
+         $articleAcademy=9;
+         $academytraining=10;
+             ?>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="retail-academy.html">عن الأكاديمية</a>
-          <a class="dropdown-item" href="academy-courses.html">الدورات وبرامج التدريب</a>
-          <a class="dropdown-item" href="training.html"> التدريب من اجل التشغيل</a>
+          <a class="dropdown-item" href="{{ url('academy/'.$articleAcademy) }}">عن الأكاديمية</a>
+          <a class="dropdown-item" href="{{url('/course')}}">الدورات وبرامج التدريب</a>
+          <a class="dropdown-item" href="{{ url('academytraining/'.$academytraining) }}"> التدريب من اجل التشغيل</a>
 
 
 
