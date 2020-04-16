@@ -78,6 +78,17 @@ Route::namespace('Customer')->group(function () {
    Route::get('/commerical', 'EncycloController@commerical');
    Route::get('/region', 'EncycloController@region');
    Route::get('/fetch_regions', 'EncycloController@regionDetails');
+   Route::get('/organization', 'EncycloController@organization');
+   Route::get('/fetch_organization', 'EncycloController@organizationDetails');
+   Route::get('/laws', 'EncycloController@laws');
+   Route::get('/fetch_laws', 'EncycloController@lawsDetails');
+   Route::get('/embassy', 'EncycloController@embassy');
+   Route::get('/fetch_embassy', 'EncycloController@embassyDetails');
+   Route::get('/communication', 'EncycloController@communication');
+   Route::get('/expencyclopedia', 'EncycloController@expencyclopedia');
+   Route::get('/fetch_expencyclopedia', 'EncycloController@encyclopediaDetails');
+   Route::get('/studies', 'EncycloController@studies');
+   Route::get('/fetch_studies', 'EncycloController@studiesDetails');
  
     //  Change Lang..
 Route::get('changeLang/{lang}', function($lang){

@@ -51,30 +51,30 @@
                             </a></li>
                         <li><a href="{{url('/commerical')}}" class="text-dark text-decoration"> اتفاقات تجارية وقعتها مصر
                             </a></li>
-                        <li><a href="organizations.html" class="text-dark text-decoration">
+                        <li><a href="{{url('/organization')}}" class="text-dark text-decoration">
                                 منظمات الأعمال </a></li>
-                        <li><a href="encyclo-details.html" class="text-dark text-decoration">
+                        <li><a href="{{url('/embassy')}}" class="text-dark text-decoration">
                                 سفارات و قنصليات
                             </a>
                         </li>
-                        <li><a href="encyclo-details.html" class="text-dark text-decoration">
+                        <li><a href="{{url('/studies')}}" class="text-dark text-decoration">
                           دراسات وتقارير
                         </a>
                     </li>
-                    <li><a href="laws.html" class="text-dark text-decoration">
+                    <li><a href="{{url('/laws')}}" class="text-dark text-decoration">
 قوانين  وقرارات                       </a>
                   </li>
                         <li><a href="encyclo-details.html" class="text-dark text-decoration">
                             وزارات و هيئات حكومية
                         </a>
                         </li>
-                        <li><a href="encyclo-details.html" class="text-dark text-decoration">
+                        <li><a href="{{url('/communication')}}" class="text-dark text-decoration">
                             أدلة الاتصالات
                         </a></li>
                         <li><a href="encyclo-details.html" class="text-dark text-decoration">
                             موضوعات تجارية
                         </a></li>
-                        <li><a href="encyclo-details.html" class="text-dark text-decoration">
+                        <li><a href="{{url('/expencyclopedia')}}" class="text-dark text-decoration">
                             موسوعة المصدرين
                         </a></li>
                        
