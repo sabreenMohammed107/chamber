@@ -64,14 +64,14 @@
                     <li><a href="{{url('/laws')}}" class="text-dark text-decoration">
 قوانين  وقرارات                       </a>
                   </li>
-                        <li><a href="encyclo-details.html" class="text-dark text-decoration">
+                        <li><a href="{{url('/ministry')}}" class="text-dark text-decoration">
                             وزارات و هيئات حكومية
                         </a>
                         </li>
                         <li><a href="{{url('/communication')}}" class="text-dark text-decoration">
                             أدلة الاتصالات
                         </a></li>
-                        <li><a href="encyclo-details.html" class="text-dark text-decoration">
+                        <li><a href="{{url('/topics')}}" class="text-dark text-decoration">
                             موضوعات تجارية
                         </a></li>
                         <li><a href="{{url('/expencyclopedia')}}" class="text-dark text-decoration">

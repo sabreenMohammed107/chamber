@@ -19,6 +19,10 @@ use App\Models\Exporter_encyclopedia;
 use App\Models\Exporter_type;
 use App\Models\Study_report;
 use App\Models\Study_type;
+use App\Models\Ministry;
+use App\Models\Ministry_type;
+use App\Models\Commerical_topic;
+use App\Models\Commerical_topic_type;
 class EncycloController extends Controller
 {
 
@@ -204,6 +208,60 @@ class EncycloController extends Controller
         $agreements = Study_report::all();
        }
         return view($view_page . 'studiesDetails', compact('studies','agreements'))->render();
+     }
+    
+    }
+    
+
+    public function  ministry()
+   
+    {
+        $view_page = 'Customer.encyclo.';
+
+        $ministries = Ministry_type::all();
+        $agreements = Ministry::all();
+        return view($view_page . 'ministry', compact('ministries','agreements'));
+    }
+
+    public function  ministryDetails(Request $request){
+      
+        $view_page = 'Customer.encyclo.';
+        if($request->ajax())
+     {
+         $ministryId=$request->get("ministry_id");
+        $ministries = Ministry_type::all();
+        $agreements = Ministry::where('ministry_type_id','=',$ministryId)->get();
+       if($ministryId==null){
+        $agreements = Ministry::all();
+       }
+        return view($view_page . 'ministryDetails', compact('ministries','agreements'))->render();
+     }
+    
+    }
+
+
+    public function  topics()
+   
+    {
+        $view_page = 'Customer.encyclo.';
+
+        $topics = Commerical_topic_type::all();
+        $agreements = Commerical_topic::all();
+        return view($view_page . 'commerical-topic', compact('topics','agreements'));
+    }
+
+    public function  topicsDetails(Request $request){
+      
+        $view_page = 'Customer.encyclo.';
+        if($request->ajax())
+     {
+         $topicId=$request->get("topic_id");
+        $topics = Commerical_topic_type::all();
+        $agreements = Commerical_topic::where('commerical_topic_id','=',$topicId)->get();
+       if($topicId==null){
+        $agreements = Commerical_topic::all();
+       }
+        return view($view_page . 'commerical-topicDetails', compact('topics','agreements'))->render();
      }
     
     }
