@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDepatrtmentsTable extends Migration
+class AddScheduleToDepartmentMeetingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateDepatrtmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('depatrtments', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('ar_title',250)->nullable();
-            $table->string('en_title',250)->nullable();
-            $table->timestamps();
+        Schema::table('department_meetings', function (Blueprint $table) {
+            $table->string('ar_schedule',1000)->nullable();
+            $table->string('en_schedule',1000)->nullable();
         });
     }
 
@@ -28,6 +26,8 @@ class CreateDepatrtmentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('depatrtments');
+        Schema::table('department_meetings', function (Blueprint $table) {
+            //
+        });
     }
 }

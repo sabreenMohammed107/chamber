@@ -4,28 +4,28 @@ namespace App\Http\Controllers\Customer;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Depatrtment;
-use App\Models\Depatrtment_board_member;
+use App\Models\Department;
+use App\Models\Department_board_member;
 use App\Models\Department_board_director;
-use App\Models\Depatrtment_register;
-use App\Models\Depatrtment_meeting;
+use App\Models\Department_register;
+use App\Models\Department_meeting;
 use App\Models\Department_news;
 use App\Models\Related_department_news;
 use App\Models\Department_gallery;
-use App\Models\Depatrtment_meeting_gallery;
+use App\Models\Department_meeting_gallery;
 class DivisionController extends Controller
 {
     public function index()
     {
 
-        $devisions = Depatrtment::orderBy("created_at", "Desc")->paginate(10);
+        $devisions = Department::orderBy("created_at", "Desc")->paginate(10);
 
         return view('Customer.division.index', compact('devisions'));
     }
 
     function fetch_devision(Request $request)
     {
-        $devisions = Depatrtment::orderBy("created_at", "Desc")->paginate(10);
+        $devisions = Department::orderBy("created_at", "Desc")->paginate(10);
 
 
         return view('Customer.division.indexList', compact('devisions'))->render();
@@ -37,23 +37,23 @@ class DivisionController extends Controller
         $subBoard = [];
 
 
-        $divisionObj = Depatrtment::where("id", '=', $id)->first();
+        $divisionObj = Department::where("id", '=', $id)->first();
 
         $currentBoard = Department_board_director::where('department_id', '=', $id)->where('current', '=', 0)->first();
 
 
         $prevBoard = Department_board_director::where('department_id', '=', $id)->where('current', '=', 1)->first();
         if ($currentBoard != null) {
-            $mastrBoard = Depatrtment_board_member::where('board_directors_id', '=', $currentBoard->id)->orderBy("position_order", "asc")->get();
+            $mastrBoard = Department_board_member::where('board_directors_id', '=', $currentBoard->id)->orderBy("position_order", "asc")->get();
         }
 
         if ($prevBoard != null) {
-            $subBoard = Depatrtment_board_member::where('board_directors_id', '=', $prevBoard->id)->orderBy("position_order", "asc")->get();
+            $subBoard = Department_board_member::where('board_directors_id', '=', $prevBoard->id)->orderBy("position_order", "asc")->get();
         }
         //get all
         $oldestList = Department_board_director::where('current', '=', 2)->get();
         //get meeting list
-        $meetingLists = Depatrtment_meeting::where('department_id', '=', $id)->orderBy("created_at", "Desc")->paginate(6);
+        $meetingLists = Department_meeting::where('department_id', '=', $id)->orderBy("created_at", "Desc")->paginate(6);
 //get news list
       $newsLists=Department_news::where('department_id', '=', $id)->orderBy("created_at", "Desc")->paginate(6);
         return view('Customer.division.divisionDetails', compact('newsLists','meetingLists', 'divisionObj', 'currentBoard', 'prevBoard', 'mastrBoard', 'subBoard', 'oldestList'));
@@ -64,7 +64,7 @@ class DivisionController extends Controller
     {
 
 
-        Depatrtment_register::create($request->all());
+        Department_register::create($request->all());
 
 
         return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
@@ -77,23 +77,23 @@ class DivisionController extends Controller
         if ($request->ajax()) {
             $id = $request->get("id");
 
-            $divisionObj = Depatrtment::where("id", '=', $id)->first();
+            $divisionObj = Department::where("id", '=', $id)->first();
 
             $currentBoard = Department_board_director::where('department_id', '=', $id)->where('current', '=', 0)->first();
 
 
             $prevBoard = Department_board_director::where('department_id', '=', $id)->where('current', '=', 1)->first();
             if ($currentBoard != null) {
-                $mastrBoard = Depatrtment_board_member::where('board_directors_id', '=', $currentBoard->id)->orderBy("position_order", "asc")->get();
+                $mastrBoard = Department_board_member::where('board_directors_id', '=', $currentBoard->id)->orderBy("position_order", "asc")->get();
             }
 
             if ($prevBoard != null) {
-                $subBoard = Depatrtment_board_member::where('board_directors_id', '=', $prevBoard->id)->orderBy("position_order", "asc")->get();
+                $subBoard = Department_board_member::where('board_directors_id', '=', $prevBoard->id)->orderBy("position_order", "asc")->get();
             }
             //get all
             $oldestList = Department_board_director::where('current', '=', 2)->get();
             //get meeting list
-            $meetingLists = Depatrtment_meeting::where('department_id', '=', $id)->orderBy("created_at", "Desc")->paginate(6);
+            $meetingLists = Department_meeting::where('department_id', '=', $id)->orderBy("created_at", "Desc")->paginate(6);
            //get news list
            $newsLists=Department_news::where('department_id', '=', $id)->orderBy("created_at", "Desc")->paginate(6);
           
@@ -120,10 +120,10 @@ class DivisionController extends Controller
 
     public function meetingDivisionDetails($id){
 
-        $newsObj=Depatrtment_meeting::where("id",'=',$id)->first();
-        $newsGallery=Depatrtment_meeting_gallery::where("department_meeting_id",'=',$id)->get();
+        $newsObj=Department_meeting::where("id",'=',$id)->first();
+        $newsGallery=Department_meeting_gallery::where("department_meeting_id",'=',$id)->get();
       
-        $newsRandom=Depatrtment_meeting::take(3)->inRandomOrder(rand(10,100))->get();
+        $newsRandom=Department_meeting::take(3)->inRandomOrder(rand(10,100))->get();
         return view('Customer.division.meetingDetails',compact('newsObj','newsGallery','newsRandom'));
     }
 

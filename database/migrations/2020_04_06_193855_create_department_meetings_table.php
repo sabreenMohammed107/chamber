@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDepatrtmentMeetingsTable extends Migration
+class CreateDepartmentMeetingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateDepatrtmentMeetingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('depatrtment_meetings', function (Blueprint $table) {
+        Schema::create('department_meetings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ar_title',1000)->nullable();
             $table->string('en_title',1000)->nullable();
@@ -34,6 +34,6 @@ class CreateDepatrtmentMeetingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('depatrtment_meetings');
+        Schema::dropIfExists('department_meetings');
     }
 }
