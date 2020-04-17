@@ -18,7 +18,7 @@ $current=date_create(now());
                   @endif
                   <a href="devisionPage.html" class="text-dark">
                   @if(app()->getLocale()=='en')
-                            {{$schedul->en_title}} {{$dateTest}}>>{{$current}}
+                            {{$schedul->en_title}} 
 					@else
                     {{$schedul->ar_title}} 
                     @endif

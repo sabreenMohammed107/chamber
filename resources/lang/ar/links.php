@@ -1,40 +1,88 @@
 <?php
 
 return [
-
+    /*----header*/
+    'login' => 'تسجيل الدخول',
+    'shahbander' => 'مجلة الشهبندر',
+    'search' => 'بحث',
+    'searchhere' => 'إبحث هنا',
+    'login' => 'تسجيل دخول',
+    'Logout' => 'خروج',
+    'en' => 'انجليزى',
+    'ar' => 'عربي',
+    'welcom' => 'مرحبا بك',
+    'guest' => 'زائر',
+    'slogan' => 'تسعة اعشار الرزق فى التجارة',
+    /*---end----*/
+    /*--Menu--*/
     'home' => 'الرئيسية',
-    'setup' =>'الإعدادات',
-    'titles' =>'العناوين',
-    'cities' =>'المدن',
-    'countries' =>'البلاد',
-    'fqa'=>'أسئلة وإجابة',
-    'nationalities' =>'جنسيات',
-    'reach-Source'=>'طريقة الوصول ',
-    'activities'=>'الأنشطة',
-    'status'=>'الحالة',
-    'services' =>'الخدمات ',
-    'clients'=>'عملاء حاليين',
-    'leads'=>'عملاء مهتمين' ,
-    'companies'=>'الشركات',
-    'users' =>'المستخدمين',
-    'qkCall'=>'إتصال سريع',
-    'msearch'=>'بحث',
-    'allMessages' =>'عرض كل الرسائل',
-    'allNotifications'=>'عرض كل الإشعارات',
-    'logout'=>'خروج ',
-    'profile'=>'الملف الشخصي',
-    'tracks'=>'تفاصيل الدورات ' ,
-    'add'=>'إضافة جديد',
-    'edit'=>'تعديل',
-    'delete'=>'حذف',
-    'next'=>'التالى',
-    'prev'=>'السابق',
-    'back'=>'رجوع',
+    'aboutChamber' => 'عن الغرفة',
+    'aboutDirector' => 'كلمة رئيس الغرفة',
+    'bords' => 'الغرفة',
+    'history' => 'تاريخ غرفة تجارة القاهرة',
+    'messageVision' => 'الرسالة والرؤية',
+    'dept' => 'ادارت الغرفة',
+    'cocialResponsibility' => 'المسئولية المجتمعية',
 
-/*----------Roles------- */
-    'roles'=>'الأدوار',
-    'role'=>'الدور',
-    'permission'=>'الصلاحيات',
-    'roles_permission'=>'الأدوار والصلاحيات',
- 
+    'mediacenter' => 'المركز الإعلامي',
+    'chamberNews' => 'أخبار الغرفة',
+    'chamberAlbum' => '(عدسة الغرفة ( أليوم الصور والفيديو',
+    'announce' => 'تنويهات وإعلانات',
+
+    'retailAcademy' => 'أكاديمية التجزئة',
+    'aboutAcademy' => 'عن الأكاديمية',
+    'courses' => 'الدورات وبرامج التدريب',
+    'training' => 'خدمات التدريب',
+
+    'chamberServices' => 'خدمات الغرفة',
+    'excellence'=>'مركز التميز',
+    'healthCare'=>' الرعاية الصحية للتجار',
+    'lifeInsurance'=>'التأمين على حياة التجار وممتلكاتهم',
+    'commerExtention'=>'الإرشاد التجارى',
+    'tradersClub'=>'نادي تجار العاصمة',
+    'conferenceRoom'=>'قاعة مؤتمرات غرفة القاهرة',
+    'arbitration'=>'التوفيق والتحكيم التجارى',
+
+    'division' => 'الشعب التجارية',
+    'devisionPages'=>'صفحات الشعب',
+    'ScheduleDevision'=>'جدول مواعيد إجتماعات الشعب',
+
+    'conferences' => 'مؤتمرات ومعارض',
+
+    'opportunities' => 'فرص تجارية',
+    'export'=>'الفرص التصديرية',
+    'import'=>'الفرص الاستيرادية',
+    'investment'=>'فرص استثمارية',
+    'tenderAuction'=>'مناقصات ومزايدات',
+
+    'electronicService' => 'خدمات إلكترونية',
+    'online-payment'=>'السداد الإلكترونى',
+    'qr-code'=>'QR code خدمة',
+    'blockchain'=>'blockchain خدمة',
+
+    'woman' => 'لجنة المرأة والتجار',
+    'aboutCommittee'=>'عن اللجنة',
+    'committeeActivities'=>'نشاطات اللجنة',
+    'encyclo' => 'أدلة هامة',
+    'contact' => 'تواصل معنا',
+
+
+
+/*---End Menu--*/
+
+
+/*--footer ---*/
+'address'=>'العنوان',
+'phone'=>'تليفون',
+'email'=>'بريد إلكترونى',
+'copyright'=>'',
+'emailList'=>'القائمة البريدية',
+'send'=>'إرسال',
+'sponsor'=>'الرعاه',
+'events'=>'فاعليات',
+'faq'=>'أسئلة شائعة',
+'relatedwebsites'=>'روابط ذات صلة',
+'coursesfooter'=>'دورات',
+'chamber'=>'الغرفة التجارية للقاهرة',
+
 ];

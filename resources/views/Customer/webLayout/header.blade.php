@@ -22,7 +22,7 @@
               <p class=" mr-3  mt-3">
                
                 <a href="shahbandr.cairochamber.org.eg"  target="_blank" class="text-white ">
-                  <span class="top-span" >مجلة الشهبندر</span>
+                  <span class="top-span" >{{ __('links.shahbander') }}</span>
                 </a></p>
                 <div class="icon mr-3 d-flex justify-content-center align-items-center">
                   <a href="{{$social->facebook_url}}" target="_blank" class="text-white">
@@ -82,9 +82,9 @@
                             <i id="close-btn" class="fa fa-times fa-2x"></i>
                             <form action="{{route('search')}}" id='search-form' method='get' target='_top'>
 
-                              <input id='search-text' name='q' placeholder="ابحث هنا" type='text' />
+                              <input id='search-text' name='q' placeholder="{{ __('links.searchhere') }}" type='text' />
                               <button id='search-button' type='submit'>
-                                <span>بحث</span>
+                                <span>{{ __('links.search') }}</span>
                               </button>
                             </form>
                           </div>
@@ -102,7 +102,7 @@
                     <span class="welcomeuser"></span>
                 </a></p> -->
                 @guest
-                <button class="btn btn-primary mr-3 ml-3 "><a href="{{ route('login') }}">تسجيل الدخول</a></button>
+                <button class="btn btn-primary mr-3 ml-3 "><a href="{{ route('login') }}">{{ __('links.login') }}</a></button>
                           
                             @if (Route::has('register'))
                                 <!-- <li class="nav-item">
@@ -112,7 +112,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre> -->
-                            <span class="welcomeuser"><span class="welcome">{{ __('titles.welcom') }} :</span>
+                            <span class="welcomeuser"><span class="welcome">{{ __('links.welcom') }} :</span>
                               <span class="welcomeuser"> {{ Auth::user()->name }} </span>
                    
                                 <!-- </a> -->
@@ -121,7 +121,7 @@
                                 <button class="btn btn-primary mr-3 ml-3 "><a  href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('links.Logout') }}
                                     </a></button>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -130,8 +130,8 @@
                                 <!-- </div> -->
                             </li>
                         @endguest
-              <a href="{{ URL::to('changeLang/en') }}" class=" text-white"><span>EN</span></a>/
-              <a href="{{ URL::to('changeLang/ar') }}" class=" text-white"><span>AR</span></a>
+              <a href="{{ URL::to('changeLang/en') }}" class=" text-white"><span> {{ __('links.en') }}</span></a>/
+              <a href="{{ URL::to('changeLang/ar') }}" class=" text-white"><span> {{ __('links.ar') }}</span></a>
               
 
               <a href="#" class=" text-white">
@@ -186,7 +186,11 @@
                 <div id="logo-date" class="logo-date">
                   <div class="container-Date">
                     <div class="date" id="printTime"></div>
+                    @if(app()->getLocale()=='ar')
                     <div class="date" id="printDay"></div>
+				
+                    @endif
+                  
                     <div class="date" id="printDate"></div>
 
                   </div>
@@ -201,7 +205,7 @@
 
 
             <div class="slogan">
-              <span>{{ __('titles.slogan') }}</span>
+              <span>{{ __('links.slogan') }}</span>
             </div>
           </div>
         </div>

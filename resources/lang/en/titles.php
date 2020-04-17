@@ -4,10 +4,7 @@ return [
 
    /*------global----------*/
    'more' => 'More',
-   'welcom' => 'Welcome',
-   'guest' => 'guest',
-   'login' => 'Login',
-   'slogan' => 'Nine Tenth of Livelihood Comes From Trade',
+ 
    'type' => 'Type',
    'from' => 'From',
    'to' => 'To',

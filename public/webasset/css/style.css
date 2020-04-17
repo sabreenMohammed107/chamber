@@ -14423,3 +14423,40 @@ width: 62px;
 body.ltr .icon .fa-search {
   margin-left: 350px !important;
 }
+
+
+body.ltr .ftco-navbar-light .navbar-nav > .nav-item .dropdown-menu .dropdown-item {
+  font-size: 14px;
+  text-align: left;
+  font-weight: 500;
+}
+.dataTables_length {
+  display: none;
+}
+div.dataTables_wrapper div.dataTables_paginate {
+  margin: 20px 0 !important;
+  white-space: nowrap;
+  text-align: right;
+}
+.paginate_button{
+  margin-top: 15px;
+  color: #e4e2e2;
+  background: #795548;
+  padding: 0 10px;
+  margin: 5px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: none;
+  color: black!important;
+  border-radius: 4px;
+  border: 1px solid #828282;
+}
+ 
+.dataTables_wrapper .dataTables_paginate .paginate_button:active {
+  background: none;
+  color: black!important;
+}
+
+body.ltr .dataTables_paginate {
+  float: left !important;
+}

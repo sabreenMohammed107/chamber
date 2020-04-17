@@ -9,7 +9,7 @@
 
         <div class="col-md-10 col-12">
           <a href="index.html">
-            <h4 class="footer-logoTitle">الغرفة التجارية للقاهرة</h4>
+            <h4 class="footer-logoTitle">{{ __('links.chamber') }}</h4>
           </a>
         </div>
       
@@ -25,19 +25,19 @@
                 style="width: 130px; margin-right: 30px;">
             </a>
             <ul class="contact-info mt-3 ml-3">
-              <li><span>العنوان :</span>
+              <li><span>{{ __('links.address') }}:</span>
                 <span class="contact-t">{{$branch->address}}</span>
               </li>
-              <li><span>تليفون :</span>
+              <li><span>{{ __('links.phone') }} :</span>
                 <span class="contact-t">{{$branch->phone}}</span>
               </li>
-              <li><span>بريد إلكترونى :</span>
+              <li><span>{{ __('links.email') }} :</span>
                 <span class="contact-t">{{$branch->email}}</span>
               </li>
 
             </ul>
             <form action="" method="post"  id="email-form" class="mr-3">
-              <input type="email" name="email" placeholder="القائمة البريدية"><input type="submit" value="إرسال">
+              <input type="email" name="email" placeholder="{{ __('links.emailList') }}"><input type="submit" value="{{ __('links.send') }}">
             </form>
           
           </div>
@@ -47,12 +47,12 @@
               <div class="col-md-2 col-5">
 
                 <div class="ftco-footer-widget ">
-                  <h2 class="ftco-heading-2">الرئيسية</h2>
-                  <p><a href="excellence.html">مركز التميز</a></p>
-                  <p><a href="relatedwebsites.html">روابط ذات صلة</a></p>
-                  <p><a href="questions.html">أسئلة شائعة </a></p>
+                  <h2 class="ftco-heading-2">{{ __('links.home') }}</h2>
+                  <p><a href="excellence.html">{{ __('links.excellence') }}</a></p>
+                  <p><a href="relatedwebsites.html">{{ __('links.relatedwebsites') }}</a></p>
+                  <p><a href="questions.html">{{ __('links.faq') }}</a></p>
 
-                  <p><a href="contact.html">اتصل بنا</a></p>
+                  <p><a href="contact.html">{{ __('links.contact') }}</a></p>
 
                 </div>
               </div>
@@ -63,36 +63,36 @@
 
               <div class="col-md-3 col-6">
                 <div class="ftco-footer-widget">
-                  <h2 class="ftco-heading-2">خدمات الغرفة</h2>
-                  <p><a href="medical-care.html"> الرعاية الصحية للتجار</a></p>
-                  <p><a href="insurance.html">التأمين على حياة التجار</a></p>
-                  <p><a href="guidance.html">الإرشاد التجاري</a></p>
-                  <p><a href="club.html">نادي تجار العاصمة</a></p>
-                  <p><a href="hall.html">قاعة مؤتمرات غرفة القاهرة</a></p>
+                  <h2 class="ftco-heading-2">{{ __('links.chamberServices') }}</h2>
+                  <p><a href="medical-care.html">{{ __('links.healthCare') }}</a></p>
+                  <p><a href="insurance.html">{{ __('links.lifeInsurance') }}</a></p>
+                  <p><a href="guidance.html">{{ __('links.commerExtention') }}</a></p>
+                  <p><a href="club.html">{{ __('links.tradersClub') }}</a></p>
+                  <p><a href="hall.html">{{ __('links.conferenceRoom') }}</a></p>
                 </div>
               </div>
 
 
               <div class="col-md-3  col-6">
                 <div class="ftco-footer-widget ">
-                  <h2 class="ftco-heading-2">المركز الإعلامي</h2>
-                  <p><a href="news.html">أخبار الغرفة</a></p>
-                  <p><a href="albums.html">عدسة الغرفة</a></p>
-                  <p><a href="advertesment.html">تنويهات و إعلانات</a></p>
-                  <p><a href="chahbander.html"> مجلة الشهبندر </a></p>
+                  <h2 class="ftco-heading-2">{{ __('links.mediacenter') }}</h2>
+                  <p><a href="news.html">{{ __('links.chamberNews') }}</a></p>
+                  <p><a href="albums.html">{{ __('links.chamberAlbum') }}</a></p>
+                  <p><a href="advertesment.html">{{ __('links.announce') }}</a></p>
+                  <p><a href="chahbander.html">{{ __('links.shahbander') }}</a></p>
 
                 </div>
               </div>
 
               <div class="col-md-3  col-6">
                 <div class="ftco-footer-widget ">
-                  <h2 class="ftco-heading-2">أكاديمية التجزئة</h2>
-                  <p><a href="retail-academy.html">عن الأكاديمية</a></p>
-                  <p><a href="academy-courses.html">الدورات</a></p>
-                  <p><a href="events.html">الفعاليات</a></p>
-                  <p><a href="training.html">التدريب من أجل التشغيل</a></p>
-                  <p><a href="retail-academy.html#parteners">الرعاة</a></p>
-                  <p><a href="retail-contact.html">التواصل مع الأكاديمية</a></p>
+                  <h2 class="ftco-heading-2">{{ __('links.retailAcademy') }}</h2>
+                  <p><a href="retail-academy.html">{{ __('links.aboutAcademy') }}</a></p>
+                  <p><a href="academy-courses.html">{{ __('links.courses') }}</a></p>
+                  <p><a href="events.html">{{ __('links.events') }}</a></p>
+                  <p><a href="training.html">{{ __('links.training') }}</a></p>
+                  <p><a href="retail-academy.html#parteners">{{ __('links.sponsor') }}</a></p>
+                  <p><a href="retail-contact.html">{{ __('links.contact') }}</a></p>
                 </div>
               </div>
 

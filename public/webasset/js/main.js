@@ -547,6 +547,8 @@ $(document).ready(function () {
 		{
 			"paging": true,
 			"pageLength":3,
+			
+			 stateSave: false,
 			"autoWidth": true,
 			"footerCallback": function (row, data, start, end, display) {
 				var api = this.api();
