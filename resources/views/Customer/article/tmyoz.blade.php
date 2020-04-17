@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
             <div class="col-md-9 ftco-animate text-center mb-4">
-                <h1 class="mb-2 bread">مركز تميز لخدمات التجار</h1>
+                <h1 class="mb-2 bread">{{ __('links.excellence') }}</h1>
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
             <div class="col-md-7 ftco-animate text-justify img-thumbnail p-4">
                 <img class="moon img-thumbnail" src="{{ asset('webasset/images/excellence.jpg')}}" style="width: 300px; height: 250px;" />
                 <div class="heading-section mb-4 my-5 my-md-0">
-                    <h2 class="mb-4 text-decoration">مركز التميز لخدمات التجار </h2>
+                    <h2 class="mb-4 text-decoration">{{ __('links.excellence') }}</h2>
                 </div>
                 {!!$data->ar_text!!}
 

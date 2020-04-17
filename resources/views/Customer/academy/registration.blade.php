@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate text-center mb-4">
-                    <h1 class="mb-2 bread"> تسجيل فى الدورة
+                    <h1 class="mb-2 bread"> {{ __('titles.registerInCourse') }}
                     </h1>
                 </div>
             </div>
@@ -22,7 +22,7 @@
 <section class="mb-5">
     <div class="container">
         <div class="section-header mb-4 mt-5">
-            <h3>تفاصيل الدورة </h3>
+            <h3>{{ __('titles.courseDetails') }}</h3>
     
           </div>
        
@@ -43,18 +43,25 @@
 
 
                             <div class=" col-md-3 " style="border-left: 1px solid #CCC;">
- 
-                                <h4 class="card-title">مده الدورة </h4>
+                            @if(app()->getLocale()=='en')
+                            <h4 class="card-title" style="text-align: left !important">{{ __('titles.courseduration') }}</h4>
+                                                @else    
+                                                 <h4 class="card-title">{{ __('titles.courseduration') }}</h4>  
+                                                    @endif
+                           
                                 <p class="card-text">{{$details->course_hourse}}</p> 
                                 <hr>
-                                <p class="card-text"> ووجود ساعات إضافيه  . </p>
+                                <p class="card-text">{{ __('titles.extrahourse') }}</p>
                             </div>
                             <div class="col-md-3">
-                              
-                                <h4 class="card-title">سعر الدورة </h4>
+                            @if(app()->getLocale()=='en')
+                            <h4 class="card-title" style="text-align: left !important">{{ __('titles.coursePrice') }} </h4>
+                                                @else    
+                                                <h4 class="card-title">{{ __('titles.coursePrice') }} </h4>  
+                                                    @endif
                                 <p class="card-text">{{$details->course_cost}}</p>
                                 <hr>
-                                <p class="card-text">الحصول على شهادة معتمدة . </p>
+                                <p class="card-text">{{ __('titles.certified') }}</p>
                              
                             </div>
                         </div>
@@ -66,11 +73,11 @@
                                   
                                   <div class="col-sm-3">
                                     <ul class="nav nav-tabs tabs-right" role="tablist">
-                                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">وصف الدورة <i class="fa fa-angle-left"></i></a>
+                                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">{{ __('titles.courseDescription') }}</a>
                                     </li>
-                                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"> محتوى الدورة<i class="fa fa-angle-left"></i></a></li>
-                                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">المستهدفون من الدورة <i class="fa fa-angle-left"></i></a></li>
-                                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">تسجيل  بياناتك<i class="fa fa-angle-left"></i></a></li>
+                                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">{{ __('titles.coursecontent') }}</a></li>
+                                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">{{ __('titles.targetAudiance') }} </a></li>
+                                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">{{ __('titles.regiterData') }} </a></li>
                                   </ul>
                                   </div>
                                   <div class="col-sm-9">
@@ -90,37 +97,37 @@
                                                 {!! $details->content !!}
                                                 @endif
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="messages"> <h4>المستهدفون من الدورة :</h4>
+                                    <div role="tabpanel" class="tab-pane" id="messages">
                                     @if(app()->getLocale()=='en')
                                                 {!! $details->audience !!}
                                                 @else
                                                 {!! $details->audience !!}
                                                 @endif
                                 </div>
-                                    <div role="tabpanel" class="tab-pane" id="settings"> <h4>سجل بياناتك </h4>
+                                    <div role="tabpanel" class="tab-pane" id="settings"> <h4>{{ __('titles.regiterData') }}</h4>
                                         <div class="contact-form">
                                             <form action="{{route('registerationForm')}}" method="post">
                                                 <!-- Message Input Area Start -->
                                                 <input type="hidden" name="course_id" value="{{$details->id}}">
                                                 @csrf
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" name="name" id="name" placeholder="الاسم " required>
+                                                                <input type="text" class="form-control" name="name" id="name" placeholder="{{ __('titles.name') }} " required>
                                                             </div>
                                                        
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" name="mobile" id="name" placeholder="الموبايل  " required>
+                                                                <input type="text" class="form-control" name="mobile" id="name" placeholder="{{ __('links.phone') }}  " required>
                                                             </div>
                                                       
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" name="email" id="name" placeholder="البريد الإلكتروني " required>
+                                                                <input type="text" class="form-control" name="email" id="name" placeholder="{{ __('links.email') }}" required>
                                                             </div>
                                                       
                                                             <div class="form-group">
-                                                                <textarea  class="form-control" name="notes"  cols="30" rows="3" placeholder="ملاحظات" required></textarea>
+                                                                <textarea  class="form-control" name="notes"  cols="30" rows="3" placeholder="{{ __('titles.notes') }}" required></textarea>
                                                             </div>
                                                     
                                                         <div class="col-12 mb-4">
-                                                            <button type="submit" class="btn fancy-btn fancy-dark bg-transparent"> إرسال  </button>
+                                                            <button type="submit" class="btn fancy-btn fancy-dark bg-transparent"> {{ __('links.send') }}  </button>
                                                         </div>
                                                 
                                                
@@ -151,7 +158,7 @@
 
                         <!-- frist section -->
                         <div class="fees">
-                            <h3>دورات أخرى </h3>
+                            <h3>{{ __('titles.anotherCourses') }} </h3>
                             <div class="related-posts">
                                 @foreach($coursegalleries as $gallery)
                                 <div class="block" style="display: flow-root;">

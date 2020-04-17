@@ -37,7 +37,7 @@ return [
 'aboutAcademy'=>'About Academy',
 'courses'=>'Courses and training programs',
 'training'=>'Training services',
-
+'jobs'=>'Job Service',
 
 
 
@@ -82,6 +82,8 @@ return [
 'address'=>'Address',
 'phone'=>'Phone',
 'email'=>'Email',
+'fax'=>'Fax',
+'follow'=>'Follow Us',
 'copyright'=>'',
 'emailList'=>'Email List',
 'send'=>'Send',
@@ -89,7 +91,7 @@ return [
 'events'=>'Events',
 'faq'=>'FAQ',
 'relatedwebsites'=>'Related Websites',
-'courses'=>'Courses',
+
 'chamber'=>'Cairo Chamber Of Commerce',
 
 

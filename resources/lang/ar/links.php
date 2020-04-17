@@ -33,6 +33,7 @@ return [
     'aboutAcademy' => 'عن الأكاديمية',
     'courses' => 'الدورات وبرامج التدريب',
     'training' => 'خدمات التدريب',
+    'jobs'=>'خدمات التوظيف',
 
     'chamberServices' => 'خدمات الغرفة',
     'excellence'=>'مركز التميز',
@@ -59,6 +60,7 @@ return [
     'online-payment'=>'السداد الإلكترونى',
     'qr-code'=>'QR code خدمة',
     'blockchain'=>'blockchain خدمة',
+   
 
     'woman' => 'لجنة المرأة والتجار',
     'aboutCommittee'=>'عن اللجنة',
@@ -75,6 +77,8 @@ return [
 'address'=>'العنوان',
 'phone'=>'تليفون',
 'email'=>'بريد إلكترونى',
+'fax'=>'فاكس',
+'follow'=>'تابعنا',
 'copyright'=>'',
 'emailList'=>'القائمة البريدية',
 'send'=>'إرسال',

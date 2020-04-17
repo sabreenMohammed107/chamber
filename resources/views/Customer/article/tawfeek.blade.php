@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate text-center mb-4">
-                    <h1 class="mb-2 bread">التوفيق والتحكيم التجارى</h1>
+                    <h1 class="mb-2 bread">{{ __('links.arbitration') }}</h1>
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
 
         <div class="col-md-7 ftco-animate text-justify img-thumbnail p-4">
                     <div class="heading-section mb-4 my-5 my-md-0">
-                        <h2 class="mb-4 text-decoration">التوفيق والتحكيم التجارى</h2>
+                        <h2 class="mb-4 text-decoration">{{ __('links.arbitration') }}</h2>
                     </div>
                 {!!$data->ar_text!!}
 

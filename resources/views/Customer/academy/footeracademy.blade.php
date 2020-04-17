@@ -6,8 +6,13 @@
             <div class="col-md-6">
                 <div class="row mt-5">
                     <div class="col-md-12 mb-5 text-center">
-                        <h3 class="font-weight-bold">الرعاة</h3>
-                        <hr class="TitlesHr" style="width: 3%; margin-top: 30px; margin-right: 47%">
+                        <h3 class="font-weight-bold">{{ __('titles.sponsor') }}</h3>
+                        @if(app()->getLocale()=='en')
+                        <hr class="TitlesHr" style="width: 3%; margin-top: 30px; margin-left: 47%">
+                                                @else
+                                                <hr class="TitlesHr" style="width: 3%; margin-top: 30px; margin-right: 47%">
+                                                @endif
+                    
                     </div>
                     @foreach($sponsors as $sponser)
                     <div class="col-md-4">
@@ -20,10 +25,20 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="row mt-5" style="border-right: 1px solid #CCC;">
+            @if(app()->getLocale()=='en')
+            <div class="row mt-5" style="border-left: 1px solid #CCC;">
+                                                @else
+                                                <div class="row mt-5" style="border-right: 1px solid #CCC;">
+                                                @endif
+              
                     <div class="col-md-12 mb-5 text-center">
-                        <h3 class="font-weight-bold">شركاء النجاح </h3>
-                        <hr class="TitlesHr" style="width: 3%; margin-top: 30px; margin-right: 47%">
+                        <h3 class="font-weight-bold">{{ __('titles.parteners') }}</h3>
+
+                        @if(app()->getLocale()=='en')
+                        <hr class="TitlesHr" style="width: 3%; margin-top: 30px; margin-left: 47%">
+                                                @else
+                                                <hr class="TitlesHr" style="width: 3%; margin-top: 30px; margin-right: 47%">
+                                                @endif
                     </div>
                     @foreach($parteners as $partener)
                     <div class="col-md-4">
@@ -43,8 +58,8 @@
     <div class="container">
 
         <div class="section-header">
-            <h3> تواصل معنا</h3>
-            <p class="text-center mt-5">هدفنا الوصول اليك في كل وقت ومكان. فإرضائك هو هدفنا.</p>
+            <h3>{{ __('titles.contactus') }}</h3>
+            <p class="text-center mt-5">{{ __('titles.contactstatment') }}</p>
         </div>
 
 
@@ -55,25 +70,26 @@
             <div class="col-md-4">
                 <div class="contact-whatsapp wow fadeInDown animated" data-wow-delay="1s">
                     <i class="fa fa-whatsapp" aria-hidden="true"></i>
-                    <h3> واتساب :</h3>
+                    <h3> {{ __('titles.whatsapp') }} :</h3>
                     <p><a ><span dir='ltr'>{{$contactAcademy->whatsapp}}</span></a></p>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="contact-phoneNew wow fadeInDown animated" data-wow-delay="1.5s">
+                    <div style="margin: 0 10px">
                     <i class="fa fa-phone" aria-hidden="true"></i>
 
-                    <h3>تليفون :</h3>
-                    <p> إدارة التدريب :<a ><span dir='ltr'>{{$contactAcademy->mangment_phone}}</span></a></p>
-                    <p> إدارة التسويق : <a ><span dir='ltr'>{{$contactAcademy->marketing_phone}}</span></a></p>
-                </div>
+                    <h3>{{ __('links.phone') }} :</h3>
+                    <p> {{ __('titles.trainingPhone') }} :<a ><span dir='ltr'>{{$contactAcademy->mangment_phone}}</span></a></p>
+                    <p> {{ __('titles.markting') }} : <a ><span dir='ltr'>{{$contactAcademy->marketing_phone}}</span></a></p>
+</div> </div>
             </div>
             <div class="col-md-4">
                 <div class="contact-emailNew wow fadeInDown animated" data-wow-delay="2s">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                     <!-- <i class="fa fa-email"></i> -->
-                    <h3> بريد إلكتروني :</h3>
+                    <h3> {{ __('links.email') }} :</h3>
                     <p><a href="{{$contactAcademy->email}}">{{$contactAcademy->email}}</a></p>
                 </div>
             </div>

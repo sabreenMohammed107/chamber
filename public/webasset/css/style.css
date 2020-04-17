@@ -14423,6 +14423,21 @@ width: 62px;
 body.ltr .icon .fa-search {
   margin-left: 350px !important;
 }
+body.ltr h1 ,body.ltr h2 ,body.ltr h3,body.ltr h4,body.ltr h5,body.ltr h6{
+  text-align: center !important;
+}
+body.ltr .electronicPayment h5{
+  align-content: center !important;
+}
+
+body.ltr .carousel-control.right {
+  right: 10% !important;
+}
+
+body.ltr .contact-infoNew h3{
+text-align: left !important;
+}
+
 
 
 body.ltr .ftco-navbar-light .navbar-nav > .nav-item .dropdown-menu .dropdown-item {
@@ -14460,3 +14475,4 @@ div.dataTables_wrapper div.dataTables_paginate {
 body.ltr .dataTables_paginate {
   float: left !important;
 }
+

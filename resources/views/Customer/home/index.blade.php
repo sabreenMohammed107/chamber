@@ -121,19 +121,19 @@
           role="tablist" aria-orientation="vertical">
           <a class="nav-link ftco-animate active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab"
             aria-controls="v-pills-1" aria-selected="true">
-            <span>الأخبار</span>
+            <span>{{ __('titles.news') }}</span>
 
           </a>
 
           <a class="nav-link ftco-animate" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab"
             aria-controls="v-pills-2" aria-selected="false">
-            <span> الخدمات الإلكترونية</span>
+            <span>{{ __('titles.electronic') }}</span>
 
           </a>
 
           <a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab"
             aria-controls="v-pills-3" aria-selected="false">
-            <span>خدمات الغرفة</span>
+            <span>{{ __('titles.services') }}</span>
           </a>
 
           <!-- <a class="nav-link ftco-animate" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab"
@@ -218,7 +218,7 @@
             <div class="col-md-4 text-center"></div>
 
             <div class="col-md-4 text-center  mt-5">
-              <p><a href="{{url('/news')}}" class="btn btn-primary w-100">عرض الكل</a></p>
+              <p><a href="{{url('/news')}}" class="btn btn-primary w-100">{{ __('titles.seeAll') }}</a></p>
             </div>
 
 
@@ -235,21 +235,21 @@
             <div class="col-md-4 col-5 text-center electronicPayment">
               <a href="online-payment.html">
                 <img src="{{ asset('webasset/images/icons/payment.png')}}" class="img-fluid mb-4">
-                <h5>خدمة <br> السداد الإلكتروني</h5>
+                <h5>{{ __('titles.serv') }} <br>{{ __('titles.payment') }} </h5>
               </a>
             </div>
 
             <div class="col-md-4 col-5 text-center electronicPayment">
               <a href="qr-code.html">
                 <img src="{{ asset('webasset/images/icons/qr-code.png')}}" class="img-fluid mb-4">
-                <h5>خدمة <br> QR CODE</h5>
+                <h5>{{ __('titles.serv') }} <br>{{ __('titles.qr') }} </h5>
               </a>
             </div>
 
             <div class="col-md-4 col-5 text-center electronicPayment">
               <a href="blockchain.html">
                 <img src="{{ asset('webasset/images/icons/blockchain.png')}}" class="img-fluid mb-4">
-                <h5>خدمة <br> BLOCKCHAIN</h5>
+                <h5>{{ __('titles.serv') }} <br>{{ __('titles.block') }} </h5>
               </a>
             </div>
 
@@ -276,7 +276,7 @@ $ladiesId=8;
             <div class="col-md-3 col-6 text-center ">
               <a href="{{ url('article/'.$insuranceId) }}">
                 <img src="{{ asset('webasset/images/icons/heartbeat.png')}}" class="img-fluid mb-4">
-                <h5>التأمين على حياة التجار و ممتلكاتهم</h5>
+                <h5>{{ __('links.lifeInsurance') }}</h5>
               </a>
             </div>
 
@@ -285,20 +285,20 @@ $ladiesId=8;
             <div class="col-md-3 col-6 text-center">
               <a href="{{ url('article/'.$medicalId) }}">
                 <img src="{{ asset('webasset/images/icons/first-aid-kit.png')}}" class="img-fluid mb-4">
-                <h5>الرعاية الصحية للتجار</h5>
+                <h5>{{ __('links.healthCare') }}</h5>
               </a>
             </div>
             <div class="col-md-3 col-6 text-center">
               <a href="{{ url('article/'.$tawfeekId) }}">
                 <img src="{{ asset('webasset/images/icons/champr-serv-icon-3 (1).png')}}" class="img-fluid mb-4">
-                <h5>التوفيق والتحكيم التجاري  </h5>
+                <h5>{{ __('links.arbitration') }}</h5>
               </a>
             </div>
 
             <div class="col-md-3 col-6 text-center">
               <a href="{{ url('article/'.$articleId) }}">
                 <img src="{{ asset('webasset/images/icons/education.png')}}" class="img-fluid mb-4">
-                <h5>مركز التميز</h5>
+                <h5>{{ __('links.excellence') }}</h5>
               </a>
             </div>
 
@@ -306,7 +306,7 @@ $ladiesId=8;
             <div class="col-md-4 col-6 text-center mt-5">
               <a href="{{ url('article/'.$chamberConferanceId) }}">
                 <img src="{{ asset('webasset/images/icons/meeting.png')}}" class="img-fluid mb-4">
-                <h5>قاعة مؤتمرات غرفة القاهرة</h5>
+                <h5>{{ __('links.conferenceRoom') }}</h5>
               </a>
             </div>
 
@@ -314,7 +314,7 @@ $ladiesId=8;
             <div class="col-md-4 col-6 text-center mt-5">
               <a href="{{ url('article/'.$clubId) }}">
                 <img src="{{ asset('webasset/images/icons/global-community.png')}}" class="img-fluid mb-4">
-                <h5>نادي تجار العاصمة</h5>
+                <h5>{{ __('links.tradersClub') }}</h5>
               </a>
             </div>
 
@@ -322,7 +322,7 @@ $ladiesId=8;
             <div class="col-md-4 col-6 text-center mt-5">
               <a href="{{ url('article/'.$ershadId) }}">
                 <img src="{{ asset('webasset/images/icons/business-people.png')}}" class="img-fluid mb-4">
-                <h5>الإرشاد التجاري</h5>
+                <h5>{{ __('links.commerExtention') }}</h5>
               </a>
             </div>
 
@@ -357,7 +357,7 @@ $ladiesId=8;
 <section class="event-calender ">
 <div class="container">
   <div class="section-header">
-    <h3>الفعاليات</h3>
+    <h3>{{ __('titles.events') }} </h3>
 
     <div class="row ">
 <div class="col-md-1"></div>
@@ -406,7 +406,7 @@ $ladiesId=8;
       </div>
       <div class="col-md-4 text-center"></div>
       <div class="col-md-4 text-center mt-5">
-        <p><a href="{{url('/conference')}}" class="btn btn-primary w-100">صفحة الفعاليات</a></p>
+        <p><a href="{{url('/conference')}}" class="btn btn-primary w-100">{{ __('titles.eventsPage') }} </a></p>
       </div>
     </div>
   </div></div>
@@ -416,7 +416,7 @@ $ladiesId=8;
 <section class=" joinTraining">
 <div class="container ">
   <div class="section-header mb-4">
-    <h3>عن الأكاديمية</h3>
+    <h3>{{ __('links.aboutAcademy') }}</h3>
 
   </div>
   <div class="row mt-5">
@@ -434,7 +434,7 @@ $ladiesId=8;
       <div class="row h100 mb-4 ">
         <div class="col-md-11  mb-4 greyly  event wow fadeInDown" data-wow-delay="1s">
           <a href="#" class="text-black ">
-            <h5 class="text-black cstm">خدمات التدريب</h5>
+            <h5 class="text-black cstm">{{ __('links.training') }}</h5>
             <p class="eventP">خدمات التدريب بالغرفة التجارية بالقاهرة تعمل على إحداث طفرة حقيقية للقطاع الخاص
               ودعم إمكاناته عبر تقديم خدمات التدريب والتأهيل لمواجهة تحديات المستقبل ومتطلبات
               التنمية، بالإضافة إلى تقديم نشاطات تدريبية موجهة للتطوير المستمر لمهارات القطاع الخاص،
@@ -448,7 +448,7 @@ $ladiesId=8;
             <div class="overlay ">
               <div class="text">
                 <button class="btn btn-primary">
-                  <a href="#">معرفة المزيد</a>
+                  <a href="#">{{ __('titles.knowmore') }}</a>
                 </button>
               </div>
             </div>
@@ -461,7 +461,7 @@ $ladiesId=8;
       <div class="row  mb-4 h100 ">
         <div class="col-md-11  mb-4 greyly  event wow fadeInDown" data-wow-delay="0.5s">
           <a href="#" class="text-black">
-            <h5 class="text-black cstm">خدمات التوظيف</h5>
+            <h5 class="text-black cstm">{{ __('links.jobs') }}</h5>
             <p class="eventP"> خدمات التدريب بالغرفة التجارية بالقاهرة تعمل على إحداث طفرة حقيقية للقطاع الخاص
               ودعم إمكاناته عبر تقديم خدمات التدريب والتأهيل لمواجهة تحديات المستقبل ومتطلبات
               التنمية، بالإضافة إلى تقديم نشاطات تدريبية موجهة للتطوير المستمر لمهارات القطاع الخاص،
@@ -475,7 +475,7 @@ $ladiesId=8;
             <div class="overlay">
               <div class="text">
                 <button class="btn btn-primary">
-                  <a href="#">معرفة المزيد</a>
+                  <a href="#">{{ __('titles.knowmore') }}</a>
                 </button>
               </div>
             </div>
@@ -496,7 +496,7 @@ $ladiesId=8;
 
 <section class="MagazinParallex">
 <div class="section-header mb-4">
-  <h3>تنويهات هامة</h3>
+  <h3>{{ __('titles.importantAnnoounce') }}</h3>
 </div>
 
 <div class="container adv mt-5">
@@ -545,16 +545,16 @@ $ladiesId=8;
         
           <!--.item-->
 
+          
         
-        
-          <a class="latestNews" href="{{url('/announce')}}">آخر التنويهات</a>
+          <a class="latestNews" href="{{url('/announce')}}">{{ __('titles.latestannounce') }}</a>
 
         </div>
         <!--.carousel-inner-->
-        <a data-slide="prev" href="#advCarousel" class="left carousel-control">
+        <!-- <a data-slide="prev" href="#advCarousel" class="left carousel-control">
           <span class="ion-ios-arrow-back">
             <</span> </a> <a data-slide="next" href="#advCarousel" class="right carousel-control"><span
-                class="ion-ios-arrow-forward">></span></a>
+                class="ion-ios-arrow-forward">></span></a> -->
       </div>
       <!--.Carousel-->
     </div>

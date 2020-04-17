@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
             <div class="col-md-9 ftco-animate text-center mb-4">
-                <h1 class="mb-2 bread">  خدمات التدريب </h1>
+                <h1 class="mb-2 bread"> {{ __('links.training') }} </h1>
             </div>
         </div>
     </div>
@@ -26,7 +26,7 @@
         
         <div class="col-md-6  text-justify img-thumbnail p-4 mr-5">
           <div class="section-header ">
-            <h3>     خدمات التدريب </h3>
+            <h3>{{ __('links.training') }}</h3>
     
           </div> 
          

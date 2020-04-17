@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
             <div class="col-md-9 ftco-animate text-center mb-4">
-                <h1 class="mb-2 bread"> أكاديمية التجزئة</h1>
+                <h1 class="mb-2 bread"> {{ __('links.retailAcademy') }}</h1>
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
             <div class="col-md-7 ftco-animate text-justify img-thumbnail p-4">
                 <img class="moon" src="{{ asset('webasset/images/Cairo-Retail-Academy.png')}}" style="width: 150px; height: 150px;" />
                 <div class="heading-section mb-4 my-5 my-md-0">
-                    <h2 class="mb-4 text-decoration">عن الأكاديمية </h2>
+                    <h2 class="mb-4 text-decoration">{{ __('links.aboutAcademy') }}</h2>
                 </div>
 
 
@@ -80,7 +80,7 @@
             <div class="container">
                 <div class="statistic ">
                     <div class="section-header mb-5">
-                        <h3> الأكاديمية بالأرقام</h3>
+                        <h3>{{ __('titles.numbers') }}</h3>
                         <!-- <p class="text-center mt-5">هدفنا الوصول اليك في كل وقت ومكان. فإرضائك هو هدفنا.</p> -->
                     </div>
                     <div class="row justify-content-center">
@@ -115,7 +115,7 @@
         <!-- photo -->
 
         <div class="col-md-12 mb-3 mt-3 text-center">
-            <h3 class="font-weight-bold">خريجى الأكاديمية</h3>
+            <h3 class="font-weight-bold">{{ __('titles.graduates') }}</h3>
             <hr class="TitlesHr" style="width: 3%; margin-top: 30px; margin-right: 47%">
         </div>
         <div class="row">

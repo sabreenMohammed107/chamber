@@ -7,7 +7,7 @@
             <div class="container">
               <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate text-center mb-4">
-                  <h1 class="mb-2 bread"> {{ __('titles.contact') }}   </h1>
+                  <h1 class="mb-2 bread"> {{ __('links.contact') }}   </h1>
                 </div>
               </div>
             </div>
@@ -33,8 +33,8 @@
 
            
               <div class="section-heading text-center">
-                <h3> تواصل معنا</h3>
-                <p >هدفنا الوصول اليك في كل وقت ومكان. فإرضائك هو هدفنا.</p>  
+                <h3>{{ __('titles.contactus') }}</h3>
+                <p >{{ __('titles.contactstatment') }}</p>  
                                     </div>
                                     <div class="row">
                 <div class="col-12 col-md-6">
@@ -42,16 +42,16 @@
                     <div class="contact-details-area wow fadeInRight animated" data-wow-delay="0.5s">
                         
                         <ul class="contact-info"  style=" line-height: 2.5;">
-                <li><span>العنوان:</span ><span class="mr-3 spanStyle" style="font-size: 16px;">
+                <li><span>{{ __('links.address') }}:</span ><span class="mr-3 spanStyle" style="font-size: 16px;">
                 {{$branch->address}}
             </span></li>
-                <li><span>تليفون:</span><span  class="mr-3 spanStyle" style="font-size: 16px;">
+                <li><span>{{ __('links.phone') }}:</span><span  class="mr-3 spanStyle" style="font-size: 16px;">
                 {{$branch->phone}}
             </span></li>
-                <li><span>فاكس:</span> <span  class="mr-3 spanStyle" style="font-size: 16px;" >
+                <li><span>{{ __('links.fax') }}:</span> <span  class="mr-3 spanStyle" style="font-size: 16px;" >
                 {{$branch->fax}}
             </span></li>
-                <li><span>البريد الإلكترونى:</span><span  class="mr-3 spanStyle" style="font-size: 16px;">
+                <li><span>{{ __('links.email') }}:</span><span  class="mr-3 spanStyle" style="font-size: 16px;">
                 {{$branch->email}}
             </span></li>
               </ul></div>
@@ -77,25 +77,25 @@
                                          <!-- Single Input Area -->
                                          <div class="col-12">
                                           <div class="form-group">
-                                              <input type="text" class="form-control" name="phone" name="mobile" placeholder="{{ __('titles.mobile') }} " required>
+                                              <input type="text" class="form-control" name="phone" name="mobile" placeholder="{{ __('links.mobile') }} " required>
                                           </div>
                                       </div>
                                        <!-- Single Input Area -->
                                        <div class="col-12">
                                         <div class="form-group">
-                                            <input type="mail" class="form-control" name="mail" name="email" placeholder="{{ __('titles.email') }}" required>
+                                            <input type="mail" class="form-control" name="mail" name="email" placeholder="{{ __('links.email') }}" required>
                                         </div>
                                     </div>
                                        
                                         <!-- Single Input Area -->
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <textarea name="message" class="form-control" name="messege" cols="30" rows="6" placeholder="{{ __('titles.messege') }} " required></textarea>
+                                                <textarea name="message" class="form-control" name="messege" cols="30" rows="6" placeholder="{{ __('titles.notes') }} " required></textarea>
                                             </div>
                                         </div>
                                         <!-- Single Input Area -->
                                         <div class="col-12 mb-4">
-                                            <button type="submit" class="btn fancy-btn fancy-dark bg-transparent"> {{ __('titles.sendMessege') }}   </button>
+                                            <button type="submit" class="btn fancy-btn fancy-dark bg-transparent"> {{ __('links.send') }}   </button>
                                         </div>
                                     </div>
                                 </div>
@@ -106,12 +106,12 @@
                 <hr>
                  <!-- Follow Us -->
                  <div class="follow-us-area text-center" >
-                  <h2 class="wow fadeInDown animated" data-wow-delay="1s">تابعنا:
+                  <h2 class="wow fadeInDown animated" data-wow-delay="1s">{{ __('links.follow') }}:
                   </h2>
-                  <a href="{{$social->facebook_url}}" class="facebook wow fadeInDown animated" data-wow-delay="1s"><i class="fa fa-facebook " aria-hidden="true"></i></a>
-                  <a href="{{$social->twitter_url}}" class="twitter wow fadeInDown animated" data-wow-delay="1.2s"><i class="fa fa-twitter " aria-hidden="true"></i></a>
-                  <a href="{{$social->youtube_url}}" class="youtube wow fadeInDown animated" data-wow-delay="1.4s"><i class="fa fa-youtube " aria-hidden="true"></i></a>
-                  <a href="{{$social->linkedin_url}}" class="linkedin wow fadeInDown animated" data-wow-delay="1.6s"><i class="fa fa-linkedin " aria-hidden="true"></i></a>
+                  <a href="{{$social->facebook_url}}" class="facebook wow fadeInDown animated text-center" data-wow-delay="1s"><i class="fa fa-facebook " aria-hidden="true"></i></a>
+                  <a href="{{$social->twitter_url}}" class="twitter wow fadeInDown animated text-center" data-wow-delay="1.2s"><i class="fa fa-twitter " aria-hidden="true"></i></a>
+                  <a href="{{$social->youtube_url}}" class="youtube wow fadeInDown animated text-center" data-wow-delay="1.4s"><i class="fa fa-youtube " aria-hidden="true"></i></a>
+                  <a href="{{$social->linkedin_url}}" class="linkedin wow fadeInDown animated text-center" data-wow-delay="1.6s"><i class="fa fa-linkedin " aria-hidden="true"></i></a>
           
             </div>
         </div>
