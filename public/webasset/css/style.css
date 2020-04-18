@@ -8406,6 +8406,7 @@ h1, h2, h3, h4, h5,
     padding-right: 0;
     color: #333333;
     opacity: 1 !important;
+    margin-left: 1px;
     border-left: solid 1px rgba(0, 0, 0, 0.1);
    /* padding: 20px; */
     /*9-12*/
