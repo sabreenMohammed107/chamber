@@ -169,7 +169,7 @@
 
         <li class="nav-item"><a href="{{url('/encyclo')}}" class=" dropdown-item nav-link  ">{{ __('links.encyclo') }}</a></li>
         <!-- <li class="nav-item"><a href="depts.html" class="nav-link  mr-2">إدارات الغرفة</a></li> -->
-        <li class="nav-item "><a href="{{url('/contact')}}" class="nav-link mr-1">{{ __('links.contact') }}</a></li>
+        <li class="nav-item "><a href="{{url('/contact')}}" class="nav-link ">{{ __('links.contact') }}</a></li>
       </ul>
     </div>
   </div>
