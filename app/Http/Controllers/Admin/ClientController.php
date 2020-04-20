@@ -24,7 +24,7 @@ class ClientController extends Controller
 
         $this->middleware('auth:admin');
         $this->object = $object;
-        $this->viewName = 'admin.clients.';
+        $this->viewName = 'Admin.clients.';
         $this->routeName = 'client.';
         $this->message = 'The Data has been saved';
         $this->errormessage = 'check Your Data ';

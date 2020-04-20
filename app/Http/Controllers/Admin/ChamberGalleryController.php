@@ -25,7 +25,7 @@ class ChamberGalleryController extends Controller
         $this->middleware('auth:admin');
 
         $this->object = $object;
-        $this->viewName = 'admin.album.';
+        $this->viewName = 'Admin.album.';
         $this->routeName = 'album.';
         $this->message = 'The Data has been saved';
         $this->errormessage = 'check Your Data ';

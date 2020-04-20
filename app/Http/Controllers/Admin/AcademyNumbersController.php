@@ -24,7 +24,7 @@ class AcademyNumbersController extends Controller
         $this->middleware('auth:admin');
 
         $this->object = $object;
-        $this->viewName = 'admin.academyNumbers.';
+        $this->viewName = 'Admin.academyNumbers.';
         $this->routeName = 'number.';
         $this->message = 'The Data has been saved';
         $this->errormessage = 'check Your Data ';

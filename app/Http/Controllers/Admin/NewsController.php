@@ -27,7 +27,7 @@ class NewsController extends Controller
         $this->middleware('auth:admin');
 
         $this->object = $object;
-        $this->viewName = 'admin.news.';
+        $this->viewName = 'Admin.news.';
         $this->routeName = 'news.';
         $this->message = 'The Data has been saved';
         $this->errormessage = 'check Your Data ';

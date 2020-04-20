@@ -23,7 +23,7 @@ class PartenerController extends Controller
 
         $this->middleware('auth:admin');
         $this->object = $object;
-        $this->viewName = 'admin.parteners.';
+        $this->viewName = 'Admin.parteners.';
         $this->routeName = 'partener.';
         $this->message = 'The Data has been saved';
         $this->errormessage = 'check Your Data ';

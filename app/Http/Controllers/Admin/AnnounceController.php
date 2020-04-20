@@ -29,7 +29,7 @@ class AnnounceController extends Controller
         $this->middleware('auth:admin');
 
         $this->object = $object;
-        $this->viewName = 'admin.announce.';
+        $this->viewName = 'Admin.announce.';
         $this->routeName = 'announce.';
         $this->message = 'The Data has been saved';
         $this->errormessage = 'check Your Data ';
