@@ -42,8 +42,12 @@ Route::resource('/admin/client', 'ClientController');
 
 /*-------------------------btsNumber-------------------*/
 Route::resource('/admin/number', 'AcademyNumbersController');
+/*-------------------------Gallery-------------------*/
+Route::resource('/admin/academyGallery', 'AcademyGalleryController');
+/*-------------------------Academy Data-------------------*/
+Route::resource('/admin/academyData', 'AcademyDataController');
 /*-------------------------slider-------------------*/
-
+Route::resource('/admin/slider', 'HomeSliderController');
  
 });
 Route::get('/admin/login', 'Auth\LoginAdminController@showLoginAdminForm')->name('admin.login');

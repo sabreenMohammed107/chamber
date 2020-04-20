@@ -51,7 +51,7 @@
                             </div>
                           </div>
                         </div>
-                      <div class="col-md-9">
+                      <div class="col-md-5">
                         <div class="form-group">
                           
 
@@ -69,7 +69,7 @@
                       </div>
                       </div>
 
-                        <div class="col-md-12">
+                        <div class="col-md-8">
                           <div class="form-group">
                             <label>Ar_name</label>
                             <div class="input-group">
@@ -77,7 +77,7 @@
                             </div>
                           </div> </div>
                          
-                          <div class="col-md-12">
+                          <div class="col-md-8">
                           <div class="form-group">
                             <label>En_name</label>
                             <div class="input-group">
