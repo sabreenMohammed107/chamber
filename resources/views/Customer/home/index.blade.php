@@ -545,7 +545,7 @@ $ladiesId=8;
         @foreach($announces as $key => $announce)
                                   <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
                                 
-                                 @if($announce->gallery->first()->image!=null)
+                                 @if($announce->gallery!= null && $announce->gallery->first()!=null &&  $announce->gallery->first()->image!=null)
                                         <img src="{{ asset('uploads/announce/'.$announce->gallery->first()->image) }}" alt="Image"
                                   style="max-width:100%;">
                                  

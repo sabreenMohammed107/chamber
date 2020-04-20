@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
 
-
+    protected $fillable = [
+        'ar_title', 'en_title', 'news_date','ar_text', 'en_text', 'searchType','home_order', 'active',
+    ];
   
    
     public function gallery()
@@ -17,6 +19,6 @@ class News extends Model
 
     public function relatednews()
     {
-        return $this->hasMany('App\Models\News','related_news_id');
+        return $this->hasMany('App\Models\Related_news','related_news_id');
     }
 }

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>BTS Admin</title>
+   <!-- Iconic Fonts -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link href="vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="vendors/iconic-fonts/flat-icons/flaticon.css">
+   <link rel="stylesheet" href="vendors/iconic-fonts/cryptocoins/cryptocoins.css">
+   <link rel="stylesheet" href="vendors/iconic-fonts/cryptocoins/cryptocoins-colors.css">
+   <!-- Bootstrap core CSS -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Date picker -->
+    <link rel="stylesheet" href="css/datepicker.css">
+   <!-- jQuery UI -->
+   <link href="css/jquery-ui.min.css" rel="stylesheet">
+   <!-- Page Specific CSS (Slick Slider.css) -->
+   <link href="css/datatables.min.css" rel="stylesheet">
+   <link href="css/slick.css" rel="stylesheet">
+     <link href="css/select.min.css" rel="stylesheet">
+     <!--sweeter-->
+     <link rel="stylesheet" href="css/sweetalert2.min.css">
+   <!-- Mystic styles -->
+   <link href="css/style.css" rel="stylesheet">
+   <!-- Favicon -->
+   <link rel="icon" type="image/png" sizes="32x32" href="img/logo/150.jpg">
+
+</head>
+
+<body class="ms-body   ms-primary-theme ms-has-quickbar">
+
+    <!-- Pre LOADER -->
+    <div id="LoaderWrapper">
+        <div class="spinner spinner-4">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    </div>
+    <!-- /Pre LOADER -->
+
+
+    <!-- Overlays -->
+    <div class="ms-aside-overlay ms-overlay-left ms-toggler" data-target="#ms-side-nav" data-toggle="slideLeft"></div>
+    <div class="ms-aside-overlay ms-overlay-right ms-toggler" data-target="#ms-recent-activity"
+        data-toggle="slideRight">
+    </div>
+    <!-- Sidebar Navigation Left -->
+    <aside id="ms-side-nav" class="side-nav fixed ms-aside-scrollable ms-aside-left">
+        <!-- Logo -->
+        <div class="logo-sn >
+      <a class=" pl-0 ml-0 text-center" href="index.html"> <img src="img/cairo-chamber-logo-footer.png" alt="logo">
+            </a>
+        </div>
+        <!-- main left  -->
+        <ul class="accordion ms-main-aside fs-14" id="side-nav-accordion">
+            <!-- Home -->
+            <li class="menu-item ">
+                <a class="active" href="home.html">
+                    <span><i class="material-icons fs-16">home</i>Home </span>
+                </a>
+            </li>
+            <!-- /Home -->
+            <!-- Setup  -->
+            <li class="menu-item">
+                <a href="#" class="has-chevron" data-toggle="collapse" data-target="#create" aria-expanded="false"
+                    aria-controls="tables">
+                    <span><i class="material-icons fs-16">build</i>Setup</span>
+                </a>
+                <ul id="create" class="collapse" aria-labelledby="tables" data-parent="#side-nav-accordion">
+                    <li> <a href="home_slider.html">Home_slider</a> </li>
+                   
+                </ul>
+            </li>
+            <!--  Setup  -->
+            <li class="menu-item">
+                <a href="#" class="has-chevron" data-toggle="collapse" data-target="#create" aria-expanded="false"
+                    aria-controls="tables">
+                    <span><i class="material-icons fs-16">build</i>Media Center</span>
+                </a>
+                <ul id="create" class="collapse" aria-labelledby="tables" data-parent="#side-nav-accordion">
+                    <li> <a href="news_page.html">news_page</a> </li>
+                    <li> <a href="Chamber_Gallery.html">Chamber Gallery</a> </li>
+                    <li> <a href="Announcements.html">Announcements</a> </li>
+                    
+                </ul>
+            </li>
+                <!-- academy   -->
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#create" aria-expanded="false"
+                        aria-controls="tables">
+                        <span><i class="material-icons fs-16">build</i>Academy</span>
+                    </a>
+                    <ul id="create" class="collapse" aria-labelledby="tables" data-parent="#side-nav-accordion">
+                        <li> <a href="Academy-in-Numbers.html">Academy in Numbers</a> </li>
+                        <li> <a href="Gallery.html">Gallery</a> </li>
+                        <li> <a href="Partners.html">Partners</a> </li>
+                        <li> <a href="Sponsors.html">Sponsors</a> </li>
+                        <li> <a href="Contact Data.html">Contact Data</a> </li>
+    
+                    </ul>
+                </li>
+        </ul>
+    </aside>
+    <!-- Main Content -->
+    <main class="body-content">
+        <!-- navar -->
+        <nav class="navbar ms-navbar">
+            <div class="ms-aside-toggler ms-toggler pl-0" data-target="#ms-side-nav" data-toggle="slideLeft">
+                <span class="ms-toggler-bar bg-primary"></span>
+                <span class="ms-toggler-bar bg-primary"></span>
+                <span class="ms-toggler-bar bg-primary"></span>
+            </div>
+            <div class="logo-sn logo-sm ms-d-block-sm">
+                <a class="pl-0 ml-0 text-center navbar-brand mr-0" href=""><img src="" alt="logo"> </a>
+            </div>
+            <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
+                </li>
+                <!-- ar & en switch -->
+                <li class="ms-nav-item  mt-2">
+                    <div class="switch">
+                        <div class="quality">
+                            <input checked="" id="q1" name="q" type="radio" value="q1">
+                            <label for="q1">EN</label>
+                        </div>
+                        <div class="quality">
+                            <input id="q2" name="q" type="radio" value="q2">
+                            <label for="q2">AR</label>
+                        </div>
+                    </div>
+                </li>
+                <!-- /ar & en switch -->
+                <li class="ms-nav-item ms-nav-user dropdown">
+                    <a href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="ms-user-img ms-img-round float-left" src="https://via.placeholder.com/270x270"
+                            alt="people">
+                        <span class="float-right">User</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="userDropdown">
+                        <li class="dropdown-menu-header">
+                            <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">Welcome, User</span>
+                            </h6>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li class="ms-dropdown-list">
+                            <a class="media fs-14 p-2" href="profile.html"> <span><i class="flaticon-user mr-2"></i>
+                                    Profile</span>
+                            </a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-menu-footer">
+                            <a class="media fs-14 p-2" href="login.html"> <span><i class="flaticon-shut-down mr-2"></i>
+                                    Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="ms-toggler ms-d-block-sm pr-0 ms-nav-toggler" data-toggle="slideDown"
+                data-target="#ms-nav-options">
+                <span class="ms-toggler-bar bg-primary"></span>
+                <span class="ms-toggler-bar bg-primary"></span>
+                <span class="ms-toggler-bar bg-primary"></span>
+            </div>
+        </nav>
+        <!-- /navar -->
+        <br>
+        <div class="ms-content-wrapper">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="home.html"><i class="material-icons"></i> Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Academy</li>
+                </ol>
+            </nav>
+            <!-- home-slider -->
+            <div class="row">
+
+                <div class="col-md-12">
+
+
+
+                    <div class="ms-panel">
+                        <div class="ms-panel-header d-flex justify-content-between">
+                            <h6>Contact-Data</h6>
+                       
+                        </div>
+                        <div class="ms-panel-body">
+                            <div class="table-responsive">
+                                <table id="courseEval" class="dattable table table-striped thead-dark  w-100">
+                                    <thead>
+                                        <th>#</th>
+                                        
+
+                                        <th>Management Phone</th>
+                                        <th>Marketing Phone</th>
+                                        <th>WhatsApp</th>
+                                        <th>Email</th>
+                                        
+                                        <th></th>
+
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td>1</td>
+                                            
+                                            <td>01120059353</td>
+
+                                            <td>022540043</td>
+                                            <td>01110049187 </td>
+                                            <td>moka@gmail.com</td>
+
+                                            <td>
+                                                <a href="#" class="btn btn-info d-inline-block"" data-toggle="modal"
+                                                    data-target="#addclient">edit</a>
+                                                
+                                                <a href="#" onclick="delette('client')"
+                                                    class="btn d-inline-block btn-danger">delete</a>
+                                                    
+                                                    
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+    </main>
+
+    <!-- Add SubCat Modal -->
+    <div class="modal fade" id="addclient" tabindex="-1" role="dialog" aria-labelledby="addclient">
+        <div class="modal-dialog modal-lg " role="document">
+            <div class="modal-content">
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
+
+                </button>
+                <h3>Add </h3>
+
+                <div class="modal-body">
+
+
+                    <div class="ms-auth-container row no-gutters">
+                        <div class="col-12 p-3">
+                            <form action="">
+                                <div class="ms-auth-container row">
+                                    
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <div class="upload-icon">
+                                                <label>Management Phone</label>
+                                            </div>
+
+                                            <div class="input-group">
+                                                <input type="url" class="form-control" id="Master AR Title">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label >Marketing Phone</label>
+                                            <div class="input-group">
+                                                <input type="url" class="form-control" id="Master AR Title">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                   
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label>WhatsApp</label>
+                                            <div class="input-group">
+                                                <input type="text" id="Sub AR Title" class="form-control"
+                                                    placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <div class="input-group">
+                                                <input type="text" id="Sub AR Title" class="form-control"
+                                                    placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                  
+                                <div class="input-group d-flex justify-content-end text-center">
+                                    <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal"
+                                        aria-label="Close">
+                                    <input type="submit" value="Add" class="btn btn-success ">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </main>
+    <!-- /Add Sub Modal -->
+
+
+
+
+
+    <!-- SCRIPTS -->
+    <!-- Global Required Scripts Start -->
+   <!-- SCRIPTS -->
+  <!-- Global Required Scripts Start -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/perfect-scrollbar.js"> </script>
+  <script src="js/jquery-ui.min.js"> </script>
+  <!-- Global Required Scripts End -->
+
+  <!-- Page Specific Scripts Start -->
+  <script src="js/slick.min.js"> </script>
+  <script src="js/moment.js"> </script>
+  <script src="js/jquery.webticker.min.js"></script>
+  <script src="js/Chart.bundle.min.js"> </script>
+  <script src="js/Chart.Financial.js"> </script>
+  <!-- <script src="js/cryptocurrency.js"> </script> -->
+  <!-- Page Specific Scripts Finish -->
+ <!-- Date picker -->
+ <script src="js/datepicker.min.js"></script>
+    <script src="js/select2.min.js"></script>
+
+  
+  <!-- Page Specific Scripts Start -->
+  <script src="js/datatables.min.js"> </script>
+  <script src="js/data-tables.js"> </script>
+  <!-- Page Specific Scripts End -->
+<!-- Circular Progress Bar -->
+<script src="vendors/jquery-circle-progress/dist/circle-progress.min.js"></script>
+  <!-- Mystic core JavaScript -->
+  <script src="js/framework.js"></script>
+<!--sweeter-->
+<script src="js/sweetalert2.min.js"></script>
+
+  <!-- Settings -->
+  <!-- <script src="//cdn.tinymce.com/4/tinymce.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.6/tinymce.min.js"></script>
+
+  <script src="js/main.js"></script>
+
+ 
+  
+    <!-- <script src="js/settings.js"></script> -->
+</body>
+
+</html>

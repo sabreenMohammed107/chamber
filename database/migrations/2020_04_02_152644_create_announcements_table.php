@@ -22,6 +22,7 @@ class CreateAnnouncementsTable extends Migration
             $table->text('en_text')->nullable();
             $table->integer('searchType')->nullable();
             $table->integer('home_order')->nullable();
+            $table->integer('active')->nullable();
             $table->timestamps();
         });
     }
