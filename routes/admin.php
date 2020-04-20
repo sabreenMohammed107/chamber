@@ -46,11 +46,11 @@ Route::resource('/admin/number', 'AcademyNumbersController');
 
  
 });
-Route::get('/admin/login', 'Auth\loginAdminController@showLoginAdminForm')->name('admin.login');
-Route::post('/admin/login', 'Auth\loginAdminController@login')->name('admin.login');
+Route::get('/admin/login', 'Auth\LoginAdminController@showLoginAdminForm')->name('admin.login');
+Route::post('/admin/login', 'Auth\LoginAdminController@login')->name('admin.login');
 Route::get('/admin/register', 'Auth\RegisterAdminController@showRegisterForm')->name('admin.register');
 Route::post('/admin/register', 'Auth\RegisterAdminController@create')->name('admin.register');
-Route::post('admin-logout', 'Auth\loginAdminController@logout')->name('admin-logout');
+Route::post('admin-logout', 'Auth\LoginAdminController@logout')->name('admin-logout');
 
 
 

@@ -1,5 +1,5 @@
 
-@extends('admin.adminLayout.main')
+@extends('Admin.adminLayout.main')
 @section('title', 'Home')
 
 
