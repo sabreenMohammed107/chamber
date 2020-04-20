@@ -1,4 +1,4 @@
-@include('admin.adminLayout.head')
+@include('Admin.adminLayout.head')
 
 
 <body class="ms-body   ms-primary-theme ms-has-quickbar">
@@ -15,11 +15,11 @@
  <div class="ms-aside-overlay ms-overlay-left ms-toggler" data-target="#ms-side-nav" data-toggle="slideLeft"></div>
  <div class="ms-aside-overlay ms-overlay-right ms-toggler" data-target="#ms-recent-activity" data-toggle="slideRight"></div>
  
-@include('admin.adminLayout.aside')
+@include('Admin.adminLayout.aside')
 
 <main class="body-content">
 
-    @include('admin.adminLayout.header')
+    @include('Admin.adminLayout.header')
      <!-- Page Content   -->
      <div class="ms-content-wrapper">
             
@@ -59,4 +59,4 @@
  
 
 
- @include('admin.adminLayout.footer')
+ @include('Admin.adminLayout.footer')
