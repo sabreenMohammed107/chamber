@@ -41,10 +41,10 @@
                         <th></th>
 
                     </thead>
-                    @foreach($galleries as $index => $gallery)
+              
          
                     <tbody>
-
+                    @foreach($galleries as $index => $gallery)
                         <tr>
                             <td>{{$index+1}}</td>
                             <td><img src="{{ asset('uploads/academy')}}/{{ $gallery->image }}" alt=""></td>
@@ -69,7 +69,7 @@
                             </td>
                         </tr>
 
-                    </tbody>
+                
 <!-- Edit SubCat Modal -->
 <div class="modal fade" id="addclient{{$gallery->id}}" tabindex="-1" role="dialog" aria-labelledby="addclient">
         <div class="modal-dialog modal-lg " role="document">
@@ -146,6 +146,7 @@
     </div>
     <!-- end Edit -->
                     @endforeach
+                    </tbody>
                 </table>
             </div>
         </div>

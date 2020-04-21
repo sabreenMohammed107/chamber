@@ -42,10 +42,10 @@
                             <th></th>
 
                         </thead>
-                        @foreach($allData as $index => $data)
-
+                    
 
                         <tbody>
+                        @foreach($allData as $index => $data)
 
                             <tr>
                                 <td>{{$index+1}}</td>
@@ -62,7 +62,6 @@
                                 </td>
                             </tr>
 
-                        </tbody>
                         <!-- Add SubCat Modal -->
                         <div class="modal fade" id="addclient{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="addclient">
                             <div class="modal-dialog modal-lg " role="document">
@@ -136,6 +135,8 @@
                        
                         <!-- /Add Sub Modal -->
                         @endforeach
+                        
+                        </tbody>
                     </table>
                 </div>
             </div>
