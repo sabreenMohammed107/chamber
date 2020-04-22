@@ -37,7 +37,7 @@
             <a class="dropdown-item" href="history.html"> {{ __('links.history') }}</a>
             <a class="dropdown-item" href="objectives.html"> {{ __('links.messageVision') }}</a>
 
-            <a class="dropdown-item" href="departments.html"> {{ __('links.dept') }} </a>
+            <a class="dropdown-item" href="{{url('/section')}}"> {{ __('links.dept') }} </a>
             <a class="dropdown-item" href="{{url('/socialres')}}"> {{ __('links.cocialResponsibility') }}</a>
           </div>
         </li>

@@ -130,8 +130,9 @@ return [
 'region'=>'Region',
 'flag'=>'Flag',
 
+// ------------------------
 
-
+'sections'=>'Chamber Sections',
 
 
 ];

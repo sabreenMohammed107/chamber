@@ -93,6 +93,9 @@ Route::namespace('Customer')->group(function () {
    Route::get('/fetch_ministry', 'EncycloController@ministryDetails');
    Route::get('/topics', 'EncycloController@topics');
    Route::get('/fetch_topics', 'EncycloController@topicsDetails');
+    /*--------------------------------------Sections--------------------------------------------*/
+    Route::get('/section', 'SectionController@index')->name('section');
+    Route::get('/sectionDetails/{id}', 'SectionController@details')->name('sectionDetails');
  
     //  Change Lang..
 Route::get('changeLang/{lang}', function($lang){
