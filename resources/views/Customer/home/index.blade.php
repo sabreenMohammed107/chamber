@@ -223,7 +223,7 @@
                                   @else
                                   <img src="" alt="no image">
                                   @endif
-                                        <div class="card-body">
+                                        <div class="card-body" style="width:100% !important">
                                             <h5>
                                             @if(app()->getLocale()=='en')
                                             {{$new->en_title}}
@@ -231,13 +231,13 @@
                     {{$new->ar_title}}
 					@endif
                                             </h5>
-                                            <!-- <p> 
+                                            <p> 
                                             @if(app()->getLocale()=='en')
                                             {!! Str::limit($new->en_text, 70,'...') !!}
 					@else
                     {!! Str::limit($new->ar_text, 100,'...') !!}
 					@endif
-                                                </p> -->
+                                                </p>
 
                                             <a href="{{ url('newsDetails/'.$new->id) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
                                         </div>
