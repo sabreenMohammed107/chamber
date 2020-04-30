@@ -204,7 +204,7 @@
                           box-shadow: 2px 2px 2px 2px #2a282852;
                           text-align: center;
                           margin-bottom: 16px;
-                         
+
                           background-color: #fff;
                           background-clip: border-box;
                           border: 0;
@@ -228,19 +228,19 @@
                           <div class="cardx">
                             @if($new->gallery!=null && $new->gallery->first() !=null && $new->gallery->first()->order==1)
                             @if($new->gallery->first()->image!=null)
-                            <img style="width:30% ;height:200px" src="{{ asset('uploads/news/'.$new->gallery->first()->image) }}" alt="...">
+                            <img style="width:100% ;height:200px" src="{{ asset('uploads/news/'.$new->gallery->first()->image) }}" alt="...">
                             @else
                             <iframe id="popup-youtube-player" width="100%" height="200" src="{{$new->gallery->first()->vedio}}" frameborder="0" allowfullscreen="true" allowscriptaccess="always"></iframe>
                             @endif
                             @else
-                            <img src=""  alt="no image">
+                            <img src="" alt="no image">
                             @endif
                             <div class="card-body">
                               <h5>
                                 @if(app()->getLocale()=='en')
-                                {{$new->en_title}}
+                                {{Str::limit($new->en_title,10,'')}}
                                 @else
-                                {{$new->ar_title}}
+                                {{Str::limit($new->ar_title,10,'')}}
                                 @endif
                               </h5>
                               <p>
