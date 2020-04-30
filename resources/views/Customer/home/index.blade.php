@@ -239,9 +239,9 @@
                             <div style=" position: relative ;height: 18%; border-bottom:1px solid #ccc;">
                               <h5>
                                 @if(app()->getLocale()=='en')
-                                {{$new->en_title}}
+                                {{ Str::limit($new->en_title, 20,'...')}}
                                 @else
-                                {{$new->ar_title}}
+                                {{ Str::limit($new->an_title, 20,'...')}}
                                 @endif
                               </h5>
                               </div>
