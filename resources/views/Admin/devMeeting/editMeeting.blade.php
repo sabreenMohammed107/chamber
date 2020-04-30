@@ -119,7 +119,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                    <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
+                                <a href="{{ route('devMeeting.edit',$devisionrow->id) }}" class="btn btn-dark mx-2"> Cancel</a>
                                     <input type="submit" value="Add" class="btn btn-success ">
                                 </div>
                         </form>
