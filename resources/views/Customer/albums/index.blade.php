@@ -87,9 +87,9 @@
                                   @endif
         
                                   @if(app()->getLocale()=='en')
-                                  {{ Str::limit($news->en_text, 50,'') }}
+                                  {!! Str::limit($news->en_text, 50,'') !!}
 					@else
-                    {{ Str::limit($news->ar_text, 50,'') }}
+                    {!! Str::limit($news->ar_text, 50,'') !!}
                     @endif
         
  

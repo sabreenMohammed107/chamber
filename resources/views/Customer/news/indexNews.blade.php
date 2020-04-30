@@ -30,9 +30,9 @@
                                             </h5>
                                             <p> 
                                             @if(app()->getLocale()=='en')
-                                            {{ Str::limit($new->en_text, 70,'...') }}
+                                            {!! Str::limit($new->en_text, 70,'...') !!}
 					@else
-                    {{ Str::limit($new->ar_text, 100,'...') }}
+                    {!! Str::limit($new->ar_text, 100,'...') !!}
 					@endif
                                                 </p>
 
@@ -122,9 +122,9 @@
                                   @endif
         
                                   @if(app()->getLocale()=='en')
-                                  {{ Str::limit($news->en_text, 50,'') }}
+                                  {!! Str::limit($news->en_text, 50,'') !!}
 					@else
-                    {{ Str::limit($news->ar_text, 50,'') }}
+                    {!! Str::limit($news->ar_text, 50,'') !!}
                     @endif
         
  

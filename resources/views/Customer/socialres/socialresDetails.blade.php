@@ -36,9 +36,9 @@
                     @endif</h2>
                       </div>
                       <p>  @if(app()->getLocale()=='en')
-                  {{ $socialresObj->en_text}}
+                  {!! $socialresObj->en_text !!}
                   @else
-                  {{$socialresObj->ar_text}}
+                  {!! $socialresObj->ar_text !!}
                   @endif </p>
          
                      

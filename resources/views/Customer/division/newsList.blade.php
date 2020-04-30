@@ -22,9 +22,9 @@
                     @endif</h6>
                     <p> 
                                             @if(app()->getLocale()=='en')
-                                            {{ Str::limit($list->en_text, 70,'...') }}
+                                            {!! Str::limit($list->en_text, 70,'...') !!}
 					@else
-                    {{ Str::limit($list->ar_text, 100,'...') }}
+                    {!! Str::limit($list->ar_text, 100,'...') !!}
 					@endif
                                                 </p>
             </a>

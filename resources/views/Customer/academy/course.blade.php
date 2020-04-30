@@ -81,9 +81,9 @@
                     </h4>
                     <p class="card-text">
                       @if(app()->getLocale()=='en')
-                      {{ Str::limit($gallery->en_description, 120,'...') }}
+                      {!! Str::limit($gallery->en_description, 120,'...') !!}
                       @else
-                      {{ Str::limit($gallery->ar_description, 150,'...') }}
+                      {!! Str::limit($gallery->ar_description, 150,'...') !!}
                       @endif
                     </p>
                     <a href="{{ url('courseRegisteration/'.$gallery->id) }}" class="btn btn-primary">{{ __('titles.registerbutton') }}</a>

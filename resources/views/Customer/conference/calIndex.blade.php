@@ -31,9 +31,9 @@
                                             </a>
 <p>
 @if(app()->getLocale()=='en')
-                                    {{ Str::limit($conference->en_text, 100,'') }}
+                                    {!! Str::limit($conference->en_text, 100,'') !!}
 					@else
-                    {{ Str::limit($conference->ar_text, 100,'') }}
+                    {!! Str::limit($conference->ar_text, 100,'') !!}
 					@endif
                                        
                                           

@@ -57,9 +57,9 @@
                               
                              <p>
                              @if(app()->getLocale()=='en')
-                             {{$announceObj->en_text}} 
+                             {!! $announceObj->en_text !!} 
 					@else
-                    {{$announceObj->ar_text}} 
+                    {!! $announceObj->ar_text !!} 
 					@endif
                                  </p>
                             </div>
@@ -90,9 +90,9 @@
                                 
                                     <a href="{{ url('announceDetails/'.$galleryAnn->relatedannounce->id) }}"><p class="card-text">
                                     @if(app()->getLocale()=='en')
-                                    {{ Str::limit($galleryAnn->relatedannounce->en_text, 100,'') }}
+                                    {!! Str::limit($galleryAnn->relatedannounce->en_text, 100,'') !!}
 					@else
-                    {{ Str::limit($galleryAnn->relatedannounce->ar_text, 100,'') }}
+                    {!! Str::limit($galleryAnn->relatedannounce->ar_text, 100,'') !!}
 					@endif
                                        
                                                
@@ -172,7 +172,7 @@
                                   @endif
         
          
-          {{ Str::limit($Anno->ar_text, 50,'') }}
+          {!! Str::limit($Anno->ar_text, 50,'') !!}
  
          </p></a>
         </div>

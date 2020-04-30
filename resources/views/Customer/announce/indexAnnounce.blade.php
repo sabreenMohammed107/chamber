@@ -30,9 +30,9 @@
                                             </h5>
                                             <p> 
                                             @if(app()->getLocale()=='en')
-                                            {{ Str::limit($announce->en_text, 70,'...') }}
+                                            {!! Str::limit($announce->en_text, 70,'...') !!}
 					@else
-                    {{ Str::limit($announce->ar_text, 100,'...') }}
+                    {!! Str::limit($announce->ar_text, 100,'...') !!}
 					@endif
                                                 </p>
 {{$announce->id}}
@@ -121,9 +121,9 @@
                                   @endif
         
                                   @if(app()->getLocale()=='en')
-                                  {{ Str::limit($announcess->en_text, 50,'') }}
+                                  {!! Str::limit($announcess->en_text, 50,'') !!}
 					@else
-                    {{ Str::limit($announcess->ar_text, 50,'') }}
+                    {!! Str::limit($announcess->ar_text, 50,'') !!}
                     @endif
         
  

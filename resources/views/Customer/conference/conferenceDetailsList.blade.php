@@ -56,9 +56,9 @@
                               
                              <p>
                              @if(app()->getLocale()=='en')
-                             {{$conferenceObj->en_text}} 
+                             {!! $conferenceObj->en_text !!} 
 					@else
-                    {{$conferenceObj->ar_text}} 
+                    {!! $conferenceObj->ar_text !!} 
 					@endif
                                  </p>
                             </div>
@@ -89,9 +89,9 @@
                                    
                                     <a href="{{ url('conferenceDetails/'.$galleryConf->relatedConferences->id) }}"><p class="card-text">
                                     @if(app()->getLocale()=='en')
-                                    {{ Str::limit($galleryConf->relatedConferences->en_text, 100,'') }}
+                                    {!! Str::limit($galleryConf->relatedConferences->en_text, 100,'') !!}
 					@else
-                    {{ Str::limit($galleryConf->relatedConferences->ar_text, 100,'') }}
+                    {!! Str::limit($galleryConf->relatedConferences->ar_text, 100,'') !!}
 					@endif
                                        
                                                

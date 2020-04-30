@@ -105,9 +105,9 @@
                                             </h5>
                                             <p> 
                                             @if(app()->getLocale()=='en')
-                                            {{ Str::limit($item['en_text'], 70,'...') }}
+                                            {!! Str::limit($item['en_text'], 70,'...') !!}
 					@else
-                    {{ Str::limit($item['ar_text'], 100,'...') }}
+                    {!! Str::limit($item['ar_text'], 100,'...') !!}
 					@endif
                                                 </p>
                                                 @if($item['searchType']==0)

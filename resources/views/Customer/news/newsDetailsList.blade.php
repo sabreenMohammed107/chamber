@@ -57,9 +57,9 @@
                               
                              <p>
                              @if(app()->getLocale()=='en')
-                             {{$newsObj->en_text}} 
+                             {!!$newsObj->en_text !!} 
 					@else
-                    {{$newsObj->ar_text}} 
+                    {!! $newsObj->ar_text !!} 
 					@endif
                                  </p>
                             </div>
@@ -90,9 +90,9 @@
                                    
                                     <a href="{{ url('newsDetails/'.$gallerynew->relatednews->id) }}"><p class="card-text">
                                     @if(app()->getLocale()=='en')
-                                    {{ Str::limit($gallerynew->relatednews->en_text, 100,'') }}
+                                    {!! Str::limit($gallerynew->relatednews->en_text, 100,'') !!}
 					@else
-                    {{ Str::limit($gallerynew->relatednews->ar_text, 100,'') }}
+                    {!! Str::limit($gallerynew->relatednews->ar_text, 100,'') !!}
 					@endif
                                        
                                                

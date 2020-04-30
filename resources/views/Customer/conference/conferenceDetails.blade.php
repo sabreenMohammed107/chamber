@@ -82,7 +82,7 @@
                                   @endif
         
          
-          {{ Str::limit($conf->ar_text, 50,'') }}
+          {!! Str::limit($conf->ar_text, 50,'') !!}
  
          </p></a>
         </div>

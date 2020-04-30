@@ -33,9 +33,9 @@ $current=date_create(now());
                 <td  data-toggle="tooltip" data-placement="top" title="{{$schedul->en_title}}">
                   <a href="devisionPage.html" class="text-dark">
                   @if(app()->getLocale()=='en')
-                            {{$schedul->en_schedule}} 
+                            {!! $schedul->en_schedule !!} 
 					@else
-                    {{$schedul->ar_schedule}} 
+                    {!! $schedul->ar_schedule !!} 
                     @endif
                   </a>
                 </td>

@@ -20,9 +20,9 @@
               </div>
               <p><a href="#" class="text-dark">
                   @if(app()->getLocale()=='en')
-                  {{ Str::limit($socialr->en_text, 70,'...') }}
+                  {!! Str::limit($socialr->en_text, 70,'...') !!}
                   @else
-                  {{ Str::limit($socialr->ar_text, 100,'...') }}
+                  {!! Str::limit($socialr->ar_text, 100,'...') !!}
                   @endif
                 </a></p>
               <p class="clearfix">

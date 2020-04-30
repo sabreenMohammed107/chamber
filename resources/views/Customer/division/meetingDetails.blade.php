@@ -81,9 +81,9 @@
                               
                              <p>
                              @if(app()->getLocale()=='en')
-                             {{$newsObj->en_text}} 
+                             {!! $newsObj->en_text !!} 
 					@else
-                    {{$newsObj->ar_text}} 
+                    {!! $newsObj->ar_text !!} 
 					@endif
                                  </p>
                             </div>
