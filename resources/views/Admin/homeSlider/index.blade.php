@@ -119,6 +119,24 @@
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <div class="form-group">
+                    <label>Sub AR Title</label>
+                    <div class="input-group">
+                      <input type="text" id="Sub AR Title" name="sub_ar_text" class="form-control" placeholder="">
+                    </div>
+                  </div>
+                </div>
+               
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label>Master EN Title</label>
+                    <div class="input-group">
+                      <input type="text" name="master_en_text" id="Master EN Title" class="form-control" placeholder="">
+                    </div>
+                  </div>
+                </div>
+               
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
                     <label for="example2">Sub EN Text</label>
                     <div class="input-group">
                       <input type="text" name="sub_en_text" class="form-control" id="Master AR Title">
@@ -126,23 +144,6 @@
                   </div>
                 </div>
 
-                <div class="col-md-6 col-sm-12">
-                  <div class="form-group">
-                    <label>Master EN Title</label>
-                    <div class="input-group">
-                      <input type="text" name="master_ar_text" id="Master EN Title" class="form-control" placeholder="">
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <div class="form-group">
-                    <label>Sub AR Title</label>
-                    <div class="input-group">
-                      <input type="text" id="Sub AR Title" name="sub_ar_text" class="form-control" placeholder="">
-                    </div>
-                  </div>
-                </div>
-                
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>URL</label>
