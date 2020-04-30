@@ -200,16 +200,21 @@
                     </div>
                     <div class=" panel-body ">
                       <style>
-                      
-                          .card {
-    box-shadow: 2px 2px 2px 2px #2a282852;
-    text-align: center;
-    margin-bottom: 16px;
-    position: relative;
+                        .cardx {
+                          box-shadow: 2px 2px 2px 2px #2a282852;
+                          text-align: center;
+                          margin-bottom: 16px;
+                          position: relative;
 
                         }
 
-                        .card p {
+                        .desc-wrap {
+                          padding: 20px;
+                          background-color: #fff;
+                          box-shadow: 0px 10px 30px 0px rgba(153, 153, 153, 0.1);
+                        }
+
+                        .desc-wrap p {
                           text-align: right !important;
                           font-size: 14px !important;
                         }
@@ -219,16 +224,18 @@
                         @foreach($news as $new)
 
                         <div class=" col-md-4 wow fadeInDown" data-wow-delay="0.2s" data-wow-duration="1s" data-wow-delay="0s">
-                          <div class="card" style="width:100% !important">
+                          <div class="cardx" style="width:100% !important">
                             @if($new->gallery!=null && $new->gallery->first() !=null && $new->gallery->first()->order==1)
                             @if($new->gallery->first()->image!=null)
-                            <img src="{{ asset('uploads/news/'.$new->gallery->first()->image) }}" alt="...">
-                            @else
-                            <iframe id="popup-youtube-player" width="100%" height="200" src="{{$new->gallery->first()->vedio}}" frameborder="0" allowfullscreen="true" allowscriptaccess="always"></iframe>
-                            @endif
-                            @else
-                            <img src="" alt="no image">
-                            @endif
+                            <div class="thumb">
+                              <img style="width:100% " src="{{ asset('uploads/news/'.$new->gallery->first()->image) }}" alt="...">
+                              @else
+                              <iframe id="popup-youtube-player" width="100%" height="200" src="{{$new->gallery->first()->vedio}}" frameborder="0" allowfullscreen="true" allowscriptaccess="always"></iframe>
+                              @endif
+                              @else
+                              <img style="width:100% " src="" alt="no image">
+                              @endif
+                            </div>
                             <div>
                               <h5>
                                 @if(app()->getLocale()=='en')
@@ -237,13 +244,15 @@
                                 {{$new->ar_title}}
                                 @endif
                               </h5>
-                              <p >
-                                <!-- @if(app()->getLocale()=='en')
-                                {!! Str::limit($new->en_text, 70,'...') !!}
-                                @else
-                                {!! Str::limit($new->ar_text, 100,'...') !!}
-                                @endif -->
-                              </p>
+                              <div class="desc-wrap">
+                                <p>
+                                  @if(app()->getLocale()=='en')
+                                  {!! Str::limit($new->en_text, 70,'...') !!}
+                                  @else
+                                  {!! Str::limit($new->ar_text, 100,'...') !!}
+                                  @endif
+                                </p>
+                              </div>
 
                               <a href="{{ url('newsDetails/'.$new->id) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
                             </div>
@@ -255,136 +264,136 @@
 
 
 
-                        @endforeach
+                          @endforeach
+
+                        </div>
 
                       </div>
-
                     </div>
                   </div>
+
+
+
+
+                  <div class="col-md-4 text-center"></div>
+
+                  <div class="col-md-4 text-center  mt-5">
+                    <p><a href="{{url('/news')}}" class="btn btn-primary w-100">{{ __('titles.seeAll') }}</a></p>
+                  </div>
+
+
                 </div>
-
-
-
-
-                <div class="col-md-4 text-center"></div>
-
-                <div class="col-md-4 text-center  mt-5">
-                  <p><a href="{{url('/news')}}" class="btn btn-primary w-100">{{ __('titles.seeAll') }}</a></p>
-                </div>
-
-
               </div>
-            </div>
-            <!--===================End News tab ====================-->
+              <!--===================End News tab ====================-->
 
-            <div class="tab-pane fade " id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab" style="padding: 50px 0 100px 0!important; ">
-              <div class="row d-flex justify-content-center greyly " style="padding: 130px 0 !important; ">
-
+              <div class="tab-pane fade " id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab" style="padding: 50px 0 100px 0!important; ">
+                <div class="row d-flex justify-content-center greyly " style="padding: 130px 0 !important; ">
 
 
-                <div class="col-md-4 col-5 text-center electronicPayment">
-                  <a href="{{url('/online-payment')}}">
-                    <img src="{{ asset('webasset/images/icons/payment.png')}}" class="img-fluid mb-4">
-                    <h5>{{ __('titles.serv') }} <br>{{ __('titles.payment') }} </h5>
-                  </a>
+
+                  <div class="col-md-4 col-5 text-center electronicPayment">
+                    <a href="{{url('/online-payment')}}">
+                      <img src="{{ asset('webasset/images/icons/payment.png')}}" class="img-fluid mb-4">
+                      <h5>{{ __('titles.serv') }} <br>{{ __('titles.payment') }} </h5>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4 col-5 text-center electronicPayment">
+                    <a href="{{url('/qr-code')}}">
+                      <img src="{{ asset('webasset/images/icons/qr-code.png')}}" class="img-fluid mb-4">
+                      <h5>{{ __('titles.serv') }} <br>{{ __('titles.qr') }} </h5>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4 col-5 text-center electronicPayment">
+                    <a href="{{url('/blockchain')}}">
+                      <img src="{{ asset('webasset/images/icons/blockchain.png')}}" class="img-fluid mb-4">
+                      <h5>{{ __('titles.serv') }} <br>{{ __('titles.block') }} </h5>
+                    </a>
+                  </div>
+
+
+
                 </div>
-
-                <div class="col-md-4 col-5 text-center electronicPayment">
-                  <a href="{{url('/qr-code')}}">
-                    <img src="{{ asset('webasset/images/icons/qr-code.png')}}" class="img-fluid mb-4">
-                    <h5>{{ __('titles.serv') }} <br>{{ __('titles.qr') }} </h5>
-                  </a>
-                </div>
-
-                <div class="col-md-4 col-5 text-center electronicPayment">
-                  <a href="{{url('/blockchain')}}">
-                    <img src="{{ asset('webasset/images/icons/blockchain.png')}}" class="img-fluid mb-4">
-                    <h5>{{ __('titles.serv') }} <br>{{ __('titles.block') }} </h5>
-                  </a>
-                </div>
-
-
-
               </div>
-            </div>
 
-            <div class="tab-pane fade greyly" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab" style="padding: 80px 0 100px 0!important; margin-top: 70px;">
-              <div class="row d-md-flex justify-content-center chamberServices" style="padding: 30px 0 !important; ">
-                <?php
-                $articleId = 1;
-                $medicalId = 2;
-                $insuranceId = 3;
-                $ershadId = 4;
-                $clubId = 5;
-                $chamberConferanceId = 6;
-                $tawfeekId = 7;
-                $ladiesId = 8;
+              <div class="tab-pane fade greyly" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab" style="padding: 80px 0 100px 0!important; margin-top: 70px;">
+                <div class="row d-md-flex justify-content-center chamberServices" style="padding: 30px 0 !important; ">
+                  <?php
+                  $articleId = 1;
+                  $medicalId = 2;
+                  $insuranceId = 3;
+                  $ershadId = 4;
+                  $clubId = 5;
+                  $chamberConferanceId = 6;
+                  $tawfeekId = 7;
+                  $ladiesId = 8;
 
-                ?>
+                  ?>
 
-                <div class="col-md-3 col-6 text-center ">
-                  <a href="{{ url('article/'.$insuranceId) }}">
-                    <img src="{{ asset('webasset/images/icons/heartbeat.png')}}" class="img-fluid mb-4">
-                    <h5>{{ __('links.lifeInsurance') }}</h5>
-                  </a>
+                  <div class="col-md-3 col-6 text-center ">
+                    <a href="{{ url('article/'.$insuranceId) }}">
+                      <img src="{{ asset('webasset/images/icons/heartbeat.png')}}" class="img-fluid mb-4">
+                      <h5>{{ __('links.lifeInsurance') }}</h5>
+                    </a>
+                  </div>
+
+
+
+                  <div class="col-md-3 col-6 text-center">
+                    <a href="{{ url('article/'.$medicalId) }}">
+                      <img src="{{ asset('webasset/images/icons/first-aid-kit.png')}}" class="img-fluid mb-4">
+                      <h5>{{ __('links.healthCare') }}</h5>
+                    </a>
+                  </div>
+                  <div class="col-md-3 col-6 text-center">
+                    <a href="{{ url('article/'.$tawfeekId) }}">
+                      <img src="{{ asset('webasset/images/icons/champr-serv-icon-3 (1).png')}}" class="img-fluid mb-4">
+                      <h5>{{ __('links.arbitration') }}</h5>
+                    </a>
+                  </div>
+
+                  <div class="col-md-3 col-6 text-center">
+                    <a href="{{ url('article/'.$articleId) }}">
+                      <img src="{{ asset('webasset/images/icons/education.png')}}" class="img-fluid mb-4">
+                      <h5>{{ __('links.excellence') }}</h5>
+                    </a>
+                  </div>
+
+
+                  <div class="col-md-4 col-6 text-center mt-5">
+                    <a href="{{ url('article/'.$chamberConferanceId) }}">
+                      <img src="{{ asset('webasset/images/icons/meeting.png')}}" class="img-fluid mb-4">
+                      <h5>{{ __('links.conferenceRoom') }}</h5>
+                    </a>
+                  </div>
+
+
+                  <div class="col-md-4 col-6 text-center mt-5">
+                    <a href="{{ url('article/'.$clubId) }}">
+                      <img src="{{ asset('webasset/images/icons/global-community.png')}}" class="img-fluid mb-4">
+                      <h5>{{ __('links.tradersClub') }}</h5>
+                    </a>
+                  </div>
+
+
+                  <div class="col-md-4 col-6 text-center mt-5">
+                    <a href="{{ url('article/'.$ershadId) }}">
+                      <img src="{{ asset('webasset/images/icons/business-people.png')}}" class="img-fluid mb-4">
+                      <h5>{{ __('links.commerExtention') }}</h5>
+                    </a>
+                  </div>
+
+
+
                 </div>
-
-
-
-                <div class="col-md-3 col-6 text-center">
-                  <a href="{{ url('article/'.$medicalId) }}">
-                    <img src="{{ asset('webasset/images/icons/first-aid-kit.png')}}" class="img-fluid mb-4">
-                    <h5>{{ __('links.healthCare') }}</h5>
-                  </a>
-                </div>
-                <div class="col-md-3 col-6 text-center">
-                  <a href="{{ url('article/'.$tawfeekId) }}">
-                    <img src="{{ asset('webasset/images/icons/champr-serv-icon-3 (1).png')}}" class="img-fluid mb-4">
-                    <h5>{{ __('links.arbitration') }}</h5>
-                  </a>
-                </div>
-
-                <div class="col-md-3 col-6 text-center">
-                  <a href="{{ url('article/'.$articleId) }}">
-                    <img src="{{ asset('webasset/images/icons/education.png')}}" class="img-fluid mb-4">
-                    <h5>{{ __('links.excellence') }}</h5>
-                  </a>
-                </div>
-
-
-                <div class="col-md-4 col-6 text-center mt-5">
-                  <a href="{{ url('article/'.$chamberConferanceId) }}">
-                    <img src="{{ asset('webasset/images/icons/meeting.png')}}" class="img-fluid mb-4">
-                    <h5>{{ __('links.conferenceRoom') }}</h5>
-                  </a>
-                </div>
-
-
-                <div class="col-md-4 col-6 text-center mt-5">
-                  <a href="{{ url('article/'.$clubId) }}">
-                    <img src="{{ asset('webasset/images/icons/global-community.png')}}" class="img-fluid mb-4">
-                    <h5>{{ __('links.tradersClub') }}</h5>
-                  </a>
-                </div>
-
-
-                <div class="col-md-4 col-6 text-center mt-5">
-                  <a href="{{ url('article/'.$ershadId) }}">
-                    <img src="{{ asset('webasset/images/icons/business-people.png')}}" class="img-fluid mb-4">
-                    <h5>{{ __('links.commerExtention') }}</h5>
-                  </a>
-                </div>
-
-
-
               </div>
-            </div>
 
-            <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-day-4-tab">
+              <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-day-4-tab">
 
-              <!--=======================End events tab=========================-->
+                <!--=======================End events tab=========================-->
 
-              <!-- <div class="tab-pane fade" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-day-5-tab">
+                <!-- <div class="tab-pane fade" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-day-5-tab">
             <div class="row justify-content-center">
 
 
@@ -393,11 +402,11 @@
             </div>
           </div> -->
 
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 </section>
 <!--========== End Tabs ==========-->
 <!--===========strat traning section =============-->
