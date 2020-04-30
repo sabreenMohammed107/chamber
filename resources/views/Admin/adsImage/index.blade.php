@@ -63,18 +63,7 @@
                                     </form>
                                 </td>
                             </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-    @foreach($ads as $data)
-    <!-- Add SubCat Modal -->
+                             <!-- Add SubCat Modal -->
     <div class="modal fade" id="addclient{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="addclient">
         <div class="modal-dialog modal-lg " role="document">
             <div class="modal-content">
@@ -145,8 +134,16 @@
     </div>
     </main>
     <!-- /Add Sub Modal -->
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
-    @endforeach
+    </div>
+
+
 
 
     @endsection
