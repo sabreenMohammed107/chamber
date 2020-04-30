@@ -85,6 +85,7 @@
 
           <div class="card-body">
 
+          
             <a href="{{ url('conferenceDetails/'.$galleryConf->relatedConferences->id) }}">
               <p class="card-text">
                 @if(app()->getLocale()=='en')
