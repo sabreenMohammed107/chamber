@@ -198,7 +198,13 @@
                     <!-- <p id="newTitle"> الاخبار</p> -->
                   </div>
                   <div class=" panel-body ">
-                 
+                 <style>
+                   .card p {
+    text-align: right !important;
+    font-size: 14px !important;
+}
+                   </style>
+
                   <div class="row">
                   @foreach($news as $new)
                    
@@ -226,9 +232,9 @@
                                             </h5>
                                             <p> 
                                             @if(app()->getLocale()=='en')
-                                            {{ Str::limit($new->en_text, 70,'...') }}
+                                            {!! Str::limit($new->en_text, 70,'...') !!}
 					@else
-                    {{ Str::limit($new->ar_text, 100,'...') }}
+                    {!! Str::limit($new->ar_text, 100,'...') !!}
 					@endif
                                                 </p>
 
