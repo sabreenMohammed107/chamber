@@ -228,7 +228,7 @@
                           <div class="cardx">
                             @if($new->gallery!=null && $new->gallery->first() !=null && $new->gallery->first()->order==1)
                             @if($new->gallery->first()->image!=null)
-                            <img style="width:100%" src="{{ asset('uploads/news/'.$new->gallery->first()->image) }}" alt="...">
+                            <img style="width:30% ;height:200px" src="{{ asset('uploads/news/'.$new->gallery->first()->image) }}" alt="...">
                             @else
                             <iframe id="popup-youtube-player" width="100%" height="200" src="{{$new->gallery->first()->vedio}}" frameborder="0" allowfullscreen="true" allowscriptaccess="always"></iframe>
                             @endif
