@@ -237,7 +237,7 @@
                                 {{$new->ar_title}}
                                 @endif
                               </h5>
-                              <p>
+                              <p style="position: relative">
                                 @if(app()->getLocale()=='en')
                                 {!! Str::limit($new->en_text, 70,'...') !!}
                                 @else
