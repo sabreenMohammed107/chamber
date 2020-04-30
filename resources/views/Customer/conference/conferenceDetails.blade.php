@@ -81,9 +81,11 @@
           width: 62px; margin-right: 15px;">
                                   @endif
         
-         
-          {!! Str::limit($conf->ar_text, 50,'') !!}
- 
+                                  <?php
+          $output = nl2br(str_replace("&nbsp;", " ", $conf->ar_text));
+          ?>
+          {{str_limit(strip_tags($output),50,'...')}}
+       
          </p></a>
         </div>
     </div>

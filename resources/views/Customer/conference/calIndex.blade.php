@@ -32,8 +32,12 @@
 <p>
 @if(app()->getLocale()=='en')
                                     {!! Str::limit($conference->en_text, 100,'') !!}
-					@else
-                    {!! Str::limit($conference->ar_text, 100,'') !!}
+                    @else
+                    <?php
+          $output = nl2br(str_replace("&nbsp;", " ",$conference->ar_text));
+          ?>
+          {{str_limit(strip_tags($output),100,'...')}}
+                  
 					@endif
                                        
                                           

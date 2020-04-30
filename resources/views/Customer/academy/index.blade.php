@@ -27,7 +27,7 @@
                     <h2 class="mb-4 text-decoration">{{ __('links.aboutAcademy') }}</h2>
                 </div>
 
-
+    
                 {!!$data->ar_text!!}
 
 
