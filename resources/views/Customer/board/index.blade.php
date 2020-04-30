@@ -149,12 +149,14 @@
           <div class="col-md-12 mt-4" style="margin-bottom: 30px;">
 
             <h5 class="mb-4">
+            @if($prevBoard)
               <a class=" heading-section font-weight-bold mb-4">
                 <?php $date = date_create($prevBoard->from_date);
                 $toDate = date_create($prevBoard->to_date);
                 ?>
                 {{ __('titles.boards_from') }} {{ date_format($date,"Y") }} {{ __('titles.boards_to') }} {{ date_format($toDate,"Y") }}
               </a>
+              @endif
             </h5>
           </div>
 
