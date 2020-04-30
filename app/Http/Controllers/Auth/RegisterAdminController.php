@@ -23,24 +23,24 @@ class RegisterAdminController extends Controller
     |
     */
 
-    use RegistersUsers;
+    // use RegistersUsers;
 
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    public $redirectTo = '/admin';
+    // /**
+    //  * Where to redirect users after registration.
+    //  *
+    //  * @var string
+    //  */
+    // public $redirectTo = '/admin';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest:admin')->except('logout');
-    }
+    // /**
+    //  * Create a new controller instance.
+    //  *
+    //  * @return void
+    //  */
+    // public function __construct()
+    // {
+    //     $this->middleware('guest:admin')->except('logout');
+    // }
 
     /** Overrriding native method */
     public function showRegisterForm()
@@ -71,25 +71,19 @@ class RegisterAdminController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(Request $request)
+
+
+    protected function create(Request $data)
     {
-  
-        event(new Registered($user =Admin::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'role'=>$request->role,
-          
-            'password' => Hash::make($request->password)
-        ])));
+        $user= Admin::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' =>uniqid(),
+            'role' =>2,
 
-        Auth::guard('admin')->login($user);
+        ]);
 
-        return $this->registered($request, $user)
-                        ?: redirect($this->redirectPath());
-            return redirect()->intended(url('/admin'));
-       
-    
-     
+    //   return redirect('/home');
+     return redirect('/admin')->with('flash_success',"$user->name's password has been reset successfully! Password('$user->password')");  
     }
 }

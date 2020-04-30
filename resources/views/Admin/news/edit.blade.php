@@ -172,9 +172,9 @@
 
                                                 </tr>
                                             </thead>
-                                            @foreach($galleries as $index => $gallery)
-                                            <tbody>
 
+                                            <tbody>
+                                                @foreach($galleries as $index => $gallery)
                                                 <tr>
                                                     <td>{{$index+1}}</td>
                                                     <td><img src="{{ asset('uploads/news')}}/{{ $gallery->image }}" alt=""></td>
@@ -206,91 +206,92 @@
 
                                                 </tr>
 
-                                            </tbody>
-
-                                            <!-- ADD -->
-                                            <div class="modal fade" id="add-Annoucement-Gallery{{$gallery->id}}" tabindex="-1" role="dialog" aria-labelledby="addCat">
-                                                <div class="modal-dialog modal-lg " role="document">
-                                                    <div class="modal-content">
-                                                        <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
-
-                                                        </button>
-                                                        <h3>Edit News Gallery </h3>
-                                                        <div class="modal-body">
 
 
-                                                            <div class="ms-auth-container row no-gutters">
-                                                                <div class="col-12 p-3">
-                                                                    <form action="{{route('updateNews')}}" method="POST" enctype="multipart/form-data">
-                                                                        {{ csrf_field() }}
+                                                <!-- ADD -->
+                                                <div class="modal fade" id="add-Annoucement-Gallery{{$gallery->id}}" tabindex="-1" role="dialog" aria-labelledby="addCat">
+                                                    <div class="modal-dialog modal-lg " role="document">
+                                                        <div class="modal-content">
+                                                            <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
+
+                                                            </button>
+                                                            <h3>Edit News Gallery </h3>
+                                                            <div class="modal-body">
 
 
-                                                                        <input type="hidden" name="news_id" value="{{$row->id}}">
-                                                                        <input type="hidden" name="gallery_id" value="{{$gallery->id}}">
-                                                                        <div class="ms-auth-container row">
-                                                                            <div class="col-md-12">
-                                                                                <div class="form-group">
-                                                                                    <div class="img-upload">
-                                                                                        <img src="{{ asset('uploads/news')}}/{{ $gallery->image }}" alt="">
+                                                                <div class="ms-auth-container row no-gutters">
+                                                                    <div class="col-12 p-3">
+                                                                        <form action="{{route('updateNews')}}" method="POST" enctype="multipart/form-data">
+                                                                            {{ csrf_field() }}
+
+
+                                                                            <input type="hidden" name="news_id" value="{{$row->id}}">
+                                                                            <input type="hidden" name="gallery_id" value="{{$gallery->id}}">
+                                                                            <div class="ms-auth-container row">
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <div class="img-upload">
+                                                                                            <img src="{{ asset('uploads/news')}}/{{ $gallery->image }}" alt="">
+                                                                                            <div class="upload-icon">
+                                                                                                <input type="file" name="image" class="upload">
+                                                                                                <i class="fas fa-camera    "></i>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
                                                                                         <div class="upload-icon">
-                                                                                            <input type="file" name="image" class="upload">
-                                                                                            <i class="fas fa-camera    "></i>
+                                                                                            <i class="fas fa-video "></i>
+                                                                                            <label> Video upload </label>
+                                                                                            <div class="input-group">
+                                                                                                <input type="url" value="{{$gallery->vedio}}" name="vedio" class="form-control" id="url-type-styled-input">
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
-                                                                            <div class="col-md-6">
-                                                                                <div class="form-group">
-                                                                                    <div class="upload-icon">
-                                                                                        <i class="fas fa-video "></i>
-                                                                                        <label> Video upload </label>
-                                                                                        <div class="input-group">
-                                                                                            <input type="url" value="{{$gallery->vedio}}" name="vedio" class="form-control" id="url-type-styled-input">
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <div class="upload-icon">
+
+                                                                                            <label> Order </label>
+                                                                                            <div class="input-group">
+                                                                                                <input type="number" value="{{$gallery->order}}" name="order" class="form-control">
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
-                                                                            <div class="col-md-6">
-                                                                                <div class="form-group">
-                                                                                    <div class="upload-icon">
 
-                                                                                        <label> Order </label>
-                                                                                        <div class="input-group">
-                                                                                            <input type="number" value="{{$gallery->order}}" name="order" class="form-control">
-                                                                                        </div>
+                                                                                <div class="col-md-12">
+                                                                                    <br>
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        @if($gallery->active == 1)
+                                                                                        <input type="checkbox" id="" name="active" checked>
+                                                                                        @else
+                                                                                        <input type="checkbox" id="" name="active">
+                                                                                        @endif
+
+                                                                                        <label for="category">active</label>
                                                                                     </div>
+
                                                                                 </div>
                                                                             </div>
 
-                                                                            <div class="col-md-12">
-                                                                                <br>
-                                                                                <div class="custom-control custom-checkbox">
-                                                                                    @if($gallery->active == 1)
-                                                                                    <input type="checkbox" id="" name="active" checked>
-                                                                                    @else
-                                                                                    <input type="checkbox" id="" name="active">
-                                                                                    @endif
-
-                                                                                    <label for="category">active</label>
-                                                                                </div>
-
+                                                                            <div class="input-group d-flex justify-content-end text-center">
+                                                                                <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
+                                                                                <input type="submit" value="Add" class="btn btn-success ">
                                                                             </div>
-                                                                        </div>
-
-                                                                        <div class="input-group d-flex justify-content-end text-center">
-                                                                            <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
-                                                                            <input type="submit" value="Add" class="btn btn-success ">
-                                                                        </div>
-                                                                    </form>
+                                                                        </form>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
 
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <!-- /news gallery  Modal -->
-                                            @endforeach
+                                                <!-- /news gallery  Modal -->
+                                                @endforeach
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -323,9 +324,9 @@
 
                                                 </tr>
                                             </thead>
-                                            @foreach($files as $index => $file)
-                                            <tbody>
 
+                                            <tbody>
+                                                @foreach($files as $index => $file)
                                                 <tr>
                                                     <td>{{$index+1}}</td>
 
@@ -349,75 +350,76 @@
                                                         </form>
                                                     </td>
                                                 </tr>
-                                            </tbody>
-                                            <!-- Edit-File -->
-                                            <div class="modal fade" id="add-Announce-Files{{$file->id}}" tabindex="-1" role="dialog" aria-labelledby="addCat">
-                                                <div class="modal-dialog modal-lg " role="document">
-                                                    <div class="modal-content">
-                                                        <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
-                                                        </button>
-                                                        <h3>Edit News Files </h3>
-                                                        <div class="modal-body">
+                                                <!-- Edit-File -->
+                                                <div class="modal fade" id="add-Announce-Files{{$file->id}}" tabindex="-1" role="dialog" aria-labelledby="addCat">
+                                                    <div class="modal-dialog modal-lg " role="document">
+                                                        <div class="modal-content">
+                                                            <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
+
+                                                            </button>
+                                                            <h3>Edit News Files </h3>
+                                                            <div class="modal-body">
 
 
-                                                            <div class="ms-auth-container row no-gutters">
-                                                                <div class="col-12 p-3">
-                                                                    <form action="{{route('updateNewsFile')}}" method="POST" enctype="multipart/form-data">
-                                                                        @csrf
-                                                                        <input type="hidden" name="news_id" value="{{$row->id}}">
-                                                                        <input type="hidden" name="file_id" value="{{$file->id}}">
-                                                                        <div class="ms-auth-container row">
-                                                                            <div class="col-md-12">
-                                                                                <label> File </label>
+                                                                <div class="ms-auth-container row no-gutters">
+                                                                    <div class="col-12 p-3">
+                                                                        <form action="{{route('updateNewsFile')}}" method="POST" enctype="multipart/form-data">
+                                                                            @csrf
+                                                                            <input type="hidden" name="news_id" value="{{$row->id}}">
+                                                                            <input type="hidden" name="file_id" value="{{$file->id}}">
+                                                                            <div class="ms-auth-container row">
+                                                                                <div class="col-md-12">
+                                                                                    <label> File </label>
 
-                                                                                <div class="fileUpload">
-                                                                                    <div class="upload-icon">
-                                                                                        <img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon">
+                                                                                    <div class="fileUpload">
+                                                                                        <div class="upload-icon">
+                                                                                            <img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon">
 
-                                                                                        <input type="file" name="path" class="upload up" id="path" onchange="readURLFile(this);" />
-                                                                                        <span class="upl" id="upload">{{$file->path}}</span></div>
+                                                                                            <input type="file" name="path" class="upload up" id="path" onchange="readURLFile(this);" />
+                                                                                            <span class="upl" id="upload">{{$file->path}}</span></div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="ms-auth-container row">
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <label>Name</label>
+                                                                                        <input type="text" name="name" value="{{$file->name}}" class="form-control">
+
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="ms-auth-container row">
+                                                                                <div class="col-md-12">
+                                                                                    <label>language</label>
+                                                                                    <div class="form-group">
+                                                                                        EN <input type="radio" name="language_id" value="en" <?php echo ($file->language_id == 0) ? 'checked' : '' ?>>
+                                                                                        Ar <input type="radio" name="language_id" value="ar" <?php echo ($file->language_id == 1) ? 'checked' : '' ?>>
+                                                                                    </div>
+                                                                                    <div class="input-group d-flex justify-content-end text-center">
+                                                                                        <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
+                                                                                        <input type="submit" value="save" class="btn btn-success ">
+                                                                                    </div>
+
 
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
 
-                                                                        <div class="ms-auth-container row">
-                                                                            <div class="col-md-12">
-                                                                                <div class="form-group">
-                                                                                    <label>Name</label>
-                                                                                    <input type="text" name="name" value="{{$file->name}}" class="form-control">
-
-
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="ms-auth-container row">
-                                                                            <div class="col-md-12">
-                                                                                <label>language</label>
-                                                                                <div class="form-group">
-                                                                                    EN <input type="radio" name="language_id" value="en" <?php echo ($file->language_id == 0) ? 'checked' : '' ?>>
-                                                                                    Ar <input type="radio" name="language_id" value="ar" <?php echo ($file->language_id == 1) ? 'checked' : '' ?>>
-                                                                                </div>
-                                                                                <div class="input-group d-flex justify-content-end text-center">
-                                                                                    <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
-                                                                                    <input type="submit" value="save" class="btn btn-success ">
-                                                                                </div>
-
-
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </form>
+                                                                        </form>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
 
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <!-- End Edit File -->
+                                                <!-- End Edit File -->
+                                            </tbody>
                                             @endforeach
                                         </table>
                                     </div>
@@ -442,7 +444,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                 
+
                                                     <th scope="col">Related</th>
 
                                                     <th scope="col"></th>
@@ -455,7 +457,7 @@
                                                 <tr>
                                                     <td>{{$index+1}}</td>
 
-                                                  
+
 
 
                                                     <td>{{$relat->relatednews->en_title}}</td>

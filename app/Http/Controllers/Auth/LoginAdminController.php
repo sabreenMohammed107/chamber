@@ -66,6 +66,21 @@ class LoginAdminController extends Controller
         return redirect()->back()->withInput($request->only(['email', 'remember']));
     }
 
+    protected function attemptLogin(Request $request)
+    
+    {
+        $user = Admin::where('email', $request->email)
+            ->where('password', $request->password)
+            ->first();
+    
+        if(!isset($user)){
+            return redirect()->back()->withInput($request->only(['email', 'remember']));
+        }
+    
+        \Auth::guard('admin')->login($user);
+    
+        return redirect()->intended(url('/admin'));
+    }
     public function logout(Request $request)
     {
         $this->guard('admin')->logout();

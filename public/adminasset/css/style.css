@@ -1224,7 +1224,7 @@ pre{
   -webkit-transition: 0.3s;
   transition: 0.3s;
   display: block;
-  background-color: #8cc152 !important;
+  background-color: #374eae !important;
 
 }
 body:not(.ms-aside-left-open) .ms-aside-toggler .ms-toggler-bar{

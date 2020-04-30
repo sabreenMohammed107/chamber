@@ -37,23 +37,7 @@
 
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li> -->
-                            @if (Route::has('register'))
-                            <button class="btn btn-primary" > <a href="{{ route('admin.register') }}" style="color:aliceblue !important">تسجيل البيانات</a></button>
-
-                                <!-- <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li> -->
-                            @endif
-                    
-                        @endguest
-                    </ul>
+               
                 </div>
             </div>
         </nav>

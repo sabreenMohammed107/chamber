@@ -14485,3 +14485,19 @@ body.ltr .dataTables_paginate {
     font-size: 14px;
 }
 }
+
+
+@media (max-width: 750px) {
+
+
+  #search-button {
+    display: none;
+  }
+  #search-btn {
+    display: none;
+  }
+
+}
+
+
+

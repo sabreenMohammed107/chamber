@@ -23,6 +23,15 @@
         </a>
         <ul id="create" class="collapse" aria-labelledby="tables" data-parent="#side-nav-accordion">
           <li> <a href="{{ route('slider.index') }}">Home_slider</a> </li>
+          <li> <a href="{{ route('articel.index') }}">Chamber pages</a> </li>
+            <li> <a href="{{ route('board.index') }}">Chamber Board</a> </li>
+            <li> <a href="{{ route('socialResponsibility.index') }}">Social Responsibility</a> </li>
+            <li> <a href="{{ route('section.index') }}">Sections</a> </li>
+            <li> <a href="{{ route('social.index') }}">Social Media</a> </li>
+            <li> <a href="{{ route('contactMsg.index') }}">Contacts Messages</a> </li>
+            <li> <a href="{{ route('newsletter.index') }}">Email Newsletter</a> </li>
+            <li> <a href="{{ route('adsImage.index') }}">Images Ads</a> </li>
+            <li> <a href="{{ route('adsVedio.index') }}">Videos Ads</a> </li>
       </ul>
   </li>
   <!--  Setup  -->
@@ -37,6 +46,35 @@
 
       </ul>
   </li>
+   <!--  devisions  -->
+   <li class="menu-item">
+     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#basic-devisions" aria-expanded="false" aria-controls="basic-devisions">
+          <span><i class="material-icons fs-16">build</i>Chamber Devisions</span>
+      </a>
+      <ul id="basic-devisions" class="collapse" aria-labelledby="tables" data-parent="#side-nav-accordion">
+          <li> <a href="{{ route('devisions.index') }}">Devisions Data</a> </li>
+          <li> <a href="{{ route('devMeeting.index') }}">Devisions Meetings</a> </li> 
+         <li> <a href="{{ route('devNews.index') }}">Devisions News</a> </li>
+         <li> <a href="{{ route('devBoard.index') }}">Devisions Board</a> </li>
+         <li> <a href="{{ route('registerDev.index') }}">Register Devisions</a> </li>
+
+      </ul>
+  </li>
+   <!-- Chamber pages   -->
+   <li class="menu-item">
+            <a href="#" class="has-chevron" data-toggle="collapse" data-target="#Usersdropdown" aria-expanded="false" aria-controls="contactsdropdown">
+            <span><i class="material-icons fs-16">build</i>Chamber pages</span>
+          </a>
+            <ul id="Usersdropdown" class="collapse" aria-labelledby="basic-elements" data-parent="#side-nav-accordion">
+             <li> <a href="{{ route('adminChance.index') }}">Commercial Chances</a> </li>
+                <li> <a href="{{ route('conference.index') }}">Conferences</a> </li>
+                <li> <a href="{{ route('activity.index') }}">Women Activities</a> </li>
+                
+               
+             
+            </ul>
+          </li>
+          <!-- end -->
       <!-- academy   -->
       <li class="menu-item">
        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#contactsdropdown" aria-expanded="false" aria-controls="contactsdropdown">
@@ -51,5 +89,31 @@
 
         </ul>
     </li>
+     <!-- Encyclo  -->
+  <li class="menu-item">
+    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#callsdropdown" aria-expanded="false" aria-controls="callsdropdown">
+    <span><i class="material-icons fs-16">call</i>Encyclo</span>
+  </a>
+    <ul id="callsdropdown" class="collapse" aria-labelledby="basic-elements" data-parent="#side-nav-accordion">
+      <li> <a href="Brothers-Agreement.html">Brothers Agreement</a> </li>
+      <li> <a href="Commercial-Agreements.html">Commercial Agreements</a> </li>
+      <li> <a href="Business-Organizations.html">Business Organizations</a> </li>
+      <li> <a href="Studies-Reports.html">Studies / Reports</a> </li>
+      <li> <a href="Embassies-Consulates.html">Embassies / Consulates</a> </li>
+      <li> <a href="Decisions-Laws.html">Decisions / Laws</a> </li>
+      <li> <a href="Ministries.html">Ministries</a> </li>
+      <li> <a href="Communications-guide.html">Communications guide</a> </li>
+      <li> <a href="Commmercial-topics.html">Commmercial topics</a> </li>
+      <li> <a href="Exporters-Encyclopedia.html">Exporters Encyclopedia</a> </li>
+      <li> <a href="Countries-Data.html">Countries Data</a> </li>
+     
+      
+      
+      
+      
+     
+    </ul>
+  </li>
+<!-- / Encyclo  -->
     </ul>
   </aside>
