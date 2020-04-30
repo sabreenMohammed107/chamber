@@ -231,13 +231,13 @@
                     {{$new->ar_title}}
 					@endif
                                             </h5>
-                                            <p> 
+                                            
                                             @if(app()->getLocale()=='en')
                                             {!! Str::limit($new->en_text, 70,'...') !!}
 					@else
                     {!! Str::limit($new->ar_text, 100,'...') !!}
 					@endif
-                                                </p>
+                                                
 
                                             <a href="{{ url('newsDetails/'.$new->id) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
                                         </div>
