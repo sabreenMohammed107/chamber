@@ -211,7 +211,7 @@
                    
                       <div class=" col-md-4 wow fadeInDown" data-wow-delay="0.2s" data-wow-duration="1s"
                         data-wow-delay="0s">
-                        <div class="card" >
+                        <div class="card" style="width:100% !important">
                                     @if($new->gallery!=null && $new->gallery->first() !=null && $new->gallery->first()->order==1)
                                  @if($new->gallery->first()->image!=null)
                                         <img src="{{ asset('uploads/news/'.$new->gallery->first()->image) }}" alt="...">
