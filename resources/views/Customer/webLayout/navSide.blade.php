@@ -27,15 +27,15 @@
           </a>
 
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="intro.html"> {{ __('links.aboutDirector') }}</a>
+            <a class="dropdown-item" href="{{url('/aboutDirector')}}"> {{ __('links.aboutDirector') }}</a>
             <?php
             $current = now()->year;
             $prev = $current - 1;
             $next = $current + 3;
             ?>
             <a class="dropdown-item" href="{{url('/board')}}"> {{ __('links.bords') }} {{$prev}} - {{$next}}</a>
-            <a class="dropdown-item" href="history.html"> {{ __('links.history') }}</a>
-            <a class="dropdown-item" href="objectives.html"> {{ __('links.messageVision') }}</a>
+            <a class="dropdown-item" href="{{url('/history')}}"> {{ __('links.history') }}</a>
+            <a class="dropdown-item" href="{{url('/messageVision')}}"> {{ __('links.messageVision') }}</a>
 
             <a class="dropdown-item" href="{{url('/section')}}"> {{ __('links.dept') }} </a>
             <a class="dropdown-item" href="{{url('/socialres')}}"> {{ __('links.cocialResponsibility') }}</a>
@@ -52,7 +52,7 @@
             <a class="dropdown-item" href="{{url('/news')}}"> {{ __('links.chamberNews') }}</a>
             <a class="dropdown-item" href="{{url('/album')}}"> {{ __('links.chamberAlbum') }}</a>
             <a class="dropdown-item" href="{{url('/announce')}}"> {{ __('links.announce') }}</a>
-            <a class="dropdown-item" href="chahbander.html"> {{ __('links.shahbander') }}</a>
+            <a class="dropdown-item" href="{{url('/chahbander')}}"> {{ __('links.shahbander') }}</a>
 
           </div>
         </li>
@@ -149,9 +149,9 @@
           </a>
 
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="online-payment.html"> {{ __('links.online-payment') }}</a>
-            <a class="dropdown-item" href="qr-code.html"> {{ __('links.qr-code') }}</a>
-            <a class="dropdown-item" href="blockchain.html"> {{ __('links.blockchain') }}</a>
+            <a class="dropdown-item" href="{{url('/online-payment')}}"> {{ __('links.online-payment') }}</a>
+            <a class="dropdown-item" href="{{url('/qr-code')}}"> {{ __('links.qr-code') }}</a>
+            <a class="dropdown-item" href="{{url('/blockchain')}}"> {{ __('links.blockchain') }}</a>
 
           </div>
         </li>

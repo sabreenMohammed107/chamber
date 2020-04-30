@@ -269,21 +269,21 @@
 
 
             <div class="col-md-4 col-5 text-center electronicPayment">
-              <a href="online-payment.html">
+              <a href="{{url('/online-payment')}}">
                 <img src="{{ asset('webasset/images/icons/payment.png')}}" class="img-fluid mb-4">
                 <h5>{{ __('titles.serv') }} <br>{{ __('titles.payment') }} </h5>
               </a>
             </div>
 
             <div class="col-md-4 col-5 text-center electronicPayment">
-              <a href="qr-code.html">
+              <a href="{{url('/qr-code')}}">
                 <img src="{{ asset('webasset/images/icons/qr-code.png')}}" class="img-fluid mb-4">
                 <h5>{{ __('titles.serv') }} <br>{{ __('titles.qr') }} </h5>
               </a>
             </div>
 
             <div class="col-md-4 col-5 text-center electronicPayment">
-              <a href="blockchain.html">
+              <a href="{{url('/blockchain')}}">
                 <img src="{{ asset('webasset/images/icons/blockchain.png')}}" class="img-fluid mb-4">
                 <h5>{{ __('titles.serv') }} <br>{{ __('titles.block') }} </h5>
               </a>

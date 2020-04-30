@@ -96,6 +96,14 @@ Route::namespace('Customer')->group(function () {
     /*--------------------------------------Sections--------------------------------------------*/
     Route::get('/section', 'SectionController@index')->name('section');
     Route::get('/sectionDetails/{id}', 'SectionController@details')->name('sectionDetails');
+    /*-------------------------------------Static Pages--------------------------------------------------*/
+    Route::get('/aboutDirector','AboutStaticController@aboutDirector')->name('aboutDirector');
+    Route::get('/history','AboutStaticController@history')->name('history');
+    Route::get('/messageVision','AboutStaticController@messageVision')->name('messageVision');
+    Route::get('/online-payment','AboutStaticController@onlinePayment')->name('online-payment');
+    Route::get('/qr-code','AboutStaticController@qrCode')->name('qr-code');
+    Route::get('/blockchain','AboutStaticController@blockchain')->name('blockchain');
+    Route::get('/chahbander','AboutStaticController@chahbander')->name('chahbander');
  
     //  Change Lang..
 Route::get('changeLang/{lang}', function($lang){
