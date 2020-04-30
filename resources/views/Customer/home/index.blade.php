@@ -203,10 +203,7 @@
     text-align: right !important;
     font-size: 14px !important;
 }
-.card p p{
-    text-align: right !important;
-    font-size: 14px !important;
-}
+
                    </style>
 
                   <div class="row">
