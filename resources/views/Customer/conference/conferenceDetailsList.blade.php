@@ -83,9 +83,10 @@
           <img src="{{ asset('webasset/images/screen.png')}}" class="img_imp">
           @endif
 
+          
           <div class="card-body">
 
-          
+
             <a href="{{ url('conferenceDetails/'.$galleryConf->relatedConferences->id) }}">
               <p class="card-text">
                 @if(app()->getLocale()=='en')
