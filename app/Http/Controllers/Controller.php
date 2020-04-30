@@ -18,7 +18,7 @@ class Controller extends BaseController
        
          $branch =Chamber_data::first();
           $social =Social::first();
-          $mainAds=Chamber_ads::first();
+          $mainAds=Chamber_ads::where('id','=',100)->first();
         if($social==null){
             $social = new Social();
         }
