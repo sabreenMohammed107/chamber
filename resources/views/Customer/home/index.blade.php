@@ -200,47 +200,41 @@
                     </div>
                     <div class=" panel-body ">
                       <style>
-                        .cardx {
-                          box-shadow: 2px 2px 2px 2px #2a282852;
-                          text-align: center;
-                          margin-bottom: 16px;
-
-                          background-color: #fff;
-                          background-clip: border-box;
-                          border: 0;
-                          border-radius: 0.25rem;
+                      
+                          .card {
+    box-shadow: 2px 2px 2px 2px #2a282852;
+    text-align: center;
+    margin-bottom: 16px;
+    position: relative;
 
                         }
 
-                        .cardx p {
+                        .card p {
                           text-align: right !important;
                           font-size: 14px !important;
                         }
                       </style>
 
-                      <div style="display: flex;
-  flex-wrap: wrap;">
+                      <div class="row">
                         @foreach($news as $new)
 
-                        <div style="flex: 1 1 30%; 
-  margin: 5px;
-">
-                          <div class="cardx">
+                        <div class=" col-md-4 wow fadeInDown" data-wow-delay="0.2s" data-wow-duration="1s" data-wow-delay="0s">
+                          <div class="card" style="width:100% !important">
                             @if($new->gallery!=null && $new->gallery->first() !=null && $new->gallery->first()->order==1)
                             @if($new->gallery->first()->image!=null)
-                            <img style="width:100% ;height:200px" src="{{ asset('uploads/news/'.$new->gallery->first()->image) }}" alt="...">
+                            <img src="{{ asset('uploads/news/'.$new->gallery->first()->image) }}" alt="...">
                             @else
                             <iframe id="popup-youtube-player" width="100%" height="200" src="{{$new->gallery->first()->vedio}}" frameborder="0" allowfullscreen="true" allowscriptaccess="always"></iframe>
                             @endif
                             @else
                             <img src="" alt="no image">
                             @endif
-                            <div class="card-body">
+                            <div>
                               <h5>
                                 @if(app()->getLocale()=='en')
-                                {{Str::limit($new->en_title,10,'')}}
+                                {{$new->en_title}}
                                 @else
-                                {{Str::limit($new->ar_title,10,'')}}
+                                {{$new->ar_title}}
                                 @endif
                               </h5>
                               <p>
