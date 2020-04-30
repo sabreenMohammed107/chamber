@@ -199,7 +199,7 @@
                   </div>
                   <div class=" panel-body ">
                  <style>
-                   .card p {
+                   p {
     text-align: right !important;
     font-size: 14px !important;
 }
