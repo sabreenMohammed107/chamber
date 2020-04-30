@@ -236,7 +236,7 @@
                               <img style="width:100% " src="" alt="no image">
                               @endif
                             </div>
-                            <div>
+                            <div style=" position: relative ;height: 18%; border-bottom:1px solid #ccc;">
                               <h5>
                                 @if(app()->getLocale()=='en')
                                 {{$new->en_title}}
@@ -244,6 +244,7 @@
                                 {{$new->ar_title}}
                                 @endif
                               </h5>
+                              </div>
                               <div class="desc-wrap">
                                 <p>
                                   @if(app()->getLocale()=='en')
@@ -257,7 +258,7 @@
                               <a href="{{ url('newsDetails/'.$new->id) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
                             </div>
                           </div>
-                        </div>
+                      
 
 
 
