@@ -25,7 +25,7 @@
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
                 <h6>News</h6>
-                <a href="{{ route('conference.create') }}" class="btn btn-dark"> add</a>
+                <a href="{{ route('activity.create') }}" class="btn btn-dark"> add</a>
             </div>
             <div class="ms-panel-body">
                 <div class="table-responsive">
@@ -36,9 +36,9 @@
 
                             <th>AR Title </th>
                             <th>EN Title</th>
-                            <th>Conference Date </th>
+                            <th>activity Date </th>
 
-                            <th>Conference Type</th>
+                           
 
                             <th></th>
 
@@ -51,20 +51,16 @@
                                 <td>{{$row->ar_title}}</td>
                                 <td>{{$row->en_title}}</td>
                                 <td>
-                                    <?php $date = date_create($row->conference_date) ?>
+                                    <?php $date = date_create($row->activity_date) ?>
                                     {{ date_format($date,"d-m-Y") }}
                                 </td>
 
-                                <td>
-                                @if($row->type)
-                                    {{$row->type->name}}
-                                    @endif
-                                </td>
+                                
 
                                 <td>
-                                    <a href="{{ route('conference.edit',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
-                                    <a href="#" onclick="destroy('this News','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
-                                    <form id="delete_{{$row->id}}" action="{{ route('conference.destroy', $row->id) }}" method="POST" style="display: none;">
+                                    <a href="{{ route('activity.edit',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
+                                    <a href="#" onclick="destroy('this activity','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                    <form id="delete_{{$row->id}}" action="{{ route('activity.destroy', $row->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" value=""></button>

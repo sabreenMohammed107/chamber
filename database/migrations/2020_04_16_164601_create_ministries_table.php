@@ -26,6 +26,7 @@ class CreateMinistriesTable extends Migration
             $table->string('manager_en_name', 250)->nullable();
             $table->integer('ministry_type_id')->unsigned()->nullable();
             $table->integer('order')->nullable();
+            $table->string('image', 1000)->nullable();
             $table->timestamps();
         });
     }

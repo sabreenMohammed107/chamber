@@ -137,6 +137,18 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::post('saveRelatedactivity', 'WomanActivityController@saveRelated')->name('saveRelatedactivity');
   Route::DELETE('deleteRelatedactivity/{id}', 'WomanActivityController@deleteRelated')->name('deleteRelatedactivity');
 
+  /*******************************Elnco************************************* */
+  Route::resource('/admin/brother', 'BrotherController');
+  Route::resource('/admin/commercialAgreement', 'CommercialAgreementController');
+  Route::resource('/admin/business-organizations', 'BusinessOrganizationController');
+  Route::resource('/admin/study-report', 'StudyReportController');
+  Route::resource('/admin/embassies', 'EmbassiesController');
+  Route::resource('/admin/decisions-laws', 'DecisionsLawsController');
+  Route::resource('/admin/ministries', 'MinistriesController');
+  Route::resource('/admin/communications-guide', 'CommunicationsGuideController');
+  Route::resource('/admin/commmercial-topics', 'CommmercialTopicsController');
+  Route::resource('/admin/exporters-encyclopedia', 'ExportersEncyclopediaController');
+  Route::resource('/admin/countries-data', 'CountriesDataController');
 
 });
 Route::get('/admin/login', 'Auth\LoginAdminController@showLoginAdminForm')->name('admin.login');

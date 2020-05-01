@@ -56,12 +56,9 @@
 
         <p>
           @if(app()->getLocale()=='en')
-          {{$newsObj->en_text}}
+          {!!$newsObj->en_text!!}
           @else
-          <?php
-          $output = nl2br(str_replace("&nbsp;", " ", $newsObj->ar_text));
-          ?>
-          {{str_limit(strip_tags($output),100,'...')}}
+          {!!$newsObj->ar_text!!}
 
           @endif
         </p>

@@ -25,7 +25,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>edit_News</h6>
+                <h6>edit_Activity</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -40,7 +40,7 @@
                             </ul>
                         </div>
                         @endif
-                        <form action="{{route('conference.update',$row->id)}}" method="POST">
+                        <form action="{{route('activity.update',$row->id)}}" method="POST">
                             {{ csrf_field() }}
 
                             @method('PUT')
@@ -61,37 +61,15 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label> Conferance Date
+                                        <label> Activity Date
                                         </label>
                                         <br>
-                                        <?php $date = date_create($row->news_date) ?>
-                                        <input style="height: 40px; border-radius: 5px;" class="col-md-12 exampleInputPassword1" for="exampleCheck1" data-date-format="dd/mm/yyyy" name="conferance_date" type="date" id="datepicker" value="{{ date_format($date,'Y-m-d') }}">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Type</label>
-                                        <select name="conference_type_id" id="conference_type_id" class="browser-default custom-select">
-                                            <option value="">
-                                                @if($row->type)
-                                                {{$row->type->name}}
-                                                @endif
-                                            </option>
-                                            @foreach ($types as $type)
-                                            <option value='{{$type->id}}'>{{$type->name}}
-
-                                            </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">Home Order</label>
-                                        <input type="text" name="home_order" value="{{$row->home_order}}" class="form-control">
+                                        <?php $date = date_create($row->activity_date) ?>
+                                        <input style="height: 40px; border-radius: 5px;" class="col-md-12 exampleInputPassword1" for="exampleCheck1" data-date-format="dd/mm/yyyy" name="activity_date" type="date" id="datepicker" value="{{ date_format($date,'Y-m-d') }}">
                                     </div>
                                 </div>
 
+                                <div class="col-md-6"></div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="example2"> Ar Text</label>
@@ -130,7 +108,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                    <a href="{{ route('conference.index') }}" class="btn btn-dark mx-2"> Cancel</a>
+                                    <a href="{{ route('activity.index') }}" class="btn btn-dark mx-2"> Cancel</a>
                                     <input type="submit" value="save" class="btn btn-success ">
                                 </div>
                         </form>
@@ -172,7 +150,7 @@
                         <div class="col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-header d-flex justify-content-between">
-                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Annoucement-Gallery">add News Gallery </button>
+                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Annoucement-Gallery">add  Gallery </button>
                                 </div>
                                 <div class="ms-panel-body">
 
@@ -194,7 +172,7 @@
                                                 @foreach($galleries as $index => $gallery)
                                                 <tr>
                                                     <td>{{$index+1}}</td>
-                                                    <td><img src="{{ asset('uploads/conferance')}}/{{ $gallery->image }}" alt=""></td>
+                                                    <td><img src="{{ asset('uploads/news')}}/{{ $gallery->image }}" alt=""></td>
                                                     <td class="sorting_1">
                                                         <a href="{{$gallery->vedio}}" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
                                                             {{$gallery->vedio}}
@@ -212,7 +190,7 @@
                                                     <td>
                                                         <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#add-Annoucement-Gallery{{$gallery->id}}">edit</a>
                                                         <a href="#" onclick="destroy('this News','{{$gallery->id}}')" class="btn d-inline-block btn-danger">delete</a>
-                                                        <form id="delete_{{$gallery->id}}" action="{{ route('deleteconferance', $gallery->id) }}" method="POST" style="display: none;">
+                                                        <form id="delete_{{$gallery->id}}" action="{{ route('deleteactivity', $gallery->id) }}" method="POST" style="display: none;">
                                                             @csrf
 
                                                             <button type="submit" value=""></button>
@@ -232,17 +210,17 @@
                                                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                                                             </button>
-                                                            <h3>Edit News Gallery </h3>
+                                                            <h3>Edit  Gallery </h3>
                                                             <div class="modal-body">
 
 
                                                                 <div class="ms-auth-container row no-gutters">
                                                                     <div class="col-12 p-3">
-                                                                        <form action="{{route('updateconferance')}}" method="POST" enctype="multipart/form-data">
+                                                                        <form action="{{route('updateactivity')}}" method="POST" enctype="multipart/form-data">
                                                                             {{ csrf_field() }}
 
 
-                                                                            <input type="hidden" name="conference_id" value="{{$row->id}}">
+                                                                            <input type="hidden" name="activity_id" value="{{$row->id}}">
                                                                             <input type="hidden" name="gallery_id" value="{{$gallery->id}}">
                                                                             <div class="ms-auth-container row">
                                                                                 <div class="col-md-12">
@@ -323,7 +301,7 @@
                         <div class="col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-header d-flex justify-content-between">
-                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Announce-Files"> add News Files</button>
+                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Announce-Files"> add  Files</button>
                                 </div>
                                 <div class="ms-panel-body">
 
@@ -360,7 +338,7 @@
 
                                                         <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#add-Announce-Files{{$file->id}}">edit</a>
                                                         <a href="#" onclick="destroy('this Announcement','{{$file->id}}')" class="btn d-inline-block btn-danger">delete</a>
-                                                        <form id="delete_{{$file->id}}" action="{{ route('deleteconferanceFile', $file->id) }}" method="POST" style="display: none;">
+                                                        <form id="delete_{{$file->id}}" action="{{ route('deleteactivityFile', $file->id) }}" method="POST" style="display: none;">
                                                             @csrf
 
                                                             <button type="submit" value=""></button>
@@ -375,15 +353,15 @@
                                                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                                                             </button>
-                                                            <h3>Edit News Files </h3>
+                                                            <h3>Edit  Files </h3>
                                                             <div class="modal-body">
 
 
                                                                 <div class="ms-auth-container row no-gutters">
                                                                     <div class="col-12 p-3">
-                                                                        <form action="{{route('updateconferanceFile')}}" method="POST" enctype="multipart/form-data">
+                                                                        <form action="{{route('updateactivityFile')}}" method="POST" enctype="multipart/form-data">
                                                                             @csrf
-                                                                            <input type="hidden" name="conference_id" value="{{$row->id}}">
+                                                                            <input type="hidden" name="activity_id" value="{{$row->id}}">
                                                                             <input type="hidden" name="file_id" value="{{$file->id}}">
                                                                             <div class="ms-auth-container row">
                                                                                 <div class="col-md-12">
@@ -452,7 +430,7 @@
                         <div class="col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-header d-flex justify-content-between">
-                                    <button class="btn btn-dark" data-toggle="modal" data-target="#addRelated"> Add New </button>
+                                    <button class="btn btn-dark" data-toggle="modal" data-target="#addRelated"> Add  </button>
                                 </div>
                                 <div class="ms-panel-body">
 
@@ -477,11 +455,11 @@
 
 
 
-                                                    <td>{{$relat->relatedConferences->en_title}}</td>
+                                                    <td>{{$relat->relatednews->en_title}}</td>
 
                                                     <td>
                                                         <a href="#" onclick="destroy('this Related','{{$relat->id}}')" class="btn d-inline-block btn-danger">delete</a>
-                                                        <form id="delete_{{$relat->id}}" action="{{ route('deleteRelatedconferance', $relat->id) }}" method="POST" style="display: none;">
+                                                        <form id="delete_{{$relat->id}}" action="{{ route('deleteRelatedactivity', $relat->id) }}" method="POST" style="display: none;">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" value=""></button>
@@ -494,7 +472,7 @@
 
                                             </tbody>
 
-                                           
+
                                             @endforeach
                                         </table>
                                     </div>
@@ -536,16 +514,16 @@
 
                 <div class="ms-auth-container row no-gutters">
                     <div class="col-12 p-3">
-                        <form action="{{route('saveRelatedconferance')}}" method="post">
+                        <form action="{{route('saveRelatedactivity')}}" method="post">
                             {{ csrf_field() }}
-                            <input type="hidden" name="conference_id" value="{{$row->id}}">
+                            <input type="hidden" name="activity_id" value="{{$row->id}}">
                             <div class="ms-auth-container row">
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>News</label>
                                         <div class="input-group">
-                                            <select data-size="7" name="related_conference_id" data-live-search="true" class="selectpicker form-control" data-title="course" id="state_list" data-width="100%">
+                                            <select data-size="7" name="related_activity_id" data-live-search="true" class="selectpicker form-control" data-title="course" id="state_list" data-width="100%">
 
                                                 <option value="">select....</option>
                                                 @if($relateds !=null)
@@ -594,9 +572,9 @@
 
                 <div class="ms-auth-container row no-gutters">
                     <div class="col-12 p-3">
-                        <form action="{{route('addconferance')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{route('addactivity')}}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" name="conference_id" value="{{$row->id}}">
+                            <input type="hidden" name="activity_id" value="{{$row->id}}">
                             <div class="ms-auth-container row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -668,9 +646,9 @@
 
                 <div class="ms-auth-container row no-gutters">
                     <div class="col-12 p-3">
-                        <form action="{{route('addconferanceFile')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{route('addactivityFile')}}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" name="conference_id" value="{{$row->id}}">
+                            <input type="hidden" name="activity_id" value="{{$row->id}}">
 
                             <div class="ms-auth-container row">
                                 <div class="col-md-12">

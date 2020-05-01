@@ -95,17 +95,17 @@
     <span><i class="material-icons fs-16">call</i>Encyclo</span>
   </a>
     <ul id="callsdropdown" class="collapse" aria-labelledby="basic-elements" data-parent="#side-nav-accordion">
-      <li> <a href="Brothers-Agreement.html">Brothers Agreement</a> </li>
-      <li> <a href="Commercial-Agreements.html">Commercial Agreements</a> </li>
-      <li> <a href="Business-Organizations.html">Business Organizations</a> </li>
-      <li> <a href="Studies-Reports.html">Studies / Reports</a> </li>
-      <li> <a href="Embassies-Consulates.html">Embassies / Consulates</a> </li>
-      <li> <a href="Decisions-Laws.html">Decisions / Laws</a> </li>
-      <li> <a href="Ministries.html">Ministries</a> </li>
-      <li> <a href="Communications-guide.html">Communications guide</a> </li>
-      <li> <a href="Commmercial-topics.html">Commmercial topics</a> </li>
-      <li> <a href="Exporters-Encyclopedia.html">Exporters Encyclopedia</a> </li>
-      <li> <a href="Countries-Data.html">Countries Data</a> </li>
+     <li> <a href="{{ route('brother.index') }}">Brothers Agreement</a> </li>
+      <li> <a href="{{ route('commercialAgreement.index') }}">Commercial Agreements</a> </li>
+      <li> <a href="{{ route('business-organizations.index') }}">Business Organizations</a> </li>
+      <li> <a href="{{ route('study-report.index') }}">Studies / Reports</a> </li>
+      <li> <a href="{{ route('embassies.index') }}">Embassies / Consulates</a> </li>
+      <li> <a href="{{ route('decisions-laws.index') }}">Decisions / Laws</a> </li>
+      <li> <a href="{{ route('ministries.index') }}">Ministries</a> </li>
+      <li> <a href="{{ route('communications-guide.index') }}">Communications guide</a> </li>
+      <li> <a href="{{ route('commmercial-topics.index') }}">Commmercial topics</a> </li>
+      <li> <a href="{{ route('exporters-encyclopedia.index') }}">Exporters Encyclopedia</a> </li>
+      <li> <a href="{{ route('countries-data.index') }}">Countries Data</a> </li>
      
       
       

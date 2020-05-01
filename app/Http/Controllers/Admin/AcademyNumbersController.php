@@ -138,8 +138,6 @@ class AcademyNumbersController extends Controller
      */
     public function destroy($id)
     {
-        $this->object::findOrFail($id)->delete();
         
-        return redirect()->route($this->routeName.'index')->with('flash_success', 'Data Has Been Deleted Successfully !');
     }
 }

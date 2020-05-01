@@ -7,6 +7,7 @@
             <td>{{ __('links.email') }}</td>
             <td>{{ __('titles.website') }}</td>
             <td>{{ __('links.address') }}</td>
+            <td></td>
         </tr>
 @foreach($agreements as $agreement)
         <tr>
@@ -49,6 +50,7 @@
                     {{$agreement->ar_address}}
 					@endif   
             </td>
+            <td><img src="{{ asset('uploads/encyclo')}}/{{ $agreement->image}}" style="height: 100px" alt=""></td>
            
         </tr>
 
