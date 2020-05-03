@@ -89,15 +89,18 @@
 
               <a href="{{ url('activityDetails/'.$gallerynew->relatednews->id) }}">
                 <p class="card-text">
-                  @if(app()->getLocale()=='en')
-                  {{ Str::limit($gallerynew->relatednews->en_text, 100,'') }}
+                
+                @if(app()->getLocale()=='en')
+                  <?php
+                  $output = nl2br(str_replace("&nbsp;", " ", $gallerynew->relatednews->en_text));
+                  ?>
+                  {{str_limit(strip_tags($output),100,'...')}}
                   @else
                   <?php
                   $output = nl2br(str_replace("&nbsp;", " ", $gallerynew->relatednews->ar_text));
                   ?>
                   {{str_limit(strip_tags($output),100,'...')}}
 
-                  @endif
 
 
                 </p>

@@ -61,33 +61,46 @@
 
 <!-- second section -->
 <div class=" panel-heading">
-    <p  class="head-p bg-dark"> أهم الاخبار </p>
+    <p  class="head-p bg-dark">{{ __('titles.importNews') }} </p>
 </div>
 <div class="panel-body">
-@foreach($newsRandom as $news)
-    <div class="fees">
-    <div class="row ">
-      
-        <a href="{{ url('newsDetails/'.$news->id) }}" target="_blank">
-        <p  style="float: left;">  
-        @if( $news->gallery->first()!=null && $news->gallery->first()->image!=null)
-                                        <img src="{{ asset('uploads/news/'.$news->gallery->first()->image) }}" alt="..." style="float: right; height: 70px;
-          width: 62px; margin-right: 15px;">
-                                  @else
-                                  <img src="{{ asset('webasset/images/screen.png')}}"  style="float: right; height: 70px;
-          width: 62px; margin-right: 15px;">
-                                  @endif
-        
-         
-          {{ Str::limit($news->ar_text, 50,'') }}
- 
-         </p></a>
-        </div>
-    </div>
-  @endforeach
+foreach($newsRandom as $news)
+          <div class="fees">
+            <div class="row ">
+              <style>
+
+              </style>
+              <a href="{{ url('activityDetails/'.$news->id) }}" target="_blank">
+                <p style="float: left; margin: 0 7px;">
+
+                  @if($news->gallery!=null && $news->gallery->first()!=null && $news->gallery->first()->image!=null)
+                  <img src="{{ asset('uploads/news/'.$news->gallery->first()->image) }}" alt="..." class="img_imp">
+                  @else
+                  <img src="{{ asset('webasset/images/screen.png')}}" class="img_imp">
+                  @endif
+
+                  @if(app()->getLocale()=='en')
+                  <?php
+                  $output = nl2br(str_replace("&nbsp;", " ", $news->en_text));
+                  ?>
+                  {{str_limit(strip_tags($output),50,'...')}}
+                  @else
+                  <?php
+                  $output = nl2br(str_replace("&nbsp;", " ", $news->ar_text));
+                  ?>
+                  {{str_limit(strip_tags($output),50,'...')}}
+
+                  @endif
+
+
+                </p>
+              </a>
+            </div>
+          </div>
+          @endforeach
    
     <div class=" panel-heading">
-        <p  class="head-p bg-dark"> إعلانات </p>
+        <p  class="head-p bg-dark"> {{ __('titles.advert') }} </p>
     </div>
     <div class="panel-body">
         <div class="fees">

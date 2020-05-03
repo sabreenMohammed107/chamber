@@ -88,16 +88,19 @@
 
               <a href="{{ url('announceDetails/'.$galleryAnn->relatedannounce->id) }}">
                 <p class="card-text">
+              
+
+
                   @if(app()->getLocale()=='en')
-                  {!! Str::limit($galleryAnn->relatedannounce->en_text, 100,'') !!}
+                  <?php
+                  $output = nl2br(str_replace("&nbsp;", " ", $galleryAnn->relatedannounce->en_text));
+                  ?>
+                  {{str_limit(strip_tags($output),100,'...')}}
                   @else
                   <?php
                   $output = nl2br(str_replace("&nbsp;", " ", $galleryAnn->relatedannounce->ar_text));
                   ?>
                   {{str_limit(strip_tags($output),100,'...')}}
-
-                  @endif
-
 
                 </p>
               </a>
@@ -158,7 +161,7 @@
 
         <!-- second section -->
         <div class=" panel-heading">
-          <p class="head-p bg-dark"> أهم الاخبار </p>
+          <p class="head-p bg-dark">{{ __('titles.importNews') }}</p>
         </div>
         <div class="panel-body">
           @foreach($AnnounceRandom as $Anno)
@@ -166,7 +169,7 @@
             <div class="row ">
 
               <a href="{{ url('announceDetails/'.$Anno->id) }}" target="_blank">
-                <p style="float: left;">
+                <p style="float: left; margin: 0 7px;">
                   @if( $Anno->gallery->first()!=null && $Anno->gallery->first()->image!=null)
                   <img src="{{ asset('uploads/announce/'.$Anno->gallery->first()->image) }}" alt="..." style="float: right; height: 70px;
           width: 62px; margin-right: 15px;">
@@ -175,8 +178,19 @@
           width: 62px; margin-right: 15px;">
                   @endif
 
+                  @if(app()->getLocale()=='en')
+                  <?php
+                  $output = nl2br(str_replace("&nbsp;", " ", $Anno->en_text));
+                  ?>
+                  {{str_limit(strip_tags($output),50,'...')}}
+                  @else
+                  <?php
+                  $output = nl2br(str_replace("&nbsp;", " ", $Anno->ar_text));
+                  ?>
+                  {{str_limit(strip_tags($output),50,'...')}}
 
-                  {!! Str::limit($Anno->ar_text, 50,'') !!}
+                  @endif
+
 
                 </p>
               </a>
@@ -185,7 +199,7 @@
           @endforeach
 
           <div class=" panel-heading">
-            <p class="head-p bg-dark"> إعلانات </p>
+            <p class="head-p bg-dark"> {{ __('titles.advert') }} </p>
           </div>
           <div class="panel-body">
             <div class="fees">

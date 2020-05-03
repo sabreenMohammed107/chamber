@@ -64,7 +64,7 @@
 
 <!-- second section -->
 <div class=" panel-heading">
-    <p  class="head-p bg-dark"> أهم الاخبار </p>
+    <p  class="head-p bg-dark">{{ __('titles.importNews') }}</p>
 </div>
 <div class="panel-body">
 @foreach($conferenceRandom as $conf)
@@ -72,7 +72,7 @@
     <div class="row ">
       
         <a href="{{ url('conferenceDetails/'.$conf->id) }}" target="_blank">
-        <p  style="float: left;">  
+        <p  style="float: left; margin: 0 7px;">  
         @if( $conf->gallery->first()!=null && $conf->gallery->first()->image!=null)
                                         <img src="{{ asset('uploads/conference/'.$conf->gallery->first()->image) }}" alt="..." style="float: right; height: 70px;
           width: 62px; margin-right: 15px;">
@@ -81,18 +81,25 @@
           width: 62px; margin-right: 15px;">
                                   @endif
         
-                                  <?php
-          $output = nl2br(str_replace("&nbsp;", " ", $conf->ar_text));
-          ?>
-          {{str_limit(strip_tags($output),50,'...')}}
-       
+          @if(app()->getLocale()=='en')
+                  <?php
+                  $output = nl2br(str_replace("&nbsp;", " ", $conf->en_text));
+                  ?>
+                  {{str_limit(strip_tags($output),50,'...')}}
+                  @else
+                  <?php
+                  $output = nl2br(str_replace("&nbsp;", " ", $conf->ar_text));
+                  ?>
+                  {{str_limit(strip_tags($output),50,'...')}}
+
+                  @endif
          </p></a>
         </div>
     </div>
   @endforeach
    
     <div class=" panel-heading">
-        <p  class="head-p bg-dark"> إعلانات </p>
+        <p  class="head-p bg-dark"> {{ __('titles.advert') }} </p>
     </div>
     <div class="panel-body">
         <div class="fees">
