@@ -50,8 +50,20 @@
                                 <td>{{$index+1}}</td>
                                 <td>{{$row->manager_en_name}}</td>
                                 <td>{{$row->manager_ar_name}}</td>
-                                <td>{{$row->from_date}}</td>
-                                <td>{{$row->to_date}}</td>
+                                <td>
+                                    @if($row->from_date)
+                                <?php $date = date_create($row->from_date) ?>
+                                    {{ date_format($date,"d-m-Y") }}
+                                    @endif
+                                  
+                                </td>
+                                <td>
+                                @if($row->to_date)
+                                <?php $date = date_create($row->to_date) ?>
+                                    {{ date_format($date,"d-m-Y") }}
+                                    @endif
+                                   
+                                </td>
 
                                 <td>
                                     <a href="{{ route('editAdminDevBoard',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
