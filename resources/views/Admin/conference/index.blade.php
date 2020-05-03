@@ -39,6 +39,7 @@
                             <th>Conference Date </th>
 
                             <th>Conference Type</th>
+                            <th>Active</th>
 
                             <th></th>
 
@@ -60,7 +61,11 @@
                                     {{$row->type->name}}
                                     @endif
                                 </td>
-
+                                @if($row->active == 1)
+                          <td><i class="fas fa-check"></i></td>
+                          @else
+                          <td><i class="fas fa-times"></i></td>
+                          @endif
                                 <td>
                                     <a href="{{ route('conference.edit',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
                                     <a href="#" onclick="destroy('this News','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
