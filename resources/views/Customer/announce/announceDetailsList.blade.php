@@ -64,6 +64,32 @@
       </div>
 
     </div>
+    <div>
+      <a href="#demo" class="btn btn-info" data-toggle="collapse">الملفات المتعلقه</a>
+
+      <div id="demo" class="collapse">
+        @foreach($newsFile as $file)
+        <li> <a href="{{asset('uploads/announce')}}/{{$file->path}}" target="_blank">
+            {{$file->name}} </a>
+
+          <input type="hidden" name="filename{{$file->id}}" value="{{asset('uploads/announce')}}/{{$file->path}}" alt="{{$file->path}}" />
+          <input type="hidden" name="calender" value="{{$file->id}}">
+          <input type="hidden" name="dawnName" value="{{$file->path}}">
+
+
+        </li>
+        <!-- <a class="btn btn-primary" onclick='downloadFile({{$file->id}})'>dawnload</a> -->
+
+        @endforeach
+
+
+
+
+
+
+      </div>
+
+    </div>
   </div>
   <div class="test panel-heading">
     <p id="newTitle mr-5 mt-3" class="subTest"> {{ __('titles.relatedAnnounce') }} </p>
@@ -88,7 +114,7 @@
 
               <a href="{{ url('announceDetails/'.$galleryAnn->relatedannounce->id) }}">
                 <p class="card-text">
-              
+
 
 
                   @if(app()->getLocale()=='en')
@@ -101,7 +127,7 @@
                   $output = nl2br(str_replace("&nbsp;", " ", $galleryAnn->relatedannounce->ar_text));
                   ?>
                   {{str_limit(strip_tags($output),100,'...')}}
-
+                  @endif
                 </p>
               </a>
 

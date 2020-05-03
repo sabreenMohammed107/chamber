@@ -8,6 +8,7 @@ use App\Models\Conference;
 use App\Models\Conference_type;
 use App\Models\Country;
 use App\Models\Conference_gallery;
+use App\Models\Conference_file;
 use App\Models\Related_conference;
 use App\Models\Chamber_ads;
 use App\Models\Ads_vedio;
@@ -102,6 +103,7 @@ class ConferenceController extends Controller
 
             $conferenceObj=Conference::where("id",'=',$id)->first();
             $conferenceGallery=Conference_gallery::where("conference_id",'=',$id)->where("active",'=',1)->orderBy("order", "asc")->get();
+            $newsFile=Conference_file::where("conference_id",'=',$id)->get();
             $relatedConference=Related_conference::where("conference_id",'=',$id)->paginate(3);
             $conferenceRandom=Conference::take(3)->inRandomOrder(rand(10,100))->get();
             $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
@@ -117,11 +119,12 @@ class ConferenceController extends Controller
              $id=$request->get("id");
              $conferenceObj=Conference::where("id",'=',$id)->first();
              $conferenceGallery=Conference_gallery::where("conference_id",'=',$id)->where("active",'=',1)->orderBy("order", "asc")->get();
+             $newsFile=Conference_file::where("conference_id",'=',$id)->get();
              $relatedConference=Related_conference::where("conference_id",'=',$id)->paginate(3);
              $conferenceRandom=Conference::take(3)->inRandomOrder(rand(10,100))->get();
              $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
              $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
-             return view('Customer.conference.conferenceDetailsList',compact('adsVedio','ads','conferenceObj','conferenceGallery','relatedConference','conferenceRandom'))->render();
+             return view('Customer.conference.conferenceDetailsList',compact('adsVedio','ads','newsFile','conferenceObj','conferenceGallery','relatedConference','conferenceRandom'))->render();
          }
         }
 }

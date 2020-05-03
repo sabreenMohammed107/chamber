@@ -332,13 +332,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="exampleInputPassword1" for="exampleCheck1">Cv -En </label>
-                                                        <input type="text" name="en_cv" value="{{$member->en_cv}}" class="form-control">
+                                                        <input type="text" name="en_cv"  class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="exampleInputPassword1" for="exampleCheck1">Cv - Ar</label>
-                                                        <input type="text" name="ar_cv" value="{{$member->ar_cv}}" class="form-control">
+                                                        <input type="text" name="ar_cv"  class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
