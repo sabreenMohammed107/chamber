@@ -257,7 +257,7 @@
                                                                                 <div class="col-md-6">
                                                                                     <div class="form-group">
                                                                                         <label class="exampleInputPassword1" for="exampleCheck1">person_position</label>
-                                                                                        <input type="number" value="{{$member->person_position}}" name="person_position" class="form-control">
+                                                                                        <input type="number" value="{{$member->position_order}}" name="person_position" class="form-control">
 
                                                                                     </div>
                                                                                 </div>
@@ -363,7 +363,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="exampleInputPassword1">person_position</label>
-                                                        <input type="number" name="person_position" class="form-control">
+                                                        <input type="number" name="position_order" class="form-control">
 
                                                     </div>
                                                 </div>
