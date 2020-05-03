@@ -13,7 +13,7 @@ class ActivityController extends Controller
 {
     public function index(){
 
-        $news=Woman_activity::orderBy("created_at", "Desc")->paginate(6);
+        $news=Woman_activity::where('active','=',1)->orderBy("activity_date", "Desc")->paginate(6);
       $newsRandom=Woman_activity::take(3)->inRandomOrder(rand(10,100))->get();
       $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
       $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();

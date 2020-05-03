@@ -16,7 +16,7 @@ class ConferenceController extends Controller
     public function index()
     {
 
-        $conferences = Conference::orderBy("created_at", "Desc")->paginate(6);
+        $conferences = Conference::where('active','=',1)->orderBy("conference_date", "Desc")->paginate(6);
         $types = Conference_type::all();
         $countries = Country::all();
 

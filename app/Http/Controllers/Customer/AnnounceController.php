@@ -13,7 +13,7 @@ class AnnounceController extends Controller
 {
     public function index(){
 
-        $announces=Announcement::orderBy("created_at", "Desc")->paginate(6);
+        $announces=Announcement::where('active','=',1)->orderBy("announce_date", "Desc")->paginate(6);
       $announceRandom=Announcement::take(3)->inRandomOrder(rand(10,100))->get();
       $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
       $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();

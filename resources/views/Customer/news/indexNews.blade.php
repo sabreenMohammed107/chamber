@@ -113,7 +113,7 @@
               <a href="{{ url('newsDetails/'.$news->id) }}" target="_blank">
                 <p style="float: left; margin: 0 7px;">
 
-                  @if($new->gallery!=null && $news->gallery->first()!=null && $news->gallery->first()->image!=null)
+                  @if($news->gallery!=null && $news->gallery->first()!=null && $news->gallery->first()->image!=null)
                   <img src="{{ asset('uploads/news/'.$news->gallery->first()->image) }}" alt="..." class="img_imp">
                   @else
                   <img src="{{ asset('webasset/images/screen.png')}}" class="img_imp">
