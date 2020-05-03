@@ -36,7 +36,7 @@
 
                             @method('PUT')
                             <div class="ms-auth-container row">
-                                <input type="hidden" name="department_id" value="{{$row->id}}">
+                                <input type="hidden" name="department_id" value="{{$devisionrow->id}}">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="exampleInputPassword1" for="exampleCheck1">from year</label>
