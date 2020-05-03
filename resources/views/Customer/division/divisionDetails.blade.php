@@ -138,7 +138,7 @@
 
                                         <div class="col-md-4">
 
-                                            <a href="people.html">
+                                            <a href="{{ url('people/'.$mastr->id) }}">
                                                 <img src="{{ asset('uploads/people/'.$mastr->image) }}" class="img-fluid" ةstyle="height:100px !important">
 
                                             </a>
@@ -194,7 +194,7 @@
                                         @foreach($subBoard as $mastr)
                                         <div class="col-md-4">
 
-                                            <a href="people.html">
+                                            <a href="{{ url('people/'.$mastr->id) }}">
                                                 <img src="{{ asset('uploads/people/'.$mastr->image) }}" class="img-fluid" ةstyle="height:100px !important">
 
                                             </a>

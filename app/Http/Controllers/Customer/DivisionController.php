@@ -149,4 +149,10 @@ class DivisionController extends Controller
          return view('Customer.division.newsDetailsList', compact('adsVedio','ads','newsObj','newsGallery','relatedNews','newsRandom'))->render();
      }
     }
+
+    public function people($id){
+        $row=Department_board_member::where('id','=',$id)->first();
+      
+        return view('Customer.people.index', compact('row'));
+    }
 }

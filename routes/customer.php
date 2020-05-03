@@ -51,6 +51,7 @@ Route::namespace('Customer')->group(function () {
     Route::get('/newsDivisionDetails/{id}', 'DivisionController@newsDivisionDetails')->name('newsDivisionDetails');
     Route::get('/meetingDivisionDetails/{id}', 'DivisionController@meetingDivisionDetails')->name('meetingDivisionDetails');
     Route::get('fetch_newsDetailsDeivsion', 'DivisionController@fetch_newsDetailsDeivsion');
+    Route::get('people/{id}', 'DivisionController@people')->name('people');
      /*----------------------------schedule-------------------------------*/
      Route::get('/schedule', 'ScheduleController@index');
      Route::get('fetch_categorySchedule', 'ScheduleController@fetch_categorySchedule');

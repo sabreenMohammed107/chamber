@@ -73,25 +73,25 @@
 
 
                                 <div class="col-md-6">
-                                  
-                                    <div class="form-group">
-                                    <select id="current" name="current" class="form-control">
-                                        <option value="" >
-                                        @if($row->current == 0)
-                                        Current
-                                        @endif
-                                        @if($row->current == 1)
-                                        Previous
-                                        @endif
-                                        @if($row->current == 2)
-                                        old
-                                        @endif
 
-                                        </option>
-                                        <option value="0">Current</option>
-                                        <option value="1">Previous</option>
-                                        <option value="2">old</option>
-                                    </select>
+                                    <div class="form-group">
+                                        <select id="current" name="current" class="form-control">
+                                            <option value="">
+                                                @if($row->current == 0)
+                                                Current
+                                                @endif
+                                                @if($row->current == 1)
+                                                Previous
+                                                @endif
+                                                @if($row->current == 2)
+                                                old
+                                                @endif
+
+                                            </option>
+                                            <option value="0">Current</option>
+                                            <option value="1">Previous</option>
+                                            <option value="2">old</option>
+                                        </select>
                                     </div>
 
                                 </div>
@@ -237,24 +237,30 @@
                                                                                 </div>
                                                                                 <div class="col-md-6">
                                                                                     <div class="form-group">
-                                                                                        <label class="exampleInputPassword1" for="exampleCheck1">Cv -En </label>
-                                                                                        <input type="text" name="en_cv" value="{{$member->en_cv}}" class="form-control">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-md-6">
-                                                                                    <div class="form-group">
-                                                                                        <label class="exampleInputPassword1" for="exampleCheck1">Cv - Ar</label>
-                                                                                        <input type="text" name="ar_cv" value="{{$member->ar_cv}}" class="form-control">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-md-6">
-                                                                                    <div class="form-group">
                                                                                         <label class="exampleInputPassword1" for="exampleCheck1">person_position</label>
                                                                                         <input type="number" value="{{$member->position_order}}" name="person_position" class="form-control">
 
                                                                                     </div>
                                                                                 </div>
 
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <label for="example2">Cv - En</label>
+                                                                                        <div class="form-group">
+                                                                                            <textarea class="content" name="en_cv">{{$member->en_cv}}</textarea>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <label for="example2">Cv - Ar</label>
+                                                                                        <div class="form-group">
+                                                                                            <textarea class="content" name="ar_cv">{{$member->ar_cv}}</textarea>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                               
 
 
 
@@ -343,24 +349,30 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="exampleInputPassword1" for="exampleCheck1">Cv -En </label>
-                                                        <input type="text" name="en_cv"  class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="exampleInputPassword1" for="exampleCheck1">Cv - Ar</label>
-                                                        <input type="text" name="ar_cv"  class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
                                                         <label class="exampleInputPassword1">person_position</label>
                                                         <input type="number" name="position_order" class="form-control">
 
                                                     </div>
                                                 </div>
 
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="example2">Cv - En</label>
+                                                        <div class="form-group">
+                                                            <textarea class="content" name="en_cv"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="example2">Cv - Ar</label>
+                                                        <div class="form-group">
+                                                            <textarea class="content" name="ar_cv"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               
 
 
 

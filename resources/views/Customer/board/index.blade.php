@@ -63,13 +63,13 @@
 
                   @if($mastr->person_position==1)
                   <div class="col-md-6 col-3">
-                    <a href="people.html">
+                    <a href="{{ url('people/'.$mastr->id) }}">
                       <img src="{{ asset('uploads/people/'.$mastr->image) }}" class="img-fluid">
 
                     </a>
                   </div>
                   <div class="col-md-6 col-9">
-                    <a href="people.html" style="color: black;">
+                    <a href="{{ url('people/'.$mastr->id) }}" style="color: black;">
                       <p class="text-dark">
                         <h6 style="margin-top:100px !important;"> @if(app()->getLocale()=='en')
                           {{$mastr->en_name}}
@@ -105,13 +105,13 @@
                   @foreach($mastrBoard as $mastr)
                   @if($mastr->person_position==2)
                   <div class="col-md-6 col-3">
-                    <a href="people.html">
+                    <a href="{{ url('people/'.$mastr->id) }}">
                       <img src="{{ asset('uploads/people/'.$mastr->image) }}" class="img-fluid">
 
                     </a>
                   </div>
                   <div class="col-md-6 col-9">
-                    <a href="people.html" style="color: black;">
+                    <a href="{{ url('people/'.$mastr->id) }}" style="color: black;">
                       <p class="text-dark">
                         <h6 style="margin-top:100px !important;"> @if(app()->getLocale()=='en')
                           {{$mastr->en_name}}
@@ -172,13 +172,13 @@
                   @foreach($subBoard as $mastr)
                   @if($mastr->person_position==1)
                   <div class="col-md-6 col-3">
-                    <a href="people.html">
+                    <a href="{{ url('people/'.$mastr->id) }}">
                       <img src="{{ asset('uploads/people/'.$mastr->image) }}" class="img-fluid">
 
                     </a>
                   </div>
                   <div class="col-md-6 col-9">
-                    <a href="people.html" style="color: black;">
+                    <a href="{{ url('people/'.$mastr->id) }}" style="color: black;">
                       <p class="text-dark">
                         <h6 style="margin-top:100px !important;"> @if(app()->getLocale()=='en')
                           {{$mastr->en_name}}
@@ -210,13 +210,13 @@
                   @foreach($subBoard as $mastr)
                   @if($mastr->person_position==2)
                   <div class="col-md-6 col-3">
-                    <a href="people.html">
+                    <a href="{{ url('people/'.$mastr->id) }}">
                       <img src="{{ asset('uploads/people/'.$mastr->image) }}" class="img-fluid">
 
                     </a>
                   </div>
                   <div class="col-md-6 col-9">
-                    <a href="people.html" style="color: black;">
+                    <a href="{{ url('people/'.$mastr->id) }}" style="color: black;">
                       <p class="text-dark">
                         <h6 style="margin-top:100px !important;"> @if(app()->getLocale()=='en')
                           {{$mastr->en_name}}
