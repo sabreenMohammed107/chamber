@@ -63,21 +63,21 @@ class DevisionBoardController extends Controller
      */
     public function store(Request $request)
     {
-       
+
         $data = [
 
             'manager_en_name' => $request->input('manager_en_name'),
             'manager_ar_name' => $request->input('manager_ar_name'),
             'from_date' => Carbon::parse($request->input('from_date')),
             'to_date' => Carbon::parse($request->input('to_date')),
-           
+
             'department_id' => $request->input('department_id'),
 
         ];
-        if($request->input('current')){
+        if ($request->input('current')) {
 
-            $data['current']=$request->input('current');
-         }
+            $data['current'] = $request->input('current');
+        }
 
         $this->object::create($data);
 
@@ -131,21 +131,20 @@ class DevisionBoardController extends Controller
      */
     public function update(Request $request, $id)
     {
-      
+
         $data = [
 
             'manager_en_name' => $request->input('manager_en_name'),
             'manager_ar_name' => $request->input('manager_ar_name'),
             'from_date' => Carbon::parse($request->input('from_date')),
             'to_date' => Carbon::parse($request->input('to_date')),
-        
             'department_id' => $request->input('department_id'),
 
         ];
-        if($request->input('current')){
+        if ($request->input('current')) {
 
-            $data['current']=$request->input('current');
-         }
+            $data['current'] =$request->input('current');
+        }
         $this->object::findOrFail($id)->update($data);
 
         return redirect()->route($this->routeName . 'edit', $request->input('department_id'));
@@ -172,13 +171,13 @@ class DevisionBoardController extends Controller
         return redirect()->route($this->routeName . 'edit', $deptId);
     }
 
-     /**
+    /**
      * Announce Gallery
      */
     public function addBoardMember(Request $request)
     {
 
-      
+
         $data = [
 
             'en_name' => $request->input('en_name'),
@@ -254,7 +253,7 @@ class DevisionBoardController extends Controller
     }
 
 
-     /**
+    /**
      * uplaud image
      */
     public function UplaodImage($file_request)
