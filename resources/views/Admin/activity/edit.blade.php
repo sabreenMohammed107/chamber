@@ -529,7 +529,7 @@
                                                 @if($relateds !=null)
                                                 @foreach ($relateds as $related)
                                                 <option value='{{$related->id}}'>
-                                                    {{ $related->en_title }}</option>
+                                                    {{ $related->ar_title }}</option>
                                                 @endforeach
                                                 @endif
 

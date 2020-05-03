@@ -101,7 +101,7 @@ class ConferenceController extends Controller
         public function conferenceDetails($id){
 
             $conferenceObj=Conference::where("id",'=',$id)->first();
-            $conferenceGallery=Conference_gallery::where("conference_id",'=',$id)->get();
+            $conferenceGallery=Conference_gallery::where("conference_id",'=',$id)->where("active",'=',1)->orderBy("order", "asc")->get();
             $relatedConference=Related_conference::where("conference_id",'=',$id)->paginate(3);
             $conferenceRandom=Conference::take(3)->inRandomOrder(rand(10,100))->get();
             $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
@@ -116,7 +116,7 @@ class ConferenceController extends Controller
          {
              $id=$request->get("id");
              $conferenceObj=Conference::where("id",'=',$id)->first();
-             $conferenceGallery=Conference_gallery::where("conference_id",'=',$id)->get();
+             $conferenceGallery=Conference_gallery::where("conference_id",'=',$id)->where("active",'=',1)->orderBy("order", "asc")->get();
              $relatedConference=Related_conference::where("conference_id",'=',$id)->paginate(3);
              $conferenceRandom=Conference::take(3)->inRandomOrder(rand(10,100))->get();
              $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();

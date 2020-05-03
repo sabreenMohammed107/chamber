@@ -23,7 +23,7 @@ class AnnounceController extends Controller
       public function announceDetails($id){
        
           $announceObj=Announcement::where("id",'=',$id)->first();
-          $announceGallery=Announce_gallery::where("announce_id",'=',$id)->get();
+          $announceGallery=Announce_gallery::where("announce_id",'=',$id)->where("active",'=',1)->orderBy("order", "asc")->get();
           $relatedAnnounces=Related_announce::where("announce_id",'=',$id)->paginate(3);
           $AnnounceRandom=Announcement::take(3)->inRandomOrder(rand(10,100))->get();
           $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
@@ -53,7 +53,7 @@ class AnnounceController extends Controller
        {
            $id=$request->get("id");
            $announceObj=Announcement::where("id",'=',$id)->first();
-           $announceGallery=Announce_gallery::where("announce_id",'=',$id)->get();
+           $announceGallery=Announce_gallery::where("announce_id",'=',$id)->where("active",'=',1)->orderBy("order", "asc")->get();
            $relatedAnnounces=Related_announce::where("announce_id",'=',$id)->paginate(3);
            $AnnounceRandom=Announcement::take(3)->inRandomOrder(rand(10,100))->get();
            $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();

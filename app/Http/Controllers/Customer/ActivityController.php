@@ -23,7 +23,7 @@ class ActivityController extends Controller
       public function newsDetails($id){
   
           $newsObj=Woman_activity::where("id",'=',$id)->first();
-          $newsGallery=Wactivity_gallery::where("activity_id",'=',$id)->get();
+          $newsGallery=Wactivity_gallery::where("activity_id",'=',$id)->where("active",'=',1)->orderBy("order", "asc")->get();
           $relatedNews=Related_wactivity::where("activity_id",'=',$id)->paginate(3);
           $newsRandom=Woman_activity::take(3)->inRandomOrder(rand(10,100))->get();
           $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
@@ -53,7 +53,7 @@ class ActivityController extends Controller
        {
            $id=$request->get("id");
            $newsObj=Woman_activity::where("id",'=',$id)->first();
-           $newsGallery=Wactivity_gallery::where("activity_id",'=',$id)->get();
+           $newsGallery=Wactivity_gallery::where("activity_id",'=',$id)->where("active",'=',1)->orderBy("order", "asc")->get();
            $relatedNews=Related_wactivity::where("activity_id",'=',$id)->paginate(3);
            $newsRandom=Woman_activity::take(3)->inRandomOrder(rand(10,100))->get();
            $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();

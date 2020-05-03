@@ -24,7 +24,7 @@ class NewsController extends Controller
     public function newsDetails($id){
 
         $newsObj=News::where("id",'=',$id)->first();
-        $newsGallery=News_gallery::where("news_id",'=',$id)->get();
+        $newsGallery=News_gallery::where("news_id",'=',$id)->where("active",'=',1)->orderBy("order", "asc")->get();
         $relatedNews=Related_new::where("news_id",'=',$id)->paginate(3);
         $newsRandom=News::take(3)->inRandomOrder(rand(10,100))->get();
         $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
@@ -54,7 +54,7 @@ class NewsController extends Controller
      {
          $id=$request->get("id");
          $newsObj=News::where("id",'=',$id)->first();
-         $newsGallery=News_gallery::where("news_id",'=',$id)->get();
+         $newsGallery=News_gallery::where("news_id",'=',$id)->where("active",'=',1)->orderBy("order", "asc")->get();
          $relatedNews=Related_new::where("news_id",'=',$id)->paginate(3);
          $newsRandom=News::take(3)->inRandomOrder(rand(10,100))->get();
          $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
