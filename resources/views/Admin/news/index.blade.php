@@ -39,6 +39,7 @@
                             <th>News Date </th>
                           
                             <th>Home Order</th>
+                            <th>Active</th>
                            
                             <th></th>
 
@@ -56,7 +57,11 @@
                                              </td>
                               
                                 <td>{{$row->home_order}}</td>
-                               
+                                @if($row->active == 1)
+                          <td><i class="fas fa-check"></i></td>
+                          @else
+                          <td><i class="fas fa-times"></i></td>
+                          @endif
                                 <td>
                                 <a href="{{ route('news.edit',$row->id) }}" class="btn btn-info d-inline-block" 
                            >edit</a>

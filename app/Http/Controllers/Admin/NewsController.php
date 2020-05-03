@@ -39,7 +39,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $rows = News::orderBy("created_at", "Desc")->get();
+        $rows = News::orderBy("news_date", "Desc")->get();
 
 
         return view($this->viewName . 'index', compact('rows'));
@@ -126,7 +126,7 @@ class NewsController extends Controller
     {
         $active = 0;
 
-        if ($request->input('round') == 'on') {
+        if ($request->input('active') == 'on') {
             $active = 1;
         }
         $data = [

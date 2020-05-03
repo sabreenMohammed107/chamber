@@ -18,9 +18,9 @@ class IndexController extends Controller
 
     public function index()
     {
-        $news=News::orderBy("home_order", "asc")->take(6)->get();
-        $announces=Announcement::orderBy("home_order", "asc")->get();
-        $conferences =Conference::orderBy("home_order", "asc")->get();
+        $news=News::where('home_order', '!=',0)->where('active', '=',1)->orderBy("home_order", "asc")->take(6)->get();
+        $announces=Announcement::where('home_order', '!=',0)->where('active', '=',1)->orderBy("home_order", "asc")->get();
+        $conferences =Conference::where('home_order', '!=',0)->where('active', '=',1)->orderBy("home_order", "asc")->get();
         $sliders = Home_slider::where('active', '=', 1)->get();
         $ads=Chamber_ads::where('active', '=', 1)->get();
         $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
