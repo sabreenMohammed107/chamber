@@ -61,7 +61,7 @@
 @if($mastrBoard!=null)
                   @foreach($mastrBoard as $mastr)
 
-                  @if($mastr->person_position==0)
+                  @if($mastr->person_position==1)
                   <div class="col-md-6 col-3">
                     <a href="people.html">
                       <img src="{{ asset('uploads/people/'.$mastr->image) }}" class="img-fluid">
@@ -103,7 +103,7 @@
                 <div class="row">
                 @if($mastrBoard!=null)
                   @foreach($mastrBoard as $mastr)
-                  @if($mastr->person_position==1)
+                  @if($mastr->person_position==2)
                   <div class="col-md-6 col-3">
                     <a href="people.html">
                       <img src="{{ asset('uploads/people/'.$mastr->image) }}" class="img-fluid">
@@ -170,7 +170,7 @@
                 <div class="row">
                 @if($subBoard!=null)
                   @foreach($subBoard as $mastr)
-                  @if($mastr->person_position==0)
+                  @if($mastr->person_position==1)
                   <div class="col-md-6 col-3">
                     <a href="people.html">
                       <img src="{{ asset('uploads/people/'.$mastr->image) }}" class="img-fluid">
@@ -208,7 +208,7 @@
                 <div class="row">
                 @if($subBoard!=null)
                   @foreach($subBoard as $mastr)
-                  @if($mastr->person_position==1)
+                  @if($mastr->person_position==2)
                   <div class="col-md-6 col-3">
                     <a href="people.html">
                       <img src="{{ asset('uploads/people/'.$mastr->image) }}" class="img-fluid">
