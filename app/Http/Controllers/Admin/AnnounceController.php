@@ -41,7 +41,7 @@ class AnnounceController extends Controller
      */
     public function index()
     {
-        $rows = Announcement::orderBy("created_at", "Desc")->get();
+        $rows = Announcement::orderBy("announce_date", "Desc")->get();
 
 
         return view($this->viewName . 'index', compact('rows'));
@@ -128,7 +128,7 @@ class AnnounceController extends Controller
     {
         $active = 0;
 
-        if ($request->input('round') == 'on') {
+        if ($request->input('active') == 'on') {
             $active = 1;
         }
         $data = [

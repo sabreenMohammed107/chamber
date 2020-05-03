@@ -40,7 +40,7 @@ class WomanActivityController extends Controller
      */
     public function index()
     {
-        $rows = Woman_activity::orderBy("created_at", "Desc")->get();
+        $rows = Woman_activity::orderBy("activity_date", "Desc")->get();
 
 
         return view($this->viewName . 'index', compact('rows'));
@@ -126,7 +126,7 @@ class WomanActivityController extends Controller
     {
         $active = 0;
 
-        if ($request->input('round') == 'on') {
+        if ($request->input('active') == 'on') {
             $active = 1;
         }
         $data = [

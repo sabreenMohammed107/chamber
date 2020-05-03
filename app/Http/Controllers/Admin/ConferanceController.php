@@ -40,7 +40,7 @@ class ConferanceController extends Controller
      */
     public function index()
     {
-        $rows = Conference::with('type')->orderBy("created_at", "Desc")->get();
+        $rows = Conference::with('type')->orderBy("conference_date", "Desc")->get();
 
 
         return view($this->viewName . 'index', compact('rows'));

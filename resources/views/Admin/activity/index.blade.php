@@ -38,7 +38,7 @@
                             <th>EN Title</th>
                             <th>activity Date </th>
 
-                           
+                           <th>Active</th>
 
                             <th></th>
 
@@ -54,7 +54,11 @@
                                     <?php $date = date_create($row->activity_date) ?>
                                     {{ date_format($date,"d-m-Y") }}
                                 </td>
-
+                                @if($row->active == 1)
+                          <td><i class="fas fa-check"></i></td>
+                          @else
+                          <td><i class="fas fa-times"></i></td>
+                          @endif
                                 
 
                                 <td>
