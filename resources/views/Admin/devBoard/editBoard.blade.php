@@ -73,13 +73,32 @@
 
 
                                 <div class="col-md-6">
-                                    <div class="custom-control custom-checkbox">
+                                    <!-- <div class="custom-control custom-checkbox">
                                         @if($row->current == 1)
                                         <input type="checkbox" id="partener" name="current" checked>
                                         @else
                                         <input type="checkbox" id="partener" name="current">
                                         @endif
                                         <label for="category">Current</label>
+                                    </div> -->
+                                    <div class="form-group">
+                                    <select id="current" name="current" class="form-control">
+                                        <option value="" >
+                                        @if($row->current == 0)
+                                        Current
+                                        @endif
+                                        @if($row->current == 1)
+                                        Previous
+                                        @endif
+                                        @if($row->current == 2)
+                                        old
+                                        @endif
+
+                                        </option>
+                                        <option value="0">Current</option>
+                                        <option value="1">Previous</option>
+                                        <option value="2">old</option>
+                                    </select>
                                     </div>
 
                                 </div>
@@ -87,7 +106,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                    <a href="{{ route('devMeeting.edit',$devisionrow->id) }}" class="btn btn-dark mx-2"> Cancel</a>
+                                    <a href="{{ route('devBoard.edit',$devisionrow->id) }}" class="btn btn-dark mx-2"> Cancel</a>
                                     <input type="submit" value="save" class="btn btn-success ">
                                 </div>
                         </form>

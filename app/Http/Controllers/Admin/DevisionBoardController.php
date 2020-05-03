@@ -63,23 +63,21 @@ class DevisionBoardController extends Controller
      */
     public function store(Request $request)
     {
-        $current = 0;
-
-
-        if ($request->input('current') == 'on') {
-            $current = 1;
-        }
+       
         $data = [
 
             'manager_en_name' => $request->input('manager_en_name'),
             'manager_ar_name' => $request->input('manager_ar_name'),
             'from_date' => Carbon::parse($request->input('from_date')),
             'to_date' => Carbon::parse($request->input('to_date')),
-            'current' => $current,
+           
             'department_id' => $request->input('department_id'),
 
         ];
+        if($request->input('current')){
 
+            $data['current']=$request->input('current');
+         }
 
         $this->object::create($data);
 
@@ -133,22 +131,21 @@ class DevisionBoardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $current = 0;
-
-
-        if ($request->input('current') == 'on') {
-            $current = 1;
-        }
+      
         $data = [
 
             'manager_en_name' => $request->input('manager_en_name'),
             'manager_ar_name' => $request->input('manager_ar_name'),
             'from_date' => Carbon::parse($request->input('from_date')),
             'to_date' => Carbon::parse($request->input('to_date')),
-            'current' => $current,
+        
             'department_id' => $request->input('department_id'),
 
         ];
+        if($request->input('current')){
+
+            $data['current']=$request->input('current');
+         }
         $this->object::findOrFail($id)->update($data);
 
         return redirect()->route($this->routeName . 'edit', $request->input('department_id'));

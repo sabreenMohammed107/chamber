@@ -135,9 +135,17 @@
                                
                               
                                 <div class="col-md-6">
-                                    <div class="custom-control custom-checkbox">
+                                    <!-- <div class="custom-control custom-checkbox">
                                         <input type="checkbox" id="" name="current" checked>
                                         <label for="category">Current</label>
+                                    </div> -->
+                                    <div class="form-group">
+                                    <select id="current" name="current" class="form-control">
+                                        <option value="" >Please Choose...</option>
+                                        <option value="0">Current</option>
+                                        <option value="1">Previous</option>
+                                        <option value="2">old</option>
+                                    </select>
                                     </div>
 
                                 </div>

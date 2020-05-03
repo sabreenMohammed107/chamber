@@ -57,8 +57,8 @@
                                     <a href="{{ route('editAdminDevBoard',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
                                     <a href="#" onclick="destroy('this News','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('devBoard.destroy', $row->id) }}" method="POST" style="display: none;">
-                                       
-                                    @csrf
+
+                                        @csrf
                                         @method('DELETE')
                                         <input type="hidden" name="department_id" value="{{$row->id}}">
                                         <button type="submit" value=""></button>
@@ -114,13 +114,13 @@
                         @endif
                         <form action="{{route('devBoard.store')}}" method="POST">
                             @csrf
-                         
+
 
 
                             <div class="ms-auth-container row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                    <input type="hidden" name="department_id" value="{{$row->id}}">
+                                        <input type="hidden" name="department_id" value="{{$row->id}}">
                                         <label class="exampleInputPassword1" for="exampleCheck1">from year </label>
 
                                         <input class="form-control" for="exampleCheck1" data-date-format="dd/mm/yyyy" name="from_date" type="date" id="datepicker">
@@ -155,13 +155,20 @@
 
 
                                 <div class="col-md-6">
-                                    <div class="custom-control custom-checkbox">
+                                    <!-- <div class="custom-control custom-checkbox">
 
                                         <input type="checkbox" id="partener" name="current" checked>
 
                                         <label for="category">Current</label>
+                                    </div> -->
+                                    <div class="form-group">
+                                    <select id="current" name="current" class="form-control">
+                                        <option value="" >Please Choose...</option>
+                                        <option value="0">Current</option>
+                                        <option value="1">Previous</option>
+                                        <option value="2">old</option>
+                                    </select>
                                     </div>
-
                                 </div>
 
 
