@@ -8,7 +8,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Brother') }} </li>
+        <li class="breadcrumb-item active" aria-current="page"> {{ __('Commercial Agreement') }} </li>
     </ol>
 </nav>
 
@@ -25,8 +25,8 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Brothers Agreement</h6>
-                <a href="{{route('commercialAgreement.create') }}" class="btn btn-dark"> add Brothers Agreement</a>
+                <h6>Commercial Agreement</h6>
+                <a href="{{route('commercialAgreement.create') }}" class="btn btn-dark"> add Commercial Agreement</a>
             </div>
             <div class="ms-panel-body">
                 <div class="table-responsive">

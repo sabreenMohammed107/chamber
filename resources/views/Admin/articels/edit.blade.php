@@ -24,7 +24,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>edit_Chamber-pages</h6>
+                <h6>Edit</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -276,7 +276,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            @foreach($files as $index => $file)
+                                                @foreach($files as $index => $file)
                                                 <tr>
                                                     <td>{{$index+1}}</td>
 
@@ -456,75 +456,75 @@
                     </div>
                 </div>
                 <!-- /news gallery  Modal -->
-             <!-- add _ -->
-<div class="modal fade" id="add-Announce-Files" tabindex="-1" role="dialog" aria-labelledby="addCat">
-    <div class="modal-dialog modal-lg " role="document">
-        <div class="modal-content">
-            <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
+                <!-- add _ -->
+                <div class="modal fade" id="add-Announce-Files" tabindex="-1" role="dialog" aria-labelledby="addCat">
+                    <div class="modal-dialog modal-lg " role="document">
+                        <div class="modal-content">
+                            <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
-            </button>
-            <h3>Add News Files </h3>
-            <div class="modal-body">
+                            </button>
+                            <h3>Add News Files </h3>
+                            <div class="modal-body">
 
 
-                <div class="ms-auth-container row no-gutters">
-                    <div class="col-12 p-3">
-                        <form action="{{route('addArticelFile')}}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <input type="hidden" name="article_id" value="{{$row->id}}">
+                                <div class="ms-auth-container row no-gutters">
+                                    <div class="col-12 p-3">
+                                        <form action="{{route('addArticelFile')}}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            <input type="hidden" name="article_id" value="{{$row->id}}">
 
-                            <div class="ms-auth-container row">
-                                <div class="col-md-12">
-                                    <label> File </label>
+                                            <div class="ms-auth-container row">
+                                                <div class="col-md-12">
+                                                    <label> File </label>
 
-                                    <div class="fileUpload">
-                                        <div class="upload-icon">
-                                            <img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon">
+                                                    <div class="fileUpload">
+                                                        <div class="upload-icon">
+                                                            <img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon">
 
-                                            <input type="file" name="path" class="upload up" id="up" onchange="readURLFile(this);" />
-                                            <span class="upl" id="upload">Upload document</span></div>
+                                                            <input type="file" name="path" class="upload up" id="up" onchange="readURLFile(this);" />
+                                                            <span class="upl" id="upload">Upload document</span></div>
 
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ms-auth-container row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Name</label>
+                                                        <input type="text" name="name" class="form-control">
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ms-auth-container row">
+                                                <div class="col-md-12">
+                                                    <label>language</label>
+                                                    <div class="form-group">
+
+                                                        EN <input type="radio" name="language_id" value="en" checked>
+                                                        Ar <input type="radio" name="language_id" value="ar">
+                                                    </div>
+                                                    <div class="input-group d-flex justify-content-end text-center">
+                                                        <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
+                                                        <input type="submit" value="save" class="btn btn-success ">
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+                                        </form>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="ms-auth-container row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Name</label>
-                                        <input type="text" name="name" class="form-control">
-
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="ms-auth-container row">
-                                <div class="col-md-12">
-                                    <label>language</label>
-                                    <div class="form-group">
-
-                                        EN <input type="radio" name="language_id" value="en" checked>
-                                        Ar <input type="radio" name="language_id" value="ar">
-                                    </div>
-                                    <div class="input-group d-flex justify-content-end text-center">
-                                        <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
-                                        <input type="submit" value="save" class="btn btn-success ">
-                                    </div>
-
-
-                                </div>
-                            </div>
-
-                        </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- end./model -->
+                <!-- end./model -->
 
 
 
@@ -536,13 +536,6 @@
         </div>
     </div>
 </div>
-</div>
-<hr>
-
-</div>
-</div>
-
-</main>
 
 <!--  Setup  -->
 @endsection

@@ -111,7 +111,7 @@
 
               </style>
               <a href="{{ url('announceDetails/'.$announcess->id) }}" target="_blank">
-                <p style="float: left;">
+                <p style="float: left; margin: 0 7px;">
 
                   @if($announcess->gallery->first()!=null && $announcess->gallery->first()->image!=null)
                   <img src="{{ asset('uploads/announce/'.$announcess->gallery->first()->image) }}" alt="..." class="img_imp">
@@ -120,7 +120,10 @@
                   @endif
 
                   @if(app()->getLocale()=='en')
-                  {!! Str::limit($announcess->en_text, 50,'') !!}
+                  <?php
+                  $output = nl2br(str_replace("&nbsp;", " ", $announcess->en_text));
+                  ?>
+                  {{str_limit(strip_tags($output),50,'...')}}
                   @else
                   <?php
                   $output = nl2br(str_replace("&nbsp;", " ", $announcess->ar_text));

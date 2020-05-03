@@ -25,13 +25,13 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>edit_Sections</h6>
+                <h6>Edit_Sections</h6>
 
             </div>
             <div class="ms-panel-body">
                 <div class="ms-auth-container row no-gutters">
                     <div class="col-12 p-3">
-                        <form action="{{route('section.update',$row->id)}}" method="POST" enctype="multipart/form-data" >
+                        <form action="{{route('section.update',$row->id)}}" method="POST" enctype="multipart/form-data">
                             <div class="ms-auth-container row">
                                 {{ csrf_field() }}
 
@@ -80,12 +80,12 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                <div class="form-group">
-                                    <label  class="exampleInputPassword1" for="exampleCheck1">Order</label>
-                                    <input type="number" name="order" value="{{$row->order}}" class="form-control">
+                                    <div class="form-group">
+                                        <label class="exampleInputPassword1" for="exampleCheck1">Order</label>
+                                        <input type="number" name="order" value="{{$row->order}}" class="form-control">
+                                    </div>
                                 </div>
-                            </div>
-                          
+
 
                                 <div class="col-md-6">
                                     <div class="custom-control custom-checkbox">
@@ -107,7 +107,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                <a href="{{ route('section.index') }}" class="btn btn-dark mx-2"> Cancel</a>
+                                    <a href="{{ route('section.index') }}" class="btn btn-dark mx-2"> Cancel</a>
                                     <input type="submit" value="save" class="btn btn-success ">
                                 </div>
                         </form>
@@ -350,13 +350,6 @@
         </div>
     </div>
 </div>
-</div>
-<hr>
-
-</div>
-</div>
-
-</main>
 
 <!--  Setup  -->
 

@@ -442,7 +442,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                 
+
                                                     <th scope="col">Related</th>
 
                                                     <th scope="col"></th>
@@ -455,7 +455,7 @@
                                                 <tr>
                                                     <td>{{$index+1}}</td>
 
-                                                  
+
 
 
                                                     <td>{{$relat->relatedannounce->en_title}}</td>

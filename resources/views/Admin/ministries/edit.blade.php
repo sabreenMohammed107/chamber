@@ -8,7 +8,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Brother') }} </li>
+        <li class="breadcrumb-item active" aria-current="page"> {{ __('Ministries') }} </li>
     </ol>
 </nav>
 
@@ -24,7 +24,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>add-Brothers-Agreement</h6>
+                <h6>add-Ministries</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -36,18 +36,18 @@
 
                             @method('PUT')
                             <div class="ms-auth-container row">
-                            <div class="col-md-3">
-                          <div class="form-group">
-                            <div id="img-upload" class="img-upload">
-                              <img src="{{ asset('uploads/encyclo')}}/{{ $row->image }}" alt="">
-                              <div class="upload-icon">
-                                <input type="file" name="pic" class="upload">
-                                <i class="fas fa-camera    "></i>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      <div class="col-md-9"></div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <div id="img-upload" class="img-upload">
+                                            <img src="{{ asset('uploads/encyclo')}}/{{ $row->image }}" alt="">
+                                            <div class="upload-icon">
+                                                <input type="file" name="pic" class="upload">
+                                                <i class="fas fa-camera    "></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9"></div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="exampleInputPassword1" for="exampleCheck1">En Name</label>
@@ -87,7 +87,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="exampleInputPassword1" for="exampleCheck1"> Ar Address </label>
-                                        <input type="text" name="ar_address"  value="{{$row->ar_address}}" class="form-control">
+                                        <input type="text" name="ar_address" value="{{$row->ar_address}}" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -109,24 +109,24 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="exampleInputPassword1" for="exampleCheck1"> Manager En name</label>
-                                                        <input type="text" name="manager_en_name" value="{{$row->manager_en_name}}" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="exampleInputPassword1" for="exampleCheck1"> Manager Ar name </label>
-                                                        <input type="text" name="manager_ar_name" value="{{$row->manager_ar_name}}" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="exampleInputPassword1" for="exampleCheck1"> order </label>
-                                                        <input type="number" name="order" value="{{$row->order}}" class="form-control">
-                                                    </div>
-                                                </div>
-                                         
+                                    <div class="form-group">
+                                        <label class="exampleInputPassword1" for="exampleCheck1"> Manager En name</label>
+                                        <input type="text" name="manager_en_name" value="{{$row->manager_en_name}}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="exampleInputPassword1" for="exampleCheck1"> Manager Ar name </label>
+                                        <input type="text" name="manager_ar_name" value="{{$row->manager_ar_name}}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="exampleInputPassword1" for="exampleCheck1"> order </label>
+                                        <input type="number" name="order" value="{{$row->order}}" class="form-control">
+                                    </div>
+                                </div>
+
 
                                 <div class="input-group d-flex justify-content-end text-center">
                                     <a href="{{ route('ministries.index') }}" class="btn btn-dark mx-2"> Cancel</a>
@@ -150,14 +150,7 @@
 
 
 </div>
-</div>
-</div>
-</div>
-</div>
-<hr>
 
-</div>
-</div>
 
 
 

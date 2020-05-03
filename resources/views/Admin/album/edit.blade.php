@@ -183,7 +183,7 @@
                                                                         <input type="hidden" name="album_id" value="{{$row->id}}">
                                                                         <input type="hidden" name="gallery_id" value="{{$gallery->id}}">
                                                                         <div class="ms-auth-container row">
-                                                                        <div class="col-md-12">
+                                                                            <div class="col-md-12">
                                                                                 <div class="form-group">
                                                                                     <div class="img-upload">
                                                                                         <img src="{{ asset('uploads/albums')}}/{{ $gallery->image }}" alt="">
@@ -200,7 +200,7 @@
                                                                                         <i class="fas fa-video "></i>
                                                                                         <label> Video upload </label>
                                                                                         <div class="input-group">
-                                                                                            <input type="url" name="vedio"  value="{{$gallery->vedio}}" class="form-control" id="url-type-styled-input">
+                                                                                            <input type="url" name="vedio" value="{{$gallery->vedio}}" class="form-control" id="url-type-styled-input">
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -219,7 +219,7 @@
                                                                             <div class="col-md-12">
                                                                                 <br>
                                                                                 <div class="custom-control custom-checkbox">
-                                                                                @if($gallery->active == 1)
+                                                                                    @if($gallery->active == 1)
                                                                                     <input type="checkbox" id="" name="active" checked>
                                                                                     @else
                                                                                     <input type="checkbox" id="" name="active">
@@ -339,10 +339,6 @@
         </div>
     </div>
 </div>
-</div>
-</div>
-<hr>
 
-</div>
 
 @endsection

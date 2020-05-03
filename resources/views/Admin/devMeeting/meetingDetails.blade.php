@@ -90,7 +90,7 @@
             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
             </button>
-            <h3>Add Devision</h3>
+            <h3>Add </h3>
 
             <div class="modal-body">
 
@@ -133,7 +133,7 @@
                                     </div>
                                 </div>
 
-
+                                <div class="col-md-6"></div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="example2"> Ar Text</label>

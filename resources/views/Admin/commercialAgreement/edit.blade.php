@@ -8,7 +8,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Brother') }} </li>
+        <li class="breadcrumb-item active" aria-current="page"> {{ __('Commercial Agreement') }} </li>
     </ol>
 </nav>
 
@@ -24,7 +24,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>add-Brothers-Agreement</h6>
+                <h6>Edit-Commercial Agreement</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -36,16 +36,14 @@
 
                             @method('PUT')
                             <div class="ms-auth-container row">
-                             
+
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Agreement date
                                         </label>
                                         <br>
                                         <?php $date = date_create($row->agreement_date) ?>
-                                        <input style="height: 40px; border-radius: 5px;" 
-                                        class="col-md-12 exampleInputPassword1" for="exampleCheck1" value="{{ date_format($date,'Y-m-d') }}"
-                                         data-date-format="dd/mm/yyyy" name="agreement_date" type="date" id="datepicker">
+                                        <input style="height: 40px; border-radius: 5px;" class="col-md-12 exampleInputPassword1" for="exampleCheck1" value="{{ date_format($date,'Y-m-d') }}" data-date-format="dd/mm/yyyy" name="agreement_date" type="date" id="datepicker">
                                     </div>
                                 </div>
 
@@ -136,14 +134,6 @@
 
 
 
-</div>
-</div>
-</div>
-</div>
-</div>
-<hr>
-
-</div>
 </div>
 
 

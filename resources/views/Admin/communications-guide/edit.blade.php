@@ -24,14 +24,14 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>add-Communications-guide</h6>
+                <h6>Edit-Communications-guide</h6>
 
             </div>
             <div class="ms-panel-body">
                 <div class="ms-auth-container row no-gutters">
                     <div class="col-12 p-3">
 
-                        <form action="{{route('communications-guide.update',$row->id)}}" method="POST" >
+                        <form action="{{route('communications-guide.update',$row->id)}}" method="POST">
                             {{ csrf_field() }}
 
                             @method('PUT')
@@ -81,10 +81,10 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="exampleInputPassword1" for="exampleCheck1"> Ar Address </label>
-                                        <input type="text" name="ar_address"  value="{{$row->ar_address}}" class="form-control">
+                                        <input type="text" name="ar_address" value="{{$row->ar_address}}" class="form-control">
                                     </div>
                                 </div>
-                               
+
 
 
 
@@ -109,14 +109,6 @@
 
 
 
-</div>
-</div>
-</div>
-</div>
-</div>
-<hr>
-
-</div>
 </div>
 
 

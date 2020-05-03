@@ -23,7 +23,7 @@
 
   <div class="ms-panel">
     <div class="ms-panel-header d-flex justify-content-between">
-      <h6>Sponsors</h6>
+      <h6>Parteners</h6>
       <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addclient"> add Partener </a>
     </div>
     <div class="ms-panel-body">

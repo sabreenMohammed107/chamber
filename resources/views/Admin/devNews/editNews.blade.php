@@ -103,7 +103,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                <a href="{{ route('devMeeting.edit',$devisionrow->id) }}" class="btn btn-dark mx-2"> Cancel</a>
+                                    <a href="{{ route('devMeeting.edit',$devisionrow->id) }}" class="btn btn-dark mx-2"> Cancel</a>
                                     <input type="submit" value="Add" class="btn btn-success ">
                                 </div>
                         </form>
@@ -434,9 +434,9 @@
 
                                                 </tr>
                                             </thead>
-                                        
+
                                             <tbody>
-                                            @foreach($related as $index => $relat)
+                                                @foreach($related as $index => $relat)
                                                 <tr>
                                                     <td>{{$index+1}}</td>
 
@@ -458,9 +458,9 @@
 
                                                 </tr>
 
-                                           
 
-                                            @endforeach
+
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
@@ -684,13 +684,7 @@
         </div>
     </div>
 </div>
-</div>
-<hr>
 
-</div>
-</div>
-
-</main>
 
 <!--  Setup  -->
 @endsection

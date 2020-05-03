@@ -24,7 +24,7 @@
 
     <div class="ms-panel">
         <div class="ms-panel-header d-flex justify-content-between">
-            <h6>add-Social-Responsibility</h6>
+            <h6>Add</h6>
 
         </div>
         <div class="ms-panel-body">

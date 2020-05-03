@@ -17,7 +17,7 @@
 @section('content')
 <div class="ms-panel">
                         <div class="ms-panel-header d-flex justify-content-between">
-                            <h6>Add_News</h6>
+                            <h6>Add Conference</h6>
 
                         </div>
                         <div class="ms-panel-body">
@@ -70,7 +70,7 @@
                                                     <input type="text" name="home_order" class="form-control">
                                                 </div>
                                             </div>
-
+                                            <div class="col-md-6"></div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="example2"> Ar Text</label>

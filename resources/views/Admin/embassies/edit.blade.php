@@ -8,7 +8,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Brother') }} </li>
+        <li class="breadcrumb-item active" aria-current="page"> {{ __('Embassies-Consulates') }} </li>
     </ol>
 </nav>
 
@@ -24,7 +24,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>add-Brothers-Agreement</h6>
+                <h6>add-Embassies-Consulates</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -81,7 +81,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="exampleInputPassword1" for="exampleCheck1"> Ar Address </label>
-                                        <input type="text" name="ar_address"  value="{{$row->ar_address}}" class="form-control">
+                                        <input type="text" name="ar_address" value="{{$row->ar_address}}" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -126,14 +126,7 @@
 
 
 </div>
-</div>
-</div>
-</div>
-</div>
-<hr>
 
-</div>
-</div>
 
 
 

@@ -66,7 +66,7 @@
       <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
       </button>
-      <h3>Add Devision</h3>
+      <h3>Edit Devision</h3>
 
       <div class="modal-body">
 

@@ -24,7 +24,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>add-countries-data</h6>
+                <h6>Edit-countries-data</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -134,14 +134,6 @@
 
 
 
-</div>
-</div>
-</div>
-</div>
-</div>
-<hr>
-
-</div>
 </div>
 
 

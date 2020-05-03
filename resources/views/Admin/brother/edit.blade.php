@@ -54,9 +54,7 @@
                                         </label>
                                         <br>
                                         <?php $date = date_create($row->agreement_date) ?>
-                                        <input style="height: 40px; border-radius: 5px;" 
-                                        class="col-md-12 exampleInputPassword1" for="exampleCheck1" value="{{ date_format($date,'Y-m-d') }}"
-                                         data-date-format="dd/mm/yyyy" name="agreement_date" type="date" id="datepicker">
+                                        <input style="height: 40px; border-radius: 5px;" class="col-md-12 exampleInputPassword1" for="exampleCheck1" value="{{ date_format($date,'Y-m-d') }}" data-date-format="dd/mm/yyyy" name="agreement_date" type="date" id="datepicker">
                                     </div>
                                 </div>
 
@@ -148,16 +146,6 @@
 
 
 </div>
-</div>
-</div>
-</div>
-</div>
-<hr>
-
-</div>
-</div>
-
-
 
 @endsection
 @section('scripts')

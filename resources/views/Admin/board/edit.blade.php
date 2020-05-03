@@ -25,7 +25,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>edit_news_page</h6>
+                <h6>Edit</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -87,7 +87,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                <a href="{{ route('board.index') }}" class="btn btn-dark mx-2"> Cancel</a>
+                                    <a href="{{ route('board.index') }}" class="btn btn-dark mx-2"> Cancel</a>
                                     <input type="submit" value="save" class="btn btn-success ">
                                 </div>
                         </form>
@@ -319,7 +319,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="exampleInputPassword1" >person_position</label>
+                                                        <label class="exampleInputPassword1">person_position</label>
                                                         <input type="number" name="person_position" class="form-control">
 
                                                     </div>
@@ -353,13 +353,6 @@
         </div>
     </div>
 </div>
-</div>
-<hr>
-
-</div>
-</div>
-
-</main>
 
 <!--  Setup  -->
 

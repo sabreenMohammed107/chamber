@@ -8,7 +8,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Brother') }} </li>
+        <li class="breadcrumb-item active" aria-current="page"> {{ __('Studies/Reports') }} </li>
     </ol>
 </nav>
 
@@ -24,7 +24,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>add-Brothers-Agreement</h6>
+                <h6>Edit-Studies/Reports</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -48,7 +48,7 @@
                                         <input type="text" name="ar_text" value="{{$row->ar_text}}" class="form-control">
                                     </div>
                                 </div>
-                         
+
 
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -67,7 +67,7 @@
                                         </select>
                                     </div>
                                 </div>
-                              
+
                                 <div class="ms-auth-container row">
                                     <div class="col-md-12">
                                         <label> En File </label>
@@ -116,7 +116,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                <a href="{{ route('study-report.index') }}" class="btn btn-dark mx-2"> Cancel</a>
+                                    <a href="{{ route('study-report.index') }}" class="btn btn-dark mx-2"> Cancel</a>
                                     <input type="submit" value="save" class="btn btn-success ">
                                 </div>
                         </form>
@@ -137,14 +137,7 @@
 
 
 </div>
-</div>
-</div>
-</div>
-</div>
-<hr>
 
-</div>
-</div>
 
 
 

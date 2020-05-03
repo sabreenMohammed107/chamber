@@ -25,7 +25,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Brothers Agreement</h6>
+                <h6>Studies/Reports</h6>
                 <a href="{{route('study-report.create') }}" class="btn btn-dark"> add </a>
             </div>
             <div class="ms-panel-body">

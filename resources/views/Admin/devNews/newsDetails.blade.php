@@ -90,7 +90,7 @@
             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
             </button>
-            <h3>Add Devision</h3>
+            <h3>Add </h3>
 
             <div class="modal-body">
 
@@ -132,7 +132,7 @@
                                         <input style="height: 40px; border-radius: 5px;" class="col-md-12 exampleInputPassword1" for="exampleCheck1" data-date-format="dd/mm/yyyy" name="news_date" type="date" id="datepicker">
                                     </div>
                                 </div>
-
+                                <div class="col-md-6"></div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">

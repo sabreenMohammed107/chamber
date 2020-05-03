@@ -150,7 +150,7 @@
                         <div class="col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-header d-flex justify-content-between">
-                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Annoucement-Gallery">add  Gallery </button>
+                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Annoucement-Gallery">add Gallery </button>
                                 </div>
                                 <div class="ms-panel-body">
 
@@ -210,7 +210,7 @@
                                                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                                                             </button>
-                                                            <h3>Edit  Gallery </h3>
+                                                            <h3>Edit Gallery </h3>
                                                             <div class="modal-body">
 
 
@@ -301,7 +301,7 @@
                         <div class="col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-header d-flex justify-content-between">
-                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Announce-Files"> add  Files</button>
+                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Announce-Files"> add Files</button>
                                 </div>
                                 <div class="ms-panel-body">
 
@@ -353,7 +353,7 @@
                                                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                                                             </button>
-                                                            <h3>Edit  Files </h3>
+                                                            <h3>Edit Files </h3>
                                                             <div class="modal-body">
 
 
@@ -430,7 +430,7 @@
                         <div class="col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-header d-flex justify-content-between">
-                                    <button class="btn btn-dark" data-toggle="modal" data-target="#addRelated"> Add  </button>
+                                    <button class="btn btn-dark" data-toggle="modal" data-target="#addRelated"> Add </button>
                                 </div>
                                 <div class="ms-panel-body">
 

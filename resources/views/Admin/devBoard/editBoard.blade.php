@@ -87,7 +87,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                <a href="{{ route('devMeeting.edit',$devisionrow->id) }}" class="btn btn-dark mx-2"> Cancel</a>
+                                    <a href="{{ route('devMeeting.edit',$devisionrow->id) }}" class="btn btn-dark mx-2"> Cancel</a>
                                     <input type="submit" value="save" class="btn btn-success ">
                                 </div>
                         </form>
@@ -377,13 +377,6 @@
         </div>
     </div>
 </div>
-</div>
-<hr>
-
-</div>
-</div>
-
-</main>
 
 <!--  Setup  -->
 

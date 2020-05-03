@@ -193,7 +193,7 @@
                                             </div>
 
                                             <div class="input-group">
-                                                <input type="text" name="image_text"value="{{$gallery->image_text}}" class="form-control" id="Master AR Title">
+                                                <input type="text" name="image_text" class="form-control" id="Master AR Title">
                                             </div>
                                         </div>
                                     </div>

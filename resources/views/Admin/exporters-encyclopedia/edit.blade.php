@@ -48,7 +48,7 @@
                                         <input type="text" name="ar_agreement" value="{{$row->ar_agreement}}" class="form-control">
                                     </div>
                                 </div>
-                         
+
 
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -67,7 +67,7 @@
                                         </select>
                                     </div>
                                 </div>
-                              
+
                                 <div class="ms-auth-container row">
                                     <div class="col-md-12">
                                         <label> En File </label>
@@ -116,7 +116,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                <a href="{{ route('exporters-encyclopedia.index') }}" class="btn btn-dark mx-2"> Cancel</a>
+                                    <a href="{{ route('exporters-encyclopedia.index') }}" class="btn btn-dark mx-2"> Cancel</a>
                                     <input type="submit" value="save" class="btn btn-success ">
                                 </div>
                         </form>
@@ -137,14 +137,7 @@
 
 
 </div>
-</div>
-</div>
-</div>
-</div>
-<hr>
 
-</div>
-</div>
 
 
 
