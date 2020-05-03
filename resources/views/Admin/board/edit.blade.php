@@ -73,14 +73,7 @@
 
 
                                 <div class="col-md-6">
-                                    <!-- <div class="custom-control custom-checkbox">
-                                        @if($row->current == 1)
-                                        <input type="checkbox" id="partener" name="current" checked>
-                                        @else
-                                        <input type="checkbox" id="partener" name="current">
-                                        @endif
-                                        <label for="category">Current</label>
-                                    </div> -->
+                            
 
                                     <div class="form-group">
                                     <select id="current" name="current" class="form-control">

@@ -141,12 +141,13 @@ class DevisionBoardController extends Controller
             'department_id' => $request->input('department_id'),
 
         ];
-        if ($request->input('current')) {
+        if ($request->input('current')!=null) {
 
             $data['current'] =$request->input('current');
         }
+      
         $this->object::findOrFail($id)->update($data);
-
+        // return($request->input('current'));
         return redirect()->route($this->routeName . 'edit', $request->input('department_id'));
     }
 
