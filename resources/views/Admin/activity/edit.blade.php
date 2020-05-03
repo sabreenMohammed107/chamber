@@ -455,7 +455,7 @@
 
 
 
-                                                    <td>{{$relat->relatednews->en_title}}</td>
+                                                    <td>{{$relat->relatednews->ar_title}}</td>
 
                                                     <td>
                                                         <a href="#" onclick="destroy('this Related','{{$relat->id}}')" class="btn d-inline-block btn-danger">delete</a>
@@ -521,9 +521,9 @@
 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>News</label>
+                                        <label>Activity</label>
                                         <div class="input-group">
-                                            <select data-size="7" name="related_activity_id" data-live-search="true" class="selectpicker form-control" data-title="course" id="state_list" data-width="100%">
+                                            <select data-size="7" name="related_activity_id" data-live-search="true" class="selectpicker form-control" data-title="select" id="state_list" data-width="100%">
 
                                                 <option value="">select....</option>
                                                 @if($relateds !=null)
