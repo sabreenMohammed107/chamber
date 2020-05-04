@@ -113,6 +113,13 @@
             <div class="card-body">
 
               <a href="{{ url('announceDetails/'.$galleryAnn->relatedannounce->id) }}">
+              <h5>
+            @if(app()->getLocale()=='en')
+            {{$gallerynew->relatednews->en_title}}
+            @else
+            {{$gallerynew->relatednews->ar_title}}
+            @endif
+          </h5>
                 <p class="card-text">
 
 

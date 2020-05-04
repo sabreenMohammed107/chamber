@@ -88,7 +88,17 @@
                                  
                                   <div class="card-body">
                                    
-                                    <a href="{{ url('newsDivisionDetails/'.$gallerynew->relatednews->id) }}"><p class="card-text">
+                                    <a href="{{ url('newsDivisionDetails/'.$gallerynew->relatednews->id) }}">
+                                    
+                                    <h5>
+            @if(app()->getLocale()=='en')
+            {{$gallerynew->relatednews->en_title}}
+            @else
+            {{$gallerynew->relatednews->ar_title}}
+            @endif
+          </h5></a>
+                                    
+                                    <p class="card-text">
                                     @if(app()->getLocale()=='en')
                                     {{ Str::limit($gallerynew->relatednews->en_text, 100,'') }}
 					@else
@@ -96,7 +106,7 @@
 					@endif
                                        
                                                
-                                      </p></a> 
+                                      </p>
                                    
                                   </div>
                               

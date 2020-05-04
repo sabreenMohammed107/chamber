@@ -114,6 +114,13 @@
 
 
             <a href="{{ url('conferenceDetails/'.$galleryConf->relatedConferences->id) }}">
+            <h5>
+            @if(app()->getLocale()=='en')
+            {{$gallerynew->relatednews->en_title}}
+            @else
+            {{$gallerynew->relatednews->ar_title}}
+            @endif
+          </h5>
               <p class="card-text">
             
                 @if(app()->getLocale()=='en')
