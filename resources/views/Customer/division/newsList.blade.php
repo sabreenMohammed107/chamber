@@ -3,7 +3,7 @@
     @foreach($newsLists as $list)
     <div class=" col-md-6">
         <div class="card ">
-            <a href="{{ url('newsDivisionDetails/'.$list->id) }}">
+           
             @if($list->gallery->first() !=null && $list->gallery->first()->order==1)
                                  @if($list->gallery->first()->image!=null)
                                         <img src="{{ asset('uploads/meeting/'.$list->gallery->first()->image) }}" alt="...">
@@ -15,17 +15,24 @@
                                   @else
                                   <img src="" alt="no image">
                                   @endif
+                                  <a href="{{ url('newsDivisionDetails/'.$list->id) }}" style="color:black !important">
                 <h6> @if(app()->getLocale()=='en')
                             {{$list->en_title}} 
 					@else
                     {{$list->ar_title}} 
-                    @endif</h6>
+                    @endif</h6></a>
                     <p> 
-                                            @if(app()->getLocale()=='en')
-                                            {!! Str::limit($list->en_text, 70,'...') !!}
-					@else
-                    {!! Str::limit($list->ar_text, 100,'...') !!}
-					@endif
+                    @if(app()->getLocale()=='en')
+                <?php
+                $output = nl2br(str_replace("&nbsp;", " ", $list->en_text));
+                ?>
+                {{str_limit(strip_tags($output),100,'...')}}
+                @else
+                <?php
+                $output = nl2br(str_replace("&nbsp;", " ", $list->ar_text));
+                ?>
+                {{str_limit(strip_tags($output),100,'...')}}
+                @endif
                                                 </p>
             </a>
 
