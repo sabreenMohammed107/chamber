@@ -25,19 +25,18 @@
 <section class="ftco-section ftco-wrap-about">
         <div class="container">
           <div class="row">
-
-            <div class="col-md-2">
-                <img src="{{ asset('uploads/sections/'.$section->image) }}" class="img-thumbnail">
-            </div>
-           
-            <div class="col-md-12 ftco-animate">
-            @if(app()->getLocale()=='en')
+          <div class="col-md-7 ftco-animate text-justify img-thumbnail p-4">
+          @if(app()->getLocale()=='en')
                                             {!!$section->en_text!!}
 					@else
                     {!!$section->ar_text!!}
 					@endif
-  
+          </div>
+          <div class="col-md-5">
+                <img src="{{ asset('uploads/sections/'.$section->image) }}" class="img-thumbnail">
             </div>
+           
+          
           </div>
         </div>
       </section>
