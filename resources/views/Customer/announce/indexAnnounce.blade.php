@@ -36,7 +36,7 @@
 
             @endif
           </p>
-          {{$announce->id}}
+        
           <a href="{{ url('announceDetails/'.$announce->id) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
         </div>
       </div>
