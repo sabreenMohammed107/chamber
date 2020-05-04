@@ -80,6 +80,7 @@
                              <div class="newsStory">
                               
                              <p>
+                               
                              @if(app()->getLocale()=='en')
                              {!! $newsObj->en_text !!} 
 					@else

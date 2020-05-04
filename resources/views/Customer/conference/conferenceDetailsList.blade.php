@@ -133,6 +133,7 @@
                   $output = nl2br(str_replace("&nbsp;", " ", $galleryConf->relatedConferences->ar_text));
                   ?>
                   {{str_limit(strip_tags($output),100,'...')}}
+                  @endif
 
 
               </p>
