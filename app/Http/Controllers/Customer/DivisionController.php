@@ -15,6 +15,7 @@ use App\Models\Department_gallery;
 use App\Models\Department_meeting_gallery;
 use App\Models\Chamber_ads;
 use App\Models\Ads_vedio;
+use Carbon\Carbon;
 class DivisionController extends Controller
 {
     public function index()
@@ -55,7 +56,7 @@ class DivisionController extends Controller
         //get all
         $oldestList = Department_board_director::where('current', '=', 2)->get();
         //get meeting list
-        $meetingLists = Department_meeting::where('department_id', '=', $id)->where('active','=',1)->orderBy("created_at", "Desc")->paginate(6);
+        $meetingLists = Department_meeting::where('department_id', '=', $id)->where('active','=',1)->where('department_id', '<',Carbon::parse(now()))->orderBy("created_at", "Desc")->paginate(6);
 //get news list
       $newsLists=Department_news::where('department_id', '=', $id)->where('active','=',1)->orderBy("created_at", "Desc")->paginate(6);
         return view('Customer.division.divisionDetails', compact('newsLists','meetingLists', 'divisionObj', 'currentBoard', 'prevBoard', 'mastrBoard', 'subBoard', 'oldestList'));
