@@ -16,22 +16,22 @@ $current=date_create(now());
                     @if(date_format($dateTest,"d-m-Y")==date_format($current,"d-m-Y"))
                   <p class="awesome">{{ __('titles.today') }}*</p>
                   @endif
-                  <a href="devisionPage.html" class="text-dark">
+                  <a href="{{ url('meetingDivisionDetails/'.$schedul->id) }}" class="text-dark">
                   @if(app()->getLocale()=='en')
                             {{$schedul->en_title}} 
 					@else
                     {{$schedul->ar_title}} 
                     @endif
                 </a> </td>
-                <td data-toggle="tooltip" data-placement="top" title="{{$schedul->en_title}}">
-                  <a href="devisionPage.html" class="text-dark">
+                <td data-toggle="tooltip" data-placement="top" >
+                  <a  class="text-dark">
                   <?php $date = date_create($schedul->meeting_date) ?>
                                     {{ date_format($date,"d-m-Y") }}
                                   
                   </a>
                 </td>
-                <td  data-toggle="tooltip" data-placement="top" title="{{$schedul->en_title}}">
-                  <a href="devisionPage.html" class="text-dark">
+                <td  data-toggle="tooltip" data-placement="top" >
+                  <a  class="text-dark">
                   @if(app()->getLocale()=='en')
                             {!! $schedul->en_schedule !!} 
 					@else
