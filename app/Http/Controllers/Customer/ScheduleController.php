@@ -10,7 +10,7 @@ class ScheduleController extends Controller
     
     public function index(){
 
-        $schedules=Department_meeting::orderBy("created_at", "Desc")->paginate(6);
+        $schedules=Department_meeting::orderBy("meeting_date", "Desc")->paginate(6);
        
         return view('Customer.schedule.index',compact('schedules'));
     }
@@ -21,7 +21,7 @@ class ScheduleController extends Controller
 
      if($request->ajax())
      {
-        $schedules=Department_meeting::orderBy("created_at", "Desc")->paginate(6);
+        $schedules=Department_meeting::orderBy("meeting_date", "Desc")->paginate(6);
       
         return view('Customer.schedule.indexSchedule',compact('schedules'))->render();
      }
