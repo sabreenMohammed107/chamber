@@ -141,7 +141,7 @@ class DevisionNewsController extends Controller
     {
         $active = 0;
 
-        if ($request->input('round') == 'on') {
+        if ($request->input('active') == 'on') {
             $active = 1;
         }
         $data = [
