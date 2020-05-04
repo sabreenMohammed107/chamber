@@ -132,7 +132,7 @@
 
 <!-- second section -->
 <div class=" panel-heading">
-    <p  class="head-p bg-dark"> أهم الاخبار </p>
+    <p  class="head-p bg-dark">{{ __('titles.meeting') }}</p>
 </div>
 <div class="panel-body">
 @foreach($newsRandom as $news)
@@ -149,8 +149,18 @@
           width: 62px; margin-right: 15px;">
                                   @endif
         
-         
-          {{ Str::limit($news->ar_text, 50,'') }}
+          @if(app()->getLocale()=='en')
+                  <?php
+                  $output = nl2br(str_replace("&nbsp;", " ", $news->en_text));
+                  ?>
+                  {{str_limit(strip_tags($output),50,'...')}}
+                  @else
+                  <?php
+                  $output = nl2br(str_replace("&nbsp;", " ", $news->ar_text));
+                  ?>
+                  {{str_limit(strip_tags($output),50,'...')}}
+
+                  @endif
  
          </p></a>
         </div>
@@ -158,7 +168,7 @@
   @endforeach
    
     <div class=" panel-heading">
-        <p  class="head-p bg-dark"> إعلانات </p>
+        <p  class="head-p bg-dark"> {{ __('titles.advert') }} </p>
     </div>
     <div class="panel-body">
         <div class="fees">
