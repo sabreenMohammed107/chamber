@@ -78,20 +78,26 @@
          
           </style>
         <a href="{{ url('newsDetails/'.$news->id) }}" target="_blank">
-        <p  style="float: left;">  
+        <p  style="float: left; margin: 0 7px;">  
         
         @if($news->gallery->first()!=null && $news->gallery->first()->image!=null)
                                         <img src="{{ asset('uploads/news/'.$news->gallery->first()->image) }}" alt="..." class="img_imp">
                                   @else
                                   <img src="{{ asset('webasset/images/screen.png')}}"  class="img_imp">
                                   @endif
-        
                                   @if(app()->getLocale()=='en')
-                                  {!! Str::limit($news->en_text, 50,'') !!}
-					@else
-                    {!! Str::limit($news->ar_text, 50,'') !!}
-                    @endif
-        
+                  <?php
+                  $output = nl2br(str_replace("&nbsp;", " ", $news->en_text));
+                  ?>
+                  {{str_limit(strip_tags($output),50,'...')}}
+                  @else
+                  <?php
+                  $output = nl2br(str_replace("&nbsp;", " ", $news->ar_text));
+                  ?>
+                  {{str_limit(strip_tags($output),50,'...')}}
+
+                  @endif
+                                 
  
          </p></a>
         </div>
