@@ -18,60 +18,64 @@
 <!-- home-slider -->
 <div class="row">
 
-<div class="col-md-12">
+    <div class="col-md-12">
 
 
 
-  <div class="ms-panel">
-    <div class="ms-panel-header d-flex justify-content-between">
-      <h6>{{$row->ar_title}}</h6>
-      <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addnumber"> add </a>
-    </div>
-    <div class="ms-panel-body">
+        <div class="ms-panel">
+            <div class="ms-panel-header d-flex justify-content-between">
+                <h6>{{$row->ar_title}}</h6>
+                <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addnumber"> add </a>
+            </div>
+            <div class="ms-panel-body">
 
-                    <div class="table-responsive">
-                        <table id="courseEval" class="dattable table table-striped thead-dark  w-100">
-                            <thead>
-                                <th>#</th>
-
-
-                                <th>AR Title </th>
-                                <th>EN Title</th>
-
-                                <th></th>
+                <div class="table-responsive">
+                    <table id="courseEval" class="dattable table table-striped thead-dark  w-100">
+                        <thead>
+                            <th>#</th>
 
 
-                            </thead>
-                            <tbody>
-                                @foreach($meetings as $index => $row)
-                                <tr>
-                                    <td>{{$index+1}}</td>
-                                    <td>{{$row->ar_title}}</td>
-                                    <td>{{$row->en_title}}</td>
+                            <th>AR Title </th>
+                            <th>EN Title</th>
+                            <th>Meeting Date</th>
 
-                                    <td>
-                                        <a href="{{ route('editAdminMeeting',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
-                                        <a href="#" onclick="destroy('this News','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
-                                        <form id="delete_{{$row->id}}" action="{{ route('devMeeting.destroy', $row->id) }}" method="POST" style="display: none;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" value=""></button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+                            <th></th>
+
+
+                        </thead>
+                        <tbody>
+                            @foreach($meetings as $index => $row)
+                            <tr>
+                                <td>{{$index+1}}</td>
+                                <td>{{$row->ar_title}}</td>
+                                <td>{{$row->en_title}}</td>
+                                <td>
+                                    <?php $date = date_create($row->meeting_date) ?>
+                                    {{ date_format($date,"d-m-Y") }}
+                                </td>
+                                <td>
+                                    <a href="{{ route('editAdminMeeting',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
+                                    <a href="#" onclick="destroy('this News','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                    <form id="delete_{{$row->id}}" action="{{ route('devMeeting.destroy', $row->id) }}" method="POST" style="display: none;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" value=""></button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        <div class="input-group d-flex justify-content-end text-center">
-            <a href="{{ route('devMeeting.index') }}" style="float: right;margin-right: 50px;margin-bottom: 20px" class="btn btn-danger "> Cancel</a>
-
-        </div>
+    </div>
+    <div class="input-group d-flex justify-content-end text-center">
+        <a href="{{ route('devMeeting.index') }}" style="float: right;margin-right: 50px;margin-bottom: 20px" class="btn btn-danger "> Cancel</a>
 
     </div>
+
+</div>
 
 
 
@@ -183,9 +187,9 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                      <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
-                      <input type="submit" value="Add" class="btn btn-success ">
-                    </div>
+                                    <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
+                                    <input type="submit" value="Add" class="btn btn-success ">
+                                </div>
                         </form>
                     </div>
                 </div>
