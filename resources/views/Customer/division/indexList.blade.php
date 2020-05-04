@@ -7,9 +7,9 @@
                     <li><a href="{{ url('devisionDetails/'.$devision->id) }}"  class="text-dark text-decoration">
                       
                     @if(app()->getLocale()=='en')
-                    {!! Str::limit($devision->en_title,30,'.') !!}
+                    {!! Str::limit($devision->en_title,50,'.') !!}
                     @else
-                    {!! Str::limit($devision->ar_title,30,'.') !!}
+                    {!! Str::limit($devision->ar_title,50,'.') !!}
                     @endif
                   </a> </li>
                    @endforeach
