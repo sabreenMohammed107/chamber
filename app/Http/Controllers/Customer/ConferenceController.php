@@ -108,7 +108,7 @@ class ConferenceController extends Controller
             $conferenceRandom=Conference::take(3)->inRandomOrder(rand(10,100))->get();
             $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
             $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
-            return view('Customer.conference.conferenceDetails',compact('adsVedio','ads','conferenceObj','conferenceGallery','relatedConference','conferenceRandom'));
+            return view('Customer.conference.conferenceDetails',compact('adsVedio','newsFile','ads','conferenceObj','conferenceGallery','relatedConference','conferenceRandom'));
         }
         function fetch_conferenceDetails(Request $request)
         {

@@ -64,32 +64,42 @@
       </div>
 
     </div>
+   
+    <!-- start related file -->
     <div>
-      <a href="#demo" class="btn btn-info" data-toggle="collapse">الملفات المتعلقه</a>
+      <a href="#demo" class="btn btn-info" data-toggle="collapse">{{ __('titles.relatedFile') }}</a>
 
       <div id="demo" class="collapse">
         @foreach($newsFile as $file)
-        <li> <a href="{{asset('uploads/announce')}}/{{$file->path}}" target="_blank">
+        @if(app()->getLocale()=='en' && $file->language_id==0)
+
+        <li> <a href="{{asset('uploads/news')}}/{{$file->path}}" target="_blank">
             {{$file->name}} </a>
 
-          <input type="hidden" name="filename{{$file->id}}" value="{{asset('uploads/announce')}}/{{$file->path}}" alt="{{$file->path}}" />
+          <input type="hidden" name="filename{{$file->id}}" value="{{asset('uploads/news')}}/{{$file->path}}" alt="{{$file->path}}" />
           <input type="hidden" name="calender" value="{{$file->id}}">
           <input type="hidden" name="dawnName" value="{{$file->path}}">
 
+        </li>
+        @endif
+        @if(app()->getLocale()=='ar' && $file->language_id==1)
+
+        <li> <a href="{{asset('uploads/news')}}/{{$file->path}}" target="_blank">
+            {{$file->name}} </a>
+
+          <input type="hidden" name="filename{{$file->id}}" value="{{asset('uploads/news')}}/{{$file->path}}" alt="{{$file->path}}" />
+          <input type="hidden" name="calender" value="{{$file->id}}">
+          <input type="hidden" name="dawnName" value="{{$file->path}}">
 
         </li>
+        @endif
         <!-- <a class="btn btn-primary" onclick='downloadFile({{$file->id}})'>dawnload</a> -->
 
         @endforeach
-
-
-
-
-
-
       </div>
 
     </div>
+    <!-- End relatedFile -->
   </div>
   <div class="test panel-heading">
     <p id="newTitle mr-5 mt-3" class="subTest"> {{ __('titles.relatedAnnounce') }} </p>

@@ -4,7 +4,7 @@ return [
 
    /*------global----------*/
    'more' => 'More',
- 
+   'relatedFile'=>'Related Files',
    'type' => 'Type',
    'from' => 'From',
    'to' => 'To',
