@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
             <div class="col-md-9 ftco-animate text-center mb-4">
-                <h1 class="mb-2 bread">  {{ __('titles.devisionDetails') }}</h1>
+                <h1 class="mb-2 bread"> {{ __('titles.devisionDetails') }}</h1>
             </div>
         </div>
     </div>
@@ -27,8 +27,8 @@
 <section class="ftco-section ftco-wrap-about bg-light">
     <div class="container">
         <div class="col-md-4">
-         
-          
+
+
         </div>
         <div class="row">
             <div class="col-md-3">
@@ -48,7 +48,7 @@
                         @csrf
 
 
-                        <input type="hidden"  id="department_id" name="department_id" value="{{$divisionObj->id}}" >
+                        <input type="hidden" id="department_id" name="department_id" value="{{$divisionObj->id}}">
                         <div class="form-group">
                             <label for="name">{{ __('titles.name') }} </label>
                             <input class="form-control" id="name" type="text" name="name">
@@ -84,11 +84,11 @@
 
                             </div>
                             <div id="meetingContent" class=" panel-body">
-                               
+
                                 @include('Customer.division.meetingList')
-                               
-                                
-                               
+
+
+
 
                             </div>
                         </div>
@@ -148,14 +148,14 @@
                                                 @else
                                                 {{$mastr->ar_name}}
                                                 @endif</h6>
-                                          
-                                                <p style="text-align: center !important">
-                                            @if(app()->getLocale()=='en')
-                                            {{$mastr->en_position}}
-                                            @else
-                                            {{$mastr->ar_position}}
-                                            @endif
-                                        </p>
+
+                                            <p style="text-align: center !important">
+                                                @if(app()->getLocale()=='en')
+                                                {{$mastr->en_position}}
+                                                @else
+                                                {{$mastr->ar_position}}
+                                                @endif
+                                            </p>
 
                                         </div>
                                         @endforeach
@@ -204,12 +204,12 @@
                                                 @else
                                                 {{$mastr->ar_name}}
                                                 @endif</h6>
-                                                <p style="text-align: center !important">
-                                            @if(app()->getLocale()=='en')
-                                            {{$mastr->en_position}}
-                                            @else
-                                            {{$mastr->ar_position}}
-                                            @endif</p>
+                                            <p style="text-align: center !important">
+                                                @if(app()->getLocale()=='en')
+                                                {{$mastr->en_position}}
+                                                @else
+                                                {{$mastr->ar_position}}
+                                                @endif</p>
 
                                         </div>
 
@@ -289,8 +289,8 @@
                             </div>
                             <div id="newsdivisionContent" class=" panel-body">
 
-                            @include('Customer.division.newsList')
-                              
+                                @include('Customer.division.newsList')
+
 
                             </div>
                         </div>
@@ -309,77 +309,69 @@
 @endsection
 @section('scripts')
 <script>
-$(document).ready(function() {
+    $(document).ready(function() {
 
 
 
-//pagination
-$(document).on('click', '#meetingPagination .pagination a', function(event){
-  event.preventDefault(); 
-  var page = $(this).attr('href').split('page=')[1];
- 
-   fetch_data(page);
- });
- 
+        //pagination
+        $(document).on('click', '#meetingPagination .pagination a', function(event) {
+            event.preventDefault();
+            var page = $(this).attr('href').split('page=')[1];
 
- //pagination
-$(document).on('click', '#newsDataPagination .pagination a', function(event){
-  event.preventDefault(); 
-  var page = $(this).attr('href').split('page=')[1];
- 
-   fetch_newsData(page);
- });
- 
- 
- function fetch_data(page)
- {
-	 
-  $.ajax({
-	
-    url:"{{ URL::to('fetch_meetingdevision') }}?page="+page,
-    data:
-		{
-		
-			id:$("#department_id").val(),
-
-		
-        } ,
-   
-   
-   success:function(data)
-   {
-     
-    $('#meetingContent').html(data);
-   }
-  });
- }
-
- function fetch_newsData(page)
- {
-	 
-  $.ajax({
-	
-    url:"{{ URL::to('fetch_meetingdevision') }}?page="+page,
-    data:
-		{
-		
-			id:$("#department_id").val(),
-            start:10,
-
-		
-        } ,
-   
-   
-   success:function(data)
-   {
-     
-    $('#newsdivisionContent').html(data);
-   }
-  });
- }
-
-});
+            fetch_data(page);
+        });
 
 
+        //pagination
+        $(document).on('click', '#newsDataPagination .pagination a', function(event) {
+            event.preventDefault();
+            var page = $(this).attr('href').split('page=')[1];
+
+            fetch_newsData(page);
+        });
+
+
+        function fetch_data(page) {
+
+            $.ajax({
+
+                url: "{{ URL::to('fetch_meetingdevision') }}?page=" + page,
+                data: {
+
+                    id: $("#department_id").val(),
+
+
+                },
+
+
+                success: function(data) {
+
+                    $('#meetingContent').html(data);
+                }
+            });
+        }
+
+        function fetch_newsData(page) {
+
+            $.ajax({
+
+                url: "{{ URL::to('fetch_meetingdevision') }}?page=" + page,
+                data: {
+
+                    id: $("#department_id").val(),
+                    start: 10,
+
+
+                },
+
+
+                success: function(data) {
+
+                    $('#newsdivisionContent').html(data);
+                }
+            });
+        }
+
+    });
 </script>
 @endsection
