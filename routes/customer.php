@@ -38,6 +38,7 @@ Route::namespace('Customer')->group(function () {
      Route::get('fetch_album', 'AlbumController@fetch_album');
      /*----------------------------Board-------------------------------*/
      Route::get('/board', 'BoardController@index');
+     Route::get('boardPeople/{id}', 'DivisionController@boardPeople')->name('boardPeople');
       /*----------------------------socialres-------------------------------*/
       Route::get('/socialres', 'SocialresController@index');
       Route::get('fetch_socialres', 'SocialresController@fetch_socialres');
