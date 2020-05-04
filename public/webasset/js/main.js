@@ -391,7 +391,7 @@ jQuery(document).ready(function () {
 
 	jQuery('#advCarousel').carousel({
 
-		interval: 8000,
+		interval: 10000,
 		animateOut: 'fadeOut',
 		animateIn: 'fadeIn',
 
@@ -417,7 +417,7 @@ function toggleCaption() {
 	jQuery('.advr .carousel-caption').hide();
 
 	var caption = carouselContainer.find('.active').find('.advr .carousel-caption');
-	caption.delay(1000).fadeToggle('slow');
+	caption.delay(3000).fadeToggle('slow');
 }
 
 // get day date in banner
