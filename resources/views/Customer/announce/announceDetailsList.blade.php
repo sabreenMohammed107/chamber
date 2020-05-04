@@ -73,10 +73,10 @@
         @foreach($newsFile as $file)
         @if(app()->getLocale()=='en' && $file->language_id==0)
 
-        <li> <a href="{{asset('uploads/news')}}/{{$file->path}}" target="_blank">
+        <li> <a href="{{asset('uploads/announce')}}/{{$file->path}}" target="_blank">
             {{$file->name}} </a>
 
-          <input type="hidden" name="filename{{$file->id}}" value="{{asset('uploads/news')}}/{{$file->path}}" alt="{{$file->path}}" />
+          <input type="hidden" name="filename{{$file->id}}" value="{{asset('uploads/announce')}}/{{$file->path}}" alt="{{$file->path}}" />
           <input type="hidden" name="calender" value="{{$file->id}}">
           <input type="hidden" name="dawnName" value="{{$file->path}}">
 
@@ -84,10 +84,10 @@
         @endif
         @if(app()->getLocale()=='ar' && $file->language_id==1)
 
-        <li> <a href="{{asset('uploads/news')}}/{{$file->path}}" target="_blank">
+        <li> <a href="{{asset('uploads/announce')}}/{{$file->path}}" target="_blank">
             {{$file->name}} </a>
 
-          <input type="hidden" name="filename{{$file->id}}" value="{{asset('uploads/news')}}/{{$file->path}}" alt="{{$file->path}}" />
+          <input type="hidden" name="filename{{$file->id}}" value="{{asset('uploads/announce')}}/{{$file->path}}" alt="{{$file->path}}" />
           <input type="hidden" name="calender" value="{{$file->id}}">
           <input type="hidden" name="dawnName" value="{{$file->path}}">
 
