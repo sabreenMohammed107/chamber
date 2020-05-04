@@ -14,6 +14,7 @@ Route::namespace('Customer')->group(function () {
   /*-----------------------index-------------------*/
   Route::get('/', 'IndexController@index');
   Route::get('/search', 'IndexController@search')->name('search');
+  Route::post('/sendNewsLetter', 'IndexController@sendNewsLetter');
   /*----------------------News---------------------------*/
    Route::get('/news', 'NewsController@index');
    Route::get('/newsDetails/{id}', 'NewsController@newsDetails')->name('newsDetails');

@@ -44,8 +44,10 @@
              </li>
 
            </ul>
-           <form action="" method="post" id="email-form" class="mr-3">
+           <form  id="email-form" class="mr-3" action="{{url('/sendNewsLetter')}}" method="POST">
+				@csrf
              <input type="email" name="email" placeholder="{{ __('links.emailList') }}"><input type="submit" value="{{ __('links.send') }}">
+             
            </form>
 
          </div>

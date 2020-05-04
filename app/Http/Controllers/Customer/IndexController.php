@@ -13,6 +13,7 @@ use App\Models\Department_news;
 use App\Models\Woman_activity;
 use App\Models\Chamber_ads;
 use App\Models\Ads_vedio;
+use App\Models\Email_news_letter;
 class IndexController extends Controller
 {
 
@@ -57,4 +58,14 @@ class IndexController extends Controller
         //   dd($itemsCollection);
         return view('Customer.home.search', compact('itemsCollection'));
     }
+
+    public function sendNewsLetter(Request $request){
+       
+
+       $letter= Email_news_letter::create($request->all());
+      
+        return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
+   
+    
+}
 }
