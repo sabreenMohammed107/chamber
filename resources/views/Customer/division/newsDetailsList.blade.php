@@ -23,7 +23,7 @@
             @foreach($newsGallery as $key => $gallery)
             <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
               @if($gallery !=null && $gallery->image!=null)
-              <img src="{{ asset('uploads/news/'.$gallery->image) }}" alt="{{$gallery->ar_title}}" title="{{$gallery->ar_title}}">
+              <img src="{{ asset('uploads/division/'.$gallery->image) }}" alt="{{$gallery->ar_title}}" title="{{$gallery->ar_title}}">
               @else
               <iframe width="560" height="315" src="{{$gallery->vedio}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               @endif
@@ -79,7 +79,7 @@
 
           <div class="card mb-2" style=" flex-grow: 1;width: 31%;margin:0 5px 5px">
             @if($gallerynew->relatednews->gallery!=null && $gallerynew->relatednews->gallery->first()!=null)
-            <img class="card-img-top" src="{{ asset('uploads/news/'.$gallerynew->relatednews->gallery->first()->image) }}" alt="محمد أبو العينين - صورة أرشيفية" title="محمد أبو العينين - صورة أرشيفية">
+            <img class="card-img-top" src="{{ asset('uploads/division/'.$gallerynew->relatednews->gallery->first()->image) }}" alt="محمد أبو العينين - صورة أرشيفية" title="محمد أبو العينين - صورة أرشيفية">
             @else
             <img src="{{ asset('webasset/images/screen.png')}}" class="img_imp">
             @endif
