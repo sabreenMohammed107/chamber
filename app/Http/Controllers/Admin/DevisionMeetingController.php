@@ -115,7 +115,7 @@ class DevisionMeetingController extends Controller
     {
         $row = Department::where('id', '=', $id)->first();
        
-        $meetings = Department_meeting::where('department_id', '=', $id)->where('department_id', '<=',Carbon::parse(now()))->orderBy("meeting_date", "Desc")->get();
+        $meetings = Department_meeting::where('department_id', '=', $id)->where('department_id', '<',Carbon::parse(now()))->orderBy("meeting_date", "Desc")->get();
       
         return view($this->viewName . 'meetingDetails', compact('row', 'meetings', ));
     }
