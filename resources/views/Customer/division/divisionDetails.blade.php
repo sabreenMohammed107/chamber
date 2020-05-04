@@ -14,14 +14,6 @@
 </section>
 <!--========== End Banner ==========-->
 
-@if ($message =Session::get('message'))
-<div id="alertDiv" class="alert alert-info alert-block">
-    <button type="button" id="alertClose" class="close" data-dismiss="alert">×</button>
-    <strong style="color:black;font-weight:bold; text-align:center">{{ __('titles.mesSession') }}</strong>
-</div>
-
-
-@endif
 
 <!--==========تفاصيل الشعبة ==========-->
 <section class="ftco-section ftco-wrap-about bg-light">
@@ -42,6 +34,14 @@
                 </div>
             </div>
             <div class="col-md-9">
+                @if ($message =Session::get('message'))
+                <div id="alertDiv" class="alert alert-info alert-block">
+                    <button type="button" id="alertClose" class="close" data-dismiss="alert">×</button>
+                    <strong style="color:black;font-weight:bold">{{ $message }}</strong>
+                </div>
+
+
+                @endif
                 <div class="content-dept">
                     <h5 style="border-bottom: 1px solid #CCC;">{{ __('titles.register') }} </h5>
                     <form action="{{route('registerDevision')}}" method="post">
