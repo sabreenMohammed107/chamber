@@ -12,7 +12,7 @@ class AlbumController extends Controller
 {
     public function index(){
       
-        $albums=Album::orderBy("created_at", "Desc")->paginate(6);
+        $albums=Album::where('active', '=', 1)->orderBy("created_at", "Desc")->paginate(6);
         $newsRandom=News::take(3)->inRandomOrder(rand(10,100))->get();
         $ads=Chamber_ads::where('active', '=', 1)->get();
         $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
@@ -22,7 +22,7 @@ class AlbumController extends Controller
       public function fetch_album(Request $request){
         if($request->ajax())
         {
-            $albums=Album::orderBy("created_at", "Desc")->paginate(6);
+            $albums=Album::where('active', '=', 1)->orderBy("created_at", "Desc")->paginate(6);
          
          return view('Customer.albums.indexAlbum',compact('albums'))->render();
         }   
