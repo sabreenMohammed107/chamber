@@ -6,7 +6,7 @@
            
             @if($list->gallery->first() !=null && $list->gallery->first()->order==1)
                                  @if($list->gallery->first()->image!=null)
-                                        <img src="{{ asset('uploads/meeting/'.$list->gallery->first()->image) }}" alt="...">
+                                        <img src="{{ asset('uploads/division/'.$list->gallery->first()->image) }}" alt="...">
                                   @else
                                   <iframe id="popup-youtube-player" width="100%" height="200"
                                             src="{{$list->gallery->first()->vedio}}" frameborder="0"
