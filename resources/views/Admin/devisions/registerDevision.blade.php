@@ -161,11 +161,11 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12"></div>
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-12 col-sm-12">
                         <div class="form-group">
                             <label>Message</label>
                             <div class="input-group">
-                            <textarea  name="messege" readonly  class="form-control">{{$row->messege}}</textarea>
+                            <textarea rows="7" name="messege" readonly  class="form-control">{{$row->messege}}</textarea>
                              
                             </div>
                         </div>
