@@ -30,7 +30,42 @@
                                             {!!$section->en_text!!}
 					@else
                     {!!$section->ar_text!!}
-					@endif
+          @endif
+              <!-- start related file -->
+    <div>
+      <a href="#demo" class="btn btn-info" data-toggle="collapse">{{ __('titles.relatedFile') }}</a>
+
+      <div id="demo" class="collapse">
+        @foreach($newsFile as $file)
+        @if(app()->getLocale()=='en' && $file->language_id==0)
+
+        <li> <a href="{{asset('uploads/sections')}}/{{$file->path}}" target="_blank">
+            {{$file->name}} </a>
+
+          <input type="hidden" name="filename{{$file->id}}" value="{{asset('uploads/sections')}}/{{$file->path}}" alt="{{$file->path}}" />
+          <input type="hidden" name="calender" value="{{$file->id}}">
+          <input type="hidden" name="dawnName" value="{{$file->path}}">
+
+        </li>
+        @endif
+        @if(app()->getLocale()=='ar' && $file->language_id==1)
+
+        <li> <a href="{{asset('uploads/sections')}}/{{$file->path}}" target="_blank">
+            {{$file->name}} </a>
+
+          <input type="hidden" name="filename{{$file->id}}" value="{{asset('uploads/sections')}}/{{$file->path}}" alt="{{$file->path}}" />
+          <input type="hidden" name="calender" value="{{$file->id}}">
+          <input type="hidden" name="dawnName" value="{{$file->path}}">
+
+        </li>
+        @endif
+        <!-- <a class="btn btn-primary" onclick='downloadFile({{$file->id}})'>dawnload</a> -->
+
+        @endforeach
+      </div>
+
+    </div>
+    <!-- End relatedFile -->
           </div>
           <div class="col-md-5">
                 <img src="{{ asset('uploads/sections/'.$section->image) }}" class="img-thumbnail">

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Customer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Section;
-
+use App\Models\Section_file;
 class SectionController extends Controller
 {
     public function index()
@@ -19,6 +19,7 @@ class SectionController extends Controller
     public function details($id)
     {
         $section = Section::where('id', '=', $id)->first();
-        return view('Customer.section.details', compact('section'));
+        $newsFile=Section_file::where("section_id",'=',$id)->get();
+        return view('Customer.section.details', compact('section','newsFile'));
     }
 }
