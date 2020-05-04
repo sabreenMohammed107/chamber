@@ -5,6 +5,7 @@ return [
    /*------global----------*/
    'more' => 'More',
    'relatedFile'=>'Related Files',
+   'devMessage'=>'Thanks; your request has been submitted successfully !',
    'type' => 'Type',
    'from' => 'From',
    'to' => 'To',

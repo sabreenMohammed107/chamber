@@ -35,9 +35,11 @@
             </div>
             <div class="col-md-9">
                 @if ($message =Session::get('message'))
-                <div id="alertDiv" class="alert alert-info alert-block">
+                <div id="alertDiv" class="alert alert-info alert-block" style="background-color:#6c757d;">
                     <button type="button" id="alertClose" class="close" data-dismiss="alert">×</button>
-                    <strong style="color:black;font-weight:bold">{{ $message }}</strong>
+                    <strong style="color:#fff;font-weight:bold ;text-align: center">
+                    {{ __('titles.devMessage') }}
+                </strong>
                 </div>
 
 
