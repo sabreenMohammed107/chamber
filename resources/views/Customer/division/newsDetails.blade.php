@@ -71,7 +71,7 @@
         <a href="{{ url('newsDivisionDetails/'.$news->id) }}" target="_blank">
         <p  style="float: left;">  
         @if( $news->gallery->first()!=null && $news->gallery->first()->image!=null)
-                                        <img src="{{ asset('uploads/division/'.$news->gallery->first()->image) }}" alt="..." style="float: right; height: 70px;
+                                        <img src="{{ asset('uploads/news/'.$news->gallery->first()->image) }}" alt="..." style="float: right; height: 70px;
           width: 62px; margin-right: 15px;">
                                   @else
                                   <img src="{{ asset('webasset/images/screen.png')}}"  style="float: right; height: 70px;
