@@ -55,9 +55,9 @@ class DivisionController extends Controller
         //get all
         $oldestList = Department_board_director::where('current', '=', 2)->get();
         //get meeting list
-        $meetingLists = Department_meeting::where('department_id', '=', $id)->orderBy("created_at", "Desc")->paginate(6);
+        $meetingLists = Department_meeting::where('department_id', '=', $id)->where('active','=',1)->orderBy("created_at", "Desc")->paginate(6);
 //get news list
-      $newsLists=Department_news::where('department_id', '=', $id)->orderBy("created_at", "Desc")->paginate(6);
+      $newsLists=Department_news::where('department_id', '=', $id)->where('active','=',1)->orderBy("created_at", "Desc")->paginate(6);
         return view('Customer.division.divisionDetails', compact('newsLists','meetingLists', 'divisionObj', 'currentBoard', 'prevBoard', 'mastrBoard', 'subBoard', 'oldestList'));
     }
 
