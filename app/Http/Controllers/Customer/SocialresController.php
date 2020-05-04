@@ -11,7 +11,7 @@ class SocialresController extends Controller
     public function index(){
 
       
-     $socialres=Social_responsibility::orderBy("created_at", "Desc")->paginate(2);
+     $socialres=Social_responsibility::where('active','=',1)->orderBy("created_at", "Desc")->paginate(4);
    
           return view('Customer.socialres.index',compact('socialres'));
       }
@@ -19,7 +19,7 @@ class SocialresController extends Controller
      
       function fetch_socialres(Request $request)
     {
-        $socialres=Social_responsibility::orderBy("created_at", "Desc")->paginate(2);
+        $socialres=Social_responsibility::where('active','=',1)->orderBy("created_at", "Desc")->paginate(4);
        
         return view('Customer.socialres.indexSocialres',compact('socialres'))->render();
      }

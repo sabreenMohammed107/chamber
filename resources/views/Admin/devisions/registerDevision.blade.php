@@ -63,7 +63,7 @@
                             </td>
                             <td>{{$row->subject}}</td>
                             <td>
-                            {{ Str::limit($row->message, 100,'...') }}
+                            {{ Str::limit($row->messege, 100,'...') }}
                             </td>
                             <td>  <?php $date = date_create($row->created_at) ?>
                                     {{ date_format($date,"d-m-Y") }}</td>
