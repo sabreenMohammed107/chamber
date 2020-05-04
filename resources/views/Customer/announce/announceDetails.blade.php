@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate text-center mb-4">
-                    <h1 class="mb-2 bread">{{ __('titles.announceDetails') }} </h1>
+                    <h1 class="mb-2 bread"> {{ __('links.announce') }}</h1>
                 </div>
             </div>
         </div>
