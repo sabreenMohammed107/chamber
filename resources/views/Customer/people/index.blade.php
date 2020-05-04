@@ -36,7 +36,8 @@
                                                 {{$row->en_name}}
                                                 @else
                                                 {{$row->ar_name}}
-                                                @endif</h4>
+                                                @endif
+                                              {{$row->id}}</h4>
                 </div>
             </div>
 
