@@ -97,7 +97,7 @@
                                  
                                              @endif
                                         <div class="card-body">
-                                        @if(app()->getLocale()=='en')
+                                       <h5> @if(app()->getLocale()=='en')
                                             {{$item['en_title']}}
 					@else
                     {{$item['ar_title']}}
