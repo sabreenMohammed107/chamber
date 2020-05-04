@@ -24,7 +24,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>{{$row->ar_title}}</h6>
+                <h6>إجتماعات {{$row->ar_title}}</h6>
                 <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addnumber"> add </a>
             </div>
             <div class="ms-panel-body">
@@ -38,6 +38,7 @@
                             <th>AR Title </th>
                             <th>EN Title</th>
                             <th>Meeting Date</th>
+                            <th>Active</th>
 
                             <th></th>
 
@@ -53,6 +54,11 @@
                                     <?php $date = date_create($row->meeting_date) ?>
                                     {{ date_format($date,"d-m-Y") }}
                                 </td>
+                                @if($row->active == 1)
+                                <td><i class="fas fa-check"></i></td>
+                                @else
+                                <td><i class="fas fa-times"></i></td>
+                                @endif
                                 <td>
                                     <a href="{{ route('editAdminMeeting',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
                                     <a href="#" onclick="destroy('this News','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>

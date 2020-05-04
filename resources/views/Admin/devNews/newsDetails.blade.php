@@ -24,7 +24,7 @@
 
   <div class="ms-panel">
     <div class="ms-panel-header d-flex justify-content-between">
-      <h6>{{$row->ar_title}}</h6>
+      <h6>أخبار  {{$row->ar_title}}</h6>
       <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addnumber"> add </a>
     </div>
     <div class="ms-panel-body">
