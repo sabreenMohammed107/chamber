@@ -114,7 +114,7 @@ class DivisionController extends Controller
     public function newsDivisionDetails($id){
 
         $newsObj=Department_news::where("id",'=',$id)->first();
-        $newsGallery=Department_gallery::where("department_news_id",'=',$id)->get();
+        $newsGallery=Department_gallery::where("department_news_id",'=',$id)->where('active','=',1)->get();
         $relatedNews=Related_department_news::where("department_news_id",'=',$id)->paginate(3);
         $newsRandom=Department_news::take(3)->inRandomOrder(rand(10,100))->get();
         $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
@@ -125,7 +125,7 @@ class DivisionController extends Controller
     public function meetingDivisionDetails($id){
 
         $newsObj=Department_meeting::where("id",'=',$id)->first();
-        $newsGallery=Department_meeting_gallery::where("department_meeting_id",'=',$id)->get();
+        $newsGallery=Department_meeting_gallery::where("department_meeting_id",'=',$id)->where('active','=',1)->get();
         $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
         $adsVedio=Ads_vedio::where('active', '=', 1)->take(1)->inRandomOrder(rand(10,100))->get();
         $newsRandom=Department_meeting::take(3)->inRandomOrder(rand(10,100))->get();
@@ -141,7 +141,7 @@ class DivisionController extends Controller
      {
          $id=$request->get("id");
          $newsObj=Department_news::where("id",'=',$id)->first();
-         $newsGallery=Department_gallery::where("department_news_id",'=',$id)->get();
+         $newsGallery=Department_gallery::where("department_news_id",'=',$id)->where('active','=',1)->get();
          $relatedNews=Related_department_news::where("department_news_id",'=',$id)->paginate(3);
          $newsRandom=Department_news::take(3)->inRandomOrder(rand(10,100))->get();
          $ads=Chamber_ads::where('active', '=', 1)->inRandomOrder(rand(10,100))->get();
