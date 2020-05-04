@@ -66,6 +66,6 @@ class BoardController extends Controller
     public function boardPeople($id){
         $row=Board_member::where('id','=',$id)->first();
       
-        return view('Customer.people.boardPeople', compact('row'));
+        return view('Customer.people.peopleBoard', compact('row'));
     }
 }
