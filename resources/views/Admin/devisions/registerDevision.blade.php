@@ -115,7 +115,7 @@
                             </div>
 
                             <div class="input-group">
-                                <input type="text" name="name" value="{{$row->name}}" class="form-control" id="Master AR Title">
+                                <input type="text" name="name" value="{{$row->name}}" class="form-control" readonly id="Master AR Title">
                             </div>
                         </div>
                     </div>   
@@ -123,7 +123,7 @@
                         <div class="form-group">
                             <label for="example2">Mobile</label>
                             <div class="input-group">
-                                <input type="text" name="mobile" value="{{$row->mobile}}" class="form-control" id="Master AR Title">
+                                <input type="text" name="mobile" value="{{$row->mobile}}" class="form-control" readonly id="Master AR Title">
                             </div>
                         </div>
                     </div>
@@ -133,9 +133,9 @@
                             <label for="example2">Devision</label>
                             <div class="input-group">
                                 @if($row->department)
-                                <input type="text" name="mobile" value="{{$row->department->ar_title}}" class="form-control" id="Master AR Title">
+                                <input type="text" name="department" readonly value="{{$row->department->ar_title}}" class="form-control" id="Master AR Title">
                           @else
-                          <input type="text" name="mobile"  class="form-control" id="Master AR Title">
+                          <input type="text" name="department"  readonly class="form-control" id="Master AR Title">
 
                                 @endif
                             </div>
@@ -146,7 +146,7 @@
                         <div class="form-group">
                             <label>Email</label>
                             <div class="input-group">
-                                <input type="text" name="email" value="{{$row->email}}" id="Master EN Title" class="form-control"
+                                <input type="text" name="email" readonly value="{{$row->email}}" id="Master EN Title" class="form-control"
                                     placeholder="">
                             </div>
                         </div>
@@ -155,17 +155,18 @@
                         <div class="form-group">
                             <label>Subject</label>
                             <div class="input-group">
-                                <input type="text" name="subject" value="{{$row->subject}}" id="Sub AR Title" class="form-control"
+                                <input type="text" name="subject" readonly value="{{$row->subject}}" id="Sub AR Title" class="form-control"
                                     placeholder="">
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-6 col-sm-12"></div>
                     <div class="col-md-6 col-sm-12">
                         <div class="form-group">
                             <label>Message</label>
                             <div class="input-group">
-                                <input type="text" name="message" value="{{$row->messege}}" id="Sub AR Title" class="form-control"
-                                    placeholder="">
+                            <textarea  name="messege" readonly  class="form-control">{{$row->messege}}</textarea>
+                             
                             </div>
                         </div>
                     </div>
