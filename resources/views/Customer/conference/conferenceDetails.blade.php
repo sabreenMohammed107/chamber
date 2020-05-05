@@ -74,7 +74,7 @@
         <a href="{{ url('conferenceDetails/'.$conf->id) }}" target="_blank">
         <p  style="float: left; margin: 0 7px;">  
         @if( $conf->gallery->first()!=null && $conf->gallery->first()->image!=null)
-                                        <img src="{{ asset('uploads/conference/'.$conf->gallery->first()->image) }}" alt="..." style="float: right; height: 70px;
+                                        <img src="{{ asset('uploads/conferance/'.$conf->gallery->first()->image) }}" alt="..." style="float: right; height: 70px;
           width: 62px; margin-right: 15px;">
                                   @else
                                   <img src="{{ asset('webasset/images/screen.png')}}"  style="float: right; height: 70px;
