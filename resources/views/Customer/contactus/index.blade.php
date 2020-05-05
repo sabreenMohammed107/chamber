@@ -108,10 +108,10 @@
                  <div class="follow-us-area text-center" >
                   <h2 class="wow fadeInDown animated" data-wow-delay="1s">{{ __('links.follow') }}:
                   </h2>
-                  <a href="{{$social->facebook_url}}" class="facebook wow fadeInDown animated text-center" data-wow-delay="1s"><i class="fa fa-facebook " aria-hidden="true"></i></a>
-                  <a href="{{$social->twitter_url}}" class="twitter wow fadeInDown animated text-center" data-wow-delay="1.2s"><i class="fa fa-twitter " aria-hidden="true"></i></a>
-                  <a href="{{$social->youtube_url}}" class="youtube wow fadeInDown animated text-center" data-wow-delay="1.4s"><i class="fa fa-youtube " aria-hidden="true"></i></a>
-                  <a href="{{$social->linkedin_url}}" class="linkedin wow fadeInDown animated text-center" data-wow-delay="1.6s"><i class="fa fa-linkedin " aria-hidden="true"></i></a>
+                  <a href="{{$social->facebook_url}}" target="_blank" class="facebook wow fadeInDown animated text-center" data-wow-delay="1s"><i class="fa fa-facebook " aria-hidden="true"></i></a>
+                  <a href="{{$social->twitter_url}}" target="_blank" class="twitter wow fadeInDown animated text-center" data-wow-delay="1.2s"><i class="fa fa-twitter " aria-hidden="true"></i></a>
+                  <a href="{{$social->youtube_url}}" target="_blank" class="youtube wow fadeInDown animated text-center" data-wow-delay="1.4s"><i class="fa fa-youtube " aria-hidden="true"></i></a>
+                  <a href="{{$social->linkedin_url}}" target="_blank" class="linkedin wow fadeInDown animated text-center" data-wow-delay="1.6s"><i class="fa fa-linkedin " aria-hidden="true"></i></a>
           
             </div>
         </div>

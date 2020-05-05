@@ -120,12 +120,12 @@
 
            <div class="row ">
              <div class="social-links">
-               <a href="{{$social->twitter_url}}" class="twitter"><i class="fa fa-twitter"></i></a>
-               <a href="{{$social->facebook_url}}" class="facebook"><i class="fa fa-facebook"></i></a>
-               <a href="{{$social->feedsfloor_url}}" class="instagram">
+               <a href="{{$social->twitter_url}}" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
+               <a href="{{$social->facebook_url}}" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+               <a href="{{$social->feedsfloor_url}}" target="_blank" class="instagram">
                  <i class="fa fa-rss"></i>
-                 <a href="{{$social->youtube_url}}" class="google-plus"><i class="fa fa-youtube"></i></a>
-                 <a href="{{$social->linkedin_url}}" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                 <a href="{{$social->youtube_url}}" target="_blank" class="google-plus"><i class="fa fa-youtube"></i></a>
+                 <a href="{{$social->linkedin_url}}" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
              </div>
              <iframe class="mt-2" src="{{$branch->map_url}}" width="100%" height="300" frameborder="0" style="border:0;opacity: 0.8;" allowfullscreen=""></iframe>
            </div>
