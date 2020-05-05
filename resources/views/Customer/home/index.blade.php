@@ -419,7 +419,7 @@
 
 
                 @if($conference->gallery!=null && $conference->gallery->first()!=null && $conference->gallery->first()->image!=null)
-                <img src="{{ asset('uploads/conference/'.$conference->gallery->first()->image) }}" class="d-block calendar-base" style="width: 100%; height: 300px; margin-top: 30px;">
+                <img src="{{ asset('uploads/conferance/'.$conference->gallery->first()->image) }}" class="d-block calendar-base" style="width: 100%; height: 300px; margin-top: 30px;">
 
                 @else
                 <img src="{{ asset('webasset/images/unnamed.png')}}" class="d-block calendar-base" style="width: 100%; height: 300px; margin-top: 30px;">

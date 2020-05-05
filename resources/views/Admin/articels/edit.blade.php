@@ -169,7 +169,7 @@
                                                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                                                             </button>
-                                                            <h3>Edit News Gallery </h3>
+                                                            <h3>Edit  Gallery </h3>
                                                             <div class="modal-body">
 
 
@@ -308,7 +308,7 @@
                                                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                                                             </button>
-                                                            <h3>Edit News Files </h3>
+                                                            <h3>Edit  Files </h3>
                                                             <div class="modal-body">
 
 
@@ -389,7 +389,7 @@
                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                             </button>
-                            <h3>add News Gallery </h3>
+                            <h3>add  Gallery </h3>
                             <div class="modal-body">
 
 
@@ -463,7 +463,7 @@
                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                             </button>
-                            <h3>Add News Files </h3>
+                            <h3>Add  Files </h3>
                             <div class="modal-body">
 
 
