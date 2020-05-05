@@ -23,7 +23,7 @@
                 <div class="col-md-3">
                     <div class="sidebar2 " style="box-shadow: 1px 1px 1px 1px #EEE;">
                         <a class="active addArow" href="#advertes-dept" onclick="advertesdept()">{{ __('titles.events') }}  </a>
-                        <a  href="#cal-dept" onclick="caldept()">{{ __('titles.calen') }} </a>
+                        <!-- <a  href="#cal-dept" onclick="caldept()">{{ __('titles.calen') }} </a> -->
                        
                        
                        
