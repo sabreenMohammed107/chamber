@@ -68,7 +68,7 @@
 								</select>
                   </div>
                   <div class="col-md-5 col-xs-12">
-                    <input type="date" value="الي تاريخ" id="confDate" name="confDate" min="2005-01-01" max="2019-01-01">
+                    <input type="date" value="الي تاريخ" id="confDate" name="confDate" >
                   </div>
                   <div class="col-md-2 col-xs-6">
                     <!-- <div class=" col-md-2 no-padding mt-3"> -->
