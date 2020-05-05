@@ -408,28 +408,36 @@
           .event-calender .carousel-control-prev-icon {
             background: #000 !important;
           }
-     
         </style>
         <!-- calendar-left -->
         <div class="col-md-5 col-xs-12 mr-3 wow fadeInDown" data-wow-delay="0.5s" style=" margin-top: 10px;">
           <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
             <div class="carousel-inner ">
+              @if(!$conferences->isEmpty())
               @foreach($conferences as $key => $conference)
               <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
 
 
 
                 @if($conference->gallery!=null && $conference->gallery->first()!=null && $conference->gallery->first()->image!=null)
+                <a href="{{ url('conferenceDetails/'.$conference->id) }}">
                 <img src="{{ asset('uploads/conferance/'.$conference->gallery->first()->image) }}" class="d-block calendar-base" style="width: 100%; height: 300px; margin-top: 30px;">
-
+                </a>
                 @else
                 <img src="{{ asset('webasset/images/unnamed.png')}}" class="d-block calendar-base" style="width: 100%; height: 300px; margin-top: 30px;">
                 @endif
 
 
 
+
+
               </div>
               @endforeach
+              @else
+              <a href="{{url('/')}}">
+                <img src="{{ asset('webasset/images/cairo-chamber-logo.png')}}" class="d-block calendar-base" style="width: 100%; height: 300px; margin-top: 30px;">
+              </a>
+              @endif
               <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true">
                   <i class="fa fa-angle-left"></i>
@@ -445,11 +453,11 @@
             </div>
 
           </div>
-          <div class="col-md-4 text-center"></div>
-          <div class="col-md-4 text-center mt-5">
-            <p><a href="{{url('/conference')}}" class="btn btn-primary w-100">{{ __('titles.eventsPage') }} </a></p>
-          </div>
+
         </div>
+      </div>
+      <div style="text-align: center ;margin-top: 40px">
+        <p><a href="{{url('/conference')}}" class="btn btn-primary ">{{ __('titles.eventsPage') }} </a></p>
       </div>
     </div>
 </section>
