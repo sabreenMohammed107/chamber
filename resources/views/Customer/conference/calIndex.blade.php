@@ -10,7 +10,7 @@
                                         <a href="{{ url('conferenceDetails/'.$conference->id) }}">
                                         @if($conference->gallery->first() !=null && $conference->gallery->first()->order==1)
                                  @if($conference->gallery->first()->image!=null)
-                                        <img src="{{ asset('uploads/conference/'.$conference->gallery->first()->image) }}" alt="...">
+                                        <img src="{{ asset('uploads/conferance/'.$conference->gallery->first()->image) }}" alt="...">
                                   @else
                                   <iframe id="popup-youtube-player" width="100%" height="200"
                                             src="{{$conference->gallery->first()->vedio}}" frameborder="0"
