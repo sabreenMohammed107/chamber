@@ -64,9 +64,9 @@
                                         <label> Conferance Date
                                         </label>
                                         <br>
-                                        <?php $date = date_create($row->conferance_date) ?>
+                                        <?php $date = date_create($row->conference_date) ?>
                                         <input style="height: 40px; border-radius: 5px;" class="col-md-12 exampleInputPassword1" 
-                                        for="exampleCheck1" data-date-format="dd/mm/yyyy" name="conferance_date" type="date" id="datepicker"
+                                        for="exampleCheck1" data-date-format="dd/mm/yyyy" name="conference_date" type="date" id="datepicker"
                                          value="{{ date_format($date,'Y-m-d') }}">
                                     </div>
                                 </div>
