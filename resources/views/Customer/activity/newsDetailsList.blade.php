@@ -105,7 +105,9 @@
   <div class="test panel-heading">
 
 
-    <a href="#demo" class="btn btn-info" data-toggle="collapse">{{ __('titles.relatedFile') }}</a>
+  @if(!$relatedNews->isEmpty())
+    <p id="newTitle mr-5 mt-3" class="subTest"> {{ __('titles.relatedNews') }} </p>
+    @endif
 
   </div>
   <div class="newsExt">
