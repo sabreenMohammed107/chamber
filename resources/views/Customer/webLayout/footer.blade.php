@@ -8,7 +8,7 @@
 
 
        <div class="col-md-10 col-12">
-         <a href="index.html">
+         <a href="{{url('/')}}">
            @if(app()->getLocale()=='en')
            <h4 class="footer-logoTitle" style="text-align: left !important">{{ __('links.chamber') }}</h4>
            @else
@@ -25,7 +25,7 @@
 
          <div class="col-md-3 col-12">
 
-           <a href="index.html">
+           <a href="{{url('/')}}">
            @if(app()->getLocale()=='en')
            <img src="{{ asset('webasset/images/cairo-chamber-logo-footer.png')}}" class="img-fluid" style="width: 130px; margin-left: 30px;">
            @else
