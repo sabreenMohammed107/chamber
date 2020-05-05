@@ -6,7 +6,7 @@
 
     <div class="row  navMobile">
       <!-- <div class="col-10"> -->
-      <p><a href="index.html" class="font-weight-bold">{{ __('links.home') }}</a></p>
+      <p><a href="{{url('/')}}" class="font-weight-bold">{{ __('links.home') }}</a></p>
       <!-- </div> -->
 
       <div class="col-2">
@@ -135,8 +135,8 @@
 
           ?>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="{{ url('chance/'.$importId) }}"> {{ __('links.export') }}</a>
-            <a class="dropdown-item" href="{{ url('chance/'.$exportId) }}"> {{ __('links.import') }}</a>
+            <a class="dropdown-item" href="{{ url('chance/'.$importId) }}">{{ __('links.import') }} </a>
+            <a class="dropdown-item" href="{{ url('chance/'.$exportId) }}">{{ __('links.export') }} </a>
             <a class="dropdown-item" href="{{ url('chance/'.$investmentId) }}"> {{ __('links.investment') }}</a>
             <a class="dropdown-item" href="{{ url('chance/'.$tendersId) }}"> {{ __('links.tenderAuction') }}</a>
 

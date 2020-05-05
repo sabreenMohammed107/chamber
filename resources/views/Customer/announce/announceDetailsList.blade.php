@@ -102,7 +102,9 @@
     <!-- End relatedFile -->
   </div>
   <div class="test panel-heading">
+  @if(!$relatedAnnounces->isEmpty())
     <p id="newTitle mr-5 mt-3" class="subTest"> {{ __('titles.relatedAnnounce') }} </p>
+    @endif
   </div>
   <div class="newsExt">
     <div class="row">

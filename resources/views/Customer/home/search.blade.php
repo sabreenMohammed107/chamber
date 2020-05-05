@@ -104,11 +104,20 @@
 					@endif
                                             </h5>
                                             <p> 
+
                                             @if(app()->getLocale()=='en')
-                                            {!! Str::limit($item['en_text'], 70,'...') !!}
-					@else
-                    {!! Str::limit($item['ar_text'], 100,'...') !!}
-					@endif
+                                <?php
+                                $output = nl2br(str_replace("&nbsp;", " ",$item['en_text']));
+                                ?>
+                                {{str_limit(strip_tags($output),100,'...')}}
+                                @else
+                                <?php
+                                $output = nl2br(str_replace("&nbsp;", " ", $item['ar_text']));
+                                ?>
+                                {{str_limit(strip_tags($output),100,'...')}}
+
+                                @endif
+                                            
                                                 </p>
                                                 @if($item['searchType']==0)
                                             <a href="{{ url('newsDetails/'.$item['id']) }}" class="btn btn-primary">{{ __('titles.more') }}</a>

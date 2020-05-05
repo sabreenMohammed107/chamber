@@ -24,7 +24,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6> شعبة - {{$devisionrow->ar_title}} </h6>
+                <h6> أخبار شعبة - {{$devisionrow->ar_title}} </h6>
 
             </div>
             <div class="ms-panel-body">
@@ -63,7 +63,7 @@
                                     </div>
                                 </div>
 
-
+                                <div class="col-md-6"></div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="example2"> Ar Text</label>
@@ -443,7 +443,7 @@
 
 
 
-                                                    <td>{{$relat->relatednews->en_title}}</td>
+                                                    <td>{{$relat->relatednews->ar_title}}</td>
 
                                                     <td>
                                                         <a href="#" onclick="destroy('this Related','{{$relat->id}}')" class="btn d-inline-block btn-danger">delete</a>
@@ -646,7 +646,7 @@
                                                                 @if($relateds !=null)
                                                                 @foreach ($relateds as $related)
                                                                 <option value='{{$related->id}}'>
-                                                                    {{ $related->en_title }}</option>
+                                                                    {{ $related->ar_title }}</option>
                                                                 @endforeach
                                                                 @endif
 

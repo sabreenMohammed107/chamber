@@ -146,7 +146,7 @@
        <div class="col-lg-12 d-block">
          <div class="row d-flex">
            <div class="col-md-2 col-6">
-             <a href="index.html">
+             <a href="{{url('/')}}">
                <img src="{{ asset('webasset/images/cairo-chamber-logo.png')}}" style="width: 220px; height: 150px;">
 
              </a>
@@ -154,7 +154,7 @@
 
 
            <div class="col-md-6 col-6  main-logoH3">
-             <a href="index.html">
+             <a href="{{url('/')}}">
                <div class="logoName">
 
                  <h1 style="font-family:titlefont, serif; color:linear-gradient(to bottom left, #261204, #c8a97e)">الغرفة التجارية للقاهرة</h1>

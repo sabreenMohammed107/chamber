@@ -63,45 +63,47 @@
     </div>
 
   </div>
-  
-    <!-- start related file -->
-    <div>
-      <a href="#demo" class="btn btn-info" data-toggle="collapse">{{ __('titles.relatedFile') }}</a>
 
-      <div id="demo" class="collapse">
-        @foreach($newsFile as $file)
-        @if(app()->getLocale()=='en' && $file->language_id==0)
+  <!-- start related file -->
+  <div>
+    <a href="#demo" class="btn btn-info" data-toggle="collapse">{{ __('titles.relatedFile') }}</a>
 
-        <li> <a href="{{asset('uploads/conferance')}}/{{$file->path}}" target="_blank">
-            {{$file->name}} </a>
+    <div id="demo" class="collapse">
+      @foreach($newsFile as $file)
+      @if(app()->getLocale()=='en' && $file->language_id==0)
 
-          <input type="hidden" name="filename{{$file->id}}" value="{{asset('uploads/conferance')}}/{{$file->path}}" alt="{{$file->path}}" />
-          <input type="hidden" name="calender" value="{{$file->id}}">
-          <input type="hidden" name="dawnName" value="{{$file->path}}">
+      <li> <a href="{{asset('uploads/conferance')}}/{{$file->path}}" target="_blank">
+          {{$file->name}} </a>
 
-        </li>
-        @endif
-        @if(app()->getLocale()=='ar' && $file->language_id==1)
+        <input type="hidden" name="filename{{$file->id}}" value="{{asset('uploads/conferance')}}/{{$file->path}}" alt="{{$file->path}}" />
+        <input type="hidden" name="calender" value="{{$file->id}}">
+        <input type="hidden" name="dawnName" value="{{$file->path}}">
 
-        <li> <a href="{{asset('uploads/conferance')}}/{{$file->path}}" target="_blank">
-            {{$file->name}} </a>
+      </li>
+      @endif
+      @if(app()->getLocale()=='ar' && $file->language_id==1)
 
-          <input type="hidden" name="filename{{$file->id}}" value="{{asset('uploads/conferance')}}/{{$file->path}}" alt="{{$file->path}}" />
-          <input type="hidden" name="calender" value="{{$file->id}}">
-          <input type="hidden" name="dawnName" value="{{$file->path}}">
+      <li> <a href="{{asset('uploads/conferance')}}/{{$file->path}}" target="_blank">
+          {{$file->name}} </a>
 
-        </li>
-        @endif
-        <!-- <a class="btn btn-primary" onclick='downloadFile({{$file->id}})'>dawnload</a> -->
+        <input type="hidden" name="filename{{$file->id}}" value="{{asset('uploads/conferance')}}/{{$file->path}}" alt="{{$file->path}}" />
+        <input type="hidden" name="calender" value="{{$file->id}}">
+        <input type="hidden" name="dawnName" value="{{$file->path}}">
 
-        @endforeach
-      </div>
+      </li>
+      @endif
+      <!-- <a class="btn btn-primary" onclick='downloadFile({{$file->id}})'>dawnload</a> -->
 
+      @endforeach
     </div>
-    <!-- End relatedFile -->
+
+  </div>
+  <!-- End relatedFile -->
 </div>
 <div class="test panel-heading">
+  @if(!$relatedConference->isEmpty())
   <p id="newTitle mr-5 mt-3" class="subTest"> {{ __('titles.relatedConference') }} </p>
+  @endif
 </div>
 <div class="newsExt">
   <div class="row">
@@ -119,31 +121,31 @@
           <img src="{{ asset('webasset/images/screen.png')}}" class="img_imp">
           @endif
 
-          
+
           <div class="card-body">
 
 
             <a href="{{ url('conferenceDetails/'.$galleryConf->relatedConferences->id) }}">
-            <h5>
-            @if(app()->getLocale()=='en')
-            {{$gallerynew->relatednews->en_title}}
-            @else
-            {{$gallerynew->relatednews->ar_title}}
-            @endif
-          </h5>
-              <p class="card-text">
-            
+              <h5>
                 @if(app()->getLocale()=='en')
-                  <?php
-                  $output = nl2br(str_replace("&nbsp;", " ", $galleryConf->relatedConferences->en_text));
-                  ?>
-                  {{str_limit(strip_tags($output),100,'...')}}
-                  @else
-                  <?php
-                  $output = nl2br(str_replace("&nbsp;", " ", $galleryConf->relatedConferences->ar_text));
-                  ?>
-                  {{str_limit(strip_tags($output),100,'...')}}
-                  @endif
+                {{$gallerynew->relatednews->en_title}}
+                @else
+                {{$gallerynew->relatednews->ar_title}}
+                @endif
+              </h5>
+              <p class="card-text">
+
+                @if(app()->getLocale()=='en')
+                <?php
+                $output = nl2br(str_replace("&nbsp;", " ", $galleryConf->relatedConferences->en_text));
+                ?>
+                {{str_limit(strip_tags($output),100,'...')}}
+                @else
+                <?php
+                $output = nl2br(str_replace("&nbsp;", " ", $galleryConf->relatedConferences->ar_text));
+                ?>
+                {{str_limit(strip_tags($output),100,'...')}}
+                @endif
 
 
               </p>

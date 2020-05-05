@@ -11,7 +11,7 @@ class SectionController extends Controller
     public function index()
     {
 
-        $sections = Section::orderBy("created_at", "Desc")->paginate(6);
+        $sections = Section::where('active','=',1)->orderBy("created_at", "Desc")->paginate(6);
 
         return view('Customer.section.index', compact('sections'));
     }

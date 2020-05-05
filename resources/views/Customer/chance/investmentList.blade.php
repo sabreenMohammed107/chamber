@@ -22,11 +22,30 @@
                         <tr>
                             <td>{{$chance->ar_subject}}</td>
                            
-                            <td>{{$chance->chance_country_id}}</td>
-                            <td>{!! $chance->ar_field !!}</td>
-                            <td>
-                            {!! $chance->ar_contact !!}
-                            </td>
+                            <td>@if($chance->country)
+                @if(app()->getLocale()=='en')
+                {{$chance->country->en_name}}
+                @else
+                {{$chance->country->ar_name}}
+                @endif
+              
+
+                @endif</td>
+                <td>
+              @if(app()->getLocale()=='en')
+                {!!$chance->en_field !!}
+                @else
+                {!!$chance->ar_field !!}
+                @endif
+               </td>
+              <td>
+              @if(app()->getLocale()=='en')
+                {!!$chance->en_contact !!}
+                @else
+                {!!$chance->ar_contact !!}
+                @endif
+               
+              </td>
                         </tr>
                         
                         

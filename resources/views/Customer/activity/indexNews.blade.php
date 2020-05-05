@@ -27,7 +27,11 @@
           </h5>
           <p>
             @if(app()->getLocale()=='en')
-            {{ Str::limit($new->en_text, 70,'...') }}
+            <?php
+            $output = nl2br(str_replace("&nbsp;", " ", $new->en_text));
+            ?>
+            {{str_limit(strip_tags($output),100,'...')}}
+
             @else
             <?php
             $output = nl2br(str_replace("&nbsp;", " ", $new->ar_text));

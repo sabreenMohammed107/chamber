@@ -65,7 +65,7 @@
       </div>
 
     </div>
-   
+
     <!-- start related file -->
     <div>
       <a href="#demo" class="btn btn-info" data-toggle="collapse">{{ __('titles.relatedFile') }}</a>
@@ -103,7 +103,10 @@
     <!-- End relatedFile -->
   </div>
   <div class="test panel-heading">
-    <p id="newTitle mr-5 mt-3" class="subTest"> {{ __('titles.relatedNews') }} </p>
+
+
+    <a href="#demo" class="btn btn-info" data-toggle="collapse">{{ __('titles.relatedFile') }}</a>
+
   </div>
   <div class="newsExt">
     <div class="row">
@@ -124,13 +127,13 @@
             <div class="card-body">
 
               <a href="{{ url('newsDetails/'.$gallerynew->relatednews->id) }}">
-              <h5>
-            @if(app()->getLocale()=='en')
-            {{$gallerynew->relatednews->en_title}}
-            @else
-            {{$gallerynew->relatednews->ar_title}}
-            @endif
-          </h5>
+                <h5>
+                  @if(app()->getLocale()=='en')
+                  {{$gallerynew->relatednews->en_title}}
+                  @else
+                  {{$gallerynew->relatednews->ar_title}}
+                  @endif
+                </h5>
                 <p class="card-text">
 
 

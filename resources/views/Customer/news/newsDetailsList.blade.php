@@ -67,8 +67,13 @@
 
     <!-- start related file -->
     <div>
+      @if(!$newsFile->isEmpty())
+      @if(app()->getLocale()=='en' && $newsFile['language_id']==0)
       <a href="#demo" class="btn btn-info" data-toggle="collapse">{{ __('titles.relatedFile') }}</a>
-
+      @else
+      <a href="#demo" class="btn btn-info" data-toggle="collapse">{{ __('titles.relatedFile') }}</a>
+      @endif   
+@endif
       <div id="demo" class="collapse">
         @foreach($newsFile as $file)
         @if(app()->getLocale()=='en' && $file->language_id==0)
@@ -102,7 +107,9 @@
     <!-- End relatedFile -->
   </div>
   <div class="test panel-heading">
+  @if(!$relatedNews->isEmpty())
     <p id="newTitle mr-5 mt-3" class="subTest"> {{ __('titles.relatedNews') }} </p>
+    @endif
   </div>
   <div class="newsExt">
     <div class="row">
