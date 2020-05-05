@@ -14,6 +14,7 @@ use App\Models\Conference_file;
 use App\Models\Conference_gallery;
 use App\Models\Conference;
 use App\Models\Conference_type;
+use App\Models\Country;
 class ConferanceController extends Controller
 {
     protected $object;
@@ -53,8 +54,9 @@ class ConferanceController extends Controller
      */
     public function create()
     {
+        $countries=Country::all();
         $types=Conference_type::all();
-        return view($this->viewName . 'create', compact('types'));
+        return view($this->viewName . 'create', compact('types','countries'));
     }
 
     /**
@@ -82,7 +84,10 @@ class ConferanceController extends Controller
             'home_order' => $request->input('home_order'),
             'active' => $active,
         ];
+        if($request->input('country_id')){
 
+            $data['country_id']=$request->input('country_id');
+         }
 
         $this->object::create($data);
 
@@ -116,7 +121,8 @@ class ConferanceController extends Controller
         $files = Conference_file::where('conference_id', '=', $id)->orderBy("created_at", "Desc")->get();
         $relateds = Conference::orderBy("created_at", "Desc")->get();
         $related = Related_conference::where('conference_id', '=', $id)->orderBy("created_at", "Desc")->get();
-        return view($this->viewName . 'edit', compact('row', 'galleries', 'files', 'relateds', 'related','types'));
+        $countries=Country::all();
+        return view($this->viewName . 'edit', compact('row', 'galleries', 'files', 'relateds', 'related','types','countries'));
     }
 
     /**
@@ -148,6 +154,10 @@ class ConferanceController extends Controller
         if($request->input('conference_type_id')){
 
             $data['conference_type_id']=$request->input('conference_type_id');
+         }
+         if($request->input('country_id')){
+
+            $data['country_id']=$request->input('country_id');
          }
 
          $this->object::findOrFail($id)->update($data);

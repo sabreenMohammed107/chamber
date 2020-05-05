@@ -63,6 +63,19 @@
                                 </select>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Country</label>
+                                    <select name="country_id" id="country_id" class="browser-default custom-select" >
+                                    <option value="">Country</option>
+                                    @foreach ($countries as $country)
+                                    <option value='{{$country->id}}'>{{$country->ar_name}}
+                  
+                                    </option>
+                                    @endforeach
+                                </select>
+                                </div>
+                            </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="exampleInputPassword1"
@@ -70,7 +83,7 @@
                                                     <input type="text" name="home_order" class="form-control">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6"></div>
+                                          
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="example2"> Ar Text</label>

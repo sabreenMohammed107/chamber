@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Conference extends Model
 {
     protected $fillable = [
-        'ar_title', 'en_title','conference_date', 'conference_type_id', 'ar_text', 'en_text','home_order', 'active',
+        'ar_title', 'en_title','conference_date', 'conference_type_id', 'ar_text', 'en_text','home_order', 'active','country_id'
     ];
  
   
