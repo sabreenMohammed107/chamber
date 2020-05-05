@@ -12,6 +12,7 @@ use App\Models\Conference_file;
 use App\Models\Related_conference;
 use App\Models\Chamber_ads;
 use App\Models\Ads_vedio;
+use Carbon\Carbon;
 class ConferenceController extends Controller
 {
     public function index()
@@ -91,7 +92,9 @@ class ConferenceController extends Controller
             }
 
             if (!empty($request->get("conf_date"))) {
-                $filtters->where('conference_date', '>=', $request->get("conf_date"));
+               
+               
+                $filtters->whereDate('conference_date', '=',$request->get("conf_date"));
             }
 
             $conferences = $filtters->orderBy("created_at", "Desc")->paginate(6);
