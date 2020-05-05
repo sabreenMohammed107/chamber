@@ -26,8 +26,12 @@
                 <div class="heading-section mb-4 my-5 my-md-0">
                     <h2 class="mb-4 text-decoration">{{ __('links.excellence') }}</h2>
                 </div>
-                {!!$data->ar_text!!}
 
+                @if(app()->getLocale()=='en')
+                {!!$data->en_text!!}
+                @else
+                {!!$data->ar_text!!}
+                @endif
 
 
             </div>
@@ -44,26 +48,26 @@
                             <a class="various" href="{{ asset('uploads/article/'.$gallery->image) }}" data-fancybox="gallery" data-srcset="large.jpg 1600w, medium.jpg 1200w, small.jpg 640w">
                                 <img src="{{ asset('uploads/article/'.$gallery->image) }}" alt="img-1" class="img-fluid"></a>
                             <div class="overlay"></div>
-                             @endif
+                            @endif
 
                         </div>
                         @endforeach
-                       
-                     
+
+
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fa fa-angle-left" style="color: #000;" aria-hidden="true"></i></span> <span class="sr-only">Previous</span>
                     </a>
                     <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"><i class="fa fa-angle-right" style="color: #000;" aria-hidden="true"></i></span> <span class="sr-only">Next</span> </a>
                     <!-- ================sasa new=========================  -->
                     <ol class='carousel-indicators fix-width scroll-inner'>
-                    @foreach($galleries as $key => $gallery)
-              
-              <li data-target="#carouselExampleControls" data-slide-to="{{$key}}" class="{{$key == 0? 'active' : '' }}">
-              <img src="{{ asset('uploads/article/'.$gallery->image) }}" alt='' />
-              </li>
-             
-              @endforeach
-                      
+                        @foreach($galleries as $key => $gallery)
+
+                        <li data-target="#carouselExampleControls" data-slide-to="{{$key}}" class="{{$key == 0? 'active' : '' }}">
+                            <img src="{{ asset('uploads/article/'.$gallery->image) }}" alt='' />
+                        </li>
+
+                        @endforeach
+
                     </ol>
                     <!-- =====================sasa end======================= -->
                 </div>
