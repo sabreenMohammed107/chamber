@@ -95,7 +95,7 @@
                                                                     </div>
 
                                                                     <div class="input-group">
-                                                                        <input type="text" name="name" value="{{$row->name}}" class="form-control" id="Master AR Title">
+                                                                        <input type="text" name="name" value="{{$row->name}}" class="form-control" id="Master AR Title" readonly>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -103,7 +103,7 @@
                                                                 <div class="form-group">
                                                                     <label for="example2">Mobile</label>
                                                                     <div class="input-group">
-                                                                        <input type="text" name="mobile" value="{{$row->mobile}}" class="form-control" id="Master AR Title">
+                                                                        <input type="text" name="mobile" value="{{$row->mobile}}" class="form-control" id="Master AR Title" readonly>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -112,7 +112,7 @@
                                                                 <div class="form-group">
                                                                     <label>Email</label>
                                                                     <div class="input-group">
-                                                                        <input type="text" name="email" value="{{$row->email}}" id="Master EN Title" class="form-control" placeholder="">
+                                                                        <input type="text" name="email" value="{{$row->email}}" id="Master EN Title" class="form-control" readonly>
                                                                     </div>
                                                                 </div>
                                                             </div>
