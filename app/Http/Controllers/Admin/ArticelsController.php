@@ -13,6 +13,7 @@ use File;
 use App\Models\Article_file;
 use App\Models\Article_gallery;
 use App\Models\Chamber_article;
+
 class ArticelsController extends Controller
 {
     protected $object;
@@ -84,10 +85,10 @@ class ArticelsController extends Controller
     public function edit($id)
     {
         $row = Chamber_article::where('id', '=', $id)->first();
-       
+
         $galleries = Article_gallery::where('article_id', '=', $id)->orderBy("created_at", "Desc")->get();
         $files = Article_file::where('article_id', '=', $id)->orderBy("created_at", "Desc")->get();
-      
+
         return view($this->viewName . 'edit', compact('row', 'galleries', 'files'));
     }
 
@@ -100,7 +101,16 @@ class ArticelsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = [
+
+            'en_text' => $request->input('en_text'),
+            'ar_text' => $request->input('ar_text'),
+
+        ];
+
+        $this->object::findOrFail($id)->update($data);
+
+        return redirect()->route($this->routeName . 'index')->with('flash_success', $this->message);
     }
 
     /**
@@ -115,8 +125,8 @@ class ArticelsController extends Controller
     }
 
 
-    
-     /**
+
+    /**
      * Announce Gallery
      */
     public function addGallery(Request $request)
@@ -132,7 +142,7 @@ class ArticelsController extends Controller
             'vedio' => $request->input('vedio'),
             'order' => $request->input('order'),
             'article_id' => $request->input('article_id'),
-           
+
             'active' => $active,
         ];
 
@@ -162,7 +172,7 @@ class ArticelsController extends Controller
             'vedio' => $request->input('vedio'),
             'order' => $request->input('order'),
             'article_id' => $request->input('article_id'),
-           
+
             'active' => $active,
         ];
 
@@ -198,7 +208,7 @@ class ArticelsController extends Controller
 
         return redirect()->back()->with('flash_success', 'Data Has Been Deleted Successfully !');
     }
-/**
+    /**
      * file
      */
 
@@ -284,7 +294,7 @@ class ArticelsController extends Controller
         return redirect()->back()->with('flash_success', 'Data Has Been Deleted Successfully !');
     }
 
-     /**
+    /**
      * uplaud image
      */
     public function UplaodImage($file_request)
