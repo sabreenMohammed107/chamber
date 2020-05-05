@@ -404,7 +404,7 @@
                                                         <div class="img-upload">
                                                             <img src="{{ asset('adminasset/img/default-user.gif')}}" alt="">
                                                             <div class="upload-icon">
-                                                                <input type="file" name="image" class="upload">
+                                                                <input type="file" name="image" class="upload" required >
                                                                 <i class="fas fa-camera    "></i>
                                                             </div>
                                                         </div>

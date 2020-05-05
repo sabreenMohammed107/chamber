@@ -43,11 +43,11 @@
                         <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
                             @if($gallery !=null && $gallery->vedio!=null)
                             <a class="col-md-3 text-center various fancybox fancy.iframe" data-fancybox-type="iframe" href="{{$gallery->vedio}}">
-                                <img src="{{ asset('uploads/article/'.$gallery->image) }}"  style="height: 200px !important" alt="img-1" class="img-fluid"></a>
+                                <img src="{{ asset('uploads/article/'.$gallery->image) }}"  style="height: 200px !important;width:100%"  alt="img-1" class="img-fluid"></a>
                             <div class="overlay"></div>
                             @else
                             <a class="various" href="{{ asset('uploads/article/'.$gallery->image) }}" data-fancybox="gallery" data-srcset="large.jpg 1600w, medium.jpg 1200w, small.jpg 640w">
-                                <img src="{{ asset('uploads/article/'.$gallery->image) }}" style="height: 200px !important" alt="img-1" class="img-fluid"></a>
+                                <img src="{{ asset('uploads/article/'.$gallery->image) }}" style="height: 200px !important;width:100%" alt="img-1" class="img-fluid"></a>
                             <div class="overlay"></div>
                              @endif
 
