@@ -64,8 +64,10 @@
                                         <label> Conferance Date
                                         </label>
                                         <br>
-                                        <?php $date = date_create($row->news_date) ?>
-                                        <input style="height: 40px; border-radius: 5px;" class="col-md-12 exampleInputPassword1" for="exampleCheck1" data-date-format="dd/mm/yyyy" name="conferance_date" type="date" id="datepicker" value="{{ date_format($date,'Y-m-d') }}">
+                                        <?php $date = date_create($row->conferance_date) ?>
+                                        <input style="height: 40px; border-radius: 5px;" class="col-md-12 exampleInputPassword1" 
+                                        for="exampleCheck1" data-date-format="dd/mm/yyyy" name="conferance_date" type="date" id="datepicker"
+                                         value="{{ date_format($date,'Y-m-d') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -174,7 +176,7 @@
 
                 <li class="btn btn-light ">
                     <a href="#tab_default_3" data-toggle="tab" role="tab">
-                    Conference News</a>
+                    Related Conference </a>
                 </li>
 
 
