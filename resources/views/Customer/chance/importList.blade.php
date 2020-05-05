@@ -20,9 +20,9 @@
                       <tbody>
                       @foreach($chances as $chance)
                         <tr>
-                            <td>{{$chance->ar_subject}}</td>
+                            <td style="width: 15%">{{$chance->ar_subject}}</td>
                            
-                            <td>@if($chance->country)
+                            <td style="width: 7%">@if($chance->country)
                 @if(app()->getLocale()=='en')
                 {{$chance->country->en_name}}
                 @else
@@ -31,7 +31,7 @@
               
 
                 @endif</td>
-                <td>
+                <td style="width: 15%">
               @if(app()->getLocale()=='en')
                 {!!$chance->en_field !!}
                 @else
