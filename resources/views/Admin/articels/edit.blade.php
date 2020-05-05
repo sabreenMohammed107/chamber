@@ -49,7 +49,7 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="example2">News Ar Text</label>
+                                        <label for="example2">News En Text</label>
                                         <div class="form-group">
                                             <textarea class="content" name="en_text">{{$row->en_text}}</textarea>
                                         </div>
@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="example2">News EN Text</label>
+                                        <label for="example2">News Ar Text</label>
                                         <div class="form-group">
                                             <textarea class="content" name="ar_text">{{$row->ar_text}}</textarea>
                                         </div>

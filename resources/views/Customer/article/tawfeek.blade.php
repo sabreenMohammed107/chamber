@@ -27,7 +27,11 @@
                     <div class="heading-section mb-4 my-5 my-md-0">
                         <h2 class="mb-4 text-decoration">{{ __('links.arbitration') }}</h2>
                     </div>
+                    @if(app()->getLocale()=='en')
+                {!!$data->en_text!!}
+                @else
                 {!!$data->ar_text!!}
+                @endif
 
 
 
