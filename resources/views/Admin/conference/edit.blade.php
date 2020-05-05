@@ -150,16 +150,16 @@
 
                 <li class="btn btn-light test">
                     <a href="#tab_default_1" class="active" data-toggle="tab" role="tab">
-                        News Gallery </a>
+                    Conference Gallery </a>
                 </li>
                 <li class="btn btn-light ">
                     <a href="#tab_default_2" data-toggle="tab" role="tab">
-                        News Files </a>
+                    Conference Files </a>
                 </li>
 
                 <li class="btn btn-light ">
                     <a href="#tab_default_3" data-toggle="tab" role="tab">
-                        Related News</a>
+                    Conference News</a>
                 </li>
 
 
@@ -172,7 +172,7 @@
                         <div class="col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-header d-flex justify-content-between">
-                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Annoucement-Gallery">add News Gallery </button>
+                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Annoucement-Gallery">add Conference Gallery </button>
                                 </div>
                                 <div class="ms-panel-body">
 
@@ -232,7 +232,7 @@
                                                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                                                             </button>
-                                                            <h3>Edit News Gallery </h3>
+                                                            <h3>Edit Conference Gallery </h3>
                                                             <div class="modal-body">
 
 
@@ -323,7 +323,7 @@
                         <div class="col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-header d-flex justify-content-between">
-                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Announce-Files"> add News Files</button>
+                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Announce-Files"> add Conference Files</button>
                                 </div>
                                 <div class="ms-panel-body">
 
@@ -375,7 +375,7 @@
                                                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                                                             </button>
-                                                            <h3>Edit News Files </h3>
+                                                            <h3>Edit Conference Files </h3>
                                                             <div class="modal-body">
 
 
@@ -452,7 +452,7 @@
                         <div class="col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-header d-flex justify-content-between">
-                                    <button class="btn btn-dark" data-toggle="modal" data-target="#addRelated"> Add New </button>
+                                    <button class="btn btn-dark" data-toggle="modal" data-target="#addRelated"> Add Conference </button>
                                 </div>
                                 <div class="ms-panel-body">
 
@@ -588,7 +588,7 @@
             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
             </button>
-            <h3>add News Gallery </h3>
+            <h3>add Conference Gallery </h3>
             <div class="modal-body">
 
 
@@ -662,7 +662,7 @@
             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
             </button>
-            <h3>Add News Files </h3>
+            <h3>Add Conference Files </h3>
             <div class="modal-body">
 
 
