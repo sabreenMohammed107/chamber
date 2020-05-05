@@ -65,11 +65,34 @@
       </div>
 
     </div>
+<?php
+$countEn=0;
+$countAr=0;
+foreach($newsFile as $file){
+  if($file->language_id==0){
+   
+    $countEn=$countEn+1;
+    continue;
+  }
+}
+foreach($newsFile as $file){
+  if($file->language_id==1){
+   
+    $countAr=$countAr+1;
+ continue;
+  }
+}
+  
 
+?>
     <!-- start related file -->
     <div>
+    @if(app()->getLocale()=='en' && $countEn>0)
       <a href="#demo" class="btn btn-info" data-toggle="collapse">{{ __('titles.relatedFile') }}</a>
-
+@endif
+@if(app()->getLocale()=='ar' && $countAr>0)
+      <a href="#demo" class="btn btn-info" data-toggle="collapse">{{ __('titles.relatedFile') }}</a>
+@endif
       <div id="demo" class="collapse">
         @foreach($newsFile as $file)
         @if(app()->getLocale()=='en' && $file->language_id==0)

@@ -65,7 +65,7 @@
     <div class="fees">
     <div class="row ">
       
-        <a href="{{ url('newsDetails/'.$news->id) }}" target="_blank">
+        <a href="{{ url('activityDetails/'.$news->id) }}" target="_blank">
         <p  style="float: left; margin: 0 7px;">  
         @if( $news->gallery->first()!=null && $news->gallery->first()->image!=null)
                                         <img src="{{ asset('uploads/news/'.$news->gallery->first()->image) }}" alt="..." style="float: right; height: 70px;
