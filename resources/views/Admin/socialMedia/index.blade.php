@@ -138,7 +138,7 @@
                                         <div class="form-group">
                                             <label>googleplus url</label>
                                             <div class="input-group">
-                                                <input type="text" value="googleplus_url" value="{{$row->googleplus_url}}" id="Sub EN Title" class="form-control" placeholder="">
+                                                <input type="text" name="googleplus_url" value="{{$row->googleplus_url}}" id="Sub EN Title" class="form-control" >
                                             </div>
                                         </div>
                                     </div>
@@ -146,7 +146,7 @@
                                         <div class="form-group">
                                             <label>Youtube url</label>
                                             <div class="input-group">
-                                                <input type="text" value="youtube_url" value="{{$row->youtube_url}}" id="Sub EN Title" class="form-control" placeholder="">
+                                                <input type="text" name="youtube_url" value="{{$row->youtube_url}}" id="Sub EN Title" class="form-control" >
                                             </div>
                                         </div>
                                     </div>
