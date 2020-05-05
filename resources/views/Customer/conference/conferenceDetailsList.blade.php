@@ -152,9 +152,9 @@ foreach($newsFile as $file){
             <a href="{{ url('conferenceDetails/'.$galleryConf->relatedConferences->id) }}">
               <h5>
                 @if(app()->getLocale()=='en')
-                {{$gallerynew->relatedConferences->en_title}}
+                {{$galleryConf->relatedConferences->en_title}}
                 @else
-                {{$gallerynew->relatedConferences->ar_title}}
+                {{$galleryConf->relatedConferences->ar_title}}
                 @endif
               </h5>
               <p class="card-text">
