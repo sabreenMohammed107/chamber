@@ -59,7 +59,7 @@
                                     <div class="form-group">
                                         <label for="example2">News EN Text</label>
                                         <div class="form-group">
-                                            <textarea class="content" name="ar_text">{{$row->en_text}}</textarea>
+                                            <textarea class="content" name="ar_text">{{$row->ar_text}}</textarea>
                                         </div>
                                     </div>
                                 </div>
