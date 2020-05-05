@@ -81,6 +81,7 @@ return [
 /*--footer ---*/
 'address'=>'Address',
 'phone'=>'Phone',
+'mobile'=>'Mobile',
 'email'=>'Email',
 'fax'=>'Fax',
 'follow'=>'Follow Us',
