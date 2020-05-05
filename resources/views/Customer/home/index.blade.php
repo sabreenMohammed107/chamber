@@ -408,6 +408,7 @@
           .event-calender .carousel-control-prev-icon {
             background: #000 !important;
           }
+     
         </style>
         <!-- calendar-left -->
         <div class="col-md-5 col-xs-12 mr-3 wow fadeInDown" data-wow-delay="0.5s" style=" margin-top: 10px;">

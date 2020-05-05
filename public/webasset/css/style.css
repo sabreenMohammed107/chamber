@@ -12051,7 +12051,7 @@ font-size: 18px;
 }
 
 .fa {
-  color: #fff;
+  /* color: #fff; */
   -webkit-transition: all 0.8s;
   -moz-transition: all 0.8s;
   -o-transition: all 0.8s;
