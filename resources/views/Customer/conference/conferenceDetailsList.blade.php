@@ -3,9 +3,9 @@
   <div class="test panel-heading mt-3">
     <p id="newTitle mr-5 mt-3">
       @if(app()->getLocale()=='en')
-      {{$conferenceObj->en_title}} - {{$conferenceObj->country->en_name}}
+      {{$conferenceObj->type->en_name}} - {{$conferenceObj->en_title}} -@if($conferenceObj->country) {{$conferenceObj->country->en_name}}@endif
       @else
-     {{$conferenceObj->ar_title}} - {{$conferenceObj->country->ar_name}}
+      {{$conferenceObj->type->name}} - {{$conferenceObj->ar_title}} - @if($conferenceObj->country){{$conferenceObj->country->ar_name}}@endif
       @endif
     </p>
     <h6>
