@@ -77,20 +77,20 @@
                                          <!-- Single Input Area -->
                                          <div class="col-12">
                                           <div class="form-group">
-                                              <input type="text" class="form-control" name="phone" name="mobile" placeholder="{{ __('links.mobile') }} " required>
+                                              <input type="text" class="form-control"  name="mobile" placeholder="{{ __('links.mobile') }} " required>
                                           </div>
                                       </div>
                                        <!-- Single Input Area -->
                                        <div class="col-12">
                                         <div class="form-group">
-                                            <input type="mail" class="form-control" name="mail" name="email" placeholder="{{ __('links.email') }}" required>
+                                            <input type="mail" class="form-control"  name="email" placeholder="{{ __('links.email') }}" required>
                                         </div>
                                     </div>
                                        
                                         <!-- Single Input Area -->
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <textarea name="message" class="form-control" name="messege" cols="30" rows="6" placeholder="{{ __('titles.notes') }} " required></textarea>
+                                                <textarea  class="form-control" name="messege" cols="30" rows="6" placeholder="{{ __('titles.notes') }} " required></textarea>
                                             </div>
                                         </div>
                                         <!-- Single Input Area -->

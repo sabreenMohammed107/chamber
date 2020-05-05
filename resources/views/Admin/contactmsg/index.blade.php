@@ -54,7 +54,7 @@
 
                                 <td>{{$row->email}}</td>
                                 <td>
-                                    {{ Str::limit($row->message, 100,'...') }}
+                                    {{ Str::limit($row->messege, 100,'...') }}
                                 </td>
                                 <td> <?php $date = date_create($row->created_at) ?>
                                     {{ date_format($date,"d-m-Y") }}</td>
@@ -70,61 +70,63 @@
                                     </form>
                                 </td>
                             </tr>
-                             <!-- Add SubCat Modal -->
-    <div class="modal fade" id="addclient{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="addclient">
+                            <!-- Add SubCat Modal -->
+                            <div class="modal fade" id="addclient{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="addclient">
 
-<div class="modal-dialog modal-lg " role="document">
-    <div class="modal-content">
-        <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
+                                <div class="modal-dialog modal-lg " role="document">
+                                    <div class="modal-content">
+                                        <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
-        </button>
-        <h3>Contact Message</h3>
+                                        </button>
+                                        <h3>Contact Message</h3>
 
-        <div class="modal-body">
+                                        <div class="modal-body">
 
 
-            <div class="ms-auth-container row no-gutters">
-                <div class="col-12 p-3">
-                    <form action="">
-                        <div class="ms-auth-container row">
+                                            <div class="ms-auth-container row no-gutters">
+                                                <div class="col-12 p-3">
+                                                    <form action="">
+                                                        <div class="ms-auth-container row">
 
-                            <div class="col-md-6 col-sm-12">
-                                <div class="form-group">
-                                    <div class="upload-icon">
-                                        <label>Name</label>
-                                    </div>
+                                                            <div class="col-md-6 col-sm-12">
+                                                                <div class="form-group">
+                                                                    <div class="upload-icon">
+                                                                        <label>Name</label>
+                                                                    </div>
 
-                                    <div class="input-group">
-                                        <input type="text" name="name" value="{{$row->name}}" class="form-control" id="Master AR Title">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
-                                <div class="form-group">
-                                    <label for="example2">Mobile</label>
-                                    <div class="input-group">
-                                        <input type="text" name="mobile" value="{{$row->mobile}}" class="form-control" id="Master AR Title">
-                                    </div>
-                                </div>
-                            </div>
+                                                                    <div class="input-group">
+                                                                        <input type="text" name="name" value="{{$row->name}}" class="form-control" id="Master AR Title">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-sm-12">
+                                                                <div class="form-group">
+                                                                    <label for="example2">Mobile</label>
+                                                                    <div class="input-group">
+                                                                        <input type="text" name="mobile" value="{{$row->mobile}}" class="form-control" id="Master AR Title">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
 
-                            <div class="col-md-6 col-sm-12">
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <div class="input-group">
-                                        <input type="text" name="email" value="{{$row->email}}" id="Master EN Title" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
-                                <div class="form-group">
-                                    <label>Message</label>
-                                    <div class="input-group">
-                                        <input type="text" name="message" value="{{$row->message}}" id="Sub AR Title" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="col-md-6">
+                                                            <div class="col-md-6 col-sm-12">
+                                                                <div class="form-group">
+                                                                    <label>Email</label>
+                                                                    <div class="input-group">
+                                                                        <input type="text" name="email" value="{{$row->email}}" id="Master EN Title" class="form-control" placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12 col-sm-12">
+                                                                <div class="form-group">
+                                                                    <label>Message</label>
+                                                                    <div class="input-group">
+                                                                        <textarea rows="7" name="messege" readonly class="form-control">{{$row->messege}}</textarea>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <!-- <div class="col-md-6">
                 <div class="form-group">
                     <label>Created Date
                     </label>
@@ -138,18 +140,18 @@
 
 
 
-                            <div class="input-group d-flex justify-content-end text-center">
-                                <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
-                                <!-- <input type="submit" value="Add" class="btn btn-success "> -->
-                            </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+                                                            <div class="input-group d-flex justify-content-end text-center">
+                                                                <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
+                                                                <!-- <input type="submit" value="Add" class="btn btn-success "> -->
+                                                            </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
 
-    </div>
-</div>
-</div>
+                                    </div>
+                                </div>
+                            </div>
                             @endforeach
                         </tbody>
                     </table>
@@ -160,7 +162,7 @@
     </div>
 
 
-   
+
     @endsection
     @section('scripts')
 
