@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Chamber-Board') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية</a></li>
+        <li class="breadcrumb-item active" aria-current="page"> مجلس اداره الغرفة </li>
     </ol>
 </nav>
 
@@ -25,8 +25,8 @@
 
     <div class="ms-panel">
         <div class="ms-panel-header d-flex justify-content-between">
-            <h6>Chamber-Board</h6>
-            <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#add-news-page"> add</a>
+            <h6>مجلس اداره الغرفه</h6>
+            <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#add-news-page"> إضافة</a>
         </div>
         <div class="ms-panel-body">
             <div class="table-responsive">
@@ -35,12 +35,12 @@
                         <th>#</th>
                         
 
-                        <th>From Year</th>
-                        <th>to Year</th>
-                        <th>Manager En Name</th>
-                        <th>Manager ar Name</th>
+                        <th>من سنة</th>
+                        <th>إلى سنة</th>
+                        <th>اسم المدير إنجليزى</th>
+                        <th>اسم المدير عربي</th>
                        
-                        <th>Current</th>
+                        <th>الحالى</th>
                         <th></th>
                         
 
@@ -68,7 +68,7 @@
                             <td>
                             <a href="{{ route('board.edit', $row->id) }}" class="btn btn-info d-inline-block" 
                 >edit</a>
-              <a href="#" onclick="destroy('this Data','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+              <a href="#" onclick="destroy('this Data','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
               <form id="delete_{{$row->id}}" action="{{ route('board.destroy', $row->id) }}"  method="POST" style="display: none;">
 									@csrf
 									@method('DELETE')
@@ -94,7 +94,7 @@
             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
             </button>
-            <h3>Add </h3>
+            <h3>إضافة </h3>
 
             <div class="modal-body">
 
@@ -106,13 +106,13 @@
                   {{ csrf_field() }}
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label  class="exampleInputPassword1" for="exampleCheck1">from year</label>
+                                        <label  class="exampleInputPassword1" for="exampleCheck1">من سنة</label>
                                         <input type="date" name="from_date" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label  class="exampleInputPassword1" for="exampleCheck1">to year</label>
+                                        <label  class="exampleInputPassword1" for="exampleCheck1">إلى سنة</label>
                                         <input type="date" name="to_date" class="form-control">
                                     </div>
                                 </div>
@@ -121,13 +121,13 @@
                                 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label  class="exampleInputPassword1" for="exampleCheck1">Manage en Name</label>
+                                        <label  class="exampleInputPassword1" for="exampleCheck1">اسم الرئيس انجليزى</label>
                                         <input type="text" name="manager_en_name" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">Manage Ar Name</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">اسم الرئيس عربي</label>
                                         <input type="text" name="manager_ar_name" class="form-control">
                                     </div>
                                 </div>
@@ -141,10 +141,10 @@
                                     </div> -->
                                     <div class="form-group">
                                     <select id="current" name="current" class="form-control">
-                                        <option value="" >Please Choose...</option>
-                                        <option value="0">Current</option>
-                                        <option value="1">Previous</option>
-                                        <option value="2">old</option>
+                                        <option value="" >اختر ...</option>
+                                        <option value="0">الحالى</option>
+                                        <option value="1">السابق</option>
+                                        <option value="2">قديما</option>
                                     </select>
                                     </div>
 

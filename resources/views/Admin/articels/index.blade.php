@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Chamber-pages') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page">صفحات الغرفة </li>
     </ol>
 </nav>
 
@@ -25,7 +25,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Chamber-pages</h6>
+                <h6>صفحات الغرفة</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -33,8 +33,8 @@
                     <table id="courseEval" class="dattable table table-striped thead-dark  w-100">
                         <thead>
                             <th>#</th>
-                            <th>code</th>
-                            <th>Name</th>
+                            <th>كود الصفحة</th>
+                            <th>اسم الصفحة</th>
                             <th></th>
 
 
@@ -58,7 +58,7 @@
 
 
                                 <td>
-                                    <a href="{{ route('articel.edit', $row->id) }}" class="btn btn-info d-inline-block" data-target="#">edit</a>
+                                    <a href="{{ route('articel.edit', $row->id) }}" class="btn btn-info d-inline-block" data-target="#">تعديل</a>
 
                                 </td>
                             </tr>

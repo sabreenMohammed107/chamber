@@ -5,10 +5,10 @@
 @section('crumb')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+<ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('countries-data') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page"> بيانات الدول </li>
     </ol>
 </nav>
 
@@ -24,7 +24,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Edit-countries-data</h6>
+                <h6>تعديل بيانات الدولة</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -50,13 +50,13 @@
                       <div class="col-md-9"></div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1"> En Text</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1"> النص إنجليزى</label>
                                         <input type="text" name="en_name" value="{{$row->en_name}}" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1"> Ar Text</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1"> النص عربي</label>
                                         <input type="text" name="ar_name" value="{{$row->ar_name}}" class="form-control">
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label> Region </label>
+                                        <label> المنطقة </label>
                                         <select name="region_id" class="form-control" id="">
                                             <option value="">
                                                 @if($row->type)
@@ -82,7 +82,7 @@
                               
                                 <div class="ms-auth-container row">
                                     <div class="col-md-12">
-                                        <label> En File </label>
+                                        <label> الملف إنجليزى </label>
 
                                         <div class="fileUpload">
                                             <div class="upload-icon">
@@ -96,7 +96,7 @@
                                 </div>
                                 <div class="ms-auth-container row">
                                     <div class="col-md-12">
-                                        <label>Ar File </label>
+                                        <label>الملف عربي </label>
 
                                         <div class="fileUpload">
                                             <div class="upload-icon">
@@ -114,7 +114,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                <a href="{{ route('countries-data.index') }}" class="btn btn-dark mx-2"> Cancel</a>
+                                <a href="{{ route('countries-data.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
                                     <input type="submit" value="save" class="btn btn-success ">
                                 </div>
                         </form>

@@ -25,7 +25,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Edit</h6>
+                <h6>تعديل</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -39,7 +39,7 @@
                             <div class="ms-auth-container row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">from year</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">من سنة</label>
                                         <?php $date = date_create($row->from_date) ?>
                                         <input style="height: 40px; border-radius: 5px;" class="col-md-12 exampleInputPassword1" for="exampleCheck1" data-date-format="dd/mm/yyyy" name="from_date" type="date" id="datepicker" value="{{ date_format($date,'Y-m-d') }}">
 
@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">to year</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">إلى سنة</label>
                                         <?php $dateTo = date_create($row->to_date) ?>
                                         <input style="height: 40px; border-radius: 5px;" class="col-md-12 exampleInputPassword1" for="exampleCheck1" data-date-format="dd/mm/yyyy" name="to_date" type="date" id="datepicker" value="{{ date_format($dateTo,'Y-m-d') }}">
 
@@ -59,13 +59,13 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">Manage en Name</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">اسم المدير إنجليزى</label>
                                         <input type="text" name="manager_en_name" value="{{$row->manager_en_name}}" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">Manage Ar Name</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">اسم المدير عربي</label>
                                         <input type="text" name="manager_ar_name" value="{{$row->manager_ar_name}}" class="form-control">
                                     </div>
                                 </div>
@@ -89,9 +89,9 @@
                                         @endif
 
                                         </option>
-                                        <option value="0">Current</option>
-                                        <option value="1">Previous</option>
-                                        <option value="2">old</option>
+                                        <option value="0">الحالى</option>
+                                        <option value="1">السابق</option>
+                                        <option value="2">قديما</option>
                                     </select>
                                     </div>
 
@@ -100,7 +100,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                    <a href="{{ route('board.index') }}" class="btn btn-dark mx-2"> Cancel</a>
+                                    <a href="{{ route('board.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
                                     <input type="submit" value="save" class="btn btn-success ">
                                 </div>
                         </form>
@@ -120,7 +120,7 @@
 
                 <li class="btn btn-light test">
                     <a href="#tab_default_1" class="active" data-toggle="tab" role="tab">
-                        Board Members </a>
+                        أعضاء المجلس </a>
                 </li>
 
 
@@ -133,7 +133,7 @@
                         <div class="col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-header d-flex justify-content-between">
-                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-news-gallery">add Chamber Board </button>
+                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-news-gallery">إضافة عضو إدارة </button>
                                 </div>
                                 <div class="ms-panel-body">
 
@@ -142,11 +142,11 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th scope="col">image</th>
-                                                    <th scope="col">En Name</th>
-                                                    <th scope="col">Ar Name</th>
-                                                    <th scope="col">En Position</th>
-                                                    <th scope="col">Ar Position</th>
+                                                    <th scope="col">الصورة</th>
+                                                    <th scope="col">الإسم إنجليزى</th>
+                                                    <th scope="col">الإسم عربي</th>
+                                                    <th scope="col">المركز إنجليزى</th>
+                                                    <th scope="col">المركز عربي</th>
 
                                                     <th scope="col"></th>
 
@@ -166,7 +166,7 @@
 
                                                     <td>
                                                         <a href="#add-news-gallery{{$member->id}}" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#add-news-gallery{{$member->id}}">edit</a>
-                                                        <a href="#" onclick="destroy('this Data','{{$member->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                                        <a href="#" onclick="destroy('this Data','{{$member->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                                         <form id="delete_{{$member->id}}" action="{{ route('deleteBoardMember', $member->id) }}" method="POST" style="display: none;">
                                                             @csrf
 
@@ -280,7 +280,7 @@
                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                             </button>
-                            <h3>Add Board Members </h3>
+                            <h3>إضافة عضو للمجلس </h3>
                             <div class="modal-body">
 
 
@@ -305,13 +305,13 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="exampleInputPassword1" for="exampleCheck1">En Name</label>
+                                                        <label class="exampleInputPassword1" for="exampleCheck1">الإسم إنجليزى</label>
                                                         <input type="text" name="en_name" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="exampleInputPassword1" for="exampleCheck1">Ar Name</label>
+                                                        <label class="exampleInputPassword1" for="exampleCheck1">الإسم عربي</label>
                                                         <input type="text" name="ar_name" class="form-control">
                                                     </div>
                                                 </div>
@@ -320,19 +320,19 @@
 
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="exampleInputPassword1" for="exampleCheck1">En Position </label>
+                                                        <label class="exampleInputPassword1" for="exampleCheck1">المركز إنجليزى </label>
                                                         <input type="text" name="en_position" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="exampleInputPassword1" for="exampleCheck1">Ar Position </label>
+                                                        <label class="exampleInputPassword1" for="exampleCheck1">المركز عربي </label>
                                                         <input type="text" name="ar_position" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="exampleInputPassword1">person_position</label>
+                                                        <label class="exampleInputPassword1">مركز العضو</label>
                                                         <input type="number" name="person_position" class="form-control">
 
                                                     </div>

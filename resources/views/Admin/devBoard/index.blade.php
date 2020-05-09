@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page">إجتماعات المجلس </li>
     </ol>
 </nav>
 
@@ -24,7 +24,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Devisions Meetings</h6>
+                <h6>إجتماعات المجلس</h6>
                 <!-- <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addnumber"> add  </a> -->
             </div>
             <div class="ms-panel-body">
@@ -34,8 +34,8 @@
                             <th>#</th>
 
 
-                            <th>AR Title </th>
-                            <th>EN Title</th>
+                            <th>المسمى عربي </th>
+                            <th>المسمى إنجليزى</th>
                            
                             <th></th>
 

@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية</a></li>
+        <li class="breadcrumb-item active" aria-current="page">الأخبار </li>
     </ol>
 </nav>
 
@@ -24,8 +24,8 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>News</h6>
-                <a href="{{ route('news.create') }}" class="btn btn-dark"> add</a>
+                <h6>الأخبار</h6>
+                <a href="{{ route('news.create') }}" class="btn btn-dark"> اضافة</a>
             </div>
             <div class="ms-panel-body">
                 <div class="table-responsive">
@@ -34,12 +34,12 @@
                             <th>#</th>
 
 
-                            <th>AR Title </th>
-                            <th>EN Title</th>
-                            <th>News Date </th>
+                            <th>العنوان عربي </th>
+                            <th>العنوان إنجليزى</th>
+                            <th>تاريخ الخبر </th>
                           
-                            <th>Home Order</th>
-                            <th>Active</th>
+                            <th>ترتيب الرئيسية</th>
+                            <th>نشط</th>
                            
                             <th></th>
 
@@ -64,8 +64,8 @@
                           @endif
                                 <td>
                                 <a href="{{ route('news.edit',$row->id) }}" class="btn btn-info d-inline-block" 
-                           >edit</a>
-              <a href="#" onclick="destroy('this News','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                           >تعديل</a>
+              <a href="#" onclick="destroy('this News','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
               <form id="delete_{{$row->id}}" action="{{ route('news.destroy', $row->id) }}"  method="POST" style="display: none;">
 									@csrf
 									@method('DELETE')

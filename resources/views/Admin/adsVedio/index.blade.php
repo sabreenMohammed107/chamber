@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Videos-Ads') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page">فيديو الإعلان </li>
     </ol>
 </nav>
 
@@ -24,8 +24,8 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Videos-Ads</h6>
-                <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addclient"> add</a>
+                <h6>فيديو الإعلان</h6>
+                <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addclient"> إضافة</a>
 
             </div>
             <div class="ms-panel-body">
@@ -33,13 +33,13 @@
                     <table id="courseEval" class="dattable table table-striped thead-dark  w-100">
                         <thead>
                             <th>#</th>
-                            <th>en Title</th>
+                            <th>المسمى إنجليزى</th>
 
-                            <th>ar Title</th>
-                            <th>En Sub title</th>
-                            <th>Ar Sub title</th>
-                            <th>Video url</th>
-                            <th>active</th>
+                            <th>المسمى</th>
+                            <th>المسمى الفرعى إنجليزى</th>
+                            <th>المسمى الفرعى عربي</th>
+                            <th>رابط الفيديو</th>
+                            <th>نشط</th>
 
 
                             <th></th>
@@ -82,7 +82,7 @@
                 <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                 </button>
-                <h3>Edit Videos Ads</h3>
+                <h3>تعديل إعلان الفيديو</h3>
 
                 <div class="modal-body">
 
@@ -101,7 +101,7 @@
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <div class="upload-icon">
-                                                <label>EN Title</label>
+                                                <label>المسمى إنجليزى</label>
                                             </div>
 
                                             <div class="input-group">
@@ -111,7 +111,7 @@
                                     </div>
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label>Ar Title</label>
+                                            <label>المسمى عربي</label>
                                             <div class="input-group">
                                                 <input type="text" name="ar_title" value="{{$data->ar_title}}" id="Master EN Title" class="form-control" placeholder="">
                                             </div>
@@ -119,7 +119,7 @@
                                     </div>
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label>En Sub title </label>
+                                            <label>المسمى الفرعى إنجليزى </label>
                                             <div class="input-group">
                                                 <input type="text" name="en_subtitle" value="{{$data->en_subtitle}}" id="Master EN Title" class="form-control" placeholder="">
                                             </div>
@@ -127,7 +127,7 @@
                                     </div>
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label>Ar Sub title </label>
+                                            <label>المسمى الفرعى عربي </label>
                                             <div class="input-group">
                                                 <input type="text" name="ar_subtitle" value="{{$data->ar_subtitle}}" id="Master EN Title" class="form-control" placeholder="">
                                             </div>
@@ -135,7 +135,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Video url</label>
+                                            <label>رابط الفيديو</label>
                                             <div class="input-group">
                                                 <input type="text" name="vedio_url" value="{{$data->vedio_url}}" id="Master EN Title" class="form-control" placeholder="">
                                             </div>
@@ -186,7 +186,7 @@
                 <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                 </button>
-                <h3>Add Videos Ads</h3>
+                <h3>إضافة اعلان الفيديو</h3>
 
                 <div class="modal-body">
 
@@ -202,7 +202,7 @@
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <div class="upload-icon">
-                                                <label>EN Title</label>
+                                                <label>المسمى إنجليزى</label>
                                             </div>
 
                                             <div class="input-group">
@@ -212,7 +212,7 @@
                                     </div>
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label>Ar Title</label>
+                                            <label>المسمى عربي</label>
                                             <div class="input-group">
                                                 <input type="text" name="ar_title" id="Master EN Title" class="form-control" placeholder="">
                                             </div>
@@ -220,7 +220,7 @@
                                     </div>
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label>En Sub title </label>
+                                            <label>المسمى الفرعى إنجليزى </label>
                                             <div class="input-group">
                                                 <input type="text" name="en_subtitle" id="Master EN Title" class="form-control" placeholder="">
                                             </div>
@@ -228,7 +228,7 @@
                                     </div>
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label>Ar Sub title </label>
+                                            <label>المسمى الفرعى عربي </label>
                                             <div class="input-group">
                                                 <input type="text" name="ar_subtitle" id="Master EN Title" class="form-control" placeholder="">
                                             </div>
@@ -236,7 +236,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Video url</label>
+                                            <label>رابط الفيديو</label>
                                             <div class="input-group">
                                                 <input type="text" name="vedio_url" id="Master EN Title" class="form-control" placeholder="">
                                             </div>
@@ -247,7 +247,7 @@
                                         <div class="custom-control custom-checkbox">
                                             <br>
                                             <input type="checkbox" id="" name="active" checked>
-                                            <label for="category">active</label>
+                                            <label for="category">نشط</label>
                                         </div>
 
                                     </div>

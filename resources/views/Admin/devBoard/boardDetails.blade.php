@@ -5,10 +5,10 @@
 @section('crumb')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+<ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page">إجتماعات المجلس </li>
     </ol>
 </nav>
 
@@ -25,7 +25,7 @@
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
                 <h6>{{$row->ar_title}}</h6>
-                <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addnumber"> add </a>
+                <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addnumber"> إضافة </a>
             </div>
             <div class="ms-panel-body">
 
@@ -35,10 +35,10 @@
                             <th>#</th>
 
 
-                            <th>manager_en_name</th>
-                            <th>manager_ar_name</th>
-                            <th>From Year</th>
-                            <th>to Year</th>
+                            <th>اسم الرئيس إنجليزى</th>
+                            <th>اسم الرئيس عربي</th>
+                            <th>من سنة</th>
+                            <th>إلى سنة</th>
 
                             <th></th>
 
@@ -66,8 +66,8 @@
                                 </td>
 
                                 <td>
-                                    <a href="{{ route('editAdminDevBoard',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
-                                    <a href="#" onclick="destroy('this News','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                    <a href="{{ route('editAdminDevBoard',$row->id) }}" class="btn btn-info d-inline-block">تعديل</a>
+                                    <a href="#" onclick="destroy('this News','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('devBoard.destroy', $row->id) }}" method="POST" style="display: none;">
 
                                         @csrf
@@ -85,7 +85,7 @@
         </div>
     </div>
     <div class="input-group d-flex justify-content-end text-center">
-        <a href="{{ route('devBoard.index') }}" style="float: right;margin-right: 50px;margin-bottom: 20px" class="btn btn-danger "> Cancel</a>
+        <a href="{{ route('devBoard.index') }}" style="float: right;margin-right: 50px;margin-bottom: 20px" class="btn btn-danger "> إلغاء</a>
 
     </div>
 
@@ -108,7 +108,7 @@
             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
             </button>
-            <h3>Add </h3>
+            <h3>إضافة </h3>
 
             <div class="modal-body">
 
@@ -133,7 +133,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="hidden" name="department_id" value="{{$row->id}}">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">from year </label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">من سنة </label>
 
                                         <input class="form-control" for="exampleCheck1" data-date-format="dd/mm/yyyy" name="from_date" type="date" id="datepicker">
 
@@ -141,7 +141,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">to year</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">إلى سنة</label>
 
                                         <input class="form-control" for="exampleCheck1" data-date-format="dd/mm/yyyy" name="to_date" type="date" id="datepicker">
 
@@ -153,13 +153,13 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">Manage en Name</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">اسم الرئيس إنجليزى</label>
                                         <input type="text" name="manager_en_name" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">Manage Ar Name</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">اسم الرئيس عربي</label>
                                         <input type="text" name="manager_ar_name" class="form-control">
                                     </div>
                                 </div>
@@ -175,10 +175,10 @@
                                     </div> -->
                                     <div class="form-group">
                                     <select id="current" name="current" class="form-control">
-                                        <option value="" >Please Choose...</option>
-                                        <option value="0">Current</option>
-                                        <option value="1">Previous</option>
-                                        <option value="2">old</option>
+                                        <option value="" >اختر...</option>
+                                        <option value="0">الحالى</option>
+                                        <option value="1">السابق</option>
+                                        <option value="2">قديما</option>
                                     </select>
                                     </div>
                                 </div>

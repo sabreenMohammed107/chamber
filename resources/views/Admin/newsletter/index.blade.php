@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Email-Newsletter') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page"> القائمة البريدية </li>
     </ol>
 </nav>
 
@@ -24,7 +24,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Email-Newsletter</h6>
+                <h6>القائمة البريدية</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -32,9 +32,9 @@
                     <table id="courseEval" class="dattable table table-striped thead-dark  w-100">
                         <thead>
                             <th>#</th>
-                            <th>Email</th>
+                            <th>البريد الإلكترونى</th>
 
-                            <th>Created Date </th>
+                            <th>تاريخ الإرسال </th>
 
                             <th></th>
 
@@ -53,8 +53,8 @@
 
 
                                 <td>
-                                <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#addclient{{$row->id}}">edit</a>
-                                    <a href="#" onclick="destroy('this Data','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#addclient{{$row->id}}">تعديل</a>
+                                    <a href="#" onclick="destroy('this Data','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('newsletter.destroy', $row->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')
@@ -69,7 +69,7 @@
                 <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                 </button>
-                <h3> Email Newsletter</h3>
+                <h3> القائمة البريدية</h3>
 
                 <div class="modal-body">
 
@@ -82,7 +82,7 @@
 
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label>Email</label>
+                                            <label>البريد الإكترونى</label>
                                             <div class="input-group">
                                                 <input type="text" name="email" value="{{$row->email}}" id="Master EN Title" class="form-control" placeholder="">
                                             </div>

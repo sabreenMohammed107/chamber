@@ -5,10 +5,10 @@
 @section('crumb')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+<ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Commmercial-topics') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i>الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page"> الموضوعات التجارية</li>
     </ol>
 </nav>
 
@@ -24,7 +24,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>add-Commmercial-topics</h6>
+                <h6>إضافة موضوع تجارى</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -35,13 +35,13 @@
                             <div class="ms-auth-container row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1"> En Text</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1"> النص إنجليزى</label>
                                         <input type="text" name="en_text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1"> Ar Text</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1"> النص عربي</label>
                                         <input type="text" name="ar_text" class="form-control">
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@
                                     <div class="form-group">
                                         <label> Type </label>
                                         <select name="commerical_topic_id" class="form-control" id="">
-                                            <option value="">select....</option>
+                                            <option value="">اختر...</option>
                                             @foreach ($types as $type)
                                             <option value='{{$type->id}}'>{{$type->ar_type}}
 
@@ -63,28 +63,28 @@
                               
                                 <div class="ms-auth-container row">
                                     <div class="col-md-12">
-                                        <label> En File </label>
+                                        <label> الملف إنجليزى </label>
 
                                         <div class="fileUpload">
                                             <div class="upload-icon">
                                                 <img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon">
 
                                                 <input type="file" name="en_file" class="upload up" id="en_file" onchange="readURLFile(this);" />
-                                                <span class="upl" id="upload">Upload document</span></div>
+                                                <span class="upl" id="upload">رفع الملف</span></div>
 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="ms-auth-container row">
                                     <div class="col-md-12">
-                                        <label>Ar File </label>
+                                        <label>الملف عربي </label>
 
                                         <div class="fileUpload">
                                             <div class="upload-icon">
                                                 <img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon">
 
                                                 <input type="file" name="ar_file" class="upload up" id="ar_file" onchange="readURLFile(this);" />
-                                                <span class="upl" id="upload">Upload document</span></div>
+                                                <span class="upl" id="upload">رفع الملف</span></div>
 
                                         </div>
                                     </div>
@@ -94,7 +94,7 @@
                                     <div class="custom-control custom-checkbox">
                                         <br>
                                         <input type="checkbox" id="" name="active" checked>
-                                        <label for="category">active</label>
+                                        <label for="category">نشط</label>
                                     </div>
 
                                 </div>
@@ -105,7 +105,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                <a href="{{ route('commmercial-topics.index') }}" class="btn btn-dark mx-2"> Cancel</a>
+                                <a href="{{ route('commmercial-topics.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
                                     <input type="submit" value="save" class="btn btn-success ">
                                 </div>
                         </form>

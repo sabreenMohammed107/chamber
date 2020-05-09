@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Commercial Agreement') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page">الإتفاقات التجارية </li>
     </ol>
 </nav>
 
@@ -25,8 +25,8 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Commercial Agreement</h6>
-                <a href="{{route('commercialAgreement.create') }}" class="btn btn-dark"> add Commercial Agreement</a>
+                <h6>الإتفاقات التجارية</h6>
+                <a href="{{route('commercialAgreement.create') }}" class="btn btn-dark"> إضافة اتفاقية تجارية</a>
             </div>
             <div class="ms-panel-body">
                 <div class="table-responsive">
@@ -34,9 +34,9 @@
                         <thead>
                             <th>#</th>
 
-                            <th>Agreement date</th>
+                            <th>تاريخ الإتفاقية</th>
 
-                            <th>Active</th>
+                            <th>نشط</th>
                             <th></th>
 
 
@@ -60,8 +60,8 @@
 
 
                                 <td>
-                                    <a href="{{ route('commercialAgreement.edit',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
-                                    <a href="#" onclick="destroy('this commercialAgreement','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                    <a href="{{ route('commercialAgreement.edit',$row->id) }}" class="btn btn-info d-inline-block">تعديل</a>
+                                    <a href="#" onclick="destroy('this commercialAgreement','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('commercialAgreement.destroy', $row->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')

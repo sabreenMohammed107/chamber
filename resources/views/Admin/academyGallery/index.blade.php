@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-      <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-      <li class="breadcrumb-item active" aria-current="page"> {{ __('Academy-Gallery') }} </li>
+      <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+      <li class="breadcrumb-item active" aria-current="page"> الجاليرى</li>
     </ol>
   </nav>
 
@@ -25,19 +25,19 @@
 
     <div class="ms-panel">
         <div class="ms-panel-header d-flex justify-content-between">
-            <h6>Gallery</h6>
-            <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addclient"> add</a>
+            <h6>الجاليرى</h6>
+            <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addclient"> إضافة</a>
         </div>
         <div class="ms-panel-body">
             <div class="table-responsive">
                 <table id="courseEval" class="dattable table table-striped thead-dark  w-100">
                     <thead>
                         <th>#</th>
-                        <th>img</th>
+                        <th>صورة</th>
 
-                        <th>Image_text</th>
+                        <th>نص الصورة</th>
                     
-                        <th>Active</th>
+                        <th>نشط</th>
                         <th></th>
 
                     </thead>
@@ -59,7 +59,7 @@
 
                             <td>
                                 <a href="#" class="btn btn-info d-inline-block" data-toggle="modal"
-                                    data-target="#addclient{{$gallery->id}}">edit</a>
+                                    data-target="#addclient{{$gallery->id}}">تعديل</a>
                                     <a href="#" onclick="destroy('this Gallery','{{$gallery->id}}')" class="btn d-inline-block btn-danger">delete</a>
               <form id="delete_{{$gallery->id}}" action="{{ route('academyGallery.destroy', $gallery->id) }}"  method="POST" style="display: none;">
 									@csrf
@@ -77,7 +77,7 @@
                 <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                 </button>
-                <h3>Edit </h3>
+                <h3>تعديل </h3>
 
                 <div class="modal-body">
 
@@ -103,7 +103,7 @@
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <div class="upload-icon">
-                                                <label>image_text</label>
+                                                <label>نص الصورة</label>
                                             </div>
 
                                             <div class="input-group">
@@ -126,7 +126,7 @@
                           <input type="checkbox" id="partener" name="active"
                             >
                           @endif
-                                            <label for="category">active</label>
+                                            <label for="category">نشط</label>
                                         </div>
 
                                     </div>
@@ -162,7 +162,7 @@
                 <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                 </button>
-                <h3>Add </h3>
+                <h3>إضافة </h3>
 
                 <div class="modal-body">
 
@@ -189,7 +189,7 @@
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <div class="upload-icon">
-                                                <label>image_text</label>
+                                                <label>نص الصورة</label>
                                             </div>
 
                                             <div class="input-group">
@@ -201,7 +201,7 @@
                                         <div class="custom-control custom-checkbox">
                                             <br>
                                             <input type="checkbox" id="" name="active" checked>
-                                            <label for="category">active</label>
+                                            <label for="category">نشط</label>
                                         </div>
 
                                     </div>

@@ -5,10 +5,10 @@
 @section('crumb')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+<ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Commmercial-topics') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i>الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page"> الموضوعات التجارية</li>
     </ol>
 </nav>
 
@@ -24,7 +24,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>add-Commmercial-topics</h6>
+                <h6>إضافة موضوع تجارى</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -38,13 +38,13 @@
                             <div class="ms-auth-container row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1"> En Text</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1"> النص إنجليزى</label>
                                         <input type="text" name="en_text" value="{{$row->en_text}}" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1"> Ar Text</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1"> النص عربي</label>
                                         <input type="text" name="ar_text" value="{{$row->ar_text}}" class="form-control">
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label> Type </label>
+                                        <label> النوع </label>
                                         <select name="commerical_topic_id" class="form-control" id="">
                                             <option value="">
                                                 @if($row->type)
@@ -70,7 +70,7 @@
 
                                 <div class="ms-auth-container row">
                                     <div class="col-md-12">
-                                        <label> En File </label>
+                                        <label> الملف إنجليزى </label>
 
                                         <div class="fileUpload">
                                             <div class="upload-icon">
@@ -84,7 +84,7 @@
                                 </div>
                                 <div class="ms-auth-container row">
                                     <div class="col-md-12">
-                                        <label>Ar File </label>
+                                        <label>الملف عربي </label>
 
                                         <div class="fileUpload">
                                             <div class="upload-icon">
@@ -105,7 +105,7 @@
                                         @else
                                         <input type="checkbox" id="" name="active">
                                         @endif
-                                        <label for="category">active</label>
+                                        <label for="category">نشط</label>
                                     </div>
 
                                 </div>
@@ -116,7 +116,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                    <a href="{{ route('commmercial-topics.index') }}" class="btn btn-dark mx-2"> Cancel</a>
+                                    <a href="{{ route('commmercial-topics.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
                                     <input type="submit" value="save" class="btn btn-success ">
                                 </div>
                         </form>

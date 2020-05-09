@@ -5,10 +5,10 @@
 @section('crumb')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+<ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Create') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page">الإدارات </li>
     </ol>
 </nav>
 
@@ -25,7 +25,7 @@
 
     <div class="ms-panel">
         <div class="ms-panel-header d-flex justify-content-between">
-            <h6>add-Sections</h6>
+            <h6>إضافة إدارة</h6>
 
         </div>
         <div class="ms-panel-body">
@@ -47,7 +47,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label  class="exampleInputPassword1" for="exampleCheck1">En Title</label>
+                                    <label  class="exampleInputPassword1" for="exampleCheck1">العنوان إنجليزى</label>
                                     <input type="text" name="en_name" class="form-control">
                                 </div>
                             </div>
@@ -56,13 +56,13 @@
                             
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label  class="exampleInputPassword1" for="exampleCheck1">Ar Title</label>
+                                    <label  class="exampleInputPassword1" for="exampleCheck1">العنوان عربي</label>
                                     <input type="text" name="ar_name" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="example2">EN Text</label>
+                                    <label for="example2">النص إنجليزى</label>
                                     <div class="form-group">
                                         <textarea class="content" name="en_text"></textarea>
                                     </div>
@@ -70,7 +70,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="example2">Ar Text</label>
+                                    <label for="example2">النص عربي</label>
                                     <div class="form-group">
                                         <textarea class="content" name="ar_text"></textarea>
                                     </div>
@@ -79,7 +79,7 @@
                            
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label  class="exampleInputPassword1" for="exampleCheck1">Order</label>
+                                    <label  class="exampleInputPassword1" for="exampleCheck1">الترتيب</label>
                                     <input type="number" name="order" class="form-control">
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                                 <div class="custom-control custom-checkbox">
                                     <br>
                                     <input type="checkbox" id="" name="active" checked>
-                                    <label for="category">active</label>
+                                    <label for="category">نشط</label>
                                 </div>
 
                             </div>
@@ -99,7 +99,7 @@
 
 
                             <div class="input-group d-flex justify-content-end text-center">
-                            <a href="{{ route('section.index') }}" class="btn btn-dark mx-2"> Cancel</a>
+                            <a href="{{ route('section.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
                                 <input type="submit" value="save" class="btn btn-success ">
                             </div>
                     </form>

@@ -11,7 +11,7 @@
       <!-- Home -->
       <li class="menu-item ">
         <a class="active" href="{{ route('admin') }}">
-          <span><i class="material-icons fs-16">home</i>Home </span>
+          <span><i class="material-icons fs-16">home</i>الرئيسية </span>
         </a>
       </li>
       <!-- /Home -->
@@ -22,53 +22,53 @@
           <span><i class="material-icons fs-16">build</i>Setup</span>
         </a>
         <ul id="create" class="collapse" aria-labelledby="tables" data-parent="#side-nav-accordion">
-          <li> <a href="{{ route('slider.index') }}">Home_slider</a> </li>
-          <li> <a href="{{ route('articel.index') }}">Chamber pages</a> </li>
-            <li> <a href="{{ route('board.index') }}">Chamber Board</a> </li>
-            <li> <a href="{{ route('socialResponsibility.index') }}">Social Responsibility</a> </li>
-            <li> <a href="{{ route('section.index') }}">Sections</a> </li>
-            <li> <a href="{{ route('social.index') }}">Social Media</a> </li>
-            <li> <a href="{{ route('contactMsg.index') }}">Contacts Messages</a> </li>
-            <li> <a href="{{ route('newsletter.index') }}">Email Newsletter</a> </li>
-            <li> <a href="{{ route('adsImage.index') }}">Images Ads</a> </li>
-            <li> <a href="{{ route('adsVedio.index') }}">Videos Ads</a> </li>
+          <li> <a href="{{ route('slider.index') }}">سلايدر الرئيسية</a> </li>
+          <li> <a href="{{ route('articel.index') }}">صفحات الغرفة</a> </li>
+            <li> <a href="{{ route('board.index') }}">إدارة الغرفة</a> </li>
+            <li> <a href="{{ route('socialResponsibility.index') }}">المسئولية الإجتماعية</a> </li>
+            <li> <a href="{{ route('section.index') }}">الإدارات</a> </li>
+            <li> <a href="{{ route('social.index') }}">التواصل الإجتماعى</a> </li>
+            <li> <a href="{{ route('contactMsg.index') }}">رسائل العملاء</a> </li>
+            <li> <a href="{{ route('newsletter.index') }}">القائمة البريدية</a> </li>
+            <li> <a href="{{ route('adsImage.index') }}">إعلانات بالصور</a> </li>
+            <li> <a href="{{ route('adsVedio.index') }}">إعلانات بالفيديو</a> </li>
       </ul>
   </li>
   <!--  Setup  -->
   <li class="menu-item">
      <a href="#" class="has-chevron" data-toggle="collapse" data-target="#basic-elements" aria-expanded="false" aria-controls="basic-elements">
-          <span><i class="material-icons fs-16">build</i>Media Center</span>
+          <span><i class="material-icons fs-16">build</i>المركز الإعلامى</span>
       </a>
       <ul id="basic-elements" class="collapse" aria-labelledby="tables" data-parent="#side-nav-accordion">
-          <li> <a href="{{ route('news.index') }}">news_page</a> </li>
-          <li> <a href="{{ route('album.index') }}">Chamber Gallery</a> </li>
-          <li> <a href="{{ route('announce.index') }}">Announcements</a> </li>
+          <li> <a href="{{ route('news.index') }}">الأخبار</a> </li>
+          <li> <a href="{{ route('album.index') }}">جاليرى الغرفة</a> </li>
+          <li> <a href="{{ route('announce.index') }}">التنويهات</a> </li>
 
       </ul>
   </li>
    <!--  devisions  -->
    <li class="menu-item">
      <a href="#" class="has-chevron" data-toggle="collapse" data-target="#basic-devisions" aria-expanded="false" aria-controls="basic-devisions">
-          <span><i class="material-icons fs-16">build</i>Chamber Devisions</span>
+          <span><i class="material-icons fs-16">build</i>شعب الغرفة</span>
       </a>
       <ul id="basic-devisions" class="collapse" aria-labelledby="tables" data-parent="#side-nav-accordion">
-          <li> <a href="{{ route('devisions.index') }}">Devisions Data</a> </li>
-          <li> <a href="{{ route('devMeeting.index') }}">Devisions Meetings</a> </li> 
-         <li> <a href="{{ route('devNews.index') }}">Devisions News</a> </li>
-         <li> <a href="{{ route('devBoard.index') }}">Devisions Board</a> </li>
-         <li> <a href="{{ route('registerDev.index') }}">Register Devisions</a> </li>
+          <li> <a href="{{ route('devisions.index') }}">بيانات الشعب</a> </li>
+          <li> <a href="{{ route('devMeeting.index') }}">إجتماعات الشعب</a> </li> 
+         <li> <a href="{{ route('devNews.index') }}">أخبار الشعب</a> </li>
+         <li> <a href="{{ route('devBoard.index') }}">إدارة الشعب</a> </li>
+         <li> <a href="{{ route('registerDev.index') }}">تسجيل الشعب</a> </li>
 
       </ul>
   </li>
    <!-- Chamber pages   -->
    <li class="menu-item">
             <a href="#" class="has-chevron" data-toggle="collapse" data-target="#Usersdropdown" aria-expanded="false" aria-controls="contactsdropdown">
-            <span><i class="material-icons fs-16">build</i>Chamber pages</span>
+            <span><i class="material-icons fs-16">build</i>صفحات الغرفة</span>
           </a>
             <ul id="Usersdropdown" class="collapse" aria-labelledby="basic-elements" data-parent="#side-nav-accordion">
-             <li> <a href="{{ route('adminChance.index') }}">Commercial Chances</a> </li>
-                <li> <a href="{{ route('conference.index') }}">Conferences</a> </li>
-                <li> <a href="{{ route('activity.index') }}">Women Activities</a> </li>
+             <li> <a href="{{ route('adminChance.index') }}">الفرص التجارية</a> </li>
+                <li> <a href="{{ route('conference.index') }}">المؤتمرات</a> </li>
+                <li> <a href="{{ route('activity.index') }}">أنشطة المرأة</a> </li>
                 
                
              
@@ -78,34 +78,34 @@
       <!-- academy   -->
       <li class="menu-item">
        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#contactsdropdown" aria-expanded="false" aria-controls="contactsdropdown">
-            <span><i class="material-icons fs-16">build</i>Academy</span>
+            <span><i class="material-icons fs-16">build</i>الأكاديمية</span>
         </a>
         <ul id="contactsdropdown" class="collapse" aria-labelledby="tables" data-parent="#side-nav-accordion">
-            <li> <a href="{{ route('number.index') }}">Academy in Numbers</a> </li>
-            <li> <a href="{{ route('academyGallery.index') }}">Gallery</a> </li>
-            <li> <a href="{{ route('partener.index') }}">Partners</a> </li>
-            <li> <a href="{{ route('client.index') }}">Sponsors</a> </li>
-            <li> <a href="{{ route('academyData.index') }}">Contact Data</a> </li>
+            <li> <a href="{{ route('number.index') }}">الأكاديمية بالأرقام</a> </li>
+            <li> <a href="{{ route('academyGallery.index') }}">الجاليرى</a> </li>
+            <li> <a href="{{ route('partener.index') }}">الشركاء</a> </li>
+            <li> <a href="{{ route('client.index') }}">الرعاة</a> </li>
+            <li> <a href="{{ route('academyData.index') }}">بيانات التواصل</a> </li>
 
         </ul>
     </li>
      <!-- Encyclo  -->
   <li class="menu-item">
     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#callsdropdown" aria-expanded="false" aria-controls="callsdropdown">
-    <span><i class="material-icons fs-16">call</i>Encyclo</span>
+    <span><i class="material-icons fs-16">call</i>أدلة هامة</span>
   </a>
     <ul id="callsdropdown" class="collapse" aria-labelledby="basic-elements" data-parent="#side-nav-accordion">
-     <li> <a href="{{ route('brother.index') }}">Brothers Agreement</a> </li>
-      <li> <a href="{{ route('commercialAgreement.index') }}">Commercial Agreements</a> </li>
-      <li> <a href="{{ route('business-organizations.index') }}">Business Organizations</a> </li>
-      <li> <a href="{{ route('study-report.index') }}">Studies / Reports</a> </li>
-      <li> <a href="{{ route('embassies.index') }}">Embassies / Consulates</a> </li>
-      <li> <a href="{{ route('decisions-laws.index') }}">Decisions / Laws</a> </li>
-      <li> <a href="{{ route('ministries.index') }}">Ministries</a> </li>
-      <li> <a href="{{ route('communications-guide.index') }}">Communications guide</a> </li>
-      <li> <a href="{{ route('commmercial-topics.index') }}">Commmercial topics</a> </li>
-      <li> <a href="{{ route('exporters-encyclopedia.index') }}">Exporters Encyclopedia</a> </li>
-      <li> <a href="{{ route('countries-data.index') }}">Countries Data</a> </li>
+     <li> <a href="{{ route('brother.index') }}">إتفاقات التآخى</a> </li>
+      <li> <a href="{{ route('commercialAgreement.index') }}">الإتفاقيات التجارية</a> </li>
+      <li> <a href="{{ route('business-organizations.index') }}">منظمات الأعمال</a> </li>
+      <li> <a href="{{ route('study-report.index') }}">دراسات / تقارير</a> </li>
+      <li> <a href="{{ route('embassies.index') }}">السفارات / القنصليات</a> </li>
+      <li> <a href="{{ route('decisions-laws.index') }}">قرارات / قوانين</a> </li>
+      <li> <a href="{{ route('ministries.index') }}">وزارات</a> </li>
+      <li> <a href="{{ route('communications-guide.index') }}">أدلة الإتصالات</a> </li>
+      <li> <a href="{{ route('commmercial-topics.index') }}">مواضيع تجارية</a> </li>
+      <li> <a href="{{ route('exporters-encyclopedia.index') }}">موسوعة المصدرين</a> </li>
+      <li> <a href="{{ route('countries-data.index') }}">بيانات الدول</a> </li>
      
       
       

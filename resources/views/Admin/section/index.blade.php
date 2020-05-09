@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Sections') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page">الإدارات </li>
     </ol>
 </nav>
 
@@ -25,8 +25,8 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Sections</h6>
-                <a href="{{ route('section.create') }}" class="btn btn-dark"> add</a>
+                <h6>الإدارات</h6>
+                <a href="{{ route('section.create') }}" class="btn btn-dark"> إضافة</a>
             </div>
             <div class="ms-panel-body">
                 <div class="table-responsive">
@@ -35,11 +35,11 @@
                             <th>#</th>
 
 
-                            <th>Image</th>
-                            <th>En Title</th>
-                            <th>Ar Title</th>
+                            <th>صورة</th>
+                            <th>العنوان إنجليزى</th>
+                            <th>العنوان عربي</th>
 
-                            <th>Order</th>
+                            <th>الترتيب</th>
                             <th></th>
 
 
@@ -63,8 +63,8 @@
                                 <td>{{$row->order}}</td>
 
                                 <td>
-                                    <a href="{{ route('section.edit', $row->id) }}" class="btn btn-info d-inline-block">edit</a>
-                                    <a href="#" onclick="destroy('this Data','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                    <a href="{{ route('section.edit', $row->id) }}" class="btn btn-info d-inline-block">تعديل</a>
+                                    <a href="#" onclick="destroy('this Data','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('section.destroy', $row->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')

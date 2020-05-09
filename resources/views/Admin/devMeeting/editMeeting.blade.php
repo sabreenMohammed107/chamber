@@ -5,10 +5,10 @@
 @section('crumb')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+<ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية</a></li>
+        <li class="breadcrumb-item active" aria-current="page">إجتماعات الشعبة </li>
     </ol>
 </nav>
 
@@ -42,21 +42,21 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">AR
-                                            Title</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">
+                                            المسمى عربي</label>
                                         <input type="text" name="ar_title" value="{{$row->ar_title}}" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">EN
-                                            Title</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">
+                                            المسمى إنجليزى</label>
                                         <input type="text" name="en_title" value="{{$row->en_title}}" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label> Date
+                                        <label> التاريخ
                                         </label>
                                         <br>
                                         <?php $date = date_create($row->meeting_date) ?>
@@ -67,7 +67,7 @@
                                 <div class="col-md-6"></div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="example2"> Ar Text</label>
+                                        <label for="example2"> النص عربي</label>
                                         <div class="form-group">
                                             <textarea class="content" name="ar_text">{{$row->ar_text}}</textarea>
                                         </div>
@@ -75,7 +75,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="example2"> EN Text</label>
+                                        <label for="example2"> النص إنجليزى</label>
                                         <div class="form-group">
                                             <textarea class="content" name="en_text">{{$row->en_text}}</textarea>
                                         </div>
@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="example2">ar_schedule</label>
+                                        <label for="example2">الموعد تفصيلي عربي</label>
                                         <div class="form-group">
                                             <textarea class="content" name="ar_schedule">{{$row->ar_schedule}}</textarea>
                                         </div>
@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="example2">en_schedule</label>
+                                        <label for="example2">الموعد تفصيلى إنجليزى</label>
                                         <div class="form-group">
                                             <textarea class="content" name="en_schedule">{{$row->en_schedule}}</textarea>
                                         </div>
@@ -119,7 +119,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                    <a href="{{ route('devMeeting.edit',$devisionrow->id) }}" class="btn btn-dark mx-2"> Cancel</a>
+                                    <a href="{{ route('devMeeting.edit',$devisionrow->id) }}" class="btn btn-dark mx-2"> إلغاء</a>
                                     <input type="submit" value="Add" class="btn btn-success ">
                                 </div>
                         </form>
@@ -139,11 +139,11 @@
 
                 <li class="btn btn-light test">
                     <a href="#tab_default_1" class="active" data-toggle="tab" role="tab">
-                        Page Gallery </a>
+                        الجاليرى </a>
                 </li>
                 <li class="btn btn-light ">
                     <a href="#tab_default_2" data-toggle="tab" role="tab">
-                        Page Files </a>
+                       الملفات </a>
                 </li>
 
 
@@ -156,7 +156,7 @@
                         <div class="col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-header d-flex justify-content-between">
-                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Annoucement-Gallery">add Page Gallery</button>
+                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Annoucement-Gallery">إضافة جاليرى</button>
                                 </div>
                                 <div class="ms-panel-body">
 
@@ -165,10 +165,10 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th scope="col">image</th>
-                                                    <th scope="col">video</th>
-                                                    <th scope="col">Order</th>
-                                                    <th scope="col">active</th>
+                                                    <th scope="col">صورة</th>
+                                                    <th scope="col">فيديو</th>
+                                                    <th scope="col">الترتيب</th>
+                                                    <th scope="col">نشط</th>
                                                     <th scope="col"></th>
 
                                                 </tr>
@@ -193,8 +193,8 @@
                                                     @endif
 
                                                     <td>
-                                                        <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#add-Annoucement-Gallery{{$gallery->id}}">edit</a>
-                                                        <a href="#" onclick="destroy('this News','{{$gallery->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                                        <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#add-Annoucement-Gallery{{$gallery->id}}">تعديل</a>
+                                                        <a href="#" onclick="destroy('this News','{{$gallery->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                                         <form id="delete_{{$gallery->id}}" action="{{ route('deleteMeetingGallery', $gallery->id) }}" method="POST" style="display: none;">
                                                             @csrf
 
@@ -215,7 +215,7 @@
                                                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                                                             </button>
-                                                            <h3>Edit News Gallery </h3>
+                                                            <h3>تعديل الجاليرى </h3>
                                                             <div class="modal-body">
 
 
@@ -243,7 +243,7 @@
                                                                                     <div class="form-group">
                                                                                         <div class="upload-icon">
                                                                                             <i class="fas fa-video "></i>
-                                                                                            <label> Video upload </label>
+                                                                                            <label> رابط الفيديو </label>
                                                                                             <div class="input-group">
                                                                                                 <input type="url" value="{{$gallery->vedio}}" name="vedio" class="form-control" id="url-type-styled-input">
                                                                                             </div>
@@ -254,7 +254,7 @@
                                                                                     <div class="form-group">
                                                                                         <div class="upload-icon">
 
-                                                                                            <label> Order </label>
+                                                                                            <label> الترتيب </label>
                                                                                             <div class="input-group">
                                                                                                 <input type="number" value="{{$gallery->order}}" name="order" class="form-control">
                                                                                             </div>
@@ -271,7 +271,7 @@
                                                                                         <input type="checkbox" id="" name="active">
                                                                                         @endif
 
-                                                                                        <label for="category">active</label>
+                                                                                        <label for="category">نشط</label>
                                                                                     </div>
 
                                                                                 </div>
@@ -306,7 +306,7 @@
                         <div class="col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-header d-flex justify-content-between">
-                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Announce-Files"> add Page Files</button>
+                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Announce-Files"> إضافة ملفات</button>
                                 </div>
                                 <div class="ms-panel-body">
 
@@ -315,9 +315,9 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col">file</th>
-                                                    <th scope="col">name</th>
-                                                    <th scope="col">language</th>
+                                                    <th scope="col">الملف</th>
+                                                    <th scope="col">الإسم</th>
+                                                    <th scope="col">اللغة</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -337,8 +337,8 @@
 
                                                     <td>
 
-                                                        <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#add-Announce-Files{{$file->id}}">edit</a>
-                                                        <a href="#" onclick="destroy('this Announcement','{{$file->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                                        <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#add-Announce-Files{{$file->id}}">تعديل</a>
+                                                        <a href="#" onclick="destroy('this Announcement','{{$file->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                                         <form id="delete_{{$file->id}}" action="{{ route('deleteMeetingFile', $file->id) }}" method="POST" style="display: none;">
                                                             @csrf
 
@@ -354,7 +354,7 @@
                                                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                                                             </button>
-                                                            <h3>Edit News Files </h3>
+                                                            <h3>تعديل الملفات </h3>
                                                             <div class="modal-body">
 
 
@@ -366,7 +366,7 @@
                                                                             <input type="hidden" name="file_id" value="{{$file->id}}">
                                                                             <div class="ms-auth-container row">
                                                                                 <div class="col-md-12">
-                                                                                    <label> File </label>
+                                                                                    <label> الملف </label>
 
                                                                                     <div class="fileUpload">
                                                                                         <div class="upload-icon">
@@ -382,7 +382,7 @@
                                                                             <div class="ms-auth-container row">
                                                                                 <div class="col-md-12">
                                                                                     <div class="form-group">
-                                                                                        <label>Name</label>
+                                                                                        <label>الإسم</label>
                                                                                         <input type="text" name="name" value="{{$file->name}}" class="form-control">
 
 
@@ -392,10 +392,10 @@
 
                                                                             <div class="ms-auth-container row">
                                                                                 <div class="col-md-12">
-                                                                                    <label>language</label>
+                                                                                    <label>اللغة</label>
                                                                                     <div class="form-group">
                                                                                         EN <input type="radio" name="language_id" value="en" <?php echo ($file->language_id == 0) ? 'checked' : '' ?>>
-                                                                                        Ar <input type="radio" name="language_id" value="ar" <?php echo ($file->language_id == 1) ? 'checked' : '' ?>>
+                                                                                        عربي <input type="radio" name="language_id" value="ar" <?php echo ($file->language_id == 1) ? 'checked' : '' ?>>
                                                                                     </div>
                                                                                     <div class="input-group d-flex justify-content-end text-center">
                                                                                         <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
@@ -435,7 +435,7 @@
                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                             </button>
-                            <h3>add News Gallery </h3>
+                            <h3>إضافة جاليرى </h3>
                             <div class="modal-body">
 
 
@@ -460,7 +460,7 @@
                                                     <div class="form-group">
                                                         <div class="upload-icon">
                                                             <i class="fas fa-video "></i>
-                                                            <label> Video upload </label>
+                                                            <label> رابط الفيديو </label>
                                                             <div class="input-group">
                                                                 <input type="url" name="vedio" class="form-control" id="url-type-styled-input">
                                                             </div>
@@ -471,7 +471,7 @@
                                                     <div class="form-group">
                                                         <div class="upload-icon">
 
-                                                            <label> Order </label>
+                                                            <label> الترتيب </label>
                                                             <div class="input-group">
                                                                 <input type="number" name="order" class="form-control" id="Master AR Title">
                                                             </div>
@@ -483,7 +483,7 @@
                                                     <br>
                                                     <div class="custom-control custom-checkbox">
                                                         <input type="checkbox" id="" name="active" checked>
-                                                        <label for="category">active</label>
+                                                        <label for="category">نشط</label>
                                                     </div>
 
                                                 </div>
@@ -509,7 +509,7 @@
                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                             </button>
-                            <h3>Add News Files </h3>
+                            <h3>إضافة ملفات </h3>
                             <div class="modal-body">
 
 
@@ -521,14 +521,14 @@
 
                                             <div class="ms-auth-container row">
                                                 <div class="col-md-12">
-                                                    <label> File </label>
+                                                    <label> الملف </label>
 
                                                     <div class="fileUpload">
                                                         <div class="upload-icon">
                                                             <img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon">
 
                                                             <input type="file" name="path" class="upload up" id="up" onchange="readURLFile(this);" />
-                                                            <span class="upl" id="upload">Upload document</span></div>
+                                                            <span class="upl" id="upload">رفع الملف</span></div>
 
                                                     </div>
                                                 </div>
@@ -537,7 +537,7 @@
                                             <div class="ms-auth-container row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label>Name</label>
+                                                        <label>الإسم</label>
                                                         <input type="text" name="name" class="form-control">
 
 
@@ -547,11 +547,11 @@
 
                                             <div class="ms-auth-container row">
                                                 <div class="col-md-12">
-                                                    <label>language</label>
+                                                    <label>اللغة</label>
                                                     <div class="form-group">
 
                                                         EN <input type="radio" name="language_id" value="en" checked>
-                                                        Ar <input type="radio" name="language_id" value="ar">
+                                                        عربي <input type="radio" name="language_id" value="ar">
                                                     </div>
                                                     <div class="input-group d-flex justify-content-end text-center">
                                                         <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">

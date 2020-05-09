@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page">الشعب </li>
     </ol>
 </nav>
 
@@ -24,8 +24,8 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Devisions</h6>
-                <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addnumber"> add  </a>
+                <h6>الشعب</h6>
+                <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addnumber"> إضافة  </a>
             </div>
             <div class="ms-panel-body">
                 <div class="table-responsive">
@@ -34,8 +34,8 @@
                             <th>#</th>
 
 
-                            <th>AR Title </th>
-                            <th>EN Title</th>
+                            <th>المسمى عربي </th>
+                            <th>المسمى إنجليزى</th>
                            
                             <th></th>
 
@@ -49,9 +49,9 @@
                                 <td>{{$row->en_title}}</td>
                                 
                                 <td>
-                                <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#addnumber{{$row->id}}">edit</a>
+                                <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#addnumber{{$row->id}}">تعديل</a>
                                
-              <a href="#" onclick="destroy('this News','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+              <a href="#" onclick="destroy('this News','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
               <form id="delete_{{$row->id}}" action="{{ route('devisions.destroy', $row->id) }}"  method="POST" style="display: none;">
 									@csrf
 									@method('DELETE')
@@ -66,7 +66,7 @@
       <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
       </button>
-      <h3>Edit Devision</h3>
+      <h3>تعديل الشعبة</h3>
 
       <div class="modal-body">
 
@@ -88,7 +88,7 @@
 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>En_name</label>
+                    <label>المسمى إنجليزى</label>
                     <div class="input-group">
                       <input type="text" id="newnumber" name="ar_title" value="{{$row->ar_title}}" class="form-control" placeholder="text">
                     </div>
@@ -97,7 +97,7 @@
 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Ar_name</label>
+                    <label>المسمى عربي</label>
                     <div class="input-group">
                       <input type="text" id="newnumber" name="en_title" value="{{$row->en_title}}" class="form-control" placeholder="text">
                     </div>
@@ -147,7 +147,7 @@
       <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
       </button>
-      <h3>Add Devision</h3>
+      <h3>إضافة شعبة</h3>
 
       <div class="modal-body">
 
@@ -169,7 +169,7 @@
 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>En_name</label>
+                    <label>المسمى إنجليزى</label>
                     <div class="input-group">
                       <input type="text" id="newnumber" name="ar_title" class="form-control" placeholder="text">
                     </div>
@@ -178,7 +178,7 @@
 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Ar_name</label>
+                    <label>المسمى عربي</label>
                     <div class="input-group">
                       <input type="text" id="newnumber" name="en_title" class="form-control" placeholder="text">
                     </div>

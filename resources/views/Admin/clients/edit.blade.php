@@ -5,11 +5,11 @@
 @section('crumb')
 
 <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-    <li class="breadcrumb-item active" aria-current="page"> {{ __('Sponsors') }} </li>
-  </ol>
+<ol class="breadcrumb">
+      <li class="breadcrumb-item">
+      <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+      <li class="breadcrumb-item active" aria-current="page">الرعاة الرسميون</li>
+    </ol>
 </nav>
 
 @endsection
@@ -19,7 +19,7 @@
   <div class="col-md-12">
     <div class="ms-panel">
       <div class="ms-panel-header d-flex justify-content-between">
-        <h6>Edit Sponsor</h6>
+        <h6>تعديل الرعاة</h6>
 
       </div>
       <div class="ms-panel-body col-md-6 col-md-offset-2">
@@ -60,7 +60,7 @@
                 <div class="upload-icon">
 
 
-                  <label>website URL</label>
+                  <label>الموقع الإلكترونى</label>
                 </div>
 
                 <div class="input-group">
@@ -71,7 +71,7 @@
 
             <div class="col-md-12">
               <div class="form-group">
-                <label>Ar_name</label>
+                <label>الإسم عربي</label>
                 <div class="input-group">
                   <input type="text" id="newclient" name="ar_name" value="{{$client->ar_name}}" class="form-control" placeholder="sponsor">
                 </div>
@@ -80,7 +80,7 @@
 
             <div class="col-md-12">
               <div class="form-group">
-                <label>En_name</label>
+                <label>الإسم إنجليزى</label>
                 <div class="input-group">
                   <input type="text" id="newclient" name="en_name" value="{{$client->en_name}}" class="form-control" placeholder="sponsor">
                 </div>
@@ -95,13 +95,13 @@
                 <input type="checkbox" id="partener" name="client">
                 @endif
 
-                <label for="category">active</label>
+                <label for="category">نشط</label>
               </div>
 
             </div>
           </div>
           <div class="input-group d-flex justify-content-end text-center">
-            <a href="{{route('client.index')}}" class="btn btn-dark mx-2">Cancel</a>
+            <a href="{{route('client.index')}}" class="btn btn-dark mx-2">إلغاء</a>
             <input type="submit" value="Add" class="btn btn-success ">
           </div>
         </form>

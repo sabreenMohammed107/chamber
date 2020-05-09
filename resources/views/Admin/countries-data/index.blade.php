@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Countries-data') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page"> بيانات الدول </li>
     </ol>
 </nav>
 
@@ -25,7 +25,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Countries-data</h6>
+                <h6>بيانات الدول</h6>
                 <a href="{{route('countries-data.create') }}" class="btn btn-dark"> add </a>
             </div>
             <div class="ms-panel-body">
@@ -34,12 +34,12 @@
                         <thead>
                             <th>#</th>
 
-                            <th>En text</th>
-                            <th>Ar text</th>
-                            <th>En File </th>
-                            <th>Ar File </th>
-                            <th>Flag </th>
-                            <th>Region</th>
+                            <th>الإسم إنجليزى</th>
+                            <th>الإسم عربي</th>
+                            <th>الملف إنجليزى </th>
+                            <th>الملف عربي </th>
+                            <th>علم الدولة </th>
+                            <th>المنطقة</th>
                           
                             <th></th>
 
@@ -67,8 +67,8 @@
 
 
                                 <td>
-                                    <a href="{{ route('countries-data.edit',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
-                                    <a href="#" onclick="destroy('this countries-data','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                    <a href="{{ route('countries-data.edit',$row->id) }}" class="btn btn-info d-inline-block">تعديل</a>
+                                    <a href="#" onclick="destroy('this countries-data','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('countries-data.destroy', $row->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')

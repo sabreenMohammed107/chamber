@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Social-Responsibility') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page"> المسئولية الإجتماعية</li>
     </ol>
 </nav>
 
@@ -24,8 +24,8 @@
 
     <div class="ms-panel">
         <div class="ms-panel-header d-flex justify-content-between">
-            <h6>Social-Responsibility</h6>
-            <a href="{{ route('socialResponsibility.create') }}" class="btn btn-dark" > add</a>
+            <h6>المسئولية الإجتماعية</h6>
+            <a href="{{ route('socialResponsibility.create') }}" class="btn btn-dark" > إضافة</a>
         </div>
         <div class="ms-panel-body">
             <div class="table-responsive">
@@ -34,11 +34,11 @@
                         <th>#</th>
                         
 
-                        <th>Image</th>
-                        <th>En Title</th>
-                        <th>Ar Title</th>
+                        <th>الصورة</th>
+                        <th>العنوان إنجليزى</th>
+                        <th>العنوان عربي</th>
                        
-                        <th>Active</th>
+                        <th>نشط</th>
                         <th></th>
                         
 
@@ -60,8 +60,8 @@
                           @endif
 
                             <td>
-                            <a href="{{ route('socialResponsibility.edit', $row->id) }}" class="btn btn-info d-inline-block">edit</a>
-                                    <a href="#" onclick="destroy('this Data','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                            <a href="{{ route('socialResponsibility.edit', $row->id) }}" class="btn btn-info d-inline-block">تعديل</a>
+                                    <a href="#" onclick="destroy('this Data','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('socialResponsibility.destroy', $row->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')

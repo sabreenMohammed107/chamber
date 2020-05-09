@@ -5,10 +5,10 @@
 @section('crumb')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+<ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Social-Responsibility') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page"> المسئولية الإجتماعية</li>
     </ol>
 </nav>
 
@@ -25,7 +25,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Edit</h6>
+                <h6>تعديل</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="exampleInputPassword1" for="exampleCheck1">En Title</label>
+                                            <label class="exampleInputPassword1" for="exampleCheck1">العنوان إنجليزى</label>
                                             <input type="text" name="en_title" value="{{$row->en_title}}" class="form-control">
                                         </div>
                                     </div>
@@ -60,13 +60,13 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="exampleInputPassword1" for="exampleCheck1">Ar Title</label>
+                                            <label class="exampleInputPassword1" for="exampleCheck1">العنوان عربي</label>
                                             <input type="text" name="ar_title" value="{{$row->ar_title}}" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="example2">EN Text</label>
+                                            <label for="example2">النص إنجليزى</label>
                                             <div class="form-group">
                                                 <textarea class="content" name="en_text">{{$row->en_text}}</textarea>
                                             </div>
@@ -74,7 +74,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="example2">Ar Text</label>
+                                            <label for="example2">النص عربي</label>
                                             <div class="form-group">
                                                 <textarea class="content" name="ar_text">{{$row->ar_text}}</textarea>
                                             </div>
@@ -91,7 +91,7 @@
                                             @else
                                             <input type="checkbox" id="partener" name="active">
                                             @endif
-                                            <label for="category">active</label>
+                                            <label for="category">نشط</label>
                                         </div>
 
                                     </div>
@@ -102,7 +102,7 @@
 
 
                                     <div class="input-group d-flex justify-content-end text-center">
-                                        <a href="{{ route('socialResponsibility.index') }}" class="btn btn-dark mx-2"> Cancel</a>
+                                        <a href="{{ route('socialResponsibility.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
                                         <input type="submit" value="save" class="btn btn-success ">
                                     </div>
                         </form>

@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية</a></li>
+        <li class="breadcrumb-item active" aria-current="page"> النشاط</li>
     </ol>
 </nav>
 
@@ -24,8 +24,8 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Activity</h6>
-                <a href="{{ route('activity.create') }}" class="btn btn-dark"> add</a>
+                <h6>النشاط</h6>
+                <a href="{{ route('activity.create') }}" class="btn btn-dark"> إضافة</a>
             </div>
             <div class="ms-panel-body">
                 <div class="table-responsive">
@@ -34,11 +34,11 @@
                             <th>#</th>
 
 
-                            <th>AR Title </th>
-                            <th>EN Title</th>
-                            <th>activity Date </th>
+                            <th>المسمى عربي </th>
+                            <th>المسمى إنجليزى</th>
+                            <th>تاريخ النشاط </th>
 
-                           <th>Active</th>
+                           <th>نشط</th>
 
                             <th></th>
 

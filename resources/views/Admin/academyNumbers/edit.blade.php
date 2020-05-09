@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-    <li class="breadcrumb-item active" aria-current="page"> {{ __('Academy Number') }} </li>
+      <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+    <li class="breadcrumb-item active" aria-current="page"> أرقام الأكاديمية </li>
   </ol>
 </nav>
 
@@ -41,7 +41,7 @@
             @method('PUT')
             <div class="col-md-8">
               <div class="form-group">
-                <label>En_name</label>
+                <label>المسمى إنجليزى</label>
                 <div class="input-group">
                   <input type="text" id="newnumber" name="en_name" value="{{$number->en_name}}" class="form-control" placeholder="number">
                 </div>
@@ -51,7 +51,7 @@
 
             <div class="col-md-8">
               <div class="form-group">
-                <label>Ar_name</label>
+                <label>المسمى عربي</label>
                 <div class="input-group">
                   <input type="text" id="newnumber" name="ar_name" value="{{$number->ar_name}}" class="form-control" placeholder="number">
                 </div>
@@ -62,7 +62,7 @@
 
             <div class="col-md-8">
               <div class="form-group">
-                <label>Number_value</label>
+                <label>القيمة بالأرقام</label>
                 <div class="input-group">
                   <input type="number" id="newnumber" name="value" value="{{$number->value}}" class="form-control" placeholder="number">
                 </div>
@@ -71,7 +71,7 @@
 
           </div>
           <div class="input-group d-flex justify-content-end text-center">
-            <a href="{{route('number.index')}}" class="btn btn-dark mx-2">Cancel</a>
+            <a href="{{route('number.index')}}" class="btn btn-dark mx-2">إلغاء</a>
             <input type="submit" value="Add" class="btn btn-success ">
           </div>
         </form>

@@ -5,10 +5,11 @@
 @section('crumb')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+<ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i>الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page">
+            المركز الإعلامى</li>
     </ol>
 </nav>
 
@@ -38,19 +39,19 @@
                             <div class="ms-auth-container row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">Album AR name</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">اسم الألبوم عربي</label>
                                         <input type="text" value="{{$row->ar_name}}" name="ar_name" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">Album EN name</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">اسم الألبوم إنجليزى</label>
                                         <input type="text" name="en_name" value="{{$row->en_name}}" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>News Date
+                                        <label>تاريخ الألبوم
                                         </label>
                                         <br>
                                         <?php $date = date_create($row->album_date) ?>
@@ -74,7 +75,7 @@
                                         @else
                                         <input type="checkbox" id="" name="active">
                                         @endif
-                                        <label for="category">active</label>
+                                        <label for="category">نشط</label>
                                     </div>
 
                                 </div>
@@ -85,7 +86,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                    <a href="{{ route('album.index') }}" class="btn btn-dark mx-2"> Cancel</a>
+                                    <a href="{{ route('album.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
                                     <input type="submit" value="Add" class="btn btn-success ">
                                 </div>
                         </form>
@@ -105,7 +106,7 @@
 
                 <li class="btn btn-light test">
                     <a href="#tab_default_1" class="active" data-toggle="tab" role="tab">
-                        Album Gallery </a>
+                        صور الألبوم </a>
                 </li>
 
 
@@ -117,7 +118,7 @@
                         <div class="col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-header d-flex justify-content-between">
-                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-news-gallery">add Album Gallery </button>
+                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-news-gallery">اضافة صور للألبوم </button>
                                 </div>
                                 <div class="ms-panel-body">
 
@@ -126,9 +127,9 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th scope="col">image</th>
-                                                    <th scope="col">video</th>
-                                                    <th scope="col">active</th>
+                                                    <th scope="col">صورة</th>
+                                                    <th scope="col">فيديو</th>
+                                                    <th scope="col">نشط</th>
                                                     <th scope="col"></th>
 
                                                 </tr>
@@ -152,8 +153,8 @@
                                                     @endif
 
                                                     <td>
-                                                        <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#add-news-gallery{{$gallery->id}}">edit</a>
-                                                        <a href="#" onclick="destroy('this Gallery','{{$gallery->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                                        <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#add-news-gallery{{$gallery->id}}">تعديل</a>
+                                                        <a href="#" onclick="destroy('this Gallery','{{$gallery->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                                         <form id="delete_{{$gallery->id}}" action="{{ route('deleteAlbum', $gallery->id) }}" method="POST" style="display: none;">
                                                             @csrf
 
@@ -172,7 +173,7 @@
                                                         <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                                                         </button>
-                                                        <h3>Edit Album Gallery </h3>
+                                                        <h3>تعديل صور الألبوم </h3>
                                                         <div class="modal-body">
 
 
@@ -198,7 +199,7 @@
                                                                                 <div class="form-group">
                                                                                     <div class="upload-icon">
                                                                                         <i class="fas fa-video "></i>
-                                                                                        <label> Video upload </label>
+                                                                                        <label> رابط الفيديو </label>
                                                                                         <div class="input-group">
                                                                                             <input type="url" name="vedio" value="{{$gallery->vedio}}" class="form-control" id="url-type-styled-input">
                                                                                         </div>
@@ -209,7 +210,7 @@
                                                                                 <div class="form-group">
                                                                                     <div class="upload-icon">
 
-                                                                                        <label> Order </label>
+                                                                                        <label> الترتيب </label>
                                                                                         <div class="input-group">
                                                                                             <input type="number" value="{{$gallery->order}}" name="order" class="form-control">
                                                                                         </div>
@@ -263,7 +264,7 @@
                         <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                         </button>
-                        <h3>Add Album Gallery </h3>
+                        <h3>إضافة صور للألبوم </h3>
                         <div class="modal-body">
 
 
@@ -289,7 +290,7 @@
                                                 <div class="form-group">
                                                     <div class="upload-icon">
                                                         <i class="fas fa-video "></i>
-                                                        <label> Video upload </label>
+                                                        <label> رابط الفيديو </label>
                                                         <div class="input-group">
                                                             <input type="url" name="vedio" class="form-control" id="url-type-styled-input">
                                                         </div>
@@ -300,7 +301,7 @@
                                                 <div class="form-group">
                                                     <div class="upload-icon">
 
-                                                        <label> Order </label>
+                                                        <label> الترتيب </label>
                                                         <div class="input-group">
                                                             <input type="number" name="order" class="form-control">
                                                         </div>
@@ -311,7 +312,7 @@
                                                 <br>
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" id="" name="active" checked>
-                                                    <label for="category">active</label>
+                                                    <label for="category">نشط</label>
                                                 </div>
 
                                             </div>

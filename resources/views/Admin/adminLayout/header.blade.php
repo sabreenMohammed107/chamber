@@ -38,9 +38,9 @@
               @if (Auth::user()->role==1)  
               <li class="ms-dropdown-list">
           
-                <a class="media fs-14 p-2" href="{{ url('admin/register') }}"> <span><i class="flaticon-user mr-2"></i>Create New User</span>
+                <a class="media fs-14 p-2" href="{{ url('admin/register') }}"> <span><i class="flaticon-user mr-2"></i>إنشاء مستخدم جديد</span>
                 <li class="dropdown-divider"></li>
-                <a class="media fs-14 p-2" href="{{ route('usersList.index') }}"> <span><i class="flaticon-user mr-2"></i>Users-List</span>
+                <a class="media fs-14 p-2" href="{{ route('usersList.index') }}"> <span><i class="flaticon-user mr-2"></i>قائمة المستخدمين</span>
               </a>
                
               </li>
@@ -49,7 +49,7 @@
             <li class="dropdown-menu-footer">
               <a class="media fs-14 p-2" href="{{ route('admin-logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"> <span><i class="flaticon-shut-down mr-2"></i> Logout</span>
+                                                     document.getElementById('logout-form').submit();"> <span><i class="flaticon-shut-down mr-2"></i> خروج</span>
               </a>
                <form id="logout-form" action="{{ route('admin-logout') }}" method="POST" style="display: none;">
                                         @csrf

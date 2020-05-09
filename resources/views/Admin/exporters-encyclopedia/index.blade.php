@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Exporters-encyclopedia') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page">موسوعة المصدرين </li>
     </ol>
 </nav>
 
@@ -25,8 +25,8 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Exporters-encyclopedia</h6>
-                <a href="{{route('exporters-encyclopedia.create') }}" class="btn btn-dark"> add </a>
+                <h6>موسوعة المصدرين</h6>
+                <a href="{{route('exporters-encyclopedia.create') }}" class="btn btn-dark"> إضافة </a>
             </div>
             <div class="ms-panel-body">
                 <div class="table-responsive">
@@ -34,12 +34,12 @@
                         <thead>
                             <th>#</th>
 
-                            <th>En text</th>
-                            <th>Ar text</th>
-                            <th>En File </th>
-                            <th>Ar File </th>
-                            <th>Type</th>
-                            <th>Active</th>
+                            <th>المسمى إنجليزى</th>
+                            <th>المسمى عربي</th>
+                            <th>الملف إنجليزى </th>
+                            <th>الملف عربي </th>
+                            <th>النوع</th>
+                            <th>نشط</th>
                             <th></th>
 
 
@@ -69,8 +69,8 @@
 
 
                                 <td>
-                                    <a href="{{ route('exporters-encyclopedia.edit',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
-                                    <a href="#" onclick="destroy('this exporters-encyclopedia','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                    <a href="{{ route('exporters-encyclopedia.edit',$row->id) }}" class="btn btn-info d-inline-block">تعديل</a>
+                                    <a href="#" onclick="destroy('this exporters-encyclopedia','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('exporters-encyclopedia.destroy', $row->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')

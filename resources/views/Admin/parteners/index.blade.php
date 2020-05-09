@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-      <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-      <li class="breadcrumb-item active" aria-current="page"> {{ __('Parteners') }} </li>
+      <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+      <li class="breadcrumb-item active" aria-current="page">الشركاء</li>
     </ol>
   </nav>
 
@@ -23,22 +23,22 @@
 
   <div class="ms-panel">
     <div class="ms-panel-header d-flex justify-content-between">
-      <h6>Parteners</h6>
-      <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addclient"> add Partener </a>
+      <h6>الشركاء</h6>
+      <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addclient"> إضافة شريك </a>
     </div>
     <div class="ms-panel-body">
       <div class="table-responsive">
         <table id="courseEval" class="dattable table table-striped thead-dark  w-100">
           <thead>
           <th>#</th>
-            <th>img</th>
+            <th>صورة</th>
             
             
-            <th> Ar-Name </th>
-            <th> En-Name </th>
-            <th>website</th>
-            <th>Active</th>
-            <th>Action</th>
+            <th> الإسم عربي </th>
+            <th> الإسم إنجليزى </th>
+            <th>موقع الإنترنت</th>
+            <th>نشط</th>
+            <th></th>
           </thead>
           <tbody>
 @foreach($parteners as $index=> $partener)
@@ -58,8 +58,8 @@
 
               <td>
                 <a href="{{ route('partener.edit', $partener->id) }}" class="btn btn-info d-inline-block" 
-                >edit</a>
-              <a href="#" onclick="destroy('this partener','{{$partener->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                >تعديل</a>
+              <a href="#" onclick="destroy('this partener','{{$partener->id}}')" class="btn d-inline-block btn-danger">مسح</a>
               <form id="delete_{{$partener->id}}" action="{{ route('partener.destroy', $partener->id) }}"  method="POST" style="display: none;">
 									@csrf
 									@method('DELETE')
@@ -87,7 +87,7 @@
           <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
            
           </button>
-          <h3>Add partener</h3>
+          <h3>إضافة شريك</h3>
         
           <div class="modal-body">
   
@@ -126,7 +126,7 @@
                           <div class="upload-icon">
                           
                             
-                            <label>website URL</label>
+                            <label>موقع الإنترنت</label>
                           </div>
                       
                         <div class="input-group">
@@ -137,14 +137,14 @@
 
                         <div class="col-md-12">
                           <div class="form-group">
-                            <label>Ar_name</label>
+                            <label>الإسم عربي</label>
                             <div class="input-group">
                               <input type="text" name="ar_name" id="newClient" class="form-control" placeholder="partener">
                             </div>
                           </div> </div>
                           <div class="col-md-12">
                           <div class="form-group">
-                            <label>En_name</label>
+                            <label>الإسم إنجليزى</label>
                             <div class="input-group">
                               <input type="text" name="en_name" id="newClient" class="form-control" placeholder="partener">
                             </div>
@@ -154,7 +154,7 @@
                           <div class="custom-control custom-checkbox">
                             <input type="checkbox" id="client" name="partener"
                             checked>
-                     <label for="category">active </label>
+                     <label for="category">نشط </label>
                    </div>
                            
                           </div>

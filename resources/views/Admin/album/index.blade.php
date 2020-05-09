@@ -7,9 +7,9 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i>الرئيسية </a></li>
         <li class="breadcrumb-item active" aria-current="page">
-            Media Center</li>
+            المركز الإعلامى</li>
     </ol>
 </nav>
 
@@ -25,8 +25,8 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Chamber-Gallery</h6>
-                <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#add-chamber-gallery"> add</a>
+                <h6>جاليرى الغرفة</h6>
+                <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#add-chamber-gallery"> إضافة</a>
             </div>
             <div class="ms-panel-body">
                 <div class="table-responsive">
@@ -35,11 +35,11 @@
                             <th>#</th>
 
 
-                            <th>Album AR name </th>
-                            <th>Album EN name</th>
-                            <th>Album date </th>
-                            <th>Order</th>
-                            <th>Active</th>
+                            <th>اسم الألبوم عربي </th>
+                            <th>اسم الألبوم إنجليزى</th>
+                            <th>تاريخ الألبوم </th>
+                            <th>الترتيب</th>
+                            <th>نشط</th>
                             <th></th>
 
 
@@ -62,7 +62,7 @@
                                                     <td><i class="fas fa-times"></i></td>
                                                     @endif
                                 <td>
-                                    <a href="{{ route('album.edit',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
+                                    <a href="{{ route('album.edit',$row->id) }}" class="btn btn-info d-inline-block">تعديل</a>
                                     <a href="#" onclick="destroy('this Album','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('album.destroy', $row->id) }}" method="POST" style="display: none;">
                                         @csrf
@@ -89,7 +89,7 @@
                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                             </button>
-                            <h3>Add </h3>
+                            <h3>إضافة </h3>
 
                             <div class="modal-body">
 
@@ -101,19 +101,19 @@
                                             <div class="ms-auth-container row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label  class="exampleInputPassword1" for="exampleCheck1">Album AR name</label>
+                                                        <label  class="exampleInputPassword1" for="exampleCheck1">اسم الألبوم عربي</label>
                                                         <input type="text" name="ar_name" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="exampleInputPassword1" for="exampleCheck1">Album EN name</label>
+                                                        <label class="exampleInputPassword1" for="exampleCheck1">اسم الألبوم إنجليزى</label>
                                                         <input type="text" name="en_name" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                   <div class="form-group">
-                                                      <label>News Date
+                                                      <label>تاريخ الألبوم
                                                       </label>
                                                       <br>
                                                       <input style="height: 40px; border-radius: 5px;" name="album_date" class="col-md-12 exampleInputPassword1" for="exampleCheck1" data-date-format="dd/mm/yyyy" type="date" id="datepicker">
@@ -121,7 +121,7 @@
                                               </div>
                                               <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label  class="exampleInputPassword1"  >Order</label>
+                                                    <label  class="exampleInputPassword1"  >الترتيب</label>
                                                     <input type="text" name="order" class="form-control">
                                                 </div>
                                             </div>
@@ -132,7 +132,7 @@
                                                     <br>
                                                     <div class="custom-control custom-checkbox">
                                                         <input type="checkbox" id="" name="active" checked>
-                                                        <label for="category">active</label>
+                                                        <label for="category">نشط</label>
                                                     </div>
             
                                                 </div>

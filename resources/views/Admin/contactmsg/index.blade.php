@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Contacts-Messages') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية</a></li>
+        <li class="breadcrumb-item active" aria-current="page"> رسائل العملاء</li>
     </ol>
 </nav>
 
@@ -24,7 +24,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Contacts-Messages</h6>
+                <h6>رسائل العملاء</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -32,12 +32,12 @@
                     <table id="courseEval" class="dattable table table-striped thead-dark  w-100">
                         <thead>
                             <th>#</th>
-                            <th>Name</th>
+                            <th>اسم العميل</th>
 
-                            <th>Mobile</th>
-                            <th>Email</th>
-                            <th>Message</th>
-                            <th>Created Date </th>
+                            <th>موبايل</th>
+                            <th>بريد إلكترونى</th>
+                            <th>الرسالة</th>
+                            <th>تاريخ الرسال </th>
 
                             <th></th>
 
@@ -61,8 +61,8 @@
 
 
                                 <td>
-                                    <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#addclient{{$row->id}}">show</a>
-                                    <a href="#" onclick="destroy('this Data','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                    <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#addclient{{$row->id}}">عرض</a>
+                                    <a href="#" onclick="destroy('this Data','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('contactMsg.destroy', $row->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')
@@ -78,7 +78,7 @@
                                         <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                                         </button>
-                                        <h3>Contact Message</h3>
+                                        <h3>رسائل العملاء</h3>
 
                                         <div class="modal-body">
 
@@ -91,7 +91,7 @@
                                                             <div class="col-md-6 col-sm-12">
                                                                 <div class="form-group">
                                                                     <div class="upload-icon">
-                                                                        <label>Name</label>
+                                                                        <label>الإسم</label>
                                                                     </div>
 
                                                                     <div class="input-group">
@@ -101,7 +101,7 @@
                                                             </div>
                                                             <div class="col-md-6 col-sm-12">
                                                                 <div class="form-group">
-                                                                    <label for="example2">Mobile</label>
+                                                                    <label for="example2">الموبايل</label>
                                                                     <div class="input-group">
                                                                         <input type="text" name="mobile" value="{{$row->mobile}}" class="form-control" id="Master AR Title" readonly>
                                                                     </div>
@@ -110,7 +110,7 @@
 
                                                             <div class="col-md-6 col-sm-12">
                                                                 <div class="form-group">
-                                                                    <label>Email</label>
+                                                                    <label>البريد الإلكترونى</label>
                                                                     <div class="input-group">
                                                                         <input type="text" name="email" value="{{$row->email}}" id="Master EN Title" class="form-control" readonly>
                                                                     </div>
@@ -118,7 +118,7 @@
                                                             </div>
                                                             <div class="col-md-12 col-sm-12">
                                                                 <div class="form-group">
-                                                                    <label>Message</label>
+                                                                    <label>الرسالة</label>
                                                                     <div class="input-group">
                                                                         <textarea rows="7" name="messege" readonly class="form-control">{{$row->messege}}</textarea>
 

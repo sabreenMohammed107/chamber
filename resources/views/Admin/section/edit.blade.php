@@ -5,10 +5,10 @@
 @section('crumb')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+<ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Edit') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page">الإدارات </li>
     </ol>
 </nav>
 
@@ -25,7 +25,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Edit_Sections</h6>
+                <h6>تعديل الإدارة</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">En Title</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">المسمى إنجليزى</label>
                                         <input type="text" name="en_name" value="{{$row->en_name}}" class="form-control">
                                     </div>
                                 </div>
@@ -58,13 +58,13 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">Ar Title</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">المسمى عربي</label>
                                         <input type="text" name="ar_name" value="{{$row->ar_name}}" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="example2">EN Text</label>
+                                        <label for="example2">النص إنجليزى</label>
                                         <div class="form-group">
                                             <textarea class="content" name="en_text">{{$row->en_text}}</textarea>
                                         </div>
@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="example2">Ar Text</label>
+                                        <label for="example2">النص عربي</label>
                                         <div class="form-group">
                                             <textarea class="content" name="ar_text">{{$row->ar_text}}</textarea>
                                         </div>
@@ -81,7 +81,7 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">Order</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">الترتيب</label>
                                         <input type="number" name="order" value="{{$row->order}}" class="form-control">
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                    <a href="{{ route('section.index') }}" class="btn btn-dark mx-2"> Cancel</a>
+                                    <a href="{{ route('section.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
                                     <input type="submit" value="save" class="btn btn-success ">
                                 </div>
                         </form>
@@ -127,7 +127,7 @@
 
                 <li class="btn btn-light test">
                     <a href="#tab_default_1" class="active" data-toggle="tab" role="tab">
-                        Sections Files </a>
+                        ملفات الإدارة </a>
                 </li>
 
 
@@ -140,7 +140,7 @@
                         <div class="col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-header d-flex justify-content-between">
-                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-news-gallery">add Sections Files </button>
+                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-news-gallery">إضافة ملفات الإدارة </button>
                                 </div>
                                 <div class="ms-panel-body">
 
@@ -149,9 +149,9 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th scope="col">patch</th>
-                                                    <th scope="col">name</th>
-                                                    <th scope="col">language</th>
+                                                    <th scope="col">المسار</th>
+                                                    <th scope="col">الإسم</th>
+                                                    <th scope="col">اللغة</th>
 
                                                     <th scope="col"></th>
 
@@ -201,7 +201,7 @@
                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                             </button>
-                            <h3>Add Sections Files </h3>
+                            <h3>إضافة ملفات الإدارة </h3>
                             <div class="modal-body">
 
 
@@ -213,14 +213,14 @@
 
                                             <div class="ms-auth-container row">
                                                 <div class="col-md-12">
-                                                    <label> File </label>
+                                                    <label> الملف </label>
 
                                                     <div class="fileUpload">
                                                         <div class="upload-icon">
                                                             <img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon">
 
                                                             <input type="file" name="path" class="upload up" id="up" onchange="readURLFile(this);" />
-                                                            <span class="upl" id="upload">Upload document</span></div>
+                                                            <span class="upl" id="upload">رفع الملف</span></div>
 
                                                     </div>
                                                 </div>
@@ -229,7 +229,7 @@
                                             <div class="ms-auth-container row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label>Name</label>
+                                                        <label>الإسم</label>
                                                         <input type="text" name="name" class="form-control">
 
 
@@ -243,7 +243,7 @@
                                                     <div class="form-group">
 
                                                         EN <input type="radio" name="language_id" value="en" checked>
-                                                        Ar <input type="radio" name="language_id" value="ar">
+                                                        عربي <input type="radio" name="language_id" value="ar">
                                                     </div>
                                                     <div class="input-group d-flex justify-content-end text-center">
                                                         <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
@@ -273,7 +273,7 @@
                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                             </button>
-                            <h3>Add Sections Files </h3>
+                            <h3>إضافة ملفات الإدارة </h3>
                             <div class="modal-body">
 
 
@@ -288,7 +288,7 @@
 
                                             <div class="ms-auth-container row">
                                                 <div class="col-md-12">
-                                                    <label> File </label>
+                                                    <label> الملف </label>
 
                                                     <div class="fileUpload">
                                                         <div class="upload-icon">
@@ -304,7 +304,7 @@
                                             <div class="ms-auth-container row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label>Name</label>
+                                                        <label>الإسم</label>
                                                         <input type="text" name="name" value="{{$file->name}}" class="form-control">
 
 
@@ -314,11 +314,11 @@
 
                                             <div class="ms-auth-container row">
                                                 <div class="col-md-12">
-                                                    <label>language</label>
+                                                    <label>اللغة</label>
 
                                                     <div class="form-group">
                                                         EN <input type="radio" name="language_id" value="en" <?php echo ($file->language_id == 0) ? 'checked' : '' ?>>
-                                                        Ar <input type="radio" name="language_id" value="ar" <?php echo ($file->language_id == 1) ? 'checked' : '' ?>>
+                                                        عربي <input type="radio" name="language_id" value="ar" <?php echo ($file->language_id == 1) ? 'checked' : '' ?>>
                                                     </div>
 
                                                     <div class="input-group d-flex justify-content-end text-center">

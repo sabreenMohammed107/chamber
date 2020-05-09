@@ -5,10 +5,10 @@
 @section('crumb')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+<ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Business-Organizations') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page"> منظمات الأعمال </li>
     </ol>
 </nav>
 
@@ -24,7 +24,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>add-Business-Organizations</h6>
+                <h6>إضافة منظمة أعمال</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -35,43 +35,43 @@
                             <div class="ms-auth-container row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">En Name</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">منظمة أعمال إنجليزى</label>
                                         <input type="text" name="ar_name" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1"> Ar Name</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1"> منظمة أعمال عربي</label>
                                         <input type="text" name="en_name" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1"> phone</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1"> الهاتف</label>
                                         <input type="text" name="phone" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1"> Email</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1"> البريد الإلكترونى</label>
                                         <input type="text" name="email" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1"> website</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1"> موقع الإنترنت</label>
                                         <input type="text" name="website" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">En Address </label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">العنوان إنجليزى </label>
                                         <input type="text" name="en_address" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1"> Ar Address </label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1"> العنوان عربي </label>
                                         <input type="text" name="ar_address" class="form-control">
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@
                                     <div class="form-group">
                                         <label>Business Type </label>
                                         <select name="bussiness_type_id" class="form-control" id="">
-                                            <option value="">select....</option>
+                                            <option value="">اختر...</option>
                                             @foreach ($types as $type)
                                             <option value='{{$type->id}}'>{{$type->ar_type}}
 
@@ -92,7 +92,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                    <a href="{{ route('business-organizations.index') }}" class="btn btn-dark mx-2"> Cancel</a>
+                                    <a href="{{ route('business-organizations.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
                                     <input type="submit" value="save" class="btn btn-success ">
                                 </div>
                         </form>

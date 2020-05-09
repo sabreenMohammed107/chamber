@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Social-Media') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page"> التواصل الإجتماعى </li>
     </ol>
 </nav>
 
@@ -25,7 +25,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Social-Media</h6>
+                <h6>التواصل الإجتماعى</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -33,13 +33,13 @@
                     <table id="courseEval" class="dattable table table-striped thead-dark  w-100">
                         <thead>
                             <th>#</th>
-                            <th>Facebook url</th>
+                            <th>رابط الفيسبوك</th>
 
-                            <th>Twitter url</th>
-                            <th>Linkedin url</th>
-                            <th>Feedsfloor url</th>
-                            <th>googleplus url </th>
-                            <th>Youtube url</th>
+                            <th>رابط تويتر</th>
+                            <th>رابط لنكد إن</th>
+                            <th>رابط فييدز فلور</th>
+                            <th>رابط جوجل بلاس </th>
+                            <th>رابط يوتيوب</th>
                             <th></th>
 
                         </thead>
@@ -56,8 +56,8 @@
                                 <td>{{$row->youtube_url}}</td>
 
                                 <td>
-                                <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#addclient{{$row->id}}">edit</a>
-                                    <a href="#" onclick="destroy('this Data','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#addclient{{$row->id}}">تعديل</a>
+                                    <a href="#" onclick="destroy('this Data','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('social.destroy', $row->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')
@@ -101,7 +101,7 @@
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <div class="upload-icon">
-                                                <label>Facebook url</label>
+                                                <label>رابط الفيسبوك</label>
                                             </div>
 
                                             <div class="input-group">
@@ -111,7 +111,7 @@
                                     </div>
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label for="example2">Twitter url</label>
+                                            <label for="example2">رابط تويتر</label>
                                             <div class="input-group">
                                                 <input type="url" name="twitter_url" value="{{$row->twitter_url}}" class="form-control" id="Master AR Title">
                                             </div>
@@ -120,7 +120,7 @@
 
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label>Linkedin url</label>
+                                            <label>رابط لنكد إن</label>
                                             <div class="input-group">
                                                 <input type="text" name="linkedin_url" value="{{$row->linkedin_url}}" id="Master EN Title" class="form-control" placeholder="">
                                             </div>
@@ -128,7 +128,7 @@
                                     </div>
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label>Feedsfloor url</label>
+                                            <label>رابط فييدز فلور</label>
                                             <div class="input-group">
                                                 <input type="text" name="feedsfloor_url" value="{{$row->feedsfloor_url}}" id="Sub AR Title" class="form-control" placeholder="">
                                             </div>
@@ -136,7 +136,7 @@
                                     </div>
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label>googleplus url</label>
+                                            <label>رابط جوجل بلاس</label>
                                             <div class="input-group">
                                                 <input type="text" name="googleplus_url" value="{{$row->googleplus_url}}" id="Sub EN Title" class="form-control" >
                                             </div>
@@ -144,7 +144,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Youtube url</label>
+                                            <label>رابط يوتيوب</label>
                                             <div class="input-group">
                                                 <input type="text" name="youtube_url" value="{{$row->youtube_url}}" id="Sub EN Title" class="form-control" >
                                             </div>

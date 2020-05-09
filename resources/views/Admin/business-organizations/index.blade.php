@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Business-Organizations') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page"> منظمات الأعمال </li>
     </ol>
 </nav>
 
@@ -25,22 +25,22 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Business-Organizations</h6>
-                <a href="{{route('business-organizations.create') }}" class="btn btn-dark"> add Business-Organizations</a>
+                <h6>منظمات الأعمال</h6>
+                <a href="{{route('business-organizations.create') }}" class="btn btn-dark"> إضافة منظمة أعمال</a>
             </div>
             <div class="ms-panel-body">
                 <div class="table-responsive">
                     <table id="courseEval" class="dattable table table-striped thead-dark  w-100">
                         <thead>
                             <th>#</th>
-                            <th>En name</th>
-                            <th>Ar name</th>
-                            <th>phone </th>
-                            <th>Email</th>
-                            <th>website </th>
-                            <th>En Address</th>
-                            <th>Ar Address</th>
-                            <th>Business Type</th>
+                            <th>منظمة أعمال إنجليزى</th>
+                            <th>منظمة أعمال عربي</th>
+                            <th>الهاتف </th>
+                            <th>البريد الإكترونى</th>
+                            <th>موقع الإنترنت </th>
+                            <th>العنوان إنجليزى</th>
+                            <th>العنوان عربي</th>
+                            <th>نوع العمل</th>
 
                             <th></th>
 
@@ -69,8 +69,8 @@
 
 
                                 <td>
-                                    <a href="{{ route('business-organizations.edit',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
-                                    <a href="#" onclick="destroy('this Business_organization','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                    <a href="{{ route('business-organizations.edit',$row->id) }}" class="btn btn-info d-inline-block">تعديل</a>
+                                    <a href="#" onclick="destroy('this Business_organization','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('business-organizations.destroy', $row->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')

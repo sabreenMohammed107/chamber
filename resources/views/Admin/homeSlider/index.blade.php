@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-    <li class="breadcrumb-item active" aria-current="page"> {{ __('home_slider') }} </li>
+      <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+    <li class="breadcrumb-item active" aria-current="page"> سلايدر الرئيسية</li>
   </ol>
 </nav>
 
@@ -23,7 +23,7 @@
 
     <div class="ms-panel">
       <div class="ms-panel-header d-flex justify-content-between">
-        <h6>home_slider</h6>
+        <h6>سلايدر الرئيسية</h6>
         <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addclient"> add </a>
       </div>
       <div class="ms-panel-body">
@@ -31,11 +31,11 @@
           <table id="courseEval" class="dattable table table-striped thead-dark  w-100">
             <thead>
               <th>#</th>
-              <th>img</th>
-              <th>Master AR Title </th>
-              <th>Master EN Title</th>
-              <th>Order</th>
-              <th>Active</th>
+              <th>صورة</th>
+              <th>المسمى الرئيسي عربي </th>
+              <th>المسمى الرئيسي إنجليزى</th>
+              <th>الترتيب</th>
+              <th>نشط</th>
               <th></th>
             </thead>
             <tbody>
@@ -54,8 +54,8 @@
 
 
                 <td>
-                  <a href="{{ route('slider.edit', $row->id) }}" class="btn btn-info d-inline-block">edit</a>
-                  <a href="#" onclick="destroy('this slider','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                  <a href="{{ route('slider.edit', $row->id) }}" class="btn btn-info d-inline-block">تعديل</a>
+                  <a href="#" onclick="destroy('this slider','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                   <form id="delete_{{$row->id}}" action="{{ route('slider.destroy', $row->id) }}" method="POST" style="display: none;">
                     @csrf
                     @method('DELETE')
@@ -84,7 +84,7 @@
       <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
       </button>
-      <h3>Add </h3>
+      <h3>اضافة </h3>
 
       <div class="modal-body">
 
@@ -109,7 +109,7 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="form-group">
                     <div class="upload-icon">
-                      <label>Master AR Title</label>
+                      <label>المسمى الرئيسي عربي</label>
                     </div>
 
                     <div class="input-group">
@@ -119,7 +119,7 @@
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <div class="form-group">
-                    <label>Sub AR Title</label>
+                    <label>المسمى الفرعى عربي</label>
                     <div class="input-group">
                       <input type="text" id="Sub AR Title" name="sub_ar_text" class="form-control" placeholder="">
                     </div>
@@ -128,7 +128,7 @@
                
                 <div class="col-md-6 col-sm-12">
                   <div class="form-group">
-                    <label>Master EN Title</label>
+                    <label>المسمى الرئيسي إنجليزى</label>
                     <div class="input-group">
                       <input type="text" name="master_en_text" id="Master EN Title" class="form-control" placeholder="">
                     </div>
@@ -137,7 +137,7 @@
                
                 <div class="col-md-6 col-sm-12">
                   <div class="form-group">
-                    <label for="example2">Sub EN Text</label>
+                    <label for="example2">المسمى الفرعى انجليزى</label>
                     <div class="input-group">
                       <input type="text" name="sub_en_text" class="form-control" id="Master AR Title">
                     </div>
@@ -146,7 +146,7 @@
 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>URL</label>
+                    <label>الرابط</label>
                     <div class="input-group">
                       <input type="text" id="Sub EN Title" name="url" class="form-control" placeholder="">
                     </div>
@@ -154,7 +154,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label> Order </label>
+                    <label> الترتيب </label>
                     <div class="input-group">
                       <input type="text" id="Sub EN Title" name="order" class="form-control" placeholder="">
                     </div>
@@ -165,7 +165,7 @@
                 <div class="col-md-12">
                   <div class="custom-control custom-checkbox">
                     <input type="checkbox" id="" name="active" checked>
-                    <label for="category">active</label>
+                    <label for="category">نشط</label>
                   </div>
 
                 </div>

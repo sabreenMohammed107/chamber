@@ -5,10 +5,10 @@
 @section('crumb')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+<ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Commercial Agreement') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page">الإتفاقات التجارية </li>
     </ol>
 </nav>
 
@@ -24,7 +24,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Edit-Commercial Agreement</h6>
+                <h6>تعديل الإتفاقية التجارية</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -39,7 +39,7 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Agreement date
+                                        <label>تاريخ الإتفاقية
                                         </label>
                                         <br>
                                         <?php $date = date_create($row->agreement_date) ?>
@@ -52,7 +52,7 @@
                                 <div class="col-md-6"></div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="example2">Agreement En Text </label>
+                                        <label for="example2">نص الإتفاقية إنجليزى </label>
                                         <div class="form-group">
                                             <textarea class="content" name="en_agreement">{{$row->en_agreement}}</textarea>
                                         </div>
@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="example2">Agreement Ar Text </label>
+                                        <label for="example2">نص الإتفاقية عربي </label>
                                         <div class="form-group">
                                             <textarea class="content" name="ar_agreement">{{$row->ar_agreement}}</textarea>
                                         </div>
@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="ms-auth-container row">
                                     <div class="col-md-8">
-                                        <label> En File </label>
+                                        <label> الملف إنجليزى </label>
 
                                         <div class="fileUpload">
                                             <div class="upload-icon">
@@ -82,7 +82,7 @@
                                 </div>
                                 <div class="ms-auth-container row">
                                     <div class="col-md-8">
-                                        <label>Ar File </label>
+                                        <label>الملف عربي </label>
 
                                         <div class="fileUpload">
                                             <div class="upload-icon">
@@ -103,7 +103,7 @@
                                         @else
                                         <input type="checkbox" id="" name="active">
                                         @endif
-                                        <label for="category">active</label>
+                                        <label for="category">نشط</label>
                                     </div>
 
                                 </div>
@@ -114,7 +114,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                    <a href="{{ route('commercialAgreement.index') }}" class="btn btn-dark mx-2"> Cancel</a>
+                                    <a href="{{ route('commercialAgreement.index') }}" class="btn btn-dark mx-2"> الغاء</a>
                                     <input type="submit" value="save" class="btn btn-success ">
                                 </div>
                         </form>

@@ -56,6 +56,26 @@ $(window).on('load', function(){
     $('#LoaderWrapper .spinner').fadeOut(2000).parent().fadeOut(2500)
   })
   
+    /**==========================  rtl  ============================== */
+
+
+var language = function () {
+
+  var locale = document.getElementsByTagName("html")[0].getAttribute("lang");
+ 
+  if (locale === 'ar') {
+
+    document.body.classList.add('rtl');
+
+  }
+  else {
+    document.body.classList.remove('rtl')
+
+
+
+  }
+};
+language();
   // delete alert
 function delette(thing) {
   Swal.fire({

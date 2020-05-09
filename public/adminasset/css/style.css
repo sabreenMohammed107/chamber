@@ -812,6 +812,7 @@ Version: 1.0.0
 /* Style Reset */
 body{
   padding: 0;
+
 }
 img {
   max-width: 100%;
@@ -1371,14 +1372,15 @@ body:not(.ms-aside-left-open) .ms-aside-toggler .ms-toggler-bar{
 .fixed,
 .side-nav.fixed {
   position: fixed;
-  left: -1px;
+  right : 0;
+  left: auto
 }
 .ms-aside-left.side-nav{
-  transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
 }
 
 
@@ -1763,8 +1765,8 @@ ul.ms-activity-log > li:hover .icon{
   background: #fff;
   height:100%;
   min-width: 400px;
-  -webkit-transform: translateX( 120% );
-  transform: translateX( 120% );
+  -webkit-transform: translateX( 12% );
+  transform: translateX( 12% );
   -webkit-transition: 0.3s;
   transition: 0.3s;
   z-index: -1;
@@ -1988,6 +1990,7 @@ a.ms-confirm-trigger:hover{
 }
 .user-dropdown.dropdown-menu{
   min-width: 200px;
+  right: -50px;
 }
 .dropdown-menu .media img{
   width: 40px;
@@ -3149,8 +3152,8 @@ input:checked + .ms-switch-slider.ms-switch-dark{
   
   }
   body.rtl.ms-aside-left-open .body-content .navbar {
-    right: 255px; left: auto;
-    width: calc( 100% - 255px );
+    right: 0px; left: auto;
+    width: calc( 100% - 0px );
   }
   body.rtl .side-nav .menu-item a{
     padding: 15px;
@@ -4104,4 +4107,10 @@ sup {
     flex: 0 0 25%;
     max-width: 25%;
 }
+}
+
+/*****************************************/
+.dropdown-menu-right {
+  right: -50px;
+  left: auto;
 }

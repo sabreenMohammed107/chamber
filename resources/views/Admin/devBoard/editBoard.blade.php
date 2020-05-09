@@ -5,10 +5,10 @@
 @section('crumb')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+<ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page">إجتماعات المجلس </li>
     </ol>
 </nav>
 
@@ -39,7 +39,7 @@
                                 <input type="hidden" name="department_id" value="{{$devisionrow->id}}">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">from year</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">من سنة</label>
                                         <?php $date = date_create($row->from_date) ?>
                                         <input style="height: 40px; border-radius: 5px;" class="col-md-12 exampleInputPassword1" for="exampleCheck1" data-date-format="dd/mm/yyyy" name="from_date" type="date" id="datepicker" value="{{ date_format($date,'Y-m-d') }}">
 
@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">to year</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">إلى سنة</label>
                                         <?php $dateTo = date_create($row->to_date) ?>
                                         <input style="height: 40px; border-radius: 5px;" class="col-md-12 exampleInputPassword1" for="exampleCheck1" data-date-format="dd/mm/yyyy" name="to_date" type="date" id="datepicker" value="{{ date_format($dateTo,'Y-m-d') }}">
 
@@ -59,13 +59,13 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">Manage en Name</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">اسم الرئيس إنجليزى</label>
                                         <input type="text" name="manager_en_name" value="{{$row->manager_en_name}}" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">Manage Ar Name</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">اسم الرئيس عربي</label>
                                         <input type="text" name="manager_ar_name" value="{{$row->manager_ar_name}}" class="form-control">
                                     </div>
                                 </div>
@@ -88,9 +88,9 @@
                                                 @endif
 
                                             </option>
-                                            <option value="0">Current</option>
-                                            <option value="1">Previous</option>
-                                            <option value="2">old</option>
+                                            <option value="0">الحالى</option>
+                                            <option value="1">السابق</option>
+                                            <option value="2">قديما</option>
                                         </select>
                                     </div>
 
@@ -99,7 +99,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                    <a href="{{ route('devBoard.edit',$devisionrow->id) }}" class="btn btn-dark mx-2"> Cancel</a>
+                                    <a href="{{ route('devBoard.edit',$devisionrow->id) }}" class="btn btn-dark mx-2"> الغاء</a>
                                     <input type="submit" value="save" class="btn btn-success ">
                                 </div>
                         </form>
@@ -119,7 +119,7 @@
 
                 <li class="btn btn-light test">
                     <a href="#tab_default_1" class="active" data-toggle="tab" role="tab">
-                        Board Members </a>
+                        عضو المجلس </a>
                 </li>
 
 
@@ -132,7 +132,7 @@
                         <div class="col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-header d-flex justify-content-between">
-                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-news-gallery">add Chamber Board </button>
+                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-news-gallery">اضافة عضو للمجلس </button>
                                 </div>
                                 <div class="ms-panel-body">
 
@@ -141,11 +141,11 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th scope="col">image</th>
-                                                    <th scope="col">En Name</th>
-                                                    <th scope="col">Ar Name</th>
-                                                    <th scope="col">En Position</th>
-                                                    <th scope="col">Ar Position</th>
+                                                    <th scope="col">صورة</th>
+                                                    <th scope="col">الإسم إنجليزى</th>
+                                                    <th scope="col">الإسم عربي</th>
+                                                    <th scope="col">المركز إنجليزى</th>
+                                                    <th scope="col">المركز عربي</th>
 
                                                     <th scope="col"></th>
 
@@ -164,8 +164,8 @@
 
 
                                                     <td>
-                                                        <a href="#add-news-gallery{{$member->id}}" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#add-news-gallery{{$member->id}}">edit</a>
-                                                        <a href="#" onclick="destroy('this Data','{{$member->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                                        <a href="#add-news-gallery{{$member->id}}" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#add-news-gallery{{$member->id}}">تعديل</a>
+                                                        <a href="#" onclick="destroy('this Data','{{$member->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                                         <form id="delete_{{$member->id}}" action="{{ route('deleteBoardMemberDev', $member->id) }}" method="POST" style="display: none;">
                                                             @csrf
 
@@ -184,7 +184,7 @@
                                                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                                                             </button>
-                                                            <h3>Add Board Members </h3>
+                                                            <h3>إضافة عضو للمجلس </h3>
                                                             <div class="modal-body">
 
 
@@ -210,13 +210,13 @@
                                                                                 </div>
                                                                                 <div class="col-md-6">
                                                                                     <div class="form-group">
-                                                                                        <label class="exampleInputPassword1" for="exampleCheck1">En Name</label>
+                                                                                        <label class="exampleInputPassword1" for="exampleCheck1">الإسم إنجليزى</label>
                                                                                         <input type="text" name="en_name" value="{{$member->en_name}}" class="form-control">
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-md-6">
                                                                                     <div class="form-group">
-                                                                                        <label class="exampleInputPassword1" for="exampleCheck1">Ar Name</label>
+                                                                                        <label class="exampleInputPassword1" for="exampleCheck1">الإسم عربي</label>
                                                                                         <input type="text" name="ar_name" value="{{$member->ar_name}}" class="form-control">
                                                                                     </div>
                                                                                 </div>
@@ -225,19 +225,19 @@
 
                                                                                 <div class="col-md-6">
                                                                                     <div class="form-group">
-                                                                                        <label class="exampleInputPassword1" for="exampleCheck1">En Position </label>
+                                                                                        <label class="exampleInputPassword1" for="exampleCheck1">المركز إنجليزى </label>
                                                                                         <input type="text" name="en_position" value="{{$member->en_position}}" class="form-control">
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-md-6">
                                                                                     <div class="form-group">
-                                                                                        <label class="exampleInputPassword1" for="exampleCheck1">Ar Position </label>
+                                                                                        <label class="exampleInputPassword1" for="exampleCheck1">المركز عربي </label>
                                                                                         <input type="text" name="ar_position" value="{{$member->ar_position}}" class="form-control">
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-md-6">
                                                                                     <div class="form-group">
-                                                                                        <label class="exampleInputPassword1" for="exampleCheck1">person_position</label>
+                                                                                        <label class="exampleInputPassword1" for="exampleCheck1">مركز الشخص</label>
                                                                                         <input type="number" value="{{$member->position_order}}" name="person_position" class="form-control">
 
                                                                                     </div>
@@ -245,7 +245,7 @@
 
                                                                                 <div class="col-md-12">
                                                                                     <div class="form-group">
-                                                                                        <label for="example2">Cv - En</label>
+                                                                                        <label for="example2">السيرة الذاتية EN</label>
                                                                                         <div class="form-group">
                                                                                             <textarea class="content" name="en_cv">{{$member->en_cv}}</textarea>
                                                                                         </div>
@@ -253,7 +253,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-12">
                                                                                     <div class="form-group">
-                                                                                        <label for="example2">Cv - Ar</label>
+                                                                                        <label for="example2">السيرة الذاتية - عربي</label>
                                                                                         <div class="form-group">
                                                                                             <textarea class="content" name="ar_cv">{{$member->ar_cv}}</textarea>
                                                                                         </div>
@@ -297,7 +297,7 @@
                             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                             </button>
-                            <h3>Add Board Members </h3>
+                            <h3>إضافة عضو المجلس </h3>
                             <div class="modal-body">
 
 
@@ -322,13 +322,13 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="exampleInputPassword1" for="exampleCheck1">En Name</label>
+                                                        <label class="exampleInputPassword1" for="exampleCheck1">الإسم إنجليزى</label>
                                                         <input type="text" name="en_name" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="exampleInputPassword1" for="exampleCheck1">Ar Name</label>
+                                                        <label class="exampleInputPassword1" for="exampleCheck1"> الإسم عربي</label>
                                                         <input type="text" name="ar_name" class="form-control">
                                                     </div>
                                                 </div>
@@ -337,19 +337,19 @@
 
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="exampleInputPassword1" for="exampleCheck1">En Position </label>
+                                                        <label class="exampleInputPassword1" for="exampleCheck1">المركز إنجليزى </label>
                                                         <input type="text" name="en_position" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="exampleInputPassword1" for="exampleCheck1">Ar Position </label>
+                                                        <label class="exampleInputPassword1" for="exampleCheck1">المركز عربي </label>
                                                         <input type="text" name="ar_position" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="exampleInputPassword1">person_position</label>
+                                                        <label class="exampleInputPassword1">مركز الشخص</label>
                                                         <input type="number" name="position_order" class="form-control">
 
                                                     </div>
@@ -357,7 +357,7 @@
 
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label for="example2">Cv - En</label>
+                                                        <label for="example2">السيرة الذاتية - EN</label>
                                                         <div class="form-group">
                                                             <textarea class="content" name="en_cv"></textarea>
                                                         </div>
@@ -366,7 +366,7 @@
 
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label for="example2">Cv - Ar</label>
+                                                        <label for="example2">السيرة الذاتية - عربي</label>
                                                         <div class="form-group">
                                                             <textarea class="content" name="ar_cv"></textarea>
                                                         </div>

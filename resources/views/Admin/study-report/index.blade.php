@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Studies/Reports') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page"> دراسة / تقرير </li>
     </ol>
 </nav>
 
@@ -25,8 +25,8 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Studies/Reports</h6>
-                <a href="{{route('study-report.create') }}" class="btn btn-dark"> add </a>
+                <h6>دراسة / تقرير</h6>
+                <a href="{{route('study-report.create') }}" class="btn btn-dark"> إضافة </a>
             </div>
             <div class="ms-panel-body">
                 <div class="table-responsive">
@@ -34,12 +34,12 @@
                         <thead>
                             <th>#</th>
 
-                            <th>En text</th>
-                            <th>Ar text</th>
-                            <th>En File </th>
-                            <th>Ar File </th>
-                            <th>Study Type</th>
-                            <th>Active</th>
+                            <th>المسمى إنجليزى</th>
+                            <th>المسمى عربي</th>
+                            <th>الملف إنجليزى </th>
+                            <th>الملف عربي </th>
+                            <th>نوع الدراسة</th>
+                            <th>نشط</th>
                             <th></th>
 
 
@@ -69,8 +69,8 @@
 
 
                                 <td>
-                                    <a href="{{ route('study-report.edit',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
-                                    <a href="#" onclick="destroy('this study-report','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                    <a href="{{ route('study-report.edit',$row->id) }}" class="btn btn-info d-inline-block">تعديل</a>
+                                    <a href="#" onclick="destroy('this study-report','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('study-report.destroy', $row->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')

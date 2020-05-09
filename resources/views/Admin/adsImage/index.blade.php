@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> {{ __('Images-Ads') }} </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i>الرئيسية</a></li>
+        <li class="breadcrumb-item active" aria-current="page"> إعلانات بالصور </li>
     </ol>
 </nav>
 
@@ -25,7 +25,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Images-Ads</h6>
+                <h6>إعلانات بالصور</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -33,10 +33,10 @@
                     <table id="courseEval" class="dattable table table-striped thead-dark  w-100">
                         <thead>
                             <th>#</th>
-                            <th>Ads No</th>
+                            <th>رقم الإعلان</th>
 
-                            <th>Ads Image</th>
-                            <th>Ads Url</th>
+                            <th>صورة الإعلان</th>
+                            <th>رابط الإعلان</th>
 
 
                             <th></th>
@@ -70,7 +70,7 @@
                 <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                 </button>
-                <h3>Edit Images Ads</h3>
+                <h3>تعديل صور الاعلان</h3>
 
                 <div class="modal-body">
 
@@ -109,7 +109,7 @@
                                     </div>
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label>ads url</label>
+                                            <label>رابط الإعلان</label>
                                             <div class="input-group">
                                                 <input type="url" name="url" value="{{$data->url}}" id="Master EN Title" class="form-control" placeholder="">
                                             </div>

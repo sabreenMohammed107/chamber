@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+        <li class="breadcrumb-item active" aria-current="page">المؤتمر </li>
     </ol>
 </nav>
 
@@ -24,8 +24,8 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Conference</h6>
-                <a href="{{ route('conference.create') }}" class="btn btn-dark"> add</a>
+                <h6>المؤتمر</h6>
+                <a href="{{ route('conference.create') }}" class="btn btn-dark"> إضافة</a>
             </div>
             <div class="ms-panel-body">
                 <div class="table-responsive">
@@ -34,12 +34,12 @@
                             <th>#</th>
 
 
-                            <th>AR Title </th>
-                            <th>EN Title</th>
-                            <th>Conference Date </th>
+                            <th>المسمى عربي </th>
+                            <th>المسمى إنجليزى</th>
+                            <th>تاريخ المؤتمر </th>
 
-                            <th>Conference Type</th>
-                            <th>Active</th>
+                            <th>نوع المؤتمر</th>
+                            <th>نشط</th>
 
                             <th></th>
 
@@ -67,8 +67,8 @@
                           <td><i class="fas fa-times"></i></td>
                           @endif
                                 <td>
-                                    <a href="{{ route('conference.edit',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
-                                    <a href="#" onclick="destroy('this News','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                    <a href="{{ route('conference.edit',$row->id) }}" class="btn btn-info d-inline-block">تعديل</a>
+                                    <a href="#" onclick="destroy('this News','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('conference.destroy', $row->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')

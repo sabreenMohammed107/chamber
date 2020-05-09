@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-    <li class="breadcrumb-item active" aria-current="page"> {{ __('Chances') }} </li>
+      <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+    <li class="breadcrumb-item active" aria-current="page">الفرص التجارية </li>
   </ol>
 </nav>
 
@@ -25,8 +25,8 @@
 
     <div class="ms-panel">
         <div class="ms-panel-header d-flex justify-content-between">
-            <h6>Commerical Chances</h6>
-            <a href="{{ route('adminChance.create') }}" class="btn btn-dark" > add</a>
+            <h6>الفرص التجارية</h6>
+            <a href="{{ route('adminChance.create') }}" class="btn btn-dark" > إضافة</a>
         </div>
         <div class="ms-panel-body">
             <div class="table-responsive">
@@ -36,13 +36,13 @@
                         
 
                         
-                        <th>Chance Type</th>
-                        <th>Chance Date</th>
-                        <th>En Subject</th>
-                        <th>Ar Subject</th>
-                        <th>Country </th>
-                        <th>En field </th>
-                        <th>Ar field</th>
+                        <th>نوع الفرصة</th>
+                        <th>تاريخ الفرصة</th>
+                        <th>العنوان إنجليزى</th>
+                        <th>العنوان عربي</th>
+                        <th>الدولة </th>
+                        <th>المجال إنجليزى </th>
+                        <th>المجال عربي </th>
                       
                         
                         <th></th>
@@ -79,7 +79,7 @@
                             
 
                             <td>
-                            <a href="{{ route('adminChance.edit', $row->id) }}" class="btn btn-info d-inline-block">edit</a>
+                            <a href="{{ route('adminChance.edit', $row->id) }}" class="btn btn-info d-inline-block">تعديل</a>
                                     <a href="#" onclick="destroy('this Data','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('adminChance.destroy', $row->id) }}" method="POST" style="display: none;">
                                         @csrf

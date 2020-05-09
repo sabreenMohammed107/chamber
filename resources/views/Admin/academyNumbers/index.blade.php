@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-    <li class="breadcrumb-item active" aria-current="page"> {{ __('Academy-Numbers') }} </li>
+      <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+    <li class="breadcrumb-item active" aria-current="page">أرقام الأكاديمية </li>
   </ol>
 </nav>
 
@@ -23,19 +23,19 @@
 
     <div class="ms-panel">
       <div class="ms-panel-header d-flex justify-content-between">
-        <h6>Academy_numbers</h6>
-        <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addnumber"> add Academy_numbers </a>
+        <h6>أرقام الأكاديمية</h6>
+        <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addnumber"> إضافة أرقام الأكاديمية </a>
       </div>
       <div class="ms-panel-body">
         <div class="table-responsive">
           <table id="courseEval" class="dattable table table-striped thead-dark  w-100">
             <thead>
               <th>#</th>
-              <th>en_name</th>
-              <th>ar_name</th>
-              <th>value</th>
+              <th>المسمى إنجليزى</th>
+              <th>المسمى العربي</th>
+              <th>القيمة</th>
 
-              <th>Action</th>
+              <th>إجراء</th>
             </thead>
             <tbody>
               @foreach($numbers as $index => $number)
@@ -48,8 +48,8 @@
 
 
                 <td>
-                  <a href="{{ route('number.edit', $number->id) }}" class="btn btn-info d-inline-block">edit</a>
-                  <a href="#" onclick="destroy('this Number','{{$number->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                  <a href="{{ route('number.edit', $number->id) }}" class="btn btn-info d-inline-block">تعديل</a>
+                  <a href="#" onclick="destroy('this Number','{{$number->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                   <form id="delete_{{$number->id}}" action="{{ route('number.destroy', $number->id) }}" method="POST" style="display: none;">
                     @csrf
                     @method('DELETE')
@@ -80,7 +80,7 @@
       <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
       </button>
-      <h3>Add number</h3>
+      <h3>إضافة رقم</h3>
 
       <div class="modal-body">
 
@@ -102,7 +102,7 @@
 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>En_name</label>
+                    <label>المسمى إنجليزى</label>
                     <div class="input-group">
                       <input type="text" id="newnumber" name="en_name" class="form-control" placeholder="number">
                     </div>
@@ -111,7 +111,7 @@
 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Ar_name</label>
+                    <label>المسمى عربي</label>
                     <div class="input-group">
                       <input type="text" id="newnumber" name="ar_name" class="form-control" placeholder="number">
                     </div>
@@ -122,7 +122,7 @@
 
                 <div class="col-md-8">
                   <div class="form-group">
-                    <label>Number_value</label>
+                    <label>القيمة بالأرقام</label>
                     <div class="input-group">
                       <input type="number" id="newnumber" name="value" class="form-control" placeholder="number">
                     </div>

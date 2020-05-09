@@ -5,10 +5,10 @@
 @section('crumb')
 
 <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
+<ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-    <li class="breadcrumb-item active" aria-current="page"> {{ __('Chances') }} </li>
+      <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية </a></li>
+    <li class="breadcrumb-item active" aria-current="page">الفرص التجارية </li>
   </ol>
 </nav>
 
@@ -24,7 +24,7 @@
 
     <div class="ms-panel">
         <div class="ms-panel-header d-flex justify-content-between">
-            <h6>add_Commerical-Chances</h6>
+            <h6>إضافة الفرص</h6>
 
         </div>
         <div class="ms-panel-body">
@@ -36,12 +36,12 @@
                             
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Chance Type</label>
+                                        <label>نوع الفرصة</label>
                                         <select name="chance_type" class="form-control" id="">
-                                            <option value="">select....</option>
+                                            <option value="">اختر...</option>
                                             <option value="1">فرص إستيراديه</option>
                                             <option value="2">فرص تصديرية</option>
-                                            <option value="3">فرص أستثمارية</option>
+                                            <option value="3">فرص إستثمارية</option>
                                             <option value="4">مناقصات ومزايدات</option>
 
                                         </select>
@@ -50,7 +50,7 @@
                            
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Chance Date
+                                    <label>تاريخ الفرصة
                                     </label>
                                     <br>
                                     <input style="height: 40px; border-radius: 5px;"
@@ -60,21 +60,21 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="exampleInputPassword1"  for="exampleCheck1"> En Subject </label>
+                                    <label class="exampleInputPassword1"  for="exampleCheck1"> العنوان إنجليزى </label>
                                     <input type="text" name="en_subject" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="exampleInputPassword1"  for="exampleCheck1"> Ar Subject</label>
+                                    <label class="exampleInputPassword1"  for="exampleCheck1"> العنوان عربي</label>
                                     <input type="text" name="ar_subject" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Country</label>
+                                    <label>الدولة</label>
                                     <select name="chance_country_id" id="chance_country_id" class="browser-default custom-select" >
-                                    <option value="">Country</option>
+                                    <option value="">الدولة</option>
                                     @foreach ($countries as $country)
                                     <option value='{{$country->id}}'>{{$country->ar_name}}
                   
@@ -86,14 +86,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="exampleInputPassword1" for="exampleCheck1">
-                                        En field</label>
+                                        المجال انجليزى</label>
                                     <input type="text" name="en_field" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="exampleInputPassword1" for="exampleCheck1">
-                                        Ar field</label>
+                                        المجال عربي</label>
                                     <input type="text" name="ar_field" class="form-control">
                                 </div>
                             </div>
@@ -102,7 +102,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="example2">En Details </label>
+                                    <label for="example2">التفاصيل إنجليزى </label>
                                     <div class="form-group">
                                         <textarea class="content" name="en_contact"></textarea>
                                     </div>
@@ -110,7 +110,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="example2">Ar Details </label>
+                                    <label for="example2">التفاصيل عربي </label>
                                     <div class="form-group">
                                         <textarea class="content" name="ar_contact"></textarea>
                                     </div>
@@ -122,7 +122,7 @@
                                 <div class="custom-control custom-checkbox">
                                     <br>
                                     <input type="checkbox" id="" name="active" checked>
-                                    <label for="category">active</label>
+                                    <label for="category">نشط</label>
                                 </div>
 
                             </div>
@@ -133,7 +133,7 @@
 
 
                             <div class="input-group d-flex justify-content-end text-center">
-                            <a href="{{ route('adminChance.index') }}" class="btn btn-dark mx-2"> Cancel</a>
+                            <a href="{{ route('adminChance.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
                                 <input type="submit" value="save" class="btn btn-success ">
                             </div>
                     </form>

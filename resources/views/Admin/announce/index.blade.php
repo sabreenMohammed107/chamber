@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية</a></li>
+        <li class="breadcrumb-item active" aria-current="page">تنويهات </li>
     </ol>
 </nav>
 
@@ -24,8 +24,8 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>Announcements</h6>
-                <a href="{{ route('announce.create') }}" class="btn btn-dark"> add</a>
+                <h6>تنويهات</h6>
+                <a href="{{ route('announce.create') }}" class="btn btn-dark"> إضافة</a>
             </div>
             <div class="ms-panel-body">
                 <div class="table-responsive">
@@ -34,12 +34,12 @@
                             <th>#</th>
 
 
-                            <th>AR Title </th>
-                            <th>EN Title</th>
-                            <th>Announce Date </th>
+                            <th>المسمى عربي </th>
+                            <th>المسمى إنجليزى</th>
+                            <th>تاريخ التنويه </th>
                           
-                            <th>Home Order</th>
-                            <th>Active</th>
+                            <th>ترتيب الرئيسية</th>
+                            <th>نشط</th>
                            
                             <th></th>
 
@@ -65,8 +65,8 @@
                                 
                                 <td>
                                 <a href="{{ route('announce.edit',$row->id) }}" class="btn btn-info d-inline-block" 
-                           >edit</a>
-              <a href="#" onclick="destroy('this Announcement','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                           >تعديل</a>
+              <a href="#" onclick="destroy('this Announcement','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
               <form id="delete_{{$row->id}}" action="{{ route('announce.destroy', $row->id) }}"  method="POST" style="display: none;">
 									@csrf
 									@method('DELETE')
@@ -92,7 +92,7 @@
                 <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                 </button>
-                <h3>Add </h3>
+                <h3>إضافة </h3>
 
                 <div class="modal-body">
 
@@ -103,19 +103,19 @@
                                 <div class="ms-auth-container row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="exampleInputPassword1" for="exampleCheck1"> AR Title</label>
+                                            <label class="exampleInputPassword1" for="exampleCheck1"> المسمى عربي</label>
                                             <input type="text" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="exampleInputPassword1" for="exampleCheck1">EN Title</label>
+                                            <label class="exampleInputPassword1" for="exampleCheck1">المسمى إنجليزى</label>
                                             <input type="text" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>News Date
+                                            <label>تاريخ التنويه
                                             </label>
                                             <br>
                                             <input style="height: 40px; border-radius: 5px;" class="col-md-12 exampleInputPassword1" for="exampleCheck1" data-date-format="dd/mm/yyyy" type="date" id="datepicker">
@@ -123,14 +123,14 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="exampleInputPassword1" for="exampleCheck1">home Order</label>
+                                            <label class="exampleInputPassword1" for="exampleCheck1">ترتيب الرئيسية</label>
                                             <input type="text" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="example2">Ar Text</label>
+                                            <label for="example2">النص عربي</label>
                                             <div class="form-group">
                                                 <textarea class="content" name="example2"></textarea>
                                             </div>
@@ -138,7 +138,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="example2">EN Text</label>
+                                            <label for="example2">النص إنجليزى</label>
                                             <div class="form-group">
                                                 <textarea class="content" name="example3"></textarea>
                                             </div>
@@ -150,7 +150,7 @@
                                         <br>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" id="" name="" checked>
-                                            <label for="category">active</label>
+                                            <label for="category">نشط</label>
                                         </div>
 
                                     </div>

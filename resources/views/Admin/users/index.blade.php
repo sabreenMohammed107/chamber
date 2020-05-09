@@ -7,8 +7,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-      <a href="#"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-      <li class="breadcrumb-item active" aria-current="page"> {{ __('Users') }} </li>
+      <a href="#"><i class="material-icons"></i> الرئيسية </a></li>
+      <li class="breadcrumb-item active" aria-current="page">المستخدمين </li>
     </ol>
   </nav>
 
@@ -30,10 +30,10 @@
                   <table id="courseEval" class="dattable table table-striped thead-dark  w-100">
           <thead>
             <th>#</th>
-             <th>Name</th>
-            <th>Email</th>
+             <th>الإسم</th>
+            <th>البريد الإلكترونى</th>
            
-            <th>Action</th>
+            <th></th>
           </thead>
           <tbody>
               @foreach($users as $index => $user)
@@ -45,8 +45,8 @@
             
              <td>
                 <a href="{{ route('usersList.edit', $user->id) }}" class="btn btn-info d-inline-block" 
-                >Rest Pass</a>
-              <a href="#" onclick="destroy('this User','{{$user->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                >تعديل كلمة السر</a>
+              <a href="#" onclick="destroy('this User','{{$user->id}}')" class="btn d-inline-block btn-danger">مسح</a>
               <form id="delete_{{$user->id}}" action="{{ route('usersList.destroy', $user->id) }}"  method="POST" style="display: none;">
 									@csrf
 									@method('DELETE')

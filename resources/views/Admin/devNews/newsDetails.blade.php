@@ -5,10 +5,10 @@
 @section('crumb')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+<ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-        <li class="breadcrumb-item active" aria-current="page"> </li>
+            <a href="{{url('admin')}}"><i class="material-icons"></i> الرئيسية</a></li>
+        <li class="breadcrumb-item active" aria-current="page">أخبار الشعبة </li>
     </ol>
 </nav>
 
@@ -25,7 +25,7 @@
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
                 <h6>أخبار {{$row->ar_title}}</h6>
-                <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addnumber"> add </a>
+                <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addnumber"> إضافة </a>
             </div>
             <div class="ms-panel-body">
 
@@ -35,10 +35,10 @@
                             <th>#</th>
 
 
-                            <th>AR Title </th>
-                            <th>EN Title</th>
-                            <th>Meeting Date</th>
-                            <th>Active</th>
+                            <th>المسمى عربي </th>
+                            <th>المسمى إنجليزى</th>
+                            <th>التاريخ</th>
+                            <th>نشط</th>
                             <th></th>
 
 
@@ -59,8 +59,8 @@
                                 <td><i class="fas fa-times"></i></td>
                                 @endif
                                 <td>
-                                    <a href="{{ route('editAdminDevNews',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
-                                    <a href="#" onclick="destroy('this News','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                    <a href="{{ route('editAdminDevNews',$row->id) }}" class="btn btn-info d-inline-block">تعديل</a>
+                                    <a href="#" onclick="destroy('this News','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('devNews.destroy', $row->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')
@@ -76,7 +76,7 @@
         </div>
     </div>
     <div class="input-group d-flex justify-content-end text-center">
-        <a href="{{ route('devNews.index') }}" style="float: right;margin-right: 50px;margin-bottom: 20px" class="btn btn-danger "> Cancel</a>
+        <a href="{{ route('devNews.index') }}" style="float: right;margin-right: 50px;margin-bottom: 20px" class="btn btn-danger "> إلغاء</a>
 
     </div>
 
@@ -99,7 +99,7 @@
             <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
             </button>
-            <h3>Add </h3>
+            <h3>إضافة </h3>
 
             <div class="modal-body">
 
@@ -121,21 +121,21 @@
                             <div class="ms-auth-container row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">AR
-                                            Title</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">
+                                            المسمى عربي</label>
                                         <input type="text" name="ar_title" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="exampleInputPassword1" for="exampleCheck1">EN
-                                            Title</label>
+                                        <label class="exampleInputPassword1" for="exampleCheck1">
+                                            المسمى إنجليزى</label>
                                         <input type="text" name="en_title" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label> Date
+                                        <label> التاريخ
                                         </label>
                                         <br>
                                         <input style="height: 40px; border-radius: 5px;" class="col-md-12 exampleInputPassword1" for="exampleCheck1" data-date-format="dd/mm/yyyy" name="news_date" type="date" id="datepicker">
@@ -145,7 +145,7 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="example2"> Ar Text</label>
+                                        <label for="example2"> النص عربي</label>
                                         <div class="form-group">
                                             <textarea class="content" name="ar_text"></textarea>
                                         </div>
@@ -153,7 +153,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="example2"> EN Text</label>
+                                        <label for="example2"> النص إنجليزى</label>
                                         <div class="form-group">
                                             <textarea class="content" name="en_text"></textarea>
                                         </div>
@@ -166,14 +166,10 @@
                                     <div class="custom-control custom-checkbox">
                                         <br>
                                         <input type="checkbox" id="" name="active" checked>
-                                        <label for="category">active</label>
+                                        <label for="category">نشط</label>
                                     </div>
 
                                 </div>
-
-
-
-
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
