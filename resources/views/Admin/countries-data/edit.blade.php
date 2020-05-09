@@ -115,7 +115,7 @@
 
                                 <div class="input-group d-flex justify-content-end text-center">
                                 <a href="{{ route('countries-data.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
-                                    <input type="submit" value="save" class="btn btn-success ">
+                                    <input type="submit" value="حفظ" class="btn btn-success ">
                                 </div>
                         </form>
                     </div>

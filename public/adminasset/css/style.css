@@ -3174,6 +3174,7 @@ input:checked + .ms-switch-slider.ms-switch-dark{
   body.rtl div.dataTables_wrapper div.dataTables_filter label {
     float: left
   }
+  
   .btn-dark {
     color: #fff;
     background-color:  #050e58;
@@ -3287,6 +3288,10 @@ input:checked + .ms-switch-slider.ms-switch-dark{
   display: inline-block;
   margin: 10px 0 0 5px;
 }
+#userDropdown img, body.rtl .dropdown-menu li a span i{
+    float: right !important;
+    margin-left: 5px
+  }
 /*---------------------------------------------end-temp-style--------------------------*/
 /* Basic Tables */
 .thead-primary thead{

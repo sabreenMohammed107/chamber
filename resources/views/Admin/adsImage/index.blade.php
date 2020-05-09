@@ -54,8 +54,8 @@
 
 
                                 <td>
-                                    <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#addclient{{$data->id}}">edit</a>
-                                    <a href="#" onclick="destroy('this Data','{{$data->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                    <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#addclient{{$data->id}}">تعديل</a>
+                                    <a href="#" onclick="destroy('this Data','{{$data->id}}')" class="btn d-inline-block btn-danger">حفظ</a>
                                     <form id="delete_{{$data->id}}" action="{{ route('adsImage.destroy', $data->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')
@@ -121,8 +121,8 @@
 
 
                                     <div class="input-group d-flex justify-content-end text-center">
-                                        <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
-                                        <input type="submit" value="Add" class="btn btn-success ">
+                                        <input type="button" value="الغاء" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
+                                        <input type="submit" value="حفظ" class="btn btn-success ">
                                     </div>
                             </form>
                         </div>

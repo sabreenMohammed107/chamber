@@ -161,8 +161,8 @@
 
 
                                     <div class="input-group d-flex justify-content-end text-center">
-                                        <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
-                                        <input type="submit" value="Add" class="btn btn-success ">
+                                        <input type="button" value="الغاء" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
+                                        <input type="submit" value="حفظ" class="btn btn-success ">
                                     </div>
                             </form>
                         </div>

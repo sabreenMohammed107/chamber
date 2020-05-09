@@ -74,7 +74,7 @@
 
                                 <div class="input-group d-flex justify-content-end text-center">
                                     <a href="{{ route('articel.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
-                                    <input type="submit" value="save" class="btn btn-success ">
+                                    <input type="submit" value="حفظ" class="btn btn-success ">
                                 </div>
                         </form>
                     </div>
@@ -147,7 +147,7 @@
                                                     @endif
 
                                                     <td>
-                                                        <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#add-Annoucement-Gallery{{$gallery->id}}">edit</a>
+                                                        <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#add-Annoucement-Gallery{{$gallery->id}}">حفظ</a>
                                                         <a href="#" onclick="destroy('this News','{{$gallery->id}}')" class="btn d-inline-block btn-danger">مسح</a>
                                                         <form id="delete_{{$gallery->id}}" action="{{ route('deleteArticel', $gallery->id) }}" method="POST" style="display: none;">
                                                             @csrf
@@ -232,8 +232,8 @@
                                                                             </div>
 
                                                                             <div class="input-group d-flex justify-content-end text-center">
-                                                                                <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
-                                                                                <input type="submit" value="Add" class="btn btn-success ">
+                                                                                <input type="button" value="الغاء" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
+                                                                                <input type="submit" value="حفظ" class="btn btn-success ">
                                                                             </div>
                                                                         </form>
                                                                     </div>
@@ -352,8 +352,8 @@
                                                                                         عربي <input type="radio" name="language_id" value="ar" <?php echo ($file->language_id == 1) ? 'checked' : '' ?>>
                                                                                     </div>
                                                                                     <div class="input-group d-flex justify-content-end text-center">
-                                                                                        <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
-                                                                                        <input type="submit" value="save" class="btn btn-success ">
+                                                                                        <input type="button" value="الغاء" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
+                                                                                        <input type="submit" value="حفظ" class="btn btn-success ">
                                                                                     </div>
 
 
@@ -444,8 +444,8 @@
                                             </div>
 
                                             <div class="input-group d-flex justify-content-end text-center">
-                                                <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
-                                                <input type="submit" value="Add" class="btn btn-success ">
+                                                <input type="button" value="الغاء" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
+                                                <input type="submit" value="حفظ" class="btn btn-success ">
                                             </div>
                                         </form>
                                     </div>
@@ -508,7 +508,7 @@
                                                         عربي <input type="radio" name="language_id" value="ar">
                                                     </div>
                                                     <div class="input-group d-flex justify-content-end text-center">
-                                                        <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
+                                                        <input type="button" value="الغاء" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
                                                         <input type="submit" value="save" class="btn btn-success ">
                                                     </div>
 

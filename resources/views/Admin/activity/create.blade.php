@@ -17,7 +17,7 @@
 @section('content')
 <div class="ms-panel">
                         <div class="ms-panel-header d-flex justify-content-between">
-                            <h6>Add_Activity</h6>
+                            <h6>اضافة نشاط</h6>
 
                         </div>
                         <div class="ms-panel-body">
@@ -87,7 +87,7 @@
 
                                             <div class="input-group d-flex justify-content-end text-center">
                                             <a href="{{ route('activity.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
-                                                <input type="submit" value="save" class="btn btn-success ">
+                                                <input type="submit" value="حفظ" class="btn btn-success ">
                                             </div>
                                     </form>
                                 </div>

@@ -108,7 +108,7 @@
 
                                 <div class="input-group d-flex justify-content-end text-center">
                                     <a href="{{ route('section.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
-                                    <input type="submit" value="save" class="btn btn-success ">
+                                    <input type="submit" value="حفظ" class="btn btn-success ">
                                 </div>
                         </form>
                     </div>
@@ -174,7 +174,7 @@
                                                     <td>
 
                                                         <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#add-news-gallery{{$file->id}}">edit</a>
-                                                        <a href="#" onclick="destroy('this Data','{{$file->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                                        <a href="#" onclick="destroy('this Data','{{$file->id}}')" class="btn d-inline-block btn-danger">حذف</a>
                                                         <form id="delete_{{$file->id}}" action="{{ route('deleteSectionFile', $file->id) }}" method="POST" style="display: none;">
                                                             @csrf
 
@@ -246,8 +246,8 @@
                                                         عربي <input type="radio" name="language_id" value="ar">
                                                     </div>
                                                     <div class="input-group d-flex justify-content-end text-center">
-                                                        <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
-                                                        <input type="submit" value="save" class="btn btn-success ">
+                                                        <input type="button" value="الغاء" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
+                                                        <input type="submit" value="حفظ" class="btn btn-success ">
                                                     </div>
 
 
@@ -322,8 +322,8 @@
                                                     </div>
 
                                                     <div class="input-group d-flex justify-content-end text-center">
-                                                        <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
-                                                        <input type="submit" value="save" class="btn btn-success ">
+                                                        <input type="button" value="الغاء" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
+                                                        <input type="submit" value="حفظ" class="btn btn-success ">
                                                     </div>
 
 

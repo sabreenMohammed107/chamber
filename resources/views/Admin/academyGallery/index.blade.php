@@ -60,7 +60,7 @@
                             <td>
                                 <a href="#" class="btn btn-info d-inline-block" data-toggle="modal"
                                     data-target="#addclient{{$gallery->id}}">تعديل</a>
-                                    <a href="#" onclick="destroy('this Gallery','{{$gallery->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                    <a href="#" onclick="destroy('this Gallery','{{$gallery->id}}')" class="btn d-inline-block btn-danger">حذف</a>
               <form id="delete_{{$gallery->id}}" action="{{ route('academyGallery.destroy', $gallery->id) }}"  method="POST" style="display: none;">
 									@csrf
 									@method('DELETE')
@@ -132,9 +132,9 @@
                                     </div>
                                 </div>
                                 <div class="input-group d-flex justify-content-end text-center">
-                                    <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal"
+                                    <input type="button" value="الغاء" class="btn btn-dark mx-2" data-dismiss="modal"
                                         aria-label="Close">
-                                    <input type="submit" value="Add" class="btn btn-success ">
+                                    <input type="submit" value="حفظ" class="btn btn-success ">
                                 </div>
                             </form>
                         </div>
@@ -207,9 +207,9 @@
                                     </div>
                                 </div>
                                 <div class="input-group d-flex justify-content-end text-center">
-                                    <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal"
+                                    <input type="button" value="الغاء" class="btn btn-dark mx-2" data-dismiss="modal"
                                         aria-label="Close">
-                                    <input type="submit" value="Add" class="btn btn-success ">
+                                    <input type="submit" value="حفظ" class="btn btn-success ">
                                 </div>
                             </form>
                         </div>

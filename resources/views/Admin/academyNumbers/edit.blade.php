@@ -19,7 +19,7 @@
   <div class="col-md-12">
     <div class="ms-panel">
       <div class="ms-panel-header d-flex justify-content-between">
-        <h6>{{ __('edit') }}</h6>
+        <h6>تعديل</h6>
       </div>
       <div class="ms-panel-body col-md-6 col-md-offset-2">
 
@@ -72,7 +72,7 @@
           </div>
           <div class="input-group d-flex justify-content-end text-center">
             <a href="{{route('number.index')}}" class="btn btn-dark mx-2">إلغاء</a>
-            <input type="submit" value="Add" class="btn btn-success ">
+            <input type="submit" value="حفظ" class="btn btn-success ">
           </div>
         </form>
 
