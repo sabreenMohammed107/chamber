@@ -26,7 +26,7 @@
 
         <div class="ms-panel">
             <div class="ms-panel-header d-flex justify-content-between">
-                <h6>edit-Chamber-Gallery</h6>
+                <h6>تعديل</h6>
 
             </div>
             <div class="ms-panel-body">
@@ -87,7 +87,7 @@
 
                                 <div class="input-group d-flex justify-content-end text-center">
                                     <a href="{{ route('album.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
-                                    <input type="submit" value="Add" class="btn btn-success ">
+                                    <input type="submit" value="حفظ" class="btn btn-success ">
                                 </div>
                         </form>
                     </div>
@@ -233,7 +233,7 @@
 
                                                                         <div class="input-group d-flex justify-content-end text-center">
                                                                             <input type="button" value="الغاء" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
-                                                                            <input type="submit" value="Add" class="btn btn-success ">
+                                                                            <input type="submit" value="حفظ" class="btn btn-success ">
                                                                         </div>
                                                                     </form>
                                                                 </div>
@@ -320,7 +320,7 @@
 
                                         <div class="input-group d-flex justify-content-end text-center">
                                             <input type="button" value="الغاء" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close">
-                                            <input type="submit" value="Add" class="btn btn-success ">
+                                            <input type="submit" value="حفظ" class="btn btn-success ">
                                         </div>
                                     </form>
                                 </div>
