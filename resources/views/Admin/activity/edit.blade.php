@@ -150,7 +150,7 @@
                         <div class="col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-header d-flex justify-content-between">
-                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Annoucement-Gallery">add Gallery </button>
+                                    <button class="btn btn-dark" data-toggle="modal" data-target="#add-Annoucement-Gallery">اضافة جاليرى </button>
                                 </div>
                                 <div class="ms-panel-body">
 

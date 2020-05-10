@@ -67,7 +67,7 @@
 
                             <td>
                             <a href="{{ route('board.edit', $row->id) }}" class="btn btn-info d-inline-block" 
-                >edit</a>
+                >تعديل</a>
               <a href="#" onclick="destroy('this Data','{{$row->id}}')" class="btn d-inline-block btn-danger">مسح</a>
               <form id="delete_{{$row->id}}" action="{{ route('board.destroy', $row->id) }}"  method="POST" style="display: none;">
 									@csrf

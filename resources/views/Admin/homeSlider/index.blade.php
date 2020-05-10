@@ -24,7 +24,7 @@
     <div class="ms-panel">
       <div class="ms-panel-header d-flex justify-content-between">
         <h6>سلايدر الرئيسية</h6>
-        <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addclient"> add </a>
+        <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addclient"> اضافة </a>
       </div>
       <div class="ms-panel-body">
         <div class="table-responsive">

@@ -62,8 +62,8 @@
                                 
 
                                 <td>
-                                    <a href="{{ route('activity.edit',$row->id) }}" class="btn btn-info d-inline-block">edit</a>
-                                    <a href="#" onclick="destroy('this activity','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
+                                    <a href="{{ route('activity.edit',$row->id) }}" class="btn btn-info d-inline-block">تعديل</a>
+                                    <a href="#" onclick="destroy('this activity','{{$row->id}}')" class="btn d-inline-block btn-danger">حذف</a>
                                     <form id="delete_{{$row->id}}" action="{{ route('activity.destroy', $row->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')

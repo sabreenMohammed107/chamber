@@ -50,7 +50,7 @@
                                 
                                 <td>
                                 <a href="{{ route('devBoard.edit',$row->id) }}" class="btn btn-info d-inline-block" 
-                           >Select</a>
+                           >اختر</a>
               
                                 </td>
                             </tr>

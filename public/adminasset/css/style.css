@@ -3901,7 +3901,7 @@ upload img
   height: 20px;
   overflow: hidden;
   bottom: 0;
-  left: 0;
+  right: 0;
   background-color: #eee;
   padding: 3px 3px 0 0;
 }

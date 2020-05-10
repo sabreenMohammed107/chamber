@@ -85,7 +85,7 @@
                 <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">X
 
                 </button>
-                <h3>Edit </h3>
+                <h3>تعديل </h3>
 
                 <div class="modal-body">
 
