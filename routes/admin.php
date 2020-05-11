@@ -149,7 +149,8 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::resource('/admin/commmercial-topics', 'CommmercialTopicsController');
   Route::resource('/admin/exporters-encyclopedia', 'ExportersEncyclopediaController');
   Route::resource('/admin/countries-data', 'CountriesDataController');
-
+ /*-------------------------chancses-------------------*/
+ Route::resource('/admin/country-details', 'CountryDetailsController');
 });
 Route::get('/admin/login', 'Auth\LoginAdminController@showLoginAdminForm')->name('admin.login');
 Route::post('/admin/login', 'Auth\LoginAdminController@attemptLogin')->name('admin.login');

@@ -478,10 +478,13 @@
         </div>
       </div>
       <div class="col-md-4 col-12">
-
+      <?php
+          $articleAcademy = 9;
+          $academytraining = 10;
+          ?>
         <div class="row h100 mb-4 ">
           <div class="col-md-11  mb-4 greyly  event wow fadeInDown" data-wow-delay="1s">
-            <a href="#" class="text-black ">
+            <a href="{{ url('academytraining/'.$academytraining) }}" class="text-black ">
               <h5 class="text-black cstm">{{ __('links.training') }}</h5>
               <p class="eventP">خدمات التدريب بالغرفة التجارية بالقاهرة تعمل على إحداث طفرة حقيقية للقطاع الخاص
                 ودعم إمكاناته عبر تقديم خدمات التدريب والتأهيل لمواجهة تحديات المستقبل ومتطلبات
@@ -496,7 +499,7 @@
               <div class="overlay ">
                 <div class="text">
                   <button class="btn btn-primary">
-                    <a href="#">{{ __('titles.knowmore') }}</a>
+                    <a href="{{ url('academytraining/'.$academytraining) }}">{{ __('titles.knowmore') }}</a>
                   </button>
                 </div>
               </div>
@@ -508,7 +511,7 @@
       <div class="col-md-4 col-12 ">
         <div class="row  mb-4 h100 ">
           <div class="col-md-11  mb-4 greyly  event wow fadeInDown" data-wow-delay="0.5s">
-            <a href="#" class="text-black">
+            <a href="{{ url('academy/'.$articleAcademy) }}" class="text-black">
               <h5 class="text-black cstm">{{ __('links.jobs') }}</h5>
               <p class="eventP"> خدمات التدريب بالغرفة التجارية بالقاهرة تعمل على إحداث طفرة حقيقية للقطاع الخاص
                 ودعم إمكاناته عبر تقديم خدمات التدريب والتأهيل لمواجهة تحديات المستقبل ومتطلبات
@@ -523,7 +526,7 @@
               <div class="overlay">
                 <div class="text">
                   <button class="btn btn-primary">
-                    <a href="#">{{ __('titles.knowmore') }}</a>
+                    <a href="{{ url('academy/'.$articleAcademy) }}">{{ __('titles.knowmore') }}</a>
                   </button>
                 </div>
               </div>

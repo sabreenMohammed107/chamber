@@ -64,6 +64,7 @@
          <span><i class="material-icons fs-16">build</i>صفحات الغرفة</span>
        </a>
        <ul id="Usersdropdown" class="collapse" aria-labelledby="basic-elements" data-parent="#side-nav-accordion">
+       <li> <a href="{{ route('country-details.index') }}">بيانات الدول </a> </li>
          <li> <a href="{{ route('adminChance.index') }}">الفرص التجارية</a> </li>
          <li> <a href="{{ route('conference.index') }}">المؤتمرات</a> </li>
          <li> <a href="{{ route('activity.index') }}">أنشطة المرأة</a> </li>
