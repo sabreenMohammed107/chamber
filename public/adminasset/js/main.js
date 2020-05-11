@@ -21,6 +21,9 @@
         $('#contentBar').toggleClass('col-sm-8 col-md-9')
         $('.mini-submenu').hide();
       })
+
+ 
+
     // Close any open menu accordions when window is resized below 768px
     $(window).resize(function() {
       if ($(window).width() < 768) {
@@ -56,6 +59,33 @@ $(window).on('load', function(){
     $('#LoaderWrapper .spinner').fadeOut(2000).parent().fadeOut(2500)
   })
   
+  
+      /* Custom Scrollbar */
+    function customScrollbar(){
+      // Scroll bar in content
+      if( $('.ms-scrollable').length > 0 ){
+        $('.ms-scrollable').each(function(){
+          var ps = new PerfectScrollbar($(this)[0], {
+            maxScrollbarLength : 700,
+            wheelPropagation : true
+          });
+        });
+      }
+      //Special Case for Side nav
+      if( $('.ms-aside-scrollable').length > 0 ){
+        var psAside = new PerfectScrollbar($('.ms-aside-scrollable')[0], {
+          maxScrollbarLength : 700,
+          wheelPropagation : true,
+          wheelSpeed : 0.5
+        });
+
+        $(".ms-main-aside").on('click', '.has-chevron', function(){
+          psAside.update();
+        });
+      }
+
+    }
+
     /**==========================  rtl  ============================== */
 
 

@@ -1109,7 +1109,7 @@ pre{
   transition: background-color .2s linear, opacity .2s linear;
   -webkit-transition: background-color .2s linear, opacity .2s linear;
   width: 6px;
-  right: 0;
+  left: 0;
   position: absolute;
 }
 .ps--active-x > .ps__rail-x,
@@ -1134,7 +1134,7 @@ pre{
   opacity: 0.9;
 }
 .ps__thumb-x {
-  background-color: #aaa;
+  background-color: #222d6a;
   border-radius: 6px;
   transition: background-color .2s linear, height .2s ease-in-out;
   -webkit-transition: background-color .2s linear, height .2s ease-in-out;
@@ -1143,24 +1143,24 @@ pre{
   position: absolute;
 }
 .ps__thumb-y {
-  background-color: #aaa;
+  background-color: #222d6a;
   border-radius: 6px;
   transition: background-color .2s linear, width .2s ease-in-out;
   -webkit-transition: background-color .2s linear, width .2s ease-in-out;
   width: 6px;
-  right: 0;
+  left: 0;
   position: absolute;
 }
 .ps__rail-x:hover > .ps__thumb-x,
 .ps__rail-x:focus > .ps__thumb-x,
 .ps__rail-x.ps--clicking .ps__thumb-x {
-  background-color: #999;
+  background-color: #222d6a;
   height: 11px;
 }
 .ps__rail-y:hover > .ps__thumb-y,
 .ps__rail-y:focus > .ps__thumb-y,
 .ps__rail-y.ps--clicking .ps__thumb-y {
-  background-color: #999;
+  background-color: #222d6a;
   width: 7px;
 }
 @supports (-ms-overflow-style: none) {
