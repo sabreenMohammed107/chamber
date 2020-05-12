@@ -23,7 +23,7 @@
         <li class="nav-item ml-2 "><a href="{{url('/')}}" class="nav-link">{{ __('links.home') }}</a></li>
 
         <li class="nav-item dropdown show ">
-          <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="dropdown-toggle nav-link"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{ __('links.aboutChamber') }}
           </a>
 
@@ -45,7 +45,7 @@
 
 
         <li class="nav-item dropdown show ">
-          <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="dropdown-toggle nav-link"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{ __('links.mediacenter') }}
           </a>
 
@@ -59,7 +59,7 @@
         </li>
 
         <li class="nav-item dropdown show ">
-          <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="dropdown-toggle nav-link"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{ __('links.retailAcademy') }}
           </a>
           <?php
@@ -81,7 +81,7 @@
 
 
         <li class="nav-item dropdown show">
-          <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="dropdown-toggle nav-link"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{ __('links.chamberServices') }}
           </a>
           <?php
@@ -108,7 +108,7 @@
         </li>
 
         <li class="nav-item dropdown show ">
-          <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="dropdown-toggle nav-link"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{ __('links.division') }}
           </a>
 
@@ -124,7 +124,7 @@
 
 
         <li class="nav-item dropdown show ">
-          <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="dropdown-toggle nav-link"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{ __('links.opportunities') }}
           </a>
           <?php
@@ -145,7 +145,7 @@
         </li>
 
         <li class="nav-item dropdown show ">
-          <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="dropdown-toggle nav-link"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{ __('links.electronicService') }}
           </a>
 
@@ -157,7 +157,7 @@
           </div>
         </li>
         <li class="nav-item dropdown show  ">
-          <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="dropdown-toggle nav-link"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{ __('links.woman') }}
           </a>
 
