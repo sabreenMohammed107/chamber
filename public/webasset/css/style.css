@@ -3767,7 +3767,9 @@ transition: all 0.3s ease-in-out;
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
       -ms-flex-direction: row;
-      flex-direction: row; }
+      flex-direction: row;
+      /* flex-wrap: wrap; */
+     }
       .navbar-expand-lg .navbar-nav .dropdown-menu {
         position: absolute;
       right: 0; }
@@ -8458,7 +8460,14 @@ h1, h2, h3, h4, h5,
             /* padding-right: 4px; */
             padding-top: .9rem;
             /* padding-bottom: .9rem; */
-            color: rgb(3, 3, 38); }
+            color: rgb(3, 3, 38);
+            white-space: normal;
+            /* float: left; */
+            width: 100%;
+            /* height: auto; */
+            text-align: center;
+            word-wrap: break-word;
+           }
             .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
               color: #fff; 
             } }
