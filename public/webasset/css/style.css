@@ -8580,8 +8580,8 @@ h1, h2, h3, h4, h5,
       .ftco-navbar-light.scrolled .navbar-nav {
         background: none;
         border-radius: 0px;
-        padding-left: 10px !important;
-        padding-right: 10px !important; } }
+        padding-left: 25px !important;
+        padding-right: 25px !important; } }
     @media (max-width: 767.98px) {
       .ftco-navbar-light.scrolled .navbar-nav {
         background: none;
