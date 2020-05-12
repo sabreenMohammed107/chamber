@@ -5,9 +5,10 @@
   <div class="container">
 
     <div class="row  navMobile">
-      <!-- <div class="col-10"> -->
+    <div class="col-2"></div>
+      <div class="col-6">
       <p><a href="{{url('/')}}" class="font-weight-bold">{{ __('links.home') }}</a></p>
-      <!-- </div> -->
+      </div>
 
       <div class="col-2">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
