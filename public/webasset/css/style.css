@@ -8580,13 +8580,13 @@ h1, h2, h3, h4, h5,
       .ftco-navbar-light.scrolled .navbar-nav {
         background: none;
         border-radius: 0px;
-        padding-left: 0rem !important;
-        padding-right: 0rem !important; } }
+        padding-left: 10px !important;
+        padding-right: 10px !important; } }
     @media (max-width: 767.98px) {
       .ftco-navbar-light.scrolled .navbar-nav {
         background: none;
-        padding-left: 0 !important;
-        padding-right: 0 !important; } }
+        padding-left: 10px !important;
+        padding-right: 10px !important; } }
     .ftco-navbar-light.scrolled .navbar-toggler {
       border: none;
       color: rgba(0, 0, 0, 0.5) !important;
@@ -8609,7 +8609,7 @@ h1, h2, h3, h4, h5,
       transition: .3s all ease-out;
       /* padding: 10px 0px;  */
       /* style after live 12-5-2020 */
-      padding: 10px 20px;
+      padding: 10px 25px;
     }
     .ftco-navbar-light.scrolled.sleep {
       -webkit-transition: .3s all ease-out;
@@ -10510,10 +10510,6 @@ background-size: 100% 100%;
   .navMobile{
     display: flex;
   }
-  @media only screen and (max-width :480px){
-    .navMobile{
-      display: flex;
-    }
   .owl-carousel.home-slider .slider-item .slider-text-edited .sasa-ani {
     padding: 300px 100px;
     height: 70%;
