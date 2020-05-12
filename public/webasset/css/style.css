@@ -10496,7 +10496,7 @@ background-size: 100% 100%;
 @media only screen and (max-width : 768px){
   .mainNews .nav-pills .nav-link{
     width: 44%;
-    padding: 10px 30px !important;
+    padding: 10px 10px !important;
     margin: 14px 6px;
     font-size: 14px;
 
