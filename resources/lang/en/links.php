@@ -3,7 +3,7 @@
 return [
   /*----header*/
   'login' => 'Login',
-  'shahbander' => 'Shahbandar',
+  'shahbander' => 'Alshahbandar',
   'search' => 'Search',
   'searchhere' => 'Search Here',
   'login' => 'Login',
@@ -20,8 +20,8 @@ return [
 
   'home' => 'Home',
   'aboutChamber' => 'About Chamber',
-
-  'aboutDirector' => 'About Director',
+  
+  'aboutDirector' => "Chairman's Address",
   'bords' => 'Board of Directors',
   'history' => 'Chamber History',
   'messageVision' => 'Messages and vision',
@@ -29,9 +29,9 @@ return [
   'cocialResponsibility' => 'Social responsibility',
 
   'mediacenter' => 'Media Center',
-  'chamberNews' => 'Camber News',
-  'chamberAlbum' => 'Camber Albums',
-  'announce' => 'Chamber Announce',
+  'chamberNews' => 'Chamber News',
+  'chamberAlbum' => 'Chamber Albums',
+  'announce' => 'Announcements',
 
   'retailAcademy' => 'Retail Academy',
 'aboutAcademy'=>'About Academy',
@@ -44,20 +44,20 @@ return [
 
   'chamberServices' => 'Services',
   'excellence'=>'Center of Excellence',
-  'healthCare'=>'Health care for merchants',
+  'healthCare'=>'Health care',
   'lifeInsurance'=>'Life insurance',
-  'commerExtention'=>'Commercial extension',
+  'commerExtention'=>'Trade Guidance',
   'tradersClub'=>'Capital Traders Club',
-  'conferenceRoom'=>'Cairo Chamber conference room',
-  'arbitration'=>'Commercial  and arbitration',
+  'conferenceRoom'=>'Conference Room',
+  'arbitration'=>'Conciliation and Arbitration',
 
-  'division' => 'Division',
-  'devisionPages'=>'Division Pages',
-  'ScheduleDevision'=>'Schadule Of Divisions',
+  'division' => 'Business Divisions',
+  'devisionPages'=>'Sectors ',
+  'ScheduleDevision'=>'Schedule',
 
-  'conferences' => 'Conferences',
+  'conferences' => 'Events ',
 
-  'opportunities' => 'Opportunities',
+  'opportunities' => 'Commercial Opportunities',
 
   'export'=>'Export opportunities',
   'import'=>'Import opportunities',
@@ -69,11 +69,11 @@ return [
   'qr-code'=>'QR code Service',
   'blockchain'=>'blockchain Service',
 
-  'woman' => 'Women & Traders',
+  'woman' => 'Women& Trade Committee',
   'aboutCommittee'=>'About Committee',
   'committeeActivities'=>'Committee activities',
 
-  'encyclo' => 'Encyclo',
+  'encyclo' => 'Encyclopedia',
   'contact' => 'Contact',
 
 
