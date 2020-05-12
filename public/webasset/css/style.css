@@ -8609,7 +8609,7 @@ h1, h2, h3, h4, h5,
       transition: .3s all ease-out;
       /* padding: 10px 0px;  */
       /* style after live 12-5-2020 */
-      padding: 10px 15px;
+      padding: 10px 20px;
     }
     .ftco-navbar-light.scrolled.sleep {
       -webkit-transition: .3s all ease-out;
