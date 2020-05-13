@@ -32,14 +32,18 @@
                               </a>
                               </div>
           <p>
-            @if(app()->getLocale()=='en')
-            {!! Str::limit($new->en_text, 120,'...') !!}
-            @else
-            <?php
-            $output = nl2br(str_replace("&nbsp;", " ", $new->ar_text));
-            ?>
-            {{str_limit(strip_tags($output),100,'...')}}
-            @endif
+          @if(app()->getLocale()=='en')
+                                <?php
+                                $output = nl2br(str_replace("&nbsp;", " ", $new->en_text));
+                                ?>
+                                {{str_limit(strip_tags($output),100,'...')}}
+                                @else
+                                <?php
+                                $output = nl2br(str_replace("&nbsp;", " ", $new->ar_text));
+                                ?>
+                                {{str_limit(strip_tags($output),100,'...')}}
+
+                                @endif
           </p>
 
           <a href="{{ url('newsDetails/'.$new->id) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
