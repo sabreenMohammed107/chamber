@@ -8,7 +8,7 @@ return [
     'searchhere' => 'إبحث هنا',
     'login' => 'تسجيل دخول',
     'Logout' => 'خروج',
-    'en' => 'انجليزى',
+    'en' => 'English ',
     'ar' => 'عربي',
     'welcom' => 'مرحبا بك',
     'guest' => 'زائر',

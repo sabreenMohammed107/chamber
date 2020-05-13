@@ -231,7 +231,7 @@ foreach($newsFile as $file){
 
         <!-- second section -->
         <div class=" panel-heading">
-          <p class="head-p bg-dark">{{ __('titles.importNews') }}</p>
+          <p class="head-p bg-dark">{{ __('titles.importantAnnoounce') }}</p>
         </div>
         <div class="panel-body">
           @foreach($AnnounceRandom as $Anno)

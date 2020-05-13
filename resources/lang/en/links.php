@@ -9,7 +9,7 @@ return [
   'login' => 'Login',
   'Logout' => 'Logout',
   'en' => 'English',
-  'ar' => 'Arabic',
+  'ar' => 'عربى',
   'welcom' => 'Welcome',
   'guest' => 'guest',
   'slogan' => 'Nine Tenth of Livelihood Comes From Trade',

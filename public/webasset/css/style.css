@@ -10276,7 +10276,7 @@ font-size: 18px;
  position: absolute;
   bottom: 20px;
   left: 10%;
-  color: #838080;
+  color: #4d0505;
 font-size: 14px;
 
 /* position: absolute;
@@ -14494,7 +14494,13 @@ body.ltr .dataTables_paginate {
   body.ltr .main-logo .slogan {
     /* right: 10px; */
     left: 1px;
+    bottom: 30px;
     font-size: 14px;
+}
+body.ltr .main-logo h4 {
+  /* right: 10px; */
+  margin-left: 0 !important;
+  font-size: 16px;
 }
 }
 
@@ -14513,3 +14519,11 @@ body.ltr .dataTables_paginate {
 
 
 
+.langLink a:hover{
+  text-decoration: underline;
+}
+
+body.ltr .container-Date  #printTime {
+  direction: rtl;
+  margin-right: 10px;
+}

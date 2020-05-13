@@ -23,8 +23,8 @@ return [
    'block'=>'BLOCKCHAIN',
    'eventsPage'=>'Events Page ',
    'knowmore'=>'Know More',
-   'importantAnnoounce'=>'Important Announce',
-   'latestannounce'=>'Latest Announces',
+   'importantAnnoounce'=>'Important Announcements',
+   'latestannounce'=>'Latest Announcement',
     /*------academy----------*/
 'numbers'=>'Academy In Numbers',
 'graduates'=>'Academy Graduates',

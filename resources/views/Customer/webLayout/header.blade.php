@@ -116,8 +116,11 @@
                  <!-- </div> -->
              </li>
              @endguest
-             <a href="{{ URL::to('changeLang/en') }}" class=" text-white"><span> {{ __('links.en') }}</span></a>/
+             <div class="langLink">
+             <a href="{{ URL::to('changeLang/en') }}" class=" text-white"><span> {{ __('links.en') }}</span></a>&nbsp;/&nbsp;
              <a href="{{ URL::to('changeLang/ar') }}" class=" text-white"><span> {{ __('links.ar') }}</span></a>
+             </div>
+            
 
 
              <a href="#" class=" text-white">
@@ -156,10 +159,15 @@
            <div class="col-md-6 col-6  main-logoH3">
              <a href="{{url('/')}}">
                <div class="logoName">
+               @if(app()->getLocale()=='en')
+               <h4 style=" color:#000!important ;text-align: left !important;margin-left:20px !important">Cairo Chamber Of Commerce</h4>
 
-                 <h1 style="font-family:titlefont, serif; color:linear-gradient(to bottom left, #261204, #c8a97e)">الغرفة التجارية للقاهرة</h1>
+                                                @else
+                                                <h1 style="font-family:titlefont, serif; color:linear-gradient(to bottom left, #261204, #c8a97e)">الغرفة التجارية للقاهرة</h1>
 
                  <h6>Cairo Chamber Of Commerce</h6>
+                                                @endif
+               
                </div>
              </a>
            </div>
