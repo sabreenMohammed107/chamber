@@ -19,38 +19,39 @@
         <img src="" alt="no image">
         @endif
         <div class="card-body">
-        <div style="position: relative;height: 70px ;border-bottom: 1px solid #ccc;">
-                              <a href="{{ url('newsDetails/'.$new->id) }}" > <h5>
-                                @if(app()->getLocale()=='en')
-                                {{ Str::limit($new->en_title, 91,'') }}
-                               
-                                @else
-                                {{ Str::limit($new->ar_title, 89,'') }}
-                              
-                                @endif
-                              </h5>
-                              </a>
-                              </div>
-          <p>
-          @if(app()->getLocale()=='en')
-                                <?php
-                                $output = nl2br(str_replace("&nbsp;", " ", $new->en_text));
-                                ?>
-                                {{str_limit(strip_tags($output),100,'...')}}
-                                @else
-                                <?php
-                                $output = nl2br(str_replace("&nbsp;", " ", $new->ar_text));
-                                ?>
-                                {{str_limit(strip_tags($output),100,'...')}}
+          <div style="position: relative;height: 70px ;border-bottom: 1px solid #ccc;">
+            <a href="{{ url('newsDetails/'.$new->id) }}">
+              <h5>
+                @if(app()->getLocale()=='en')
+                {{ Str::limit($new->en_title, 91,'') }}
 
-                                @endif
+                @else
+                {{ Str::limit($new->ar_title, 89,'') }}
+
+                @endif
+              </h5>
+            </a>
+          </div>
+          <p>
+            @if(app()->getLocale()=='en')
+            <?php
+            $output = nl2br(str_replace("&nbsp;", " ", $new->en_text));
+            ?>
+            {{str_limit(strip_tags($output),100,'...')}}
+            @else
+            <?php
+            $output = nl2br(str_replace("&nbsp;", " ", $new->ar_text));
+            ?>
+            {{str_limit(strip_tags($output),100,'...')}}
+
+            @endif
           </p>
 
           <a href="{{ url('newsDetails/'.$new->id) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
         </div>
       </div>
 
-@endif
+      @endif
       @endforeach
 
 
