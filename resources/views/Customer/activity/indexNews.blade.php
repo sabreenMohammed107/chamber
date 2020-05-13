@@ -5,9 +5,11 @@
 
       </p>
     </div>
-    <div class="fees panel-body" style="display: flex;flex-wrap: wrap;">
+    <div class=" panel-body" >
+    <div class="row">
       @foreach($news as $new)
-      <div class="card" style=" flex-grow: 1;width: 31%;margin:0 5px 5px">
+      <div class=" col-md-4 wow fadeInDown" data-wow-delay="0.2s" data-wow-duration="1s" data-wow-delay="0s">
+      <div class="card" >
         @if($new->gallery!=null && $new->gallery->first() !=null && $new->gallery->first()->order==1)
         @if($new->gallery->first()->image!=null)
         <img src="{{ asset('uploads/news/'.$new->gallery->first()->image) }}" alt="...">
@@ -44,7 +46,7 @@
           <a href="{{ url('activityDetails/'.$new->id) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
         </div>
       </div>
-
+      </div>
 
       @endforeach
 
@@ -65,7 +67,7 @@
       {!! $news->links() !!}
 
     </div>
-
+    </div>
   </div>
 </div>
 <div class=" col-md-3 col-xs-12 mr-5">

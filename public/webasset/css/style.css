@@ -14383,7 +14383,9 @@ body.ltr .btn{
   text-align: center;
 }
 body.ltr .card-body .btn{
-
+  text-align: center;
+  width: 30%;
+  margin: 0 110px !important;
   position: absolute;
     bottom: 10px;
 }

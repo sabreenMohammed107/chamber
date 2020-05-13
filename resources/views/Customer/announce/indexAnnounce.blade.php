@@ -5,9 +5,11 @@
 
       </p>
     </div>
-    <div class="fees panel-body" style="display: flex;flex-wrap: wrap;">
+    <div class=" panel-body" >
+    <div class="row">
       @foreach($announces as $announce)
-      <div class="card" style=" flex-grow: 1;width: 31%;margin:0 5px 5px">
+      <div class=" col-md-4 wow fadeInDown" data-wow-delay="0.2s" data-wow-duration="1s" data-wow-delay="0s">
+      <div class="card" >
         @if($announce->gallery->first() !=null && $announce->gallery->first()->order==1)
         @if($announce->gallery->first()->image!=null)
         <img src="{{ asset('uploads/announce/'.$announce->gallery->first()->image) }}" alt="...">
@@ -26,8 +28,11 @@
             @endif
           </h5>
           <p>
-            @if(app()->getLocale()=='en')
-            {!! Str::limit($announce->en_text, 70,'...') !!}
+          @if(app()->getLocale()=='en')
+            <?php
+            $output = nl2br(str_replace("&nbsp;", " ", $announce->en_text));
+            ?>
+            {{str_limit(strip_tags($output),100,'...')}}
             @else
             <?php
             $output = nl2br(str_replace("&nbsp;", " ", $announce->ar_text));
@@ -40,7 +45,7 @@
           <a href="{{ url('announceDetails/'.$announce->id) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
         </div>
       </div>
-
+      </div>
 
       @endforeach
 
@@ -61,7 +66,7 @@
       {!! $announces->links() !!}
 
     </div>
-
+    </div>
   </div>
 </div>
 <div class=" col-md-3 col-xs-12 mr-5">
