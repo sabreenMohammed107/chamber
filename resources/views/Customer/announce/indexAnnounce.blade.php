@@ -8,6 +8,7 @@
     <div class=" panel-body" >
     <div class="row">
       @foreach($announces as $announce)
+      @if((app()->getLocale()=='en' && $announce->en_title )||(app()->getLocale()=='ar' &&$announce->ar_title ))
       <div class=" col-md-4 wow fadeInDown" data-wow-delay="0.2s" data-wow-duration="1s" data-wow-delay="0s">
       <div class="card" >
         @if($announce->gallery->first() !=null && $announce->gallery->first()->order==1)
@@ -20,6 +21,8 @@
         <img src="" alt="no image">
         @endif
         <div class="card-body">
+        <div style="position: relative;height: 70px ;border-bottom: 1px solid #ccc;">
+            <a href="{{ url('announceDetails/'.$announce->id) }}">
           <h5>
             @if(app()->getLocale()=='en')
             {{$announce->en_title}}
@@ -27,6 +30,7 @@
             {{$announce->ar_title}}
             @endif
           </h5>
+            </a></div>
           <p>
           @if(app()->getLocale()=='en')
             <?php
@@ -46,7 +50,7 @@
         </div>
       </div>
       </div>
-
+@endif
       @endforeach
 
 
