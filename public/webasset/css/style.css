@@ -14385,6 +14385,8 @@ body.ltr .card-body .btn{
   text-align: center;
   width: 30%;
   margin: 0 110px !important;
+  position: absolute;
+    bottom: 0;
 }
 body.ltr .dropdown-menu .media img{
   margin-right: 5px
