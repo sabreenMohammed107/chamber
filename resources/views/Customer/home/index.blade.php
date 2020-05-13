@@ -201,7 +201,7 @@
                     <div class=" panel-body ">
                       <div class="row">
                         @foreach($news as $new)
-
+@if((app()->getLocale()=='en' && $new->en_title )||(app()->getLocale()=='ar' &&$new->ar_title ))
                         <div class=" col-md-4 wow fadeInDown" data-wow-delay="0.2s" data-wow-duration="1s" data-wow-delay="0s">
                           <div class="card">
                             @if($new->gallery!=null && $new->gallery->first() !=null && $new->gallery->first()->order==1)
@@ -215,7 +215,7 @@
                             @endif
                             <div class="card-body">
                               <div style="position: relative;height: 70px ;border-bottom: 1px solid #ccc;">
-                              <h5>
+                              <a href="{{ url('newsDetails/'.$new->id) }}" > <h5>
                                 @if(app()->getLocale()=='en')
                                 {{ Str::limit($new->en_title, 130,'') }}
                                
@@ -224,6 +224,7 @@
                               
                                 @endif
                               </h5>
+                              </a>
                               </div>
                              
                               <p>
@@ -251,7 +252,7 @@
 
 
 
-
+@endif
                         @endforeach
                       </div>
                     </div>
