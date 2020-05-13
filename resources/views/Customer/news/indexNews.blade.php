@@ -7,6 +7,7 @@
     </div>
     <div class="fees panel-body" style="display: flex;flex-wrap: wrap;">
       @foreach($news as $new)
+      @if((app()->getLocale()=='en' && $new->en_title )||(app()->getLocale()=='ar' &&$new->ar_title ))
       <div class="card" style=" flex-grow: 1;width: 31%;margin:0 5px 5px">
         @if($new->gallery!=null && $new->gallery->first() !=null && $new->gallery->first()->order==1)
         @if($new->gallery->first()->image!=null)
@@ -18,13 +19,18 @@
         <img src="" alt="no image">
         @endif
         <div class="card-body">
-          <h5>
-            @if(app()->getLocale()=='en')
-            {{$new->en_title}}
-            @else
-            {{$new->ar_title}}
-            @endif
-          </h5>
+        <div style="position: relative;height: 70px ;border-bottom: 1px solid #ccc;">
+                              <a href="{{ url('newsDetails/'.$new->id) }}" > <h5>
+                                @if(app()->getLocale()=='en')
+                                {{ Str::limit($new->en_title, 130,'') }}
+                               
+                                @else
+                                {{ Str::limit($new->ar_title, 89,'') }}
+                              
+                                @endif
+                              </h5>
+                              </a>
+                              </div>
           <p>
             @if(app()->getLocale()=='en')
             {!! Str::limit($new->en_text, 70,'...') !!}
@@ -40,7 +46,7 @@
         </div>
       </div>
 
-
+@endif
       @endforeach
 
 
