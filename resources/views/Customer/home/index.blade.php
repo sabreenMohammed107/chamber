@@ -217,7 +217,7 @@
                               <div style="position: relative;height: 70px ;border-bottom: 1px solid #ccc;">
                               <a href="{{ url('newsDetails/'.$new->id) }}" > <h5>
                                 @if(app()->getLocale()=='en')
-                                {{ Str::limit($new->en_title, 130,'') }}
+                                {{ Str::limit($new->en_title, 100,'') }}
                                
                                 @else
                                 {{ Str::limit($new->ar_title, 89,'') }}
