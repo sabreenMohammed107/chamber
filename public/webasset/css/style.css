@@ -14386,7 +14386,7 @@ body.ltr .card-body .btn{
   width: 30%;
   margin: 0 110px !important;
   position: absolute;
-    bottom: 0;
+    bottom: 10px;
 }
 body.ltr .dropdown-menu .media img{
   margin-right: 5px
