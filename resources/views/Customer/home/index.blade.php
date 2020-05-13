@@ -214,13 +214,18 @@
                             <img src="" alt="no image">
                             @endif
                             <div class="card-body">
+                              <div style="position: relative;height: 70px ;border-bottom: 1px solid #ccc;">
                               <h5>
                                 @if(app()->getLocale()=='en')
-                                {{$new->en_title}}
+                                {{ Str::limit($new->en_title, 130,'') }}
+                               
                                 @else
-                                {{$new->ar_title}}
+                                {{ Str::limit($new->ar_title, 89,'') }}
+                              
                                 @endif
                               </h5>
+                              </div>
+                             
                               <p>
                                 @if(app()->getLocale()=='en')
                                 <?php
