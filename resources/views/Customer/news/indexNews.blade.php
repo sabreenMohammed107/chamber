@@ -33,7 +33,7 @@
                               </div>
           <p>
             @if(app()->getLocale()=='en')
-            {!! Str::limit($new->en_text, 70,'...') !!}
+            {!! Str::limit($new->en_text, 120,'...') !!}
             @else
             <?php
             $output = nl2br(str_replace("&nbsp;", " ", $new->ar_text));
