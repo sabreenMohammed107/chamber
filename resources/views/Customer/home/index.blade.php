@@ -242,7 +242,7 @@
                                 @endif
                               </p>
 
-                              <a href="{{ url('newsDetails/'.$new->id) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
+                              <a href="{{ url('newsDetails/'.$new->id) }}"  class="btn btn-primary">{{ __('titles.more') }}</a>
                             </div>
                           </div>
                         </div>
@@ -461,11 +461,17 @@
           </div>
 
         </div>
-      </div>
-      <div style="text-align: center ;margin-top: 40px">
-        <p><a href="{{url('/conference')}}" class="btn btn-primary ">{{ __('titles.eventsPage') }} </a></p>
-      </div>
+      <!-- </div> -->
+
+      <div class="col-md-4 text-center"></div>
+
+<div class="col-md-4 text-center  mt-5">
+  <p><a href="{{url('/conference')}}" class="btn btn-primary w-100">{{ __('titles.eventsPage') }}</a></p>
+</div>
+
+     
     </div>
+  </div></div>
 </section>
 <!-- ======================end calender================= -->
 <!--========== End Magazin Parallex ==========-->

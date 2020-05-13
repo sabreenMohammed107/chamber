@@ -12742,6 +12742,7 @@ font-size: 20px !important;
     line-height: 1.625em;
 }
 
+
 .test{
  
   color: #000 !important;
@@ -14379,6 +14380,11 @@ body.ltr #userDropdown img, body.ltr .dropdown-menu li a span i{
 }
 body.ltr .btn{
   text-align: center;
+}
+body.ltr .card-body .btn{
+  text-align: center;
+  width: 30%;
+  margin: 0 110px !important;
 }
 body.ltr .dropdown-menu .media img{
   margin-right: 5px
