@@ -598,11 +598,13 @@
                       </h6>
                     </span>
                     <a href="{{ url('announceDetails/'.$announce->id) }}"><span class="col-md-9 col-10 test-news">
-                        @if(app()->getLocale()=='en')
-                        {{$announce->en_title}}
-                        @else
-                        {{$announce->ar_title}}
-                        @endif
+                    @if(app()->getLocale()=='en')
+                                    {{ Str::limit($announce->en_title, 70,'') }}
+
+                                    @else
+                                    {{ Str::limit($announce->ar_title, 70,'') }}
+
+                                    @endif
                       </span></a> </div>
                   <!-- <a class="more" style="z-index:20" href="advertesment.html">المزيد...</a> -->
 
