@@ -218,14 +218,18 @@
                                 <a href="{{ url('newsDetails/'.$new->id) }}">
                                   <h5>
                                     @if(app()->getLocale()=='en')
-                                    {{ Str::limit($new->en_title, 91,'') }}
+                                    {{ Str::limit($new->en_title, 70,'') }}
 
                                     @else
-                                    {{ Str::limit($new->ar_title, 89,'') }}
+                                    {{ Str::limit($new->ar_title, 70,'') }}
 
                                     @endif
                                   </h5>
                                 </a>
+                                <span style="color: #ccc ;">
+                                  <?php $date = date_create($new->news_date) ?>
+                                  {{ date_format($date,"d-m-Y H:i:s") }}
+                                </span>
                               </div>
 
                               <p>
@@ -244,11 +248,11 @@
                               </p>
 
                               <a href="{{ url('newsDetails/'.$new->id) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
-                             
+
                             </div>
-                           
+
                           </div>
-                       
+
                         </div>
 
 
