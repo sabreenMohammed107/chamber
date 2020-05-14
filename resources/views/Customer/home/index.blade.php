@@ -201,7 +201,7 @@
                     <div class=" panel-body ">
                       <div class="row">
                         @foreach($news as $new)
-@if((app()->getLocale()=='en' && $new->en_title )||(app()->getLocale()=='ar' &&$new->ar_title ))
+                        @if((app()->getLocale()=='en' && $new->en_title )||(app()->getLocale()=='ar' &&$new->ar_title ))
                         <div class=" col-md-4 wow fadeInDown" data-wow-delay="0.2s" data-wow-duration="1s" data-wow-delay="0s">
                           <div class="card">
                             @if($new->gallery!=null && $new->gallery->first() !=null && $new->gallery->first()->order==1)
@@ -215,18 +215,19 @@
                             @endif
                             <div class="card-body">
                               <div style="position: relative;height: 70px ;border-bottom: 1px solid #ccc;">
-                              <a href="{{ url('newsDetails/'.$new->id) }}" > <h5>
-                                @if(app()->getLocale()=='en')
-                                {{ Str::limit($new->en_title, 91,'') }}
-                               
-                                @else
-                                {{ Str::limit($new->ar_title, 89,'') }}
-                              
-                                @endif
-                              </h5>
-                              </a>
+                                <a href="{{ url('newsDetails/'.$new->id) }}">
+                                  <h5>
+                                    @if(app()->getLocale()=='en')
+                                    {{ Str::limit($new->en_title, 91,'') }}
+
+                                    @else
+                                    {{ Str::limit($new->ar_title, 89,'') }}
+
+                                    @endif
+                                  </h5>
+                                </a>
                               </div>
-                             
+
                               <p>
                                 @if(app()->getLocale()=='en')
                                 <?php
@@ -242,9 +243,12 @@
                                 @endif
                               </p>
 
-                              <a href="{{ url('newsDetails/'.$new->id) }}"  class="btn btn-primary">{{ __('titles.more') }}</a>
+                              <a href="{{ url('newsDetails/'.$new->id) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
+                             
                             </div>
+                           
                           </div>
+                       
                         </div>
 
 
@@ -252,7 +256,7 @@
 
 
 
-@endif
+                        @endif
                         @endforeach
                       </div>
                     </div>
@@ -427,7 +431,7 @@
 
                 @if($conference->gallery!=null && $conference->gallery->first()!=null && $conference->gallery->first()->image!=null)
                 <a href="{{ url('conferenceDetails/'.$conference->id) }}">
-                <img src="{{ asset('uploads/conferance/'.$conference->gallery->first()->image) }}" class="d-block calendar-base" style="width: 100%; height: 300px; margin-top: 30px;">
+                  <img src="{{ asset('uploads/conferance/'.$conference->gallery->first()->image) }}" class="d-block calendar-base" style="width: 100%; height: 300px; margin-top: 30px;">
                 </a>
                 @else
                 <img src="{{ asset('webasset/images/unnamed.png')}}" class="d-block calendar-base" style="width: 100%; height: 300px; margin-top: 30px;">
@@ -461,17 +465,18 @@
           </div>
 
         </div>
-      <!-- </div> -->
+        <!-- </div> -->
 
-      <div class="col-md-4 text-center"></div>
+        <div class="col-md-4 text-center"></div>
 
-<div class="col-md-4 text-center  mt-5">
-  <p><a href="{{url('/conference')}}" class="btn btn-primary w-100">{{ __('titles.eventsPage') }}</a></p>
-</div>
+        <div class="col-md-4 text-center  mt-5">
+          <p><a href="{{url('/conference')}}" class="btn btn-primary w-100">{{ __('titles.eventsPage') }}</a></p>
+        </div>
 
-     
+
+      </div>
     </div>
-  </div></div>
+  </div>
 </section>
 <!-- ======================end calender================= -->
 <!--========== End Magazin Parallex ==========-->
@@ -490,10 +495,10 @@
         </div>
       </div>
       <div class="col-md-4 col-12">
-      <?php
-          $articleAcademy = 9;
-          $academytraining = 10;
-          ?>
+        <?php
+        $articleAcademy = 9;
+        $academytraining = 10;
+        ?>
         <div class="row h100 mb-4 ">
           <div class="col-md-11  mb-4 greyly  event wow fadeInDown" data-wow-delay="1s">
             <a href="{{ url('academytraining/'.$academytraining) }}" class="text-black ">
