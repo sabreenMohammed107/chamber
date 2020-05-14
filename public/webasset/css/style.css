@@ -12767,7 +12767,7 @@ font-size: 20px !important;
 
 .fees{
   color: #0c0c0c;
-  text-align: center;
+  /* text-align: center; */
   background-color: #FFF;
   box-shadow: 1px 1px 1px 1px #EEE;
   width: 100%;

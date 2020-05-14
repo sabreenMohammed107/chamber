@@ -233,12 +233,12 @@
                                 <?php
                                 $output = nl2br(str_replace("&nbsp;", " ", $new->en_text));
                                 ?>
-                                {{str_limit(strip_tags($output),100,'...')}}
+                                {{Str::words(strip_tags($output),25,'...')}}
                                 @else
                                 <?php
                                 $output = nl2br(str_replace("&nbsp;", " ", $new->ar_text));
                                 ?>
-                                {{str_limit(strip_tags($output),100,'...')}}
+                                {{Str::words(strip_tags($output),30,'...')}}
 
                                 @endif
                               </p>
