@@ -11875,6 +11875,7 @@ right: 90%;
   color: #FFF !important;
 }
 .text-span{
+  margin: 0 10px;
   color: #fcc624;
   /* position: absolute;
     bottom: 15px;
