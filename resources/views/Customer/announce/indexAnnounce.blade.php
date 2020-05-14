@@ -24,11 +24,14 @@
         <div style="position: relative;height: 70px ;border-bottom: 1px solid #ccc;">
             <a href="{{ url('announceDetails/'.$announce->id) }}">
           <h5>
-            @if(app()->getLocale()=='en')
-            {{$announce->en_title}}
-            @else
-            {{$announce->ar_title}}
-            @endif
+          @if(app()->getLocale()=='en')
+                {{ Str::limit($announce->en_title, 91,'') }}
+
+                @else
+                {{ Str::limit($announce->ar_title, 89,'') }}
+
+                @endif
+          
           </h5>
             </a></div>
           <p>
