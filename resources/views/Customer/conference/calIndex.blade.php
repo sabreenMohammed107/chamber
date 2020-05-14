@@ -48,6 +48,7 @@
             @endif
 
                  </p>
+                 <a href="{{ url('conferenceDetails/'.$conference->id) }}" class="btn btn-primary">{{ __('titles.more') }}</a>
              </div>
          </div>
 
