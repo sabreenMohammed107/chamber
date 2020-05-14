@@ -8319,9 +8319,14 @@ a {
 
 h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
-  line-height: 1.5;
-  color: #000000;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  line-height: 1.2em !important;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight: 600;
  }
+ 
 
 .top {
   position: absolute;
@@ -14341,6 +14346,7 @@ control top
 
 /*====================================*/
 body.ltr *{
+  font-family: "Poppins", sans-serif;
   direction: ltr;
   text-align: left;
 
