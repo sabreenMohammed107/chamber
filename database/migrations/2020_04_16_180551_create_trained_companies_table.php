@@ -19,6 +19,7 @@ class CreateTrainedCompaniesTable extends Migration
             $table->string('en_name',250)->nullable();
             $table->integer('year_from')->nullable();
             $table->integer('year_to')->nullable();
+            $table->integer('active')->nullable();
             $table->timestamps();
         });
     }

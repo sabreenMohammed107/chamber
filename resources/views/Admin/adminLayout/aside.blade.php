@@ -85,6 +85,10 @@
          <li> <a href="{{ route('partener.index') }}">الشركاء</a> </li>
          <li> <a href="{{ route('client.index') }}">الرعاة</a> </li>
          <li> <a href="{{ route('academyData.index') }}">بيانات التواصل</a> </li>
+         <li> <a href="{{ route('academyCompany.index') }}"> شركات تم تدريبها</a> </li>
+         <li> <a href="{{ route('academyCourses.index') }}"> كورسات الاكاديمية</a> </li>
+
+         <li> <a href="{{ route('aboutAcademy.index') }}">عن الأكاديمية </a> </li>
 
        </ul>
      </li>

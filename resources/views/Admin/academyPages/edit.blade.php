@@ -30,7 +30,7 @@
             <div class="ms-panel-body">
                 <div class="ms-auth-container row no-gutters">
                     <div class="col-12 p-3">
-                        <form action="{{route('articel.update',$row->id)}}" method="POST">
+                        <form action="{{route('aboutAcademy.update',$row->id)}}" method="POST">
 
                             {{ csrf_field() }}
 
@@ -40,7 +40,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="exampleInputPassword1" for="exampleCheck1">اسم الصفحة</label>
-                                        <input type="text" class="form-control" value="{{$row->code == 1 ? 'مركز التمييز' : '' }}{{$row->code == 2 ? 'الرعاية الصحية للتجار' : '' }}{{$row->code == 3 ? 'التأمين على حياة التجار و ممتلكاتهم' : '' }}{{$row->code == 4 ? 'الإرشاد التجاري' : '' }}{{$row->code == 5 ? 'نادي تجار العاصمة' : '' }}{{$row->code == 6 ? 'قاعة مؤتمرات غرفة العاصمة' : '' }}{{$row->code == 7 ? 'التوفيق والتحكيم التجارى' : '' }}{{$row->code == 8 ? 'لجنة المرأة والتجار' : '' }}
+                                        <input type="text" class="form-control" value="{{$row->code == 9 ? 'عن الأكاديمية' : '' }}{{$row->code == 2 ? 'الرعاية الصحية للتجار' : '' }}{{$row->code == 3 ? 'التأمين على حياة التجار و ممتلكاتهم' : '' }}{{$row->code == 4 ? 'الإرشاد التجاري' : '' }}{{$row->code == 5 ? 'نادي تجار العاصمة' : '' }}{{$row->code == 6 ? 'قاعة مؤتمرات غرفة العاصمة' : '' }}{{$row->code == 7 ? 'التوفيق والتحكيم التجارى' : '' }}{{$row->code == 8 ? 'لجنة المرأة والتجار' : '' }}
                                 " readonly="">
                                     </div>
                                 </div>
@@ -73,7 +73,7 @@
 
 
                                 <div class="input-group d-flex justify-content-end text-center">
-                                    <a href="{{ route('articel.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
+                                    <a href="{{ route('aboutAcademy.index') }}" class="btn btn-dark mx-2"> إلغاء</a>
                                     <input type="submit" value="حفظ" class="btn btn-success ">
                                 </div>
                         </form>
@@ -149,7 +149,7 @@
                                                     <td>
                                                         <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#add-Annoucement-Gallery{{$gallery->id}}">حفظ</a>
                                                         <a href="#" onclick="destroy('this News','{{$gallery->id}}')" class="btn d-inline-block btn-danger">مسح</a>
-                                                        <form id="delete_{{$gallery->id}}" action="{{ route('deleteArticel', $gallery->id) }}" method="POST" style="display: none;">
+                                                        <form id="delete_{{$gallery->id}}" action="{{ route('deleteAbout', $gallery->id) }}" method="POST" style="display: none;">
                                                             @csrf
 
                                                             <button type="submit" value=""></button>
@@ -175,7 +175,7 @@
 
                                                                 <div class="ms-auth-container row no-gutters">
                                                                     <div class="col-12 p-3">
-                                                                        <form action="{{route('updateArticel')}}" method="POST" enctype="multipart/form-data">
+                                                                        <form action="{{route('updateAbout')}}" method="POST" enctype="multipart/form-data">
                                                                             {{ csrf_field() }}
 
 
@@ -293,7 +293,7 @@
 
                                                         <a href="#" class="btn btn-info d-inline-block" data-toggle="modal" data-target="#add-Announce-Files{{$file->id}}">تعديل</a>
                                                         <a href="#" onclick="destroy('this Announcement','{{$file->id}}')" class="btn d-inline-block btn-danger">مسح</a>
-                                                        <form id="delete_{{$file->id}}" action="{{ route('deleteArticelFile', $file->id) }}" method="POST" style="display: none;">
+                                                        <form id="delete_{{$file->id}}" action="{{ route('deleteaboutFile', $file->id) }}" method="POST" style="display: none;">
                                                             @csrf
 
                                                             <button type="submit" value=""></button>
@@ -314,7 +314,7 @@
 
                                                                 <div class="ms-auth-container row no-gutters">
                                                                     <div class="col-12 p-3">
-                                                                        <form action="{{route('updateArticelFile')}}" method="POST" enctype="multipart/form-data">
+                                                                        <form action="{{route('updateaboutFile')}}" method="POST" enctype="multipart/form-data">
                                                                             @csrf
                                                                             <input type="hidden" name="article_id" value="{{$row->id}}">
                                                                             <input type="hidden" name="file_id" value="{{$file->id}}">
@@ -395,7 +395,7 @@
 
                                 <div class="ms-auth-container row no-gutters">
                                     <div class="col-12 p-3">
-                                        <form action="{{route('addArticel')}}" method="POST" enctype="multipart/form-data">
+                                        <form action="{{route('addAbout')}}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" name="article_id" value="{{$row->id}}">
                                             <div class="ms-auth-container row">
@@ -469,7 +469,7 @@
 
                                 <div class="ms-auth-container row no-gutters">
                                     <div class="col-12 p-3">
-                                        <form action="{{route('addArticelFile')}}" method="POST" enctype="multipart/form-data">
+                                        <form action="{{route('addaboutFile')}}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" name="article_id" value="{{$row->id}}">
 
