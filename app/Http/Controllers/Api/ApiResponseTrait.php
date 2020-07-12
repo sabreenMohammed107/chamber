@@ -14,13 +14,13 @@ trait ApiResponseTrait{
      * important know that sucees not only 200 , 201 => created , 202 =>Accepted
      */
 
-     public  function apiResponse($data=null ,$error=null ,$code=200){
+     public  function apiResponse($data=null ,$error='Success' ,$code=200){
         
         
         $array=[
             'data'=> $data,
-            'status'=>in_array($code , $this->successCode())?true : false,
-            'error'=>$error
+            'status'=>in_array($code , $this->successCode())?0 : 1,
+            'Message'=>$error
          ];
            
          return response($array,$code);
