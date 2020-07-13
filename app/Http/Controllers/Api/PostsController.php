@@ -20,6 +20,7 @@ class PostsController extends Controller
         
         
         // $posts= Conference::get();
+        
          $posts= PostResource::collection(Conference::get()); //in return list
     return $this->apiResponse($posts,'all Data Get Success',200);
     }

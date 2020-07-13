@@ -14,4 +14,6 @@ class Conference_gallery extends Model
         return $this->belongsTo('App\Models\Conference','conference_id');
 
     }
+
+    
 }

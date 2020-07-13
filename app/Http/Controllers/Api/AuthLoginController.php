@@ -13,7 +13,7 @@ use JWTAuth;
 class AuthLoginController extends Controller
 {
     // use GeneralTrait; //must put here not above in use 
-
+    use ApiResponseTrait; 
     public function __construct()
 	{
 		
@@ -28,7 +28,8 @@ class AuthLoginController extends Controller
         ]);
 
         if($validator->fails()){
-                return response()->json($validator->errors()->toJson(), 400);
+            return $this->apiResponse(null,$validator->errors()->toJson(),400);
+                // return response()->json($validator->errors()->toJson(), 400);
         }
 
         $admin = User::create([
@@ -40,8 +41,12 @@ class AuthLoginController extends Controller
         ]);
 
         $token = JWTAuth::fromUser($admin);
-
-        return response()->json(compact('admin','token'),201);
+        $data=[
+           'user'=> $admin,
+           'token'=> $token
+        ];
+        return $this->apiResponse($data,'all Data Get Success',201);
+        // return response()->json(compact('admin','token'),201);
     }
   
     // login user & create token
@@ -56,9 +61,16 @@ class AuthLoginController extends Controller
 
         $credentials = $request->only("email", "password");
         if ($token = $this->guard('user_api')->attempt($credentials)) {
-            return $this->respondWithToken($token);
+            $data=[
+               
+                'token'=> $token
+             ];
+            return $this->apiResponse($data,'all Data Get Success',200);
+
+            // return $this->respondWithToken($token);
         }
-        return response()->json(["error" => "Your Email/Password is wrong"], 401);
+        return $this->apiResponse(null,'Your Email/Password is wrong',401);
+        // return response()->json(["error" => "Your Email/Password is wrong"], 401);
     }
 
     public function resetPassword(Request $request)
@@ -79,8 +91,12 @@ class AuthLoginController extends Controller
 			$user->update();
 
             $token = JWTAuth::fromUser($user);
-
-            return response()->json(compact('user','token'),201);
+            $data=[
+                'user'=> $user,
+                'token'=> $token
+             ];
+             return $this->apiResponse($data,'all Data Get Success',201);
+            // return response()->json(compact('user','token'),201);
 		
 	}
     // refresh JWT token
