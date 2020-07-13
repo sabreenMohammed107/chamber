@@ -12,7 +12,7 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 use JWTAuth;
 class AuthLoginController extends Controller
 {
-    use GeneralTrait; //must put here not above in use 
+    // use GeneralTrait; //must put here not above in use 
 
     public function __construct()
 	{
@@ -61,6 +61,28 @@ class AuthLoginController extends Controller
         return response()->json(["error" => "Your Email/Password is wrong"], 401);
     }
 
+    public function resetPassword(Request $request)
+	{
+		$this->validate($request, [
+		
+			'email' => 'required|email',
+			'password' => 'required|confirmed',
+		]);
+
+		$credentials = $request->only(
+			'email', 'password', 'password_confirmation'
+		);
+
+	$user=User::where('email','=',$request->get('email'))->first();
+			$user->password = bcrypt($request->password);
+
+			$user->update();
+
+            $token = JWTAuth::fromUser($user);
+
+            return response()->json(compact('user','token'),201);
+		
+	}
     // refresh JWT token
     public function refresh()
     {
@@ -93,7 +115,7 @@ class AuthLoginController extends Controller
     {
         return response()->json([
             'access_token' => $token,
-            'token_type' => 'bearer'
+            // 'token_type' => 'bearer'
         ]);
     }
 }

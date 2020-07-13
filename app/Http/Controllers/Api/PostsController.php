@@ -19,9 +19,9 @@ class PostsController extends Controller
         //all()
         
         
-        $posts= Conference::get();
-        // $posts= PostResource::collection(Conference::get()); //in return list
-    return $this->apiResponse($posts);
+        // $posts= Conference::get();
+         $posts= PostResource::collection(Conference::get()); //in return list
+    return $this->apiResponse($posts,'all Data Get Success',200);
     }
 
 
@@ -31,9 +31,9 @@ class PostsController extends Controller
       
         if($post)
         {
-            // $post= new PostResource( $post);
+             $post= new PostResource( $post);
             // $post= new Conference( $post);
-            return $this->apiResponse($post);
+            return $this->apiResponse($post,'all Data Get Success',200);
         }
         return $this->apiResponse(null,'Id Not Found','404');     // status errorr
 
@@ -47,7 +47,7 @@ class PostsController extends Controller
         {
             // $post= new PostResource( $post);
             // $post= new PostResource( $post);
-            return $this->apiResponse($post,null ,'201'); //201 created success
+            return $this->apiResponse($post,'Data Has Been Saved' ,'201'); //201 created success
         }
         return $this->apiResponse(null,'Unknown error','400');     // status errorr
 
