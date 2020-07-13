@@ -52,12 +52,11 @@ class AuthLoginController extends Controller
     // login user & create token
     public function login(Request $request)
     {
-
-        $request->validate([
-            'email' => 'required|string|email',
-            'password' => 'required|string',
+        $validator = Validator::make($request->all(), [
+           
+            'email' => 'required|string|email|max:255',
+            'password' => 'required|string|min:6',
         ]);
-
         $credentials = $request->only("email", "password");
         if ($token = $this->guard('user_api')->attempt($credentials)) {
             $data=[
@@ -68,7 +67,7 @@ class AuthLoginController extends Controller
 
             // return $this->respondWithToken($token);
         }
-        return $this->apiResponse(null,'Your Email/Password is wrong',401);
+        return $this->apiResponse(null,$validator->errors()->toJson(),401);
         // return response()->json(["error" => "Your Email/Password is wrong"], 401);
     }
 
