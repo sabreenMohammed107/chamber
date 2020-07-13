@@ -20,7 +20,7 @@ trait ApiResponseTrait{
         $array=[
             'data'=> $data,
             'status'=>in_array($code , $this->successCode())?0 : 1,
-            'Message'=>$error
+            'message'=>$error
          ];
            
          return response($array,$code);

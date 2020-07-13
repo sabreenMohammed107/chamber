@@ -15,8 +15,21 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+    
+
+});
+Route::group(['middleware'=>['checkPassword']], function () {
+
+    route::post('store','PostsController@storeData')->name('store');
 });
 
 route::resource('posts','PostsController')->except(['create','edit']); //use this or  use get & post as you like
-route::post('store','PostsController@storeData')->name('store');
+route::post('login','AuthLoginController@login')->name('login');
+route::post('refresh','AuthLoginController@refresh')->name('refresh');
 
+route::post('register','AuthLoginController@register')->name('register');
+
+Route::group(['middleware'=>['checkAdminToken:admin_api']], function () {
+
+    route::post('store','PostsController@storeData')->name('store');
+});
