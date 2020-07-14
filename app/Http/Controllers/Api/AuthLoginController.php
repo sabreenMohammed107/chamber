@@ -60,16 +60,10 @@ class AuthLoginController extends Controller
     public function login(Request $request)
     {
 
-        $validator = Validator::make($request->all(), [
-           
-            'password' => 'required|string|min:6',
-            'email' => 'max:255|required|email',
+        $request->validate([
+            'email' => 'required|string|email',
+            'password' => 'required|string',
         ]);
-
-        if($validator->fails()){
-            return $this->apiResponse(null,$validator->errors()->toJson(),400);
-           
-        }
 
         $credentials = $request->only("email", "password");
         if ($token = $this->guard('user_api')->attempt($credentials)) {
@@ -81,7 +75,7 @@ class AuthLoginController extends Controller
 
             // return $this->respondWithToken($token);
         }
-        return $this->apiResponse(null,$validator->errors()->toJson(),401);
+        return $this->apiResponse(null,'Your Email/Password is wrong',401);
         // return response()->json(["error" => "Your Email/Password is wrong"], 401);
     }
 
