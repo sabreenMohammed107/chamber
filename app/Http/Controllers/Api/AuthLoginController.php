@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
  use App\Traits\GeneralTrait ;
-use App\Http\Resources\PostResource as PostResource;
+use App\Http\Resources\UserResource as UserResource ;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
@@ -10,10 +10,12 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use JWTAuth;
+
 class AuthLoginController extends Controller
 {
-    // use GeneralTrait; //must put here not above in use 
+     use GeneralTrait; //must put here not above in use 
     use ApiResponseTrait; 
+
     public function __construct()
 	{
 		
@@ -23,12 +25,13 @@ class AuthLoginController extends Controller
     {
             $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'max:255|required|email|unique:users',
             'password' => 'required|string|min:6',
         ]);
 
         if($validator->fails()){
-            return $this->apiResponse(null,'Your Email/Password is wrong',400);
+            return $this->apiResponse(null,$validator->errors()->toJson(),400);
+            // return $this->returnValidationError(null,$validator->errors()->toJson(),400);
                 // return response()->json($validator->errors()->toJson(), 400);
         }
 
@@ -41,11 +44,14 @@ class AuthLoginController extends Controller
         ]);
 
         $token = JWTAuth::fromUser($admin);
-        $data=[
-           'user'=> $admin,
-           'token'=> $token
-        ];
-        return $this->apiResponse($data,'all Data Get Success',201);
+        $admin = collect($admin);
+        $admin->put('access_token', $token);
+        // $data=[
+        //    'user'=> $admin,
+        //    'token'=> $token
+        // ];
+         $data=new UserResource($admin);
+        return $this->apiResponse(array($admin),'all Data Get Success',201);
         // return response()->json(compact('admin','token'),201);
     }
   

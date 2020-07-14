@@ -10,40 +10,40 @@ trait GeneralTrait
         return app()->getLocale();
     }
 
-    public function returnError($errNum, $msg)
+    public function returnError($data, $msg,$errNum)
     {
         return response()->json([
-            'status' => false,
-            'errNum' => $errNum,
-            'msg' => $msg
+            'data' => null,
+            'status' => 1,
+            'message' => $msg
         ]);
     }
 
 
-    public function returnSuccessMessage($msg = "", $errNum = "S000")
+    public function returnSuccessMessage($data,$msg = "", $errNum = "S000")
     {
         return [
-            'status' => true,
-            'errNum' => $errNum,
-            'msg' => $msg
+            'data' => null,
+            'status' => 1,
+            'message' => $msg
         ];
     }
 
-    public function returnData($key, $value, $msg = "")
+    public function returnData($key, $msg = "", $value)
     {
         return response()->json([
-            'status' => true,
-            'errNum' => "S000",
-            'msg' => $msg,
-            $key => $value
+           
+            'data' =>  $key,
+            'status' => 0,
+            'message' => $msg
         ]);
     }
 
 
     //////////////////
-    public function returnValidationError($code = "E001", $validator)
+    public function returnValidationError($data, $validator,$code = "E001")
     {
-        return $this->returnError($code, $validator->errors()->first());
+        return $this->returnError( $data,$validator->errors()->first(),$code);
     }
 
 
@@ -227,6 +227,4 @@ trait GeneralTrait
         else
             return "";
     }
-
-
 }
