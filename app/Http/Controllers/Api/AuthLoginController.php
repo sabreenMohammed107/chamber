@@ -32,7 +32,7 @@ class AuthLoginController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return $this->apiResponse(null, $validator->errors()->toJson(), 400);
+            return $this->apiResponse(null, $validator->errors()->toJson(), 200);
             // return $this->returnValidationError(null,$validator->errors()->toJson(),400);
             // return response()->json($validator->errors()->toJson(), 400);
         }
@@ -69,7 +69,7 @@ class AuthLoginController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return $this->apiResponse(null, $validator->errors()->toJson(), 400);
+            return $this->apiResponse(null, $validator->errors()->toJson(), 200);
         }
 
         $credentials = $request->only("email", "password");
