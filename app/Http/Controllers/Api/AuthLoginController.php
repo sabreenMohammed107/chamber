@@ -53,7 +53,7 @@ class AuthLoginController extends Controller
         //    'token'=> $token
         // ];
         $data = new UserResource($admin);
-        return $this->apiResponse(array($admin), 'all Data Get Success', 201);
+        return $this->apiResponse(array($admin), 'all Data Get Success', 401);
         // return response()->json(compact('admin','token'),201);
     }
 
