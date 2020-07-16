@@ -105,6 +105,10 @@ class AuthLoginController extends Controller
         );
 
         $user = User::where('email', '=', $request->get('email'))->first();
+      
+        if (!$user) {
+            return $this->apiResponse(null, 'mail is not  exist', 400);
+        }
         $user->password = bcrypt($request->password);
 
         $user->update();
