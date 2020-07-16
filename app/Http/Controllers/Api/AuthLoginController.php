@@ -63,9 +63,10 @@ class AuthLoginController extends Controller
     public function login(Request $request)
     {
 
-        if ($request->has(['email', 'password'])) {
-            $credentials = $request->only('email', 'password');
-        } 
+        $credentials=array(
+            'email'=>$request->get('email'),
+            'password'=>$request->get('password')
+        );
       
 
         if ($token = $this->guard('user_api')->attempt($credentials)) {
