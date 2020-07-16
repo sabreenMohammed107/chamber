@@ -81,12 +81,12 @@ class AuthLoginController extends Controller
             $admin = collect($admin);
             $admin->put('access_token', $token);
 
-            return $this->apiResponse(array($admin), 'all Data Get Success', 200);
+            return $this->apiResponse(array($admin), 'all Data Get Success', 201);
 
 
             // return $this->respondWithToken($token);
         }
-        return $this->apiResponse(null, 'Your Email/Password is wrong', 401);
+        return $this->apiResponse(null, 'Your Email/Password is wrong', 400);
         // return response()->json(["error" => "Your Email/Password is wrong"], 401);
     }
 
