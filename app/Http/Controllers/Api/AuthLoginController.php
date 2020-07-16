@@ -70,10 +70,7 @@ class AuthLoginController extends Controller
             'email' => 'required|string|email',
         ]);
 
-        if ($validator->fails()) {
-
-            return $this->apiResponse(null, $validator->errors()->toJson(), 404);
-        }
+      
 
         $credentials = $request->only("email", "password");
 
@@ -86,10 +83,7 @@ class AuthLoginController extends Controller
 
 
         }
-        else{
-            return $this->apiResponse(null, 'Your Email/Password is wrong', 400);
-
-        }
+        return $this->apiResponse(array($admin), 'User Register Successfully', 201);
     }
 
     public function resetPassword(Request $request)
