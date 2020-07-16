@@ -70,10 +70,12 @@ class AuthLoginController extends Controller
             'email' => 'required|string|email',
         ]);
 
-      
+        if ($validator->fails()) {
+
+            return $this->apiResponse(null, $validator->errors()->toJson(), 404);
+        }
 
         $credentials = $request->only("email", "password");
-
         if ($token = $this->guard('user_api')->attempt($credentials)) {
             $admin = User::where('email', '=', $request->get('email'))->first();
             $admin = collect($admin);
@@ -82,8 +84,10 @@ class AuthLoginController extends Controller
             return $this->apiResponse(array($admin), 'all Data Get Success', 201);
 
 
+            // return $this->respondWithToken($token);
         }
-        return $this->apiResponse(array($admin), 'User Register Successfully', 201);
+        return $this->apiResponse(null, $this->guard('user_api')->attempt($credentials), 400);
+        // return response()->json(["error" => "Your Email/Password is wrong"], 401);
     }
 
     public function resetPassword(Request $request)
