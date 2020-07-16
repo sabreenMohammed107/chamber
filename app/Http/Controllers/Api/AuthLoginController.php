@@ -144,11 +144,9 @@ class AuthLoginController extends Controller
     // logout user form application
     public function logout()
     {
-        $this->guard()->logout();
-        return response()->json([
-            "status" => "success",
-            "msg" => "Logged out successfully."
-        ], 200);
+        $this->guard('user_api')->logout();
+    
+        return $this->apiResponse(null, 'Logged out successfully.', 200);
     }
 
     private function guard()
