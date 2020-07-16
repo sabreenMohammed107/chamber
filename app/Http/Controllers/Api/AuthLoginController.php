@@ -92,12 +92,17 @@ class AuthLoginController extends Controller
 
     public function resetPassword(Request $request)
     {
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
 
-            'email' => 'required|email',
             'password' => 'required|confirmed',
+            'email' => 'required|string|email',
         ]);
 
+        if ($validator->fails()) {
+
+            return $this->apiResponse(null, $validator->errors()->toJson(), 404);
+        }
+     
         $credentials = $request->only(
             'email',
             'password',
