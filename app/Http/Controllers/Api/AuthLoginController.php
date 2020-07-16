@@ -25,21 +25,23 @@ class AuthLoginController extends Controller
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
+
             'name' => 'required|string|max:255',
-
+            'email_address' => 'required|email',
             'password' => 'required|string|min:6',
-            'email' => 'max:255|required|email|unique:users',
-        ]);
 
+        ]);
         if ($validator->fails()) {
-            return $this->apiResponse(null, $validator->errors()->toJson(), 200);
-            // return $this->returnValidationError(null,$validator->errors()->toJson(),400);
-            // return response()->json($validator->errors()->toJson(), 400);
+            return $this->apiResponse(null, $validator->errors()->toJson(), 404);
         }
 
+        $user = User::where('email', '=', $request->get('email_address'))->first();
+        if ($user) {
+            return $this->apiResponse(null, 'mail is already  exist', 400);
+        }
         $admin = User::create([
             'name' => $request->get('name'),
-            'email' => $request->get('email'),
+            'email' => $request->get('email_address'),
             "password" => bcrypt($request->password),
 
 
@@ -53,7 +55,7 @@ class AuthLoginController extends Controller
         //    'token'=> $token
         // ];
         $data = new UserResource($admin);
-        return $this->apiResponse(array($admin), 'all Data Get Success', 401);
+        return $this->apiResponse(array($admin), 'User Register Successfully', 201);
         // return response()->json(compact('admin','token'),201);
     }
 
@@ -69,7 +71,8 @@ class AuthLoginController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return $this->apiResponse(null, $validator->errors()->toJson(), 200);
+
+            return $this->apiResponse(null, $validator->errors()->toJson(), 404);
         }
 
         $credentials = $request->only("email", "password");
@@ -111,7 +114,7 @@ class AuthLoginController extends Controller
             'user' => $user,
             'token' => $token
         ];
-        return $this->apiResponse($data, 'all Data Get Success', 201);
+        return $this->apiResponse($data, 'Rest your Password Successfully', 201);
         // return response()->json(compact('user','token'),201);
 
     }
