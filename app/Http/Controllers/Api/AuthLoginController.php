@@ -88,7 +88,7 @@ class AuthLoginController extends Controller
 
             // return $this->respondWithToken($token);
         }
-        return $this->apiResponse(null,$credentials, 401);
+        return $this->apiResponse(null,'Your Email/Password is wrong', 401);
     }
 
     public function resetPassword(Request $request)
