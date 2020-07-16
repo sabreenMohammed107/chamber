@@ -30,12 +30,13 @@ route::post('login','AuthLoginController@login')->name('login');
 
 
 route::post('register','AuthLoginController@register')->name('register');
-route::post('logout','AuthLoginController@logout')->name('logout');
 
 Route::group(['middleware'=>['checkAdminToken:admin_api']], function () {
 
     route::post('refresh','AuthLoginController@refresh')->name('refresh');
     
     route::post('resetPassword','AuthLoginController@resetPassword')->name('resetPassword');
+    route::post('logout','AuthLoginController@logout')->name('logout');
+
 
 });
